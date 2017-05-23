@@ -34,15 +34,15 @@ public class LoginInterceptor {
                              Object handler) throws Exception {
         //获取请求的URL
         String url = request.getRequestURI();
-        //URL:login.jsp是公开的;这个demo是除了login.jsp是可以公开访问的，其它的URL都进行拦截控制
-        if(url.contains("/")){
+        //URL:login.jsp是公开的;除了index.jsp是可以公开访问的，其它的URL都进行拦截控制
+        if (url.contains("/")) {
             return true;
         }
         //获取Session
         HttpSession session = request.getSession();
-        String username = (String)session.getAttribute("username");
+        String username = (String) session.getAttribute("username");
 
-        if(username != null){
+        if (username != null) {
             return true;
         }
         //不符合条件的，跳转到登录界面

@@ -2,9 +2,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
        xmlns:tx="http://www.springframework.org/schema/tx"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd  http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
     <!--spring管理所有业务逻辑组件-->
     <context:component-scan base-package="com.arcsoft.studyOnline">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
@@ -42,8 +41,7 @@
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
 
         <!--指定mapping文件的位置-->
-        <!--<property name="mapperLocations" value="classpath:mybatis-mapper/*.xml"/>-->
-
+        <property name="mapperLocations" value="classpath:mybatis-mapper/*.xml"/>
 
         <property name="typeAliasesPackage" value="com.isea533.mybatis.model"/>
         <property name="plugins">
@@ -63,13 +61,19 @@
     </bean>
 
 
-    <!--<mybatis-spring:scan base-package="com.compusNews.dao"/>-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.arcsoft.studyOnline.dao"/>
     </bean>
-    <!--<bean id="administrator" class="com.compusNews.bean.Administrator"/>-->
-    <!--<bean id="news" class="com.compusNews.bean.News"/>-->
-    <!--<bean id="newsWithSortName" class="com.compusNews.bean.NewsWithSortName"/>-->
-    <!--<bean id="sort" class="com.compusNews.bean.Sort"/>-->
+
+    <bean id="adminstrator" class="com.arcsoft.studyOnline.bean.Adminstrator"/>
+    <bean id="audios" class="com.arcsoft.studyOnline.bean.Audios"/>
+    <bean id="discuss" class="com.arcsoft.studyOnline.bean.Discuss"/>
+    <bean id="employee" class="com.arcsoft.studyOnline.bean.Employee"/>
+    <bean id="position" class="com.arcsoft.studyOnline.bean.Position"/>
+    <bean id="ppts" class="com.arcsoft.studyOnline.bean.PPTs"/>
+    <bean id="privateMessage" class="com.arcsoft.studyOnline.bean.PrivateMessage"/>
+    <bean id="videos" class="com.arcsoft.studyOnline.bean.Videos"/>
+    <bean id="videoSort" class="com.arcsoft.studyOnline.bean.VideoSort"/>
+    <bean id="viewRecord" class="com.arcsoft.studyOnline.bean.ViewRecord"/>
 
 </beans>

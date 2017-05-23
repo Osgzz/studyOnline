@@ -15,7 +15,7 @@
     <!--开启注解-->
     <mvc:annotation-driven/>
 
-    <mvc:view-controller path="/" view-name="index"/>
+    <mvc:view-controller path="/" view-name="/index"/>
 
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
         <property name="messageConverters">
@@ -44,12 +44,12 @@
     </bean>
 
 
-    <mvc:interceptors>
-        <mvc:interceptor>
-            <mvc:mapping path="/**"/>
-            <bean class="com.arcsoft.studyOnline.interceptor.LoginInterceptor"/>
-        </mvc:interceptor>
-    </mvc:interceptors>
+    <!--<mvc:interceptors>-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/**"/>-->
+            <!--<bean class="com.arcsoft.studyOnline.interceptor.LoginInterceptor"/>-->
+        <!--</mvc:interceptor>-->
+    <!--</mvc:interceptors>-->
 
 
 </beans>
