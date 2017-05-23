@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/study_online?serverTimezone=GMT&amp;userSSL=false&amp;characterEncoding=utf8"
+                        userId="root"
+                        password="root">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.arcsoft.studyOnline.bean" targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mybatis-mapper" targetProject=".\src\main\resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.arcsoft.studyOnline.dao" targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!--     <table schema="DB2ADMIN" tableName="ALLTYPES" domainObjectName="Customer" >
+                 <property name="useActualColumnNames" value="true"/>
+                 <generatedKey column="ID" sqlStatement="DB2" identity="true" />
+                 <columnOverride column="DATE_FIELD" property="startDate" />
+                 <ignoreColumn column="FRED" />
+                 <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" />
+             </table>-->
+        <table tableName="adminstrator" domainObjectName="Adminstrator"/>
+        <table tableName="audios" domainObjectName="Audios"/>
+        <table tableName="discuss" domainObjectName="Discuss"/>
+        <table tableName="employee" domainObjectName="Employee"/>
+        <table tableName="position" domainObjectName="Position"/>
+        <table tableName="ppts" domainObjectName="PPTs"/>
+        <table tableName="private_message" domainObjectName="PrivateMessage"/>
+        <table tableName="videos" domainObjectName="Videos"/>
+        <table tableName="video_sort" domainObjectName="VideoSort"/>
+        <table tableName="view_record" domainObjectName="ViewRecord"/>
+
+    </context>
+</generatorConfiguration>

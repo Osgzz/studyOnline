@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+    <!--spring管理所有业务逻辑组件-->
+    <context:component-scan base-package="com.arcsoft.studyOnline">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+
+    <!--引入外部的数据库配置文件-->
+    <context:property-placeholder location="classpath:dataSource.properties"/>
+
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl"
+                  value="${jdbc.url}"/>
+        <property name="driverClass" value="${jdbc.driver}"/>
+        <property name="user" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+
+        <property name="acquireIncrement" value="${c3p0.acquireIncrement}"/>
+        <property name="initialPoolSize" value="${c3p0.initialPoolSize}"/>
+        <property name="minPoolSize" value="${c3p0.minPoolSize}"/>
+        <property name="maxPoolSize" value="${c3p0.maxPoolSize}"/>
+        <property name="maxStatements" value="${c3p0.maxStatements}"/>
+        <property name="maxStatementsPerConnection" value="${c3p0.maxStatementsPerConnection}"/>
+    </bean>
+
+    <!--Spring事务管理器-->
+    <bean id="dataSourceTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--开启基于注解的事务-->
+    <tx:annotation-driven transaction-manager="dataSourceTransactionManager"/>
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+
+        <!--指定mapping文件的位置-->
+        <!--<property name="mapperLocations" value="classpath:mybatis-mapper/*.xml"/>-->
+
+
+        <property name="typeAliasesPackage" value="com.isea533.mybatis.model"/>
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <value>
+                            helperDialect=mysql
+                            reasonable=true
+                            supportMethodsArguments=true
+                            autoRuntimeDialect=true
+                        </value>
+                    </property>
+                </bean>
+            </array>
+        </property>
+    </bean>
+
+
+    <!--<mybatis-spring:scan base-package="com.compusNews.dao"/>-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.arcsoft.studyOnline.dao"/>
+    </bean>
+    <!--<bean id="administrator" class="com.compusNews.bean.Administrator"/>-->
+    <!--<bean id="news" class="com.compusNews.bean.News"/>-->
+    <!--<bean id="newsWithSortName" class="com.compusNews.bean.NewsWithSortName"/>-->
+    <!--<bean id="sort" class="com.compusNews.bean.Sort"/>-->
+
+</beans>
