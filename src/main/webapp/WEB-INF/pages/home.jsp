@@ -11,6 +11,7 @@
     <title>home</title>
 </head>
 <body>
+<a href="${pageContext.request.contextPath}/shiro/logout">logout</a>
 
 </body>
 </html>

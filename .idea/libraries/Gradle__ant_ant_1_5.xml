@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ant:ant:1.5">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/ant/ant/1.5/ant-1.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

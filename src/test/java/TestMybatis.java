@@ -1,3 +1,4 @@
+import org.apache.shiro.crypto.hash.SimpleHash;
 import org.junit.Test;
 import org.mybatis.generator.api.MyBatisGenerator;
 import org.mybatis.generator.config.Configuration;
@@ -23,5 +24,10 @@ public class TestMybatis {
         DefaultShellCallback callback = new DefaultShellCallback(overwrite);
         MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
         myBatisGenerator.generate(null);
+    }
+
+    @Test
+    public void testMD5(){
+        System.out.println(new SimpleHash("MD5","admin","admin",499));
     }
 }

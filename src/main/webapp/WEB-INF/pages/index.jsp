@@ -11,7 +11,7 @@
     <title>index</title>
 </head>
 <body>
-<form action="login" method="post">
+<form action="${pageContext.request.contextPath}/shiro/login" method="post">
     <input name="username" type="text" placeholder="username">
     <input name="password" type="password" placeholder="password">
     <input type="submit" value="submit">

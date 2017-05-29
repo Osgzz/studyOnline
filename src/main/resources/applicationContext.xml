@@ -10,60 +10,23 @@
     </context:component-scan>
 
 
-    <!--引入外部的数据库配置文件-->
-    <context:property-placeholder location="classpath:dataSource.properties"/>
-
-    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-        <property name="jdbcUrl"
-                  value="${jdbc.url}"/>
-        <property name="driverClass" value="${jdbc.driver}"/>
-        <property name="user" value="${jdbc.username}"/>
-        <property name="password" value="${jdbc.password}"/>
-
-        <property name="acquireIncrement" value="${c3p0.acquireIncrement}"/>
-        <property name="initialPoolSize" value="${c3p0.initialPoolSize}"/>
-        <property name="minPoolSize" value="${c3p0.minPoolSize}"/>
-        <property name="maxPoolSize" value="${c3p0.maxPoolSize}"/>
-        <property name="maxStatements" value="${c3p0.maxStatements}"/>
-        <property name="maxStatementsPerConnection" value="${c3p0.maxStatementsPerConnection}"/>
-    </bean>
-
-    <!--Spring事务管理器-->
-    <bean id="dataSourceTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource"/>
-    </bean>
-
-    <!--开启基于注解的事务-->
-    <tx:annotation-driven transaction-manager="dataSourceTransactionManager"/>
-
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="dataSource"/>
-        <property name="configLocation" value="classpath:mybatis-config.xml"/>
-
-        <!--指定mapping文件的位置-->
-        <property name="mapperLocations" value="classpath:mybatis-mapper/*.xml"/>
-
-        <property name="typeAliasesPackage" value="com.isea533.mybatis.model"/>
-        <property name="plugins">
-            <array>
-                <bean class="com.github.pagehelper.PageInterceptor">
-                    <property name="properties">
-                        <value>
-                            helperDialect=mysql
-                            reasonable=true
-                            supportMethodsArguments=true
-                            autoRuntimeDialect=true
-                        </value>
-                    </property>
-                </bean>
-            </array>
+    <!--&lt;!&ndash;引入外部的数据库配置文件&ndash;&gt;-->
+    <!--<context:property-placeholder location="classpath:dataSource.properties"/>-->
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+        <property name="ignoreResourceNotFound" value="true" />
+        <property name="locations">
+            <list>
+                <value>classpath:dataSource.properties</value>
+                <value>classpath:shiro-config.properties</value>
+            </list>
         </property>
     </bean>
 
 
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.arcsoft.studyOnline.dao"/>
-    </bean>
+
+
 
     <bean id="adminstrator" class="com.arcsoft.studyOnline.bean.Adminstrator"/>
     <bean id="audios" class="com.arcsoft.studyOnline.bean.Audios"/>
@@ -76,4 +39,9 @@
     <bean id="videoSort" class="com.arcsoft.studyOnline.bean.VideoSort"/>
     <bean id="viewRecord" class="com.arcsoft.studyOnline.bean.ViewRecord"/>
 
+
+    <import resource="spring-mybatis.xml"/>
+    <import resource="spring-cache.xml"/>
+    <import resource="spring-shiro.xml"/>
+    
 </beans>

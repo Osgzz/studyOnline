@@ -45,12 +45,17 @@ public class AdminstratorService {
         return adminstrator.getPassword().equals(password);
     }
 
-    @Transactional
+
     public void updatePassword(String username, String password) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         Adminstrator adminstrator = (Adminstrator) applicationContext.getBean("adminstrator");
         adminstrator.setUsername(username);
         adminstrator.setPassword(password);
         adminstratorMapper.updatePassword(adminstrator);
+    }
+
+    public Adminstrator selectAdminstratorByUsername(String username){
+        Adminstrator adminstrator = adminstratorMapper.selectPasswordByUsername(username);
+        return adminstrator;
     }
 }

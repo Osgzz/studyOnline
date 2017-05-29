@@ -69,4 +69,7 @@ public interface AdminstratorMapper {
     Adminstrator selectPasswordByUsername(@Param("username")String username);
 
     void updatePassword(Adminstrator adminstrator);
+
+
+
 }

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: javax.faces:jsf-impl:1.2_04">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/javax/faces/jsf-impl/1.2_04/jsf-impl-1.2_04.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
