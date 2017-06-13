@@ -29,6 +29,7 @@
     <!-- 缓存管理器 使用Ehcache实现，引用mybatis的缓存配置 -->
     <bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
         <property name="cacheManager" ref="ehCacheManagerFactory" />
+        <!--<property name="cacheManagerConfigFile" value="classpath:ehcache-shiro.xml" />-->
     </bean>
 
     <!-- 会话DAO -->
