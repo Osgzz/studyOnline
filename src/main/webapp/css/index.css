@@ -228,6 +228,7 @@
 	padding: 10px 5px;
 }
 
+/* nav css */
 .mainer{
 	z-index: 1000;
 	height: 40px;
@@ -271,6 +272,7 @@
 
 }
 
+/*sub-nav css */
 .sub-nav{
 	display: none; /*二级菜单栏原始状态隐藏*/
 	width: 420px;
@@ -324,7 +326,7 @@
 
 
 /* main-css */
-.main{
+#main{
 	display: block;
 	padding:20px 0;
 	/*min-height: 900px;*/
@@ -723,7 +725,7 @@
 }
 
 
-.footer{
+#footer{
 /*	margin: 0 auto;*/
 /*	width: 1200px;*/
 	background-color: #8e3850;
