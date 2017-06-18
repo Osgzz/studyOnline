@@ -7,6 +7,7 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -24,7 +25,7 @@ public class AdminstratorController {
     private AdminstratorService adminstratorService;
 
     @RequestMapping("/login")
-    public String login(@RequestParam String username, @RequestParam String password, RedirectAttributes model, HttpSession session) {
+    public String login(@RequestParam String username, @RequestParam String password, Model model, HttpSession session) {
         Subject currentUser = SecurityUtils.getSubject();
         if (!currentUser.isAuthenticated()){
             UsernamePasswordToken token = new UsernamePasswordToken(username, password);
@@ -33,9 +34,12 @@ public class AdminstratorController {
                 currentUser.login(token);
             }catch (AuthenticationException e){
                 System.out.println("登录失败:"+e.getMessage());
+                return "index";
             }
         }
-        return "redirect:/home";
+
+        model.addAttribute("username", username);
+        return "home";
 
 
 
@@ -53,6 +57,13 @@ public class AdminstratorController {
     }
 
 
-
+@RequestMapping("/logout")
+public String logout() {
+    Subject subject = SecurityUtils.getSubject();
+    if (subject.isAuthenticated()) {
+        subject.logout(); // session 会销毁，在SessionListener监听session销毁，清理权限缓存
+    }
+    return "index";
+}
 
 }

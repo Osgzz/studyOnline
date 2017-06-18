@@ -41,7 +41,7 @@
     <!--视图解析器-->
     <!--order值越低优先级越高-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="prefix" value="/WEB-INF/background/"/>
         <property name="suffix" value=".jsp"/>
         <property name="order" value="0"/>
     </bean>

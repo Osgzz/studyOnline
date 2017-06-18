@@ -8,15 +8,19 @@
         <property name="securityManager" ref="securityManager"/>
         <property name="loginUrl" value="/index"/>
         <property name="successUrl" value="/home"/>
-        <property name="unauthorizedUrl" value="/html/401.html"/>
         <property name="filterChainDefinitions">
             <value>
                 <!-- 静态资源允许访问 -->
+                /css/** = anon
+                /fonts/** = anon
                 /html/** = anon
+                /img/** = anon
+                /js/** = anon
+                /ext/** = anon
                 /ueditor/** = anon
                 /shiro/login = anon
-
                 /shiro/logout = logout
+
                 <!-- 登录页允许访问 -->
                 /index = anon
                 <!-- 其他资源需要认证 -->
@@ -38,6 +42,14 @@
     <!-- 会话管理器 -->
     <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
         <property name="sessionDAO" ref="sessionDAO"/>
+        <!-- 设置session过期时间为1小时(单位：毫秒)，默认为30分钟 -->
+        <property name="globalSessionTimeout" value="3600000"/>
+        <property name="sessionValidationSchedulerEnabled" value="true"/>
+        <property name="sessionIdCookie">
+            <bean class="org.apache.shiro.web.servlet.SimpleCookie">
+                <property name="name" value="JSESSID" />
+            </bean>
+        </property>
     </bean>
 
     <!-- 安全管理器 -->
