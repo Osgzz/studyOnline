@@ -14,7 +14,8 @@
     <title>虹软在线培训系统后台管理</title>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.1.0.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/ext/bootstrap/js/bootstrap.min.js"></script>
-    <link href="${pageContext.request.contextPath}/ext/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/ext/bootstrap/css/bootstrap.min.css" type="text/css"
+          rel="stylesheet">
 
     <style>
         .panel-group {
@@ -116,7 +117,6 @@
 
 //            激活标签页最后一标签
             $('#myTab a:last').tab('show');
-
         }
 
     </script>
@@ -143,7 +143,8 @@
                 <li class="active"><a href="#">首页</a></li>
             </ul>
             <div style="margin-right: 0.7%">
-                <form method="post" action="${pageContext.request.contextPath}/shiro/logout" class="navbar-form navbar-right"
+                <form method="post" action="${pageContext.request.contextPath}/shiro/logout"
+                      class="navbar-form navbar-right"
                       role="search">
                     <div class="form-group">
                         <p style="color: #ffffff;padding-top: 10%;">用户：${username}</p>
@@ -195,12 +196,12 @@
                 </div>
             </div>
 
-            <%--书本管理--%>
+            <%--课程管理--%>
             <div class="panel panel-primary leftMenu">
                 <div class="panel-heading" id="collapseListGroupHeading2" data-toggle="collapse"
                      data-target="#collapseListGroup2" role="tab">
                     <h4 class="panel-title">
-                        书本管理
+                        课程管理
                         <span class="glyphicon glyphicon-chevron-down right"></span>
                     </h4>
                 </div>

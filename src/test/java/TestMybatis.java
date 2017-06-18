@@ -16,14 +16,14 @@ import java.util.List;
 public class TestMybatis {
     @Test
     public void testgenerarot() throws Exception {
-        List<String> warnings = new ArrayList<>();
-        boolean overwrite = true;
-        File configFile = new File("generatorConfig.xml");
-        ConfigurationParser cp = new ConfigurationParser(warnings);
-        Configuration config = cp.parseConfiguration(configFile);
-        DefaultShellCallback callback = new DefaultShellCallback(overwrite);
-        MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
-        myBatisGenerator.generate(null);
+//        List<String> warnings = new ArrayList<>();
+//        boolean overwrite = true;
+//        File configFile = new File("generatorConfig.xml");
+//        ConfigurationParser cp = new ConfigurationParser(warnings);
+//        Configuration config = cp.parseConfiguration(configFile);
+//        DefaultShellCallback callback = new DefaultShellCallback(overwrite);
+//        MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
+//        myBatisGenerator.generate(null);
     }
 
     @Test

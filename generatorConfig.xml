@@ -43,7 +43,8 @@
         <table tableName="ppts" domainObjectName="PPTs"/>
         <table tableName="private_message" domainObjectName="PrivateMessage"/>
         <table tableName="videos" domainObjectName="Videos"/>
-        <table tableName="video_sort" domainObjectName="VideoSort"/>
+        <table tableName="route" domainObjectName="Route"/>
+        <table tableName="lesson" domainObjectName="Lesson"/>
         <table tableName="view_record" domainObjectName="ViewRecord"/>
 
     </context>
