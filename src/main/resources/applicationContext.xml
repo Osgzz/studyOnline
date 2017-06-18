@@ -36,7 +36,8 @@
     <bean id="ppts" class="com.arcsoft.studyOnline.bean.PPTs"/>
     <bean id="privateMessage" class="com.arcsoft.studyOnline.bean.PrivateMessage"/>
     <bean id="videos" class="com.arcsoft.studyOnline.bean.Videos"/>
-    <bean id="videoSort" class="com.arcsoft.studyOnline.bean.VideoSort"/>
+    <bean id="route" class="com.arcsoft.studyOnline.bean.Route"/>
+    <bean id="lesson" class="com.arcsoft.studyOnline.bean.Lesson"/>
     <bean id="viewRecord" class="com.arcsoft.studyOnline.bean.ViewRecord"/>
 
 

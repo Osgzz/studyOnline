@@ -69,6 +69,39 @@
     <script type="text/javascript">
         $(function () {
 
+            $("#modifypwd").click(function () {
+                $("#username").val("${username}");
+                $("#oldPassword").val("");
+                $("#newPassword").val("");
+                $("#checkNewPassword").val("");
+                $("#editModal").modal("show");
+                $("#editModal").removeAttr("style");
+            });
+
+
+            $("#submit").click(function () {
+
+                var username = $("#username").val();
+                var oldPassword = $("#oldPassword").val();
+                var newPassword = $("#newPassword").val();
+                var checkNewPassword = $("#checkNewPassword").val();
+
+
+                $.getJSON("${pageContext.request.contextPath}/shiro/modifyAdminPwd",
+                    {
+                        username: username,
+                        oldPassword: oldPassword,
+                        newPassword: newPassword,
+                        checkNewPassword: checkNewPassword
+                    }
+                    ,
+                    function (json) {
+                        var message = json.message;
+                        alert(message);
+                    });
+            });
+
+
             <!--右侧标签页的首次加载-->
             $('#myTab').find('a:first').tab('show');
 
@@ -182,7 +215,7 @@
                             <!-- 利用data-target指定URL -->
                             <button class="menu-item-left">
                                 <span class="glyphicon glyphicon-triangle-right"></span><a href="javascript:void(0)"
-                                                                                           onclick="addTab('管理员密码修改', 'toModifyPwd')">管理员密码修改</a>
+                                                                                           id="modifypwd">管理员密码修改</a>
                             </button>
                         </li>
                         <li class="list-group-item">
@@ -268,11 +301,51 @@
             <li><a href="#home" data-toggle="tab">首页</a></li>
         </ul>
         <div class="tab-content" id="content">
-            <div class="tab-pane active fade in" id="home">欢迎来到网上书店销售后台管理系统</div>
+            <div class="tab-pane active fade in" id="home">欢迎来到虹软线上培训后台管理系统</div>
         </div>
     </div>
 
 </div>
+
+
+<%--模态框：修改管理员账号信息--%>
+<div style="display:none" class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="editModalLabel">管理员密码修改</h4>
+            </div>
+            <form method="post" role="form">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="username">管理员账号：</label>
+                        <input readonly id="username" type="text" name="username" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="oldPassword">旧密码：</label>
+                        <input id="oldPassword" type="password" name="oldPassword" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">新密码：</label>
+                        <input id="newPassword" type="password" name="newPassword" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="checkNewPassword">新密码确认：</label>
+                        <input id="checkNewPassword" type="password" name="checkNewPassword" class="form-control">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <input id="submit" type="button" class="btn btn-primary" value="修改"/>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
 
 </body>
 </html>
