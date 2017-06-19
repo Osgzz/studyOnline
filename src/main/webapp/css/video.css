@@ -187,15 +187,18 @@
 	margin: 0 auto;
 	padding: 0;
 }
-.play-area{
+.video-wrap{
              box-shadow: 0 0 20px #111;
              margin:0 auto;
              width: 860px;
              background: #000;
+             box-shadow: 0 0 20px #111;
 }
-.flash-area{
-             width: 860px;
-             height: 485px;
+.video-box{
+             /*width: 860px;*/
+             /*height: 485px;*/
+/*             width: 100%;
+             height: 100%;*/
              position: relative;
              top: 0;
 /*             left: 50%;*/
@@ -211,6 +214,7 @@
 .comment-area{
 	position: relative;
 	width: 824px;
+/*	width: 100%;*/
 	margin:0 auto;
 	padding:0;
 	overflow: hidden; 
@@ -294,9 +298,11 @@
 	padding:0;
 }
 .list-container ul{
+	border:1px solid #e8e8e8;
 	list-style:none;
 	margin: 0;
-	padding:0;
+	padding:0 20px;
+	line-height: 26px;
 }
 .content-item{
 	padding:20px 24px;
@@ -318,15 +324,33 @@
 	margin-left: 60px;
 	padding:0;
 }
+/*.pl>ul {
+            padding: 0 20px;
+            line-height: 26px;
+}*/
+.plbg{
+	background-color: #fafafa;
+	border-bottom: 1px dotted #DCDCDC;
+}
 .list-nick{
+	font-size: 14px;
+	float: left;
 	line-height: 16px;
+	padding-top: 8px;
 	padding-bottom: 8px;
 }
 .list-nick a{
-	font--size:14px;
 	color: #4d555d;
 	font-weight: 700;
 	text-decoration: none;
+}
+.list-time{
+	float: right;
+	font-size: 14px;
+	color: #4d555d;
+}
+.plul{
+	padding-bottom:10px;
 }
 .list-content{
 	margin-top: 3px;
@@ -334,15 +358,18 @@
 	color: #14191e;
 	line-height: 24px; 
 }
-.list-btm{
+/*.list-btm{
 	position: relative;
 	font-size: 12px;
 	color: #93999f;
 	margin-top: 15px;
-/*	float: left;*/
-}
-.list-time{
-	float: left;
+/*	float: left;
+}*/
+.list-reply{
+             float: right;
+	font-size: 12px;
+	color: #93999f;
+	cursor: pointer;
 }
 .list-praise {
 	display: block;

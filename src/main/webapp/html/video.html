@@ -5,6 +5,7 @@
 	<title>虹软中国</title>
 	<link rel="stylesheet" type="text/css" href="../css/video.css">
 	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../video-js-5.11.4/video-js.css">
 </head>
 <body>
 	<div id="header">
@@ -47,8 +48,18 @@
 	<div id="main">
 		<div class="video-stage">
 			<div class="video-container">
-				<div class="play-area">
-					<div class="flash-area"></div>
+                                                   <div class="video-wrap">
+<!--   controls表示控制条，prload：预加载，poster表示最初的显示的图片。data-set支持用json来设置一些参数。source不用说了，track指的是字幕。 -->
+					<div class="video-box">
+						<video id="ocean-video" class="video-js vjs-default-skin vjs-fluid vjs-big-play-centered" controls preload="none" width="100%" height="100%" poster="http://vjs.zencdn.net/v/oceans.png" data-setup='{"techOrder": ["html5", "flash", "other supported tech"]}'>
+						              <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+						              <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm">
+						              <source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg">
+						              <track kind="captions" src="../video-js-5.11.4/examples/shared/example-captions.vtt" srclang="en" label="English"></track>
+						              <track kind="subtitles" src="../video-js-5.11.4/examples/shared/example-captions.vtt" srclang="en" label="English"></track>
+						             <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+						</video>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -77,23 +88,35 @@
 											<img src="../img/1.png" alt="头像">
 										</a>			
 									</div>
-									<div class="list-main clearfix">
-										<div class="list-nick">
-										             <a href="" >路人甲</a>
-										</div>
-										<div class="list-content">
-											这个评论厉害了@
-										</div>				
-										<div class="list-btm clearfix">			
-											<span class="list-time">2天前</span>
-											<a title="赞" class="list-praise" href="" target="_self">
-												<span>
-													<i class="icon-thumb-revert"></i>
-													<span>4</span>
-												</span>
-											</a>
-									             </div>
-									</div>
+									<div class="list-main">
+										<ul class="plbg clearfix">
+											<div class="list-nick">
+											             <a href="" >路人甲</a>
+											</div>
+											<div class="list-time">
+											            <span class="list-time">2天前</span>
+											 </div>
+										</ul>
+										<ul class="plul clearfix">
+											<div class="list-content">
+												这个评论厉害了@
+											</div>	
+											<ul class="plbg plbg2 clearfix">
+												<div class="list-nick">
+												             <a href="" >路人乙</a>
+												</div>
+												<div class="list-time">
+												            <span class="list-time">2天前</span>
+												 </div>
+											</ul>
+											<ul class="plul plul2 clearfix">
+												<div class="list-content">
+													来自于第二个的回复@
+												</div>			
+											</ul>						
+											<a class="list-reply" name="">回复</a>	
+										</ul>								
+									</div>									
 								</li>
 								<li class="content-item clearfix">
 								            <div class="list-avator">
@@ -101,23 +124,22 @@
 											<img src="../img/1.png" alt="头像">
 										</a>			
 									</div>
-									<div class="list-main clearfix">
-										<div class="list-nick">
-										             <a href="" >路人甲</a>
-										</div>
-										<div class="list-content">
-											这个评论厉害了@
-										</div>				
-										<div class="list-btm clearfix">			
-											<span class="list-time">2天前</span>
-											<a title="赞" class="list-praise" href="" target="_self">
-												<span>
-													<i class="icon-thumb-revert"></i>
-													<span>4</span>
-												</span>
-											</a>
-									             </div>
-									</div>
+									<div class="list-main">
+										<ul class="plbg clearfix">
+											<div class="list-nick">
+											             <a href="" >路人甲</a>
+											</div>
+											<div class="list-time">
+											            <span class="list-time">2天前</span>
+											 </div>
+										</ul>
+										<ul class="plul clearfix">
+											<div class="list-content">
+												这个评论厉害了@
+											</div>		
+											<a class="list-reply" name="">回复</a>	
+										</ul>								
+									</div>									
 								</li>
 								<li class="content-item clearfix">
 								            <div class="list-avator">
@@ -125,23 +147,22 @@
 											<img src="../img/1.png" alt="头像">
 										</a>			
 									</div>
-									<div class="list-main clearfix">
-										<div class="list-nick">
-										             <a href="" >路人甲</a>
-										</div>
-										<div class="list-content">
-											这个评论厉害了@
-										</div>				
-										<div class="list-btm clearfix">			
-											<span class="list-time">2天前</span>
-											<a title="赞" class="list-praise" href="" target="_self">
-												<span>
-													<i class="icon-thumb-revert"></i>
-													<span>4</span>
-												</span>
-											</a>
-									             </div>
-									</div>
+									<div class="list-main">
+										<ul class="plbg clearfix">
+											<div class="list-nick">
+											             <a href="" >路人甲</a>
+											</div>
+											<div class="list-time">
+											            <span class="list-time">2天前</span>
+											 </div>
+										</ul>
+										<ul class="plul clearfix">
+											<div class="list-content">
+												这个评论厉害了@
+											</div>		
+											<a class="list-reply" name="">回复</a>	
+										</ul>								
+									</div>									
 								</li>
 								<li class="content-item clearfix">
 								            <div class="list-avator">
@@ -149,97 +170,83 @@
 											<img src="../img/1.png" alt="头像">
 										</a>			
 									</div>
-									<div class="list-main clearfix">
-										<div class="list-nick">
-										             <a href="" >路人甲</a>
-										</div>
-										<div class="list-content">
-											这个评论厉害了@
-										</div>				
-										<div class="list-btm clearfix">			
-											<span class="list-time">2天前</span>
-											<a title="赞" class="list-praise" href="" target="_self">
-												<span>
-													<i class="icon-thumb-revert"></i>
-													<span>4</span>
-												</span>
-											</a>
-									             </div>
-									</div>
-								</li>
-								<li class="content-item clearfix">
-								            <div class="list-avator">
-										<a href="" target="_blank">
-											<img src="../img/1.png" alt="头像">
-										</a>			
-									</div>
-									<div class="list-main clearfix">
-										<div class="list-nick">
-										             <a href="" >路人甲</a>
-										</div>
-										<div class="list-content">
-											这个评论厉害了@
-										</div>				
-										<div class="list-btm clearfix">			
-											<span class="list-time">2天前</span>
-											<a title="赞" class="list-praise" href="" target="_self">
-												<span>
-													<i class="icon-thumb-revert"></i>
-													<span>4</span>
-												</span>
-											</a>
-									             </div>
-									</div>
-								</li>
-								<li class="content-item clearfix">
-								            <div class="list-avator">
-										<a href="" target="_blank">
-											<img src="../img/1.png" alt="头像">
-										</a>			
-									</div>
-									<div class="list-main clearfix">
-										<div class="list-nick">
-										             <a href="" >路人甲</a>
-										</div>
-										<div class="list-content">
-											这个评论厉害了@
-										</div>				
-										<div class="list-btm clearfix">			
-											<span class="list-time">2天前</span>
-											<a title="赞" class="list-praise" href="" target="_self">
-												<span>
-													<i class="icon-thumb-revert"></i>
-													<span>4</span>
-												</span>
-											</a>
-									             </div>
-									</div>
-								</li>
-								<li class="content-item clearfix">
-								            <div class="list-avator">
-										<a href="" target="_blank">
-											<img src="../img/1.png" alt="头像">
-										</a>			
-									</div>
-									<div class="list-main clearfix">
-										<div class="list-nick">
-										             <a href="" >路人甲</a>
-										</div>
-										<div class="list-content">
-											这个评论厉害了@
-										</div>				
-										<div class="list-btm clearfix">			
-											<span class="list-time">2天前</span>
-											<a title="赞" class="list-praise" href="" target="_self">
-												<span>
-													<i class="icon-thumb-revert"></i>
-													<span>4</span>
-												</span>
-											</a>
-									             </div>
-									</div>
+									<div class="list-main">
+										<ul class="plbg clearfix">
+											<div class="list-nick">
+											             <a href="" >路人甲</a>
+											</div>
+											<div class="list-time">
+											            <span class="list-time">2天前</span>
+											 </div>
+										</ul>
+										<ul class="plul clearfix">
+											<div class="list-content">
+												这个评论厉害了@
+											</div>		
+											<a class="list-reply" name="">回复</a>	
+										</ul>								
+									</div>									
 								</li>	
-																																																							
+								<li class="content-item clearfix">
+								            <div class="list-avator">
+										<a href="" target="_blank">
+											<img src="../img/1.png" alt="头像">
+										</a>			
+									</div>
+									<div class="list-main">
+										<ul class="plbg clearfix">
+											<div class="list-nick">
+											             <a href="" >路人甲</a>
+											</div>
+											<div class="list-time">
+											            <span class="list-time">2天前</span>
+											 </div>
+										</ul>
+										<ul class="plul clearfix">
+											<div class="list-content">
+												这个评论厉害了@
+											</div>		
+											<a class="list-reply" name="">回复</a>	
+										</ul>								
+									</div>									
+								</li>
+								<li class="content-item clearfix">
+								            <div class="list-avator">
+										<a href="" target="_blank">
+											<img src="../img/1.png" alt="头像">
+										</a>			
+									</div>
+									<div class="list-main">
+										<ul class="plbg clearfix">
+											<div class="list-nick">
+											             <a href="" >路人甲</a>
+											</div>
+											<div class="list-time">
+											            <span class="list-time">2天前</span>
+											 </div>
+										</ul>
+											<ul class="plul clearfix">
+												<div class="list-content">
+													这个评论厉害了@
+												</div>
+												<ul class="plbg plbg2 clearfix">
+													<div class="list-nick">
+													             <a href="" >路人乙</a>
+													</div>
+													<div class="list-time">
+													            <span class="list-time">2天前</span>
+													 </div>
+												</ul>
+												<ul class="plul plul2 clearfix">
+													<div class="list-content">
+														来自于第二个的回复@
+													</div>		
+													<a class="list-reply" name="">回复</a>	
+												</ul>					
+											<a class="list-reply" name="">回复</a>	
+										</ul>								
+									</div>									
+								</li>																	
 							</ul>
 						</div>
 						<div class="list-page">
@@ -266,5 +273,12 @@
           	           	</div>
           	           </div>
              </div>
+             <!-- <script type="text/javascript" src="../js/video.js"></script> -->
+             <script type="text/javascript" src="../video-js-5.11.4/ie8/videojs-ie8.min.js"></script>
+             <script type="text/javascript" src="../video-js-5.11.4/video.js"></script>
+             <script type="text/javascript">
+             	videojs.options.flash.swf ="video-js.swf";
+             </script>
+
 </body>
 </html>
