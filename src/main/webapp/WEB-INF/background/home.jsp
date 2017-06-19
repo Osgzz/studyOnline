@@ -251,7 +251,7 @@
                             <button class="menu-item-left">
                                 <span class="glyphicon glyphicon-triangle-right"></span><a
                                     href="javascript:void(0)"
-                                    onclick="addTab('新增图书', 'toCreateBook')">新增图书</a>
+                                    onclick="addTab('课程信息管理', 'toLessonList')">课程信息管理</a>
                             </button>
                         </li>
                         <li class="list-group-item">

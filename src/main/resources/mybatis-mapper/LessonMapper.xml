@@ -225,4 +225,31 @@
             lesson (name, isshow, cover)
         VALUES (#{name}, #{isshow}, #{cover})
     </insert>
+
+
+    <select id="selectLessonList" resultType="com.arcsoft.studyOnline.bean.Lesson">
+        SELECT *
+        FROM lesson
+    </select>
+
+    <select id="selectLessonById" resultType="com.arcsoft.studyOnline.bean.Lesson">
+        SELECT *
+        FROM lesson
+        WHERE id = #{id}
+    </select>
+
+    <delete id="deleteLessonById">
+        DELETE lesson FROM lesson
+        WHERE id = #{id}
+    </delete>
+
+
+    <update id="updateLesson" parameterType="com.arcsoft.studyOnline.bean.Lesson">
+        UPDATE lesson
+        SET name   = #{lesson.name},
+            cover  = #{lesson.cover},
+            isshow = #{lesson.isshow}
+        WHERE id = #{lesson.id}
+    </update>
+
 </mapper>

@@ -65,4 +65,13 @@ public interface LessonMapper {
     int updateByExample(@Param("record") Lesson record, @Param("example") LessonExample example);
 
     void insertLesson(Lesson lesson);
+
+    List<Lesson> selectLessonList();
+
+    void deleteLessonById(@Param("id") Integer id);
+
+    void updateLesson(@Param("lesson")Lesson lesson);
+
+    Lesson selectLessonById(@Param("id") Integer id);
+
 }

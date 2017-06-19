@@ -10,11 +10,14 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.fileupload.servlet.ServletRequestContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,6 +29,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+
 /**
  * Created by Focus on 2017/6/19.
  */
@@ -34,91 +38,137 @@ public class LessonController {
     @Autowired
     private LessonService lessonService;
 
+    /**
+     * @return 跳转到 createLesson.jsp 新增课程页面
+     */
     @RequestMapping("/toCreateLesson")
     public String toCreateLesson() {
         return "createLesson";
     }
 
 
+    /**
+     * 根据传入的参数新增课程
+     *
+     * @param file       上传的课程封面图片文件
+     * @param lessonName 传入的课程名称
+     * @param request
+     * @param isshow     是否上线该课程，1未上线，0为不上线
+     * @return 跳转到原页面 createLesson.jsp 新增课程页面
+     * @throws UnsupportedEncodingException
+     */
     @RequestMapping("/createLesson")
-    public String createLesson(HttpServletRequest request) throws UnsupportedEncodingException {
-//        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+    public String createLesson(@RequestParam("picFile") MultipartFile file, @RequestParam("lessonName") String lessonName, HttpServletRequest request, @RequestParam("isshow") Integer isshow) throws UnsupportedEncodingException {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        Lesson lesson = (Lesson) applicationContext.getBean("lesson");
+        lesson.setName(lessonName);
+        lesson.setIsshow(isshow);
 
-        System.out.println(request);
-        FileItemFactory factory = new DiskFileItemFactory();
-        System.out.println(factory);
-        ServletFileUpload upload = new ServletFileUpload(factory);
-        System.out.println(upload);
-        List<FileItem> items = null;
-        int flag = 0;
-        try {
-            items=upload.parseRequest(new ServletRequestContext(request));
-            System.out.println(items);
-        } catch (FileUploadException e) {
-            e.printStackTrace();
-        }
-        Iterator<FileItem> itr = items.iterator();
-        System.out.println(itr);
-        Lesson lesson = new Lesson();
-        while (itr.hasNext()) {
-            FileItem item = (FileItem) itr.next();
-            System.out.println("???");
-            if (item.isFormField()) {
-                String fieldName = item.getFieldName();
-                System.out.println(fieldName);
-                if ("lessonName".equals(fieldName)) {
-                    String name = item.getString("utf-8");
-                    if (name != null) {
-                        lesson.setName(name);
-                    }
-                }
+        // 判断文件是否为空
+        if (!file.isEmpty()) {
+            try {
+                Date date = new Date();
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmmss");
+                String cover = sdf.format(date);
+                lesson.setCover(cover + "." + file.getOriginalFilename().split("\\.")[1]);
 
-                if ("lessonId".equals(fieldName)) {
-                    String lessonId = item.getString("utf-8");
-                    if (lessonId != null) {
-                        lesson.setId(Integer.valueOf(lessonId));
-                    }
-                }
+                // 文件保存路径
+                String filePath = request.getSession().getServletContext().getRealPath("/") + "img\\lessonImage\\"
+                        + cover + "." + file.getOriginalFilename().split("\\.")[1];
+                // 转存文件
+                file.transferTo(new File(filePath));
 
-
-                if ("isshow".equals(fieldName)) {
-                    String isshow = item.getString("utf-8");
-                    if (isshow != null) {
-                        lesson.setIsshow(Integer.valueOf(isshow));
-                    }
-                }
-
-
-                if ("imageName".equals(fieldName) && flag == 1) {
-                    String cover = item.getString("utf-8");
-                    if (cover != null && (!cover.equals(""))) {
-                        lesson.setCover(cover);
-                    }
-                }
-            } else if (!"".equals(item.getName())) {
-                try {
-                    Date date = new Date();
-                    SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmmss");
-                    String cover = sdf.format(date);
-                    lesson.setCover(cover + "." + item.getName().split("\\.")[1]);
-                    String filePath = "E:\\JetBrains\\studyOnline\\build\\libs\\exploded\\studyOnline-1.0-SNAPSHOT.war\\img\\lessonImage\\" + cover + "." + item.getName().split("\\.")[1];
-                    item.write(new File(filePath));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            } else {
-                flag = 1;
+                lessonService.insertLesson(lesson);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
+        return "createLesson";
+    }
 
-        if (lesson.getId() != null) {
-            lessonService.updateLesson(lesson);
-            return "redirect:/toBookList";
+
+    /**
+     * 根据课程ID，查出该课程信息，将信息回显到课程信息修改页面
+     *
+     * @param model 作用相当于request，用于传值到页面
+     * @param id    传入的课程ID
+     * @return 跳转到 updateLesson.jsp 课程信息修改页面
+     */
+    @RequestMapping("/toUpdateLesson")
+    public String toUpdateLesson(Model model, @RequestParam("id") Integer id) {
+        Lesson lesson = lessonService.selectLesson(id);
+        model.addAttribute("lesson", lesson);
+        return "updateLesson";
+    }
+
+    /**
+     * 根据上传的参数修改单个课程信息
+     *
+     * @param file       上传的课程封面图片文件
+     * @param lessonName 课程名称
+     * @param request    HttpServletRequest
+     * @param isshow     是否上线该课程，1未上线，0为不上线
+     * @param id         课程ID
+     * @param oldCover   原本的课程封面
+     * @return 跳转到 toLessonList 方法，重新查询新的课程信息列表后显示
+     * @throws UnsupportedEncodingException
+     */
+    @RequestMapping("/updateLesson")
+    public String updateLesson(@RequestParam("picFile") MultipartFile file, @RequestParam("lessonName") String lessonName, HttpServletRequest request, @RequestParam("isshow") Integer isshow, @RequestParam("id") Integer id, @RequestParam("oldPicFile") String oldCover) throws UnsupportedEncodingException {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        Lesson lesson = (Lesson) applicationContext.getBean("lesson");
+        lesson.setId(id);
+        lesson.setName(lessonName);
+        lesson.setIsshow(isshow);
+
+        // 判断文件是否为空
+        if (!file.isEmpty()) {
+            try {
+                Date date = new Date();
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmmss");
+                String cover = sdf.format(date);
+                lesson.setCover(cover + "." + file.getOriginalFilename().split("\\.")[1]);
+
+                // 文件保存路径
+                String filePath = request.getSession().getServletContext().getRealPath("/") + "img\\lessonImage\\"
+                        + cover + "." + file.getOriginalFilename().split("\\.")[1];
+                // 转存文件
+                file.transferTo(new File(filePath));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         } else {
-            lessonService.insertLesson(lesson);
-            return "redirect:/toCreateLesson";
+            lesson.setCover(oldCover);
         }
+        lessonService.updateLesson(lesson);
+        return "redirect:/toLessonList";
+    }
 
+
+    /**
+     * 查询所有课程信息列表后跳转到lessonList.jsp
+     *
+     * @param model 相当于request
+     * @return 跳转到 课程信息列表
+     */
+    @RequestMapping("/toLessonList")
+    public String toLessonList(Model model) {
+        List<Lesson> lessonList = lessonService.getLessonList();
+        model.addAttribute("lessonList", lessonList);
+        return "lessonList";
+    }
+
+
+    /**
+     * 根据传入的课程ID，删除该课程
+     *
+     * @param id 传入的课程ID
+     * @return 完成后重定向到 查询后跳转到 课程信息列表 的方法
+     */
+    @RequestMapping("/delLesson")
+    public String delLesson(@RequestParam Integer id) {
+        lessonService.deleteLesson(id);
+        return "redirect:/toLessonList";
     }
 
 }
