@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : test
+Source Server         : test_1
 Source Server Version : 50505
-Source Host           : localhost:3306
+Source Host           : 127.0.0.1:3306
 Source Database       : study_online
 
 Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2017-06-18 21:17:47
+Date: 2017-06-19 11:51:04
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -91,12 +91,14 @@ CREATE TABLE `lesson` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '课程ID',
   `name` varchar(40) COLLATE utf8_unicode_ci NOT NULL COMMENT '课程名称',
   `isshow` int(2) DEFAULT '1' COMMENT '是否上线课程',
+  `cover` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '封面图片路径',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='课程表';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='课程表';
 
 -- ----------------------------
 -- Records of lesson
 -- ----------------------------
+INSERT INTO `lesson` VALUES ('1', '防抖教程', '1', '20170619030549.png');
 
 -- ----------------------------
 -- Table structure for position
@@ -158,7 +160,8 @@ CREATE TABLE `route` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '课程线路ID',
   `lesson_id` int(11) NOT NULL COMMENT '所属课程ID',
   `route_name` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '线路名',
-  `time` datetime NOT NULL COMMENT '路径创建时间',
+  `time` datetime DEFAULT NULL COMMENT '路径创建时间',
+  `cover` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '封面图片路径',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='课程线路表';
 
