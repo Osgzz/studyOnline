@@ -80,18 +80,6 @@
         .form-signin button {
             border-radius: 0;
         }
-
-
-
-
-
-
-
-
-
-
-
-
         body {
             background: url(${pageContext.request.contextPath}/img/backgrouud.jpg) #f8f6e9;
         }
@@ -131,7 +119,7 @@
 
 <div class="container">
     <div class="row">
-        <form action="${pageContext.request.contextPath}/shiro/login" method="post">
+        <form action="${pageContext.request.contextPath}/login" method="post">
             <div class="col-lg-12 text-center" style="margin-top: 50%">
                 <h2>虹软在线培训系统后台管理</h2>
             </div>

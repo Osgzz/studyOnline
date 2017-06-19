@@ -23,15 +23,22 @@ import java.util.Map;
 /**
  * Created by Focus on 2017/5/23.
  */
-@RequestMapping("/shiro")
 @Controller
 public class AdminstratorController {
 
     @Autowired
     private AdminstratorService adminstratorService;
 
+    /**
+     * 管理员登录,shiro进行登陆验证
+     *
+     * @param username 管理员账号
+     * @param password 密码
+     * @param model    相当于request，保存登陆成功后的管理员账号
+     * @return 登陆成功则跳转到管理主页home.jsp，否则返回登录页面index.jsp
+     */
     @RequestMapping("/login")
-    public String login(@RequestParam String username, @RequestParam String password, Model model, HttpSession session) {
+    public String login(@RequestParam String username, @RequestParam String password, Model model) {
         Subject currentUser = SecurityUtils.getSubject();
         if (!currentUser.isAuthenticated()) {
             UsernamePasswordToken token = new UsernamePasswordToken(username, password);
@@ -40,14 +47,18 @@ public class AdminstratorController {
                 currentUser.login(token);
             } catch (AuthenticationException e) {
                 System.out.println("登录失败:" + e.getMessage());
+                model.addAttribute("msg", "error");
                 return "index";
             }
         }
-
         model.addAttribute("username", username);
         return "home";
     }
 
+
+    /**
+     * 注销，清除用户信息
+     */
     @RequestMapping("/logout")
     public String logout() {
         Subject subject = SecurityUtils.getSubject();
@@ -57,6 +68,16 @@ public class AdminstratorController {
         return "index";
     }
 
+
+    /**
+     * 根据传进的管理员账号，当前密码和新密码对照后修改密码
+     *
+     * @param username         管理员账号
+     * @param oldPassword      当前密码
+     * @param newPassword      新密码
+     * @param checkNewPassword 新密码确认
+     * @return 根据执行结果，返回Json格式数据
+     */
     @RequestMapping("/modifyAdminPwd")
     @ResponseBody
     public Map modifyAdminPwd(@RequestParam String username, @RequestParam String oldPassword, @RequestParam String newPassword, @RequestParam String checkNewPassword) {
@@ -69,9 +90,8 @@ public class AdminstratorController {
         }
 
         Boolean result = adminstratorService.checkPassword(username, oldPassword);
-
         if (result) {
-            adminstratorService.updatePassword(username,newPassword);
+            adminstratorService.updatePassword(username, newPassword);
             map.put("message", "修改成功！");
             return map;
         } else {

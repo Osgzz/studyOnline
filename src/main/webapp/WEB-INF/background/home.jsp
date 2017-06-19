@@ -87,7 +87,7 @@
                 var checkNewPassword = $("#checkNewPassword").val();
 
 
-                $.getJSON("${pageContext.request.contextPath}/shiro/modifyAdminPwd",
+                $.getJSON("${pageContext.request.contextPath}/modifyAdminPwd",
                     {
                         username: username,
                         oldPassword: oldPassword,
@@ -176,7 +176,7 @@
                 <li class="active"><a href="#">首页</a></li>
             </ul>
             <div style="margin-right: 0.7%">
-                <form method="post" action="${pageContext.request.contextPath}/shiro/logout"
+                <form method="post" action="${pageContext.request.contextPath}/logout"
                       class="navbar-form navbar-right"
                       role="search">
                     <div class="form-group">
@@ -244,7 +244,7 @@
                         <li class="list-group-item">
                             <button class="menu-item-left">
                                 <span class="glyphicon glyphicon-triangle-right"></span><a href="javascript:void(0)"
-                                                                                           onclick="addTab('书本分类', 'toBookSort')">书本分类</a>
+                                                                                           onclick="addTab('新增课程', 'toCreateLesson')">新增课程</a>
                             </button>
                         </li>
                         <li class="list-group-item">

@@ -18,8 +18,9 @@
                 /js/** = anon
                 /ext/** = anon
                 /ueditor/** = anon
-                /shiro/login = anon
-                /shiro/logout = logout
+                /login = anon
+                /createLesson = anon
+                /logout = logout
 
                 <!-- 登录页允许访问 -->
                 /index = anon
@@ -32,7 +33,7 @@
 
     <!-- 缓存管理器 使用Ehcache实现，引用mybatis的缓存配置 -->
     <bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
-        <property name="cacheManager" ref="ehCacheManagerFactory" />
+        <property name="cacheManager" ref="ehCacheManagerFactory"/>
         <!--<property name="cacheManagerConfigFile" value="classpath:ehcache-shiro.xml" />-->
     </bean>
 
@@ -47,7 +48,7 @@
         <property name="sessionValidationSchedulerEnabled" value="true"/>
         <property name="sessionIdCookie">
             <bean class="org.apache.shiro.web.servlet.SimpleCookie">
-                <property name="name" value="JSESSID" />
+                <property name="name" value="JSESSID"/>
             </bean>
         </property>
     </bean>
@@ -65,7 +66,7 @@
     </bean>
 
     <!--指定加密算法-->
-    <bean id="securityRealm"  class="com.arcsoft.studyOnline.SecurityRealm.SecurityRealm">
+    <bean id="securityRealm" class="com.arcsoft.studyOnline.SecurityRealm.SecurityRealm">
         <property name="credentialsMatcher">
             <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
                 <property name="hashAlgorithmName" value="MD5"/>
