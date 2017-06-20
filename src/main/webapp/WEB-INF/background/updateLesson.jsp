@@ -8,6 +8,13 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/ext/bootstrap/js/bootstrap.min.js"></script>
     <link href="${pageContext.request.contextPath}/ext/bootstrap/css/bootstrap.min.css" type="text/css"
           rel="stylesheet">
+    <script>
+        $(function () {
+            $("#cancel").click(function () {
+                window.location = "/toLessonList";
+            })
+        })
+    </script>
 </head>
 <body>
 
@@ -39,7 +46,12 @@
                 <input id="no" type="radio" name="isshow" value="0" <c:if test="${lesson.isshow eq 0}">checked</c:if> >
             </div>
         </div>
-        <input class="btn btn-success" type="submit" value="提交"/>
+        <div class="form-group">
+            <label for="detail" class="control-label col-sm-1">课程描述:</label>
+            <textarea style="width: 600px" id="detail" name="detail" class="form-control col-sm-6" rows="3">${lesson.detail}</textarea>
+        </div>
+        <input class="btn btn-success col-sm-offset-1" type="submit" value="提交"/>
+        <button id="cancel" class="btn btn-danger">取消</button>
     </form>
 </div>
 

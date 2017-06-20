@@ -29,6 +29,11 @@ public class AdminstratorController {
     @Autowired
     private AdminstratorService adminstratorService;
 
+    @RequestMapping("/index")
+    public String index() {
+        return "index";
+    }
+
     /**
      * 管理员登录,shiro进行登陆验证
      *

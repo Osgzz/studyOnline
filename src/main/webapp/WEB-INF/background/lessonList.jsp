@@ -15,7 +15,11 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/ext/bootstrap/js/bootstrap.min.js"></script>
     <link href="${pageContext.request.contextPath}/ext/bootstrap/css/bootstrap.min.css" type="text/css"
           rel="stylesheet">
+
+
 </head>
+
+
 <body>
 
 <div class="table-responsive">
@@ -38,6 +42,7 @@
                 <td><c:if test="${lesson.isshow eq 0}">否</c:if><c:if test="${lesson.isshow eq 1}">是</c:if></td>
                 <td>
                     <a target="_blank" href="${pageContext.request.contextPath}/toViewBook?id=${lesson.id}">查看</a>
+                    <a href="${pageContext.request.contextPath}/toInsertRoute?id=${lesson.id}">添加课程学习路径</a>
                     <a href="${pageContext.request.contextPath}/toUpdateLesson?id=${lesson.id}">修改</a>
                     <a href="${pageContext.request.contextPath}/delLesson?id=${lesson.id}">删除</a>
                 </td>
@@ -48,22 +53,24 @@
     <nav aria-label="Page navigation">
         <ul class="pagination">
             <li>
-                <a href="${pageContext.request.contextPath}/toBookList?start=1&bookId=${bookId}&bookname=${bookname}&publisher=${publisher}&author=${author}" aria-label="Previous">
+                <a href="${pageContext.request.contextPath}/toBookList?start=1&bookId=${bookId}&bookname=${bookname}&publisher=${publisher}&author=${author}"
+                   aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
             <c:forEach var="i" begin="1" end="${pageCount}" step="1">
-                <li><a href="${pageContext.request.contextPath}/toBookList?start=${i}&bookId=${bookId}&bookname=${bookname}&publisher=${publisher}&author=${author}">${i}</a></li>
+                <li>
+                    <a href="${pageContext.request.contextPath}/toBookList?start=${i}&bookId=${bookId}&bookname=${bookname}&publisher=${publisher}&author=${author}">${i}</a>
+                </li>
             </c:forEach>
             <li>
-                <a href="${pageContext.request.contextPath}/toBookList?start=${pageCount}&bookId=${bookId}&bookname=${bookname}&publisher=${publisher}&author=${author}" aria-label="Next">
+                <a href="${pageContext.request.contextPath}/toBookList?start=${pageCount}&bookId=${bookId}&bookname=${bookname}&publisher=${publisher}&author=${author}"
+                   aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>
         </ul>
     </nav>
 </div>
-
-
 </body>
 </html>

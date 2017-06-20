@@ -30,4 +30,28 @@ public class TestMybatis {
     public void testMD5(){
         System.out.println(new SimpleHash("MD5","admin","admin",499));
     }
+
+    @Test
+    public  void testSceen(){
+//        String dirStr = "C:\\Users\\Focus\\Desktop";
+//        //视频文件
+//        String videoRealPath ="E:\\JetBrains\\studyOnline\\build\\libs\\exploded\\studyOnline-1.0-SNAPSHOT.war\\video\\1.wmv";
+//
+//        //截图的路径（输出路径）
+////        String imageRealPath = dirStr + "//a.png";
+//        String imageRealPath ="E:\\JetBrains\\studyOnline\\build\\libs\\exploded\\studyOnline-1.0-SNAPSHOT.war\\img\\videoSceen\\a.png";
+//
+//
+//        //视频转换地址
+//        String transVideo ="E:\\JetBrains\\studyOnline\\build\\libs\\exploded\\studyOnline-1.0-SNAPSHOT.war\\video\\trans.mp4";
+//        try {
+//            //调用批处理文件
+////            Runtime.getRuntime().exec("cmd /c start  " +"sceen.bat " + videoRealPath + " " + imageRealPath);
+//
+//            Runtime.getRuntime().exec("cmd /c start  " +"transVideo.bat "  +videoRealPath+ " " +transVideo);
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+    }
 }

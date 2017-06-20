@@ -97,6 +97,7 @@
                     ,
                     function (json) {
                         var message = json.message;
+
                         alert(message);
                     });
             });
@@ -257,7 +258,7 @@
                         <li class="list-group-item">
                             <button class="menu-item-left">
                                 <span class="glyphicon glyphicon-triangle-right"></span><a href="javascript:void(0)"
-                                                                                           onclick="addTab('书本信息列表', 'toBookList')">书本信息列表</a>
+                                                                                           onclick="addTab('添加课程学习路线', 'toAddRoute')">添加课程学习路线</a>
                             </button>
                         </li>
 
@@ -288,8 +289,6 @@
                     </ul>
                 </div>
             </div>
-
-
         </div>
     </div>
 

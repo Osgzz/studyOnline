@@ -18,8 +18,9 @@
                 /js/** = anon
                 /ext/** = anon
                 /ueditor/** = anon
+                /video-js-5.11.4/** = anon
+                /video/** = anon
                 /login = anon
-                /createLesson = anon
                 /logout = logout
 
                 <!-- 登录页允许访问 -->

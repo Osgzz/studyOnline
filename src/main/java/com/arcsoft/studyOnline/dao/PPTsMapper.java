@@ -61,4 +61,6 @@ public interface PPTsMapper {
      * @mbg.generated Sun Jun 18 17:34:40 CST 2017
      */
     int updateByExample(@Param("record") PPTs record, @Param("example") PPTsExample example);
+
+    void insetPpt(PPTs ppt);
 }

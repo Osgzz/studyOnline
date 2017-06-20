@@ -3,12 +3,6 @@ package com.arcsoft.studyOnline.controller;
 import com.arcsoft.studyOnline.bean.Lesson;
 import com.arcsoft.studyOnline.service.LessonService;
 
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileItemFactory;
-import org.apache.commons.fileupload.FileUploadException;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import org.apache.commons.fileupload.servlet.ServletRequestContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -18,16 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
-import java.sql.Connection;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -54,35 +44,13 @@ public class LessonController {
      * @param lessonName 传入的课程名称
      * @param request
      * @param isshow     是否上线该课程，1未上线，0为不上线
+     * @param detail     课程简介
      * @return 跳转到原页面 createLesson.jsp 新增课程页面
      * @throws UnsupportedEncodingException
      */
     @RequestMapping("/createLesson")
-    public String createLesson(@RequestParam("picFile") MultipartFile file, @RequestParam("lessonName") String lessonName, HttpServletRequest request, @RequestParam("isshow") Integer isshow) throws UnsupportedEncodingException {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
-        Lesson lesson = (Lesson) applicationContext.getBean("lesson");
-        lesson.setName(lessonName);
-        lesson.setIsshow(isshow);
-
-        // 判断文件是否为空
-        if (!file.isEmpty()) {
-            try {
-                Date date = new Date();
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmmss");
-                String cover = sdf.format(date);
-                lesson.setCover(cover + "." + file.getOriginalFilename().split("\\.")[1]);
-
-                // 文件保存路径
-                String filePath = request.getSession().getServletContext().getRealPath("/") + "img\\lessonImage\\"
-                        + cover + "." + file.getOriginalFilename().split("\\.")[1];
-                // 转存文件
-                file.transferTo(new File(filePath));
-
-                lessonService.insertLesson(lesson);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+    public String createLesson(@RequestParam("picFile") MultipartFile file, @RequestParam("lessonName") String lessonName, HttpServletRequest request, @RequestParam("isshow") Integer isshow, @RequestParam("detail") String detail) throws UnsupportedEncodingException {
+        lessonService.insertLesson(file, lessonName, request, isshow, detail);
         return "createLesson";
     }
 
@@ -110,37 +78,13 @@ public class LessonController {
      * @param isshow     是否上线该课程，1未上线，0为不上线
      * @param id         课程ID
      * @param oldCover   原本的课程封面
+     * @param detail     课程简介
      * @return 跳转到 toLessonList 方法，重新查询新的课程信息列表后显示
      * @throws UnsupportedEncodingException
      */
     @RequestMapping("/updateLesson")
-    public String updateLesson(@RequestParam("picFile") MultipartFile file, @RequestParam("lessonName") String lessonName, HttpServletRequest request, @RequestParam("isshow") Integer isshow, @RequestParam("id") Integer id, @RequestParam("oldPicFile") String oldCover) throws UnsupportedEncodingException {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
-        Lesson lesson = (Lesson) applicationContext.getBean("lesson");
-        lesson.setId(id);
-        lesson.setName(lessonName);
-        lesson.setIsshow(isshow);
-
-        // 判断文件是否为空
-        if (!file.isEmpty()) {
-            try {
-                Date date = new Date();
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmmss");
-                String cover = sdf.format(date);
-                lesson.setCover(cover + "." + file.getOriginalFilename().split("\\.")[1]);
-
-                // 文件保存路径
-                String filePath = request.getSession().getServletContext().getRealPath("/") + "img\\lessonImage\\"
-                        + cover + "." + file.getOriginalFilename().split("\\.")[1];
-                // 转存文件
-                file.transferTo(new File(filePath));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } else {
-            lesson.setCover(oldCover);
-        }
-        lessonService.updateLesson(lesson);
+    public String updateLesson(@RequestParam("picFile") MultipartFile file, @RequestParam("lessonName") String lessonName, HttpServletRequest request, @RequestParam("isshow") Integer isshow, @RequestParam("id") Integer id, @RequestParam("oldPicFile") String oldCover, @RequestParam("detail") String detail) throws UnsupportedEncodingException {
+        lessonService.updateLesson(file, lessonName, request, isshow, id, oldCover, detail);
         return "redirect:/toLessonList";
     }
 

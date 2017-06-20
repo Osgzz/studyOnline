@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2017-06-19 11:51:04
+Date: 2017-06-21 02:04:44
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -39,14 +39,15 @@ CREATE TABLE `audios` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '音频ID',
   `name` varchar(40) COLLATE utf8_unicode_ci NOT NULL COMMENT '音频名称',
   `path` varchar(60) COLLATE utf8_unicode_ci NOT NULL COMMENT '音频路径',
-  `length` varchar(20) COLLATE utf8_unicode_ci NOT NULL COMMENT '音频时长',
   `route_id` int(11) NOT NULL COMMENT '所属课程路径ID',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='音频表';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='音频表';
 
 -- ----------------------------
 -- Records of audios
 -- ----------------------------
+INSERT INTO `audios` VALUES ('3', '防抖技术1', '20170621020004.mp3', '7');
+INSERT INTO `audios` VALUES ('4', '防抖技术2', '20170621020126.mp3', '8');
 
 -- ----------------------------
 -- Table structure for discuss
@@ -92,13 +93,14 @@ CREATE TABLE `lesson` (
   `name` varchar(40) COLLATE utf8_unicode_ci NOT NULL COMMENT '课程名称',
   `isshow` int(2) DEFAULT '1' COMMENT '是否上线课程',
   `cover` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '封面图片路径',
+  `detail` varchar(600) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '课程简介',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='课程表';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='课程表';
 
 -- ----------------------------
 -- Records of lesson
 -- ----------------------------
-INSERT INTO `lesson` VALUES ('1', '防抖教程', '1', '20170619030549.png');
+INSERT INTO `lesson` VALUES ('1', '防抖技术', '1', '20170619030549.png', 'Test');
 
 -- ----------------------------
 -- Table structure for position
@@ -125,11 +127,13 @@ CREATE TABLE `ppts` (
   `path` varchar(60) COLLATE utf8_unicode_ci NOT NULL COMMENT 'ppt路径',
   `route_id` int(11) NOT NULL COMMENT '所属课程路径ID',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='ppt表';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='ppt表';
 
 -- ----------------------------
 -- Records of ppts
 -- ----------------------------
+INSERT INTO `ppts` VALUES ('3', '防抖技术1', '20170621020004.pptx', '7');
+INSERT INTO `ppts` VALUES ('4', '防抖技术2', '20170621020126.pptx', '8');
 
 -- ----------------------------
 -- Table structure for private_message
@@ -162,12 +166,15 @@ CREATE TABLE `route` (
   `route_name` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '线路名',
   `time` datetime DEFAULT NULL COMMENT '路径创建时间',
   `cover` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '封面图片路径',
+  `detail` varchar(600) COLLATE utf8_unicode_ci NOT NULL COMMENT '简介说明',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='课程线路表';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='课程线路表';
 
 -- ----------------------------
 -- Records of route
 -- ----------------------------
+INSERT INTO `route` VALUES ('7', '1', '防抖技术1', '2017-06-20 17:58:25', '20170621020004.png', '防抖技术1');
+INSERT INTO `route` VALUES ('8', '1', '防抖技术2', '2017-06-20 18:01:18', '20170621020126.png', '防抖技术2');
 
 -- ----------------------------
 -- Table structure for videos
@@ -177,16 +184,17 @@ CREATE TABLE `videos` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '视频ID',
   `name` varchar(40) COLLATE utf8_unicode_ci NOT NULL COMMENT '视频名称',
   `path` varchar(60) COLLATE utf8_unicode_ci NOT NULL COMMENT '视频路径',
-  `views` int(10) NOT NULL COMMENT '观看次数',
+  `views` int(10) DEFAULT '0' COMMENT '观看次数',
   `cover_path` varchar(60) COLLATE utf8_unicode_ci NOT NULL COMMENT '封面路径',
   `route_id` int(11) NOT NULL COMMENT '所属课程路径ID',
-  `length` varchar(20) COLLATE utf8_unicode_ci NOT NULL COMMENT '视频长度',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='视频表';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='视频表';
 
 -- ----------------------------
 -- Records of videos
 -- ----------------------------
+INSERT INTO `videos` VALUES ('3', '防抖技术1', '20170621020004.mp4', '0', '20170621020004.png', '7');
+INSERT INTO `videos` VALUES ('4', '防抖技术2', '20170621020126.mp4', '0', '20170621020126.png', '8');
 
 -- ----------------------------
 -- Table structure for view_record

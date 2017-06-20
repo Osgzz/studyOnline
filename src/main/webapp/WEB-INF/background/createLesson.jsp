@@ -46,7 +46,12 @@
                 <input id="no" type="radio" name="isshow" value="0">
             </div>
         </div>
-        <input class="btn btn-success" type="submit" value="提交"/>
+        <div class="form-group">
+            <label for="detail" class="control-label col-sm-1">课程描述:</label>
+            <textarea style="width: 600px" id="detail" name="detail" class="form-control col-sm-6"
+                      rows="3">${lesson.detail}</textarea>
+        </div>
+        <input class="btn btn-success col-sm-offset-1" type="submit" value="提交"/>
     </form>
 </div>
 
