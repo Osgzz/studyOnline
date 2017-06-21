@@ -61,4 +61,6 @@ public interface EmployeeMapper {
      * @mbg.generated Sun Jun 18 17:34:40 CST 2017
      */
     int updateByExample(@Param("record") Employee record, @Param("example") EmployeeExample example);
+
+    Employee selectEmployeeByUsername(@Param("username")String username);
 }

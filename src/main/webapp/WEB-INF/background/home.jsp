@@ -219,13 +219,6 @@
                                                                                            id="modifypwd">管理员密码修改</a>
                             </button>
                         </li>
-                        <li class="list-group-item">
-                            <!-- 利用data-target指定URL -->
-                            <button class="menu-item-left">
-                                <span class="glyphicon glyphicon-triangle-right"></span><a href="javascript:void(0)"
-                                                                                           onclick="addTab('用户信息管理', 'customerList')">用户信息管理</a>
-                            </button>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -263,29 +256,6 @@
                         </li>
 
 
-                    </ul>
-                </div>
-            </div>
-
-
-            <%--订单管理--%>
-            <div class="panel panel-primary leftMenu">
-                <div class="panel-heading" id="collapseListGroupHeading3" data-toggle="collapse"
-                     data-target="#collapseListGroup3" role="tab">
-                    <h4 class="panel-title">
-                        书本管理
-                        <span class="glyphicon glyphicon-chevron-down right"></span>
-                    </h4>
-                </div>
-                <div id="collapseListGroup3" class="panel-collapse collapse" role="tabpanel"
-                     aria-labelledby="collapseListGroupHeading3">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <button class="menu-item-left">
-                                <span class="glyphicon glyphicon-triangle-right"></span><a href="javascript:void(0)"
-                                                                                           onclick="addTab('订单管理', 'toManageOrderList')">订单管理</a>
-                            </button>
-                        </li>
                     </ul>
                 </div>
             </div>

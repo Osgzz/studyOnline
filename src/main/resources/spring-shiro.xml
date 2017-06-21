@@ -23,6 +23,7 @@
                 /video/** = anon
                 /video-js-5.11.4/** = anon
                 /login = anon
+                /toCustomerLogin = anon
                 /getLessonListWithRouteByJson = anon
                 /getRouteWithResourceById = anon
                 /logout = logout

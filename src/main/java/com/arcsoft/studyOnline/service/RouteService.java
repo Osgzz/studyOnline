@@ -186,7 +186,7 @@ public class RouteService {
 
     }
 
-    public List<RouteWithResource> selectRouteWithResource(Integer id) {
+    public RouteWithResource selectRouteWithResource(Integer id) {
         return routeMapper.selectRouteWithResourceById(id);
     }
 }

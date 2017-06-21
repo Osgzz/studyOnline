@@ -44,8 +44,8 @@ public class RouteController {
 
     @RequestMapping("/getRouteWithResourceById")
     @ResponseBody
-    public  List getRouteWithResource(@RequestParam("id") Integer id){
-        List<RouteWithResource> routeWithResources = routeService.selectRouteWithResource(id);
+    public  RouteWithResource getRouteWithResource(@RequestParam("id") Integer id){
+        RouteWithResource routeWithResources = routeService.selectRouteWithResource(id);
         return routeWithResources;
     }
 

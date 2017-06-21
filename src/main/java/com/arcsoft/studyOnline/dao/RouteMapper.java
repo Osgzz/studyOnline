@@ -66,5 +66,5 @@ public interface RouteMapper {
 
     void insertRoute(Route route);
 
-    List<RouteWithResource> selectRouteWithResourceById(Integer id);
+    RouteWithResource selectRouteWithResourceById(Integer id);
 }
