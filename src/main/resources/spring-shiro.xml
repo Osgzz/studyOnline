@@ -11,15 +11,17 @@
         <property name="filterChainDefinitions">
             <value>
                 <!-- 静态资源允许访问 -->
+                /audios/** = anon
                 /css/** = anon
+                /ext/** = anon
                 /fonts/** = anon
                 /html/** = anon
                 /img/** = anon
                 /js/** = anon
-                /ext/** = anon
+                /ppts/** = anon
                 /ueditor/** = anon
-                /video-js-5.11.4/** = anon
                 /video/** = anon
+                /video-js-5.11.4/** = anon
                 /login = anon
                 /logout = logout
 

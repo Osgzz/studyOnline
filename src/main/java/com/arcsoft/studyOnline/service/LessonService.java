@@ -1,6 +1,7 @@
 package com.arcsoft.studyOnline.service;
 
 import com.arcsoft.studyOnline.bean.Lesson;
+import com.arcsoft.studyOnline.bean.LessonWithRoute;
 import com.arcsoft.studyOnline.dao.LessonMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -83,7 +84,7 @@ public class LessonService {
 
     }
 
-    public List<Lesson> getLessonList() {
+    public List<Lesson> selectLessonList() {
         return lessonMapper.selectLessonList();
     }
 
@@ -93,5 +94,9 @@ public class LessonService {
 
     public Lesson selectLesson(Integer id) {
         return lessonMapper.selectLessonById(id);
+    }
+
+    public List<LessonWithRoute> selectLessonListWithRoute() {
+        return lessonMapper.selectLessonListWithRoute();
     }
 }

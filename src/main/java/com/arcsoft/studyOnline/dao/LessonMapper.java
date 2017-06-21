@@ -3,6 +3,8 @@ package com.arcsoft.studyOnline.dao;
 import com.arcsoft.studyOnline.bean.Lesson;
 import com.arcsoft.studyOnline.bean.LessonExample;
 import java.util.List;
+
+import com.arcsoft.studyOnline.bean.LessonWithRoute;
 import org.apache.ibatis.annotations.Param;
 
 public interface LessonMapper {
@@ -71,4 +73,6 @@ public interface LessonMapper {
     void updateLesson(@Param("lesson")Lesson lesson);
 
     Lesson selectLessonById(@Param("id") Integer id);
+
+    List<LessonWithRoute> selectLessonListWithRoute();
 }

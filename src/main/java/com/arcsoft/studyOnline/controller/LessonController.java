@@ -1,11 +1,10 @@
 package com.arcsoft.studyOnline.controller;
 
 import com.arcsoft.studyOnline.bean.Lesson;
+import com.arcsoft.studyOnline.bean.LessonWithRoute;
 import com.arcsoft.studyOnline.service.LessonService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,10 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
 import java.io.UnsupportedEncodingException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -97,7 +93,7 @@ public class LessonController {
      */
     @RequestMapping("/toLessonList")
     public String toLessonList(Model model) {
-        List<Lesson> lessonList = lessonService.getLessonList();
+        List<Lesson> lessonList = lessonService.selectLessonList();
         model.addAttribute("lessonList", lessonList);
         return "lessonList";
     }
@@ -113,6 +109,20 @@ public class LessonController {
     public String delLesson(@RequestParam Integer id) {
         lessonService.deleteLesson(id);
         return "redirect:/toLessonList";
+    }
+
+    @RequestMapping("/getLessonListByJson")
+    @ResponseBody
+    public List getLessonListByJson(){
+        List lessonList =  lessonService.selectLessonList();
+        return lessonList;
+    }
+
+    @RequestMapping("/getLessonListWithRouteByJson")
+    @ResponseBody
+    public List getLessonListWithRouteByJson(){
+        List<LessonWithRoute> lessonWithRouteList =  lessonService.selectLessonListWithRoute();
+        return lessonWithRouteList;
     }
 
 }
