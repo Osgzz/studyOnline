@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -38,6 +39,14 @@ public class RouteController {
     public String addRoute(Model model, @RequestParam("lessonId") Integer lessonId, @RequestParam("routeName") String routeName, @RequestParam("time") String time, @RequestParam("routeCover") MultipartFile routeCover, @RequestParam("routeDetail") String routeDetail, @RequestParam("video") MultipartFile videoPath, @RequestParam("videoName") String videoName, @RequestParam("ppt") MultipartFile pptPath, @RequestParam("pptName") String pptName, @RequestParam("audio") MultipartFile audioPath, @RequestParam("audioName") String audioName, HttpServletRequest request) {
         routeService.insertRouteWithResource(lessonId, routeName, time, routeCover, routeDetail, videoPath, videoName, pptPath,  pptName, audioPath, audioName, request);
         return "redirect:/toAddRoute";
+    }
+
+
+    @RequestMapping("/getRouteWithResourceById")
+    @ResponseBody
+    public  List getRouteWithResource(@RequestParam("id") Integer id){
+        List<RouteWithResource> routeWithResources = routeService.selectRouteWithResource(id);
+        return routeWithResources;
     }
 
 

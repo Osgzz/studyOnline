@@ -248,4 +248,50 @@
         INSERT INTO route (lesson_id, route_name, time, cover, detail)
         VALUES (#{lessonId}, #{routeName}, #{time}, #{cover}, #{detail})
     </insert>
+
+
+    <resultMap id="getRouteWithResource" type="com.arcsoft.studyOnline.bean.RouteWithResource">
+        <id property="routeId" column="r_id"/>
+        <result property="lessonId" column="r_lesson_id"/>
+        <result property="routeName" column="r_route_name"/>
+        <result property="routeTime" column="r_time"/>
+        <result property="routeCover" column="r_cover"/>
+        <result property="routeDetail" column="r_detail"/>
+        <result property="videoId" column="v_id"/>
+        <result property="videoName" column="v_name"/>
+        <result property="videoPath" column="v_path"/>
+        <result property="videoViews" column="v_views"/>
+        <result property="videoCoverPath" column="v_cover_path"/>
+        <result property="pptId" column="p_id"/>
+        <result property="pptName" column="p_name"/>
+        <result property="pptPath" column="p_path"/>
+        <result property="audioId" column="a_id"/>
+        <result property="audioName" column="a_name"/>
+        <result property="audioPath" column="a_path"/>
+    </resultMap>
+
+    <select id="selectRouteWithResourceById" resultMap="getRouteWithResource">
+        SELECT
+            r.id         r_id,
+            r.lesson_id  r_lesson_id,
+            r.route_name r_route_name,
+            r.time       r_time,
+            r.cover      r_cover,
+            r.detail     r_detail,
+            v.id         v_id,
+            v.name       v_name,
+            v.path       v_path,
+            v.views      v_views,
+            v.cover_path v_cover_path,
+            p.id         p_id,
+            p.name       p_name,
+            p.path       p_path,
+            a.id         a_id,
+            a.name       a_name,
+            a.path       a_path
+        FROM route r, videos v, ppts p, audios a
+        WHERE r.id = #{id} AND r.id = v.route_id AND r.id = p.route_id AND r.id = a.route_id
+    </select>
+
+
 </mapper>

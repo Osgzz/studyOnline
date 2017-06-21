@@ -24,6 +24,7 @@
                 /video-js-5.11.4/** = anon
                 /login = anon
                 /getLessonListWithRouteByJson = anon
+                /getRouteWithResourceById = anon
                 /logout = logout
 
                 <!-- 登录页允许访问 -->

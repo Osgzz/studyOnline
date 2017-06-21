@@ -1,9 +1,6 @@
 package com.arcsoft.studyOnline.service;
 
-import com.arcsoft.studyOnline.bean.Audios;
-import com.arcsoft.studyOnline.bean.PPTs;
-import com.arcsoft.studyOnline.bean.Route;
-import com.arcsoft.studyOnline.bean.Videos;
+import com.arcsoft.studyOnline.bean.*;
 import com.arcsoft.studyOnline.dao.AudiosMapper;
 import com.arcsoft.studyOnline.dao.PPTsMapper;
 import com.arcsoft.studyOnline.dao.RouteMapper;
@@ -21,6 +18,7 @@ import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Focus on 2017/6/20.
@@ -188,4 +186,7 @@ public class RouteService {
 
     }
 
+    public List<RouteWithResource> selectRouteWithResource(Integer id) {
+        return routeMapper.selectRouteWithResourceById(id);
+    }
 }

@@ -3,6 +3,8 @@ package com.arcsoft.studyOnline.dao;
 import com.arcsoft.studyOnline.bean.Route;
 import com.arcsoft.studyOnline.bean.RouteExample;
 import java.util.List;
+
+import com.arcsoft.studyOnline.bean.RouteWithResource;
 import org.apache.ibatis.annotations.Param;
 
 public interface RouteMapper {
@@ -63,4 +65,6 @@ public interface RouteMapper {
     int updateByExample(@Param("record") Route record, @Param("example") RouteExample example);
 
     void insertRoute(Route route);
+
+    List<RouteWithResource> selectRouteWithResourceById(Integer id);
 }
