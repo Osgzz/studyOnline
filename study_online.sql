@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : test_1
+Source Server         : test
 Source Server Version : 50505
-Source Host           : 127.0.0.1:3306
+Source Host           : localhost:3306
 Source Database       : study_online
 
 Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2017-06-21 02:04:44
+Date: 2017-06-21 16:46:18
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -41,13 +41,20 @@ CREATE TABLE `audios` (
   `path` varchar(60) COLLATE utf8_unicode_ci NOT NULL COMMENT '音频路径',
   `route_id` int(11) NOT NULL COMMENT '所属课程路径ID',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='音频表';
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='音频表';
 
 -- ----------------------------
 -- Records of audios
 -- ----------------------------
-INSERT INTO `audios` VALUES ('3', '防抖技术1', '20170621020004.mp3', '7');
-INSERT INTO `audios` VALUES ('4', '防抖技术2', '20170621020126.mp3', '8');
+INSERT INTO `audios` VALUES ('1', '防抖技术1', '20170621020004.mp3', '7');
+INSERT INTO `audios` VALUES ('2', '防抖技术2', '20170621020126.mp3', '8');
+INSERT INTO `audios` VALUES ('5', '全景技术1', '20170621094708.mp3', '9');
+INSERT INTO `audios` VALUES ('6', '全景技术2', '20170621094752.mp3', '10');
+INSERT INTO `audios` VALUES ('7', '暗影高光技术1', '20170621032854.mp3', '11');
+INSERT INTO `audios` VALUES ('8', '暗影高光技术2', '20170621032941.mp3', '12');
+INSERT INTO `audios` VALUES ('9', '暗影高光技术3', '20170621033026.mp3', '13');
+INSERT INTO `audios` VALUES ('10', 'HDR技术1', '20170621034413.mp3', '14');
+INSERT INTO `audios` VALUES ('11', '单摄像头智能手机1', '20170621034736.mp3', '15');
 
 -- ----------------------------
 -- Table structure for discuss
@@ -76,13 +83,14 @@ CREATE TABLE `employee` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '员工ID',
   `name` varchar(14) COLLATE utf8_unicode_ci NOT NULL COMMENT '员工名称',
   `password` varchar(50) COLLATE utf8_unicode_ci NOT NULL COMMENT '登录密码',
-  `position_id` int(11) NOT NULL COMMENT '职位ID',
+  `position_id` int(11) DEFAULT NULL COMMENT '职位ID',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='员工表';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='员工表';
 
 -- ----------------------------
 -- Records of employee
 -- ----------------------------
+INSERT INTO `employee` VALUES ('1', '123', '123', null);
 
 -- ----------------------------
 -- Table structure for lesson
@@ -95,12 +103,16 @@ CREATE TABLE `lesson` (
   `cover` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '封面图片路径',
   `detail` varchar(600) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '课程简介',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='课程表';
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='课程表';
 
 -- ----------------------------
 -- Records of lesson
 -- ----------------------------
-INSERT INTO `lesson` VALUES ('1', '防抖技术', '1', '20170619030549.png', 'Test');
+INSERT INTO `lesson` VALUES ('1', '防抖技术', '1', '20170621094412.png', 'Test');
+INSERT INTO `lesson` VALUES ('2', '全景技术', '1', '20170621033156.png', '全景技术');
+INSERT INTO `lesson` VALUES ('9', '暗影高光技术', '1', '20170621032633.png', '暗影高光技术');
+INSERT INTO `lesson` VALUES ('10', 'HDR技术', '1', '20170621033218.png', 'HDR技术');
+INSERT INTO `lesson` VALUES ('11', '单摄像头智能手机', '1', '20170621033238.jpg', '单摄像头智能手机');
 
 -- ----------------------------
 -- Table structure for position
@@ -127,13 +139,20 @@ CREATE TABLE `ppts` (
   `path` varchar(60) COLLATE utf8_unicode_ci NOT NULL COMMENT 'ppt路径',
   `route_id` int(11) NOT NULL COMMENT '所属课程路径ID',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='ppt表';
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='ppt表';
 
 -- ----------------------------
 -- Records of ppts
 -- ----------------------------
-INSERT INTO `ppts` VALUES ('3', '防抖技术1', '20170621020004.pptx', '7');
-INSERT INTO `ppts` VALUES ('4', '防抖技术2', '20170621020126.pptx', '8');
+INSERT INTO `ppts` VALUES ('1', '防抖技术1', '20170621020004.pptx', '7');
+INSERT INTO `ppts` VALUES ('2', '防抖技术2', '20170621020126.pptx', '8');
+INSERT INTO `ppts` VALUES ('5', '全景技术1', '20170621094708.pptx', '9');
+INSERT INTO `ppts` VALUES ('6', '全景技术2', '20170621094752.pptx', '10');
+INSERT INTO `ppts` VALUES ('7', '暗影高光技术1', '20170621032854.pptx', '11');
+INSERT INTO `ppts` VALUES ('8', '暗影高光技术2', '20170621032941.pptx', '12');
+INSERT INTO `ppts` VALUES ('9', '暗影高光技术3', '20170621033026.pptx', '13');
+INSERT INTO `ppts` VALUES ('10', 'HDR技术1', '20170621034413.pptx', '14');
+INSERT INTO `ppts` VALUES ('11', '单摄像头智能手机1', '20170621034736.pptx', '15');
 
 -- ----------------------------
 -- Table structure for private_message
@@ -168,13 +187,20 @@ CREATE TABLE `route` (
   `cover` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '封面图片路径',
   `detail` varchar(600) COLLATE utf8_unicode_ci NOT NULL COMMENT '简介说明',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='课程线路表';
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='课程线路表';
 
 -- ----------------------------
 -- Records of route
 -- ----------------------------
 INSERT INTO `route` VALUES ('7', '1', '防抖技术1', '2017-06-20 17:58:25', '20170621020004.png', '防抖技术1');
 INSERT INTO `route` VALUES ('8', '1', '防抖技术2', '2017-06-20 18:01:18', '20170621020126.png', '防抖技术2');
+INSERT INTO `route` VALUES ('9', '2', '全景技术1', '2017-06-21 01:45:56', '20170621033026.png', '全景技术1');
+INSERT INTO `route` VALUES ('10', '2', '全景技术2', '2017-06-21 01:47:17', '20170621094752.png', '全景技术2');
+INSERT INTO `route` VALUES ('11', '9', '暗影高光技术1', '2017-06-21 07:26:57', '20170621032854.png', '暗影高光技术1');
+INSERT INTO `route` VALUES ('12', '9', '暗影高光技术2', '2017-06-21 07:29:04', '20170621094708.png', '暗影高光技术2');
+INSERT INTO `route` VALUES ('13', '9', '暗影高光技术3', '2017-06-21 07:29:50', '20170621033026.png', '暗影高光技术3');
+INSERT INTO `route` VALUES ('14', '10', 'HDR技术1', '2017-06-21 07:43:12', '20170621034413.png', 'HDR技术1');
+INSERT INTO `route` VALUES ('15', '11', '单摄像头智能手机1', '2017-06-21 07:44:34', '20170621034735.png', '单摄像头智能手机1');
 
 -- ----------------------------
 -- Table structure for videos
@@ -188,13 +214,20 @@ CREATE TABLE `videos` (
   `cover_path` varchar(60) COLLATE utf8_unicode_ci NOT NULL COMMENT '封面路径',
   `route_id` int(11) NOT NULL COMMENT '所属课程路径ID',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='视频表';
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='视频表';
 
 -- ----------------------------
 -- Records of videos
 -- ----------------------------
-INSERT INTO `videos` VALUES ('3', '防抖技术1', '20170621020004.mp4', '0', '20170621020004.png', '7');
-INSERT INTO `videos` VALUES ('4', '防抖技术2', '20170621020126.mp4', '0', '20170621020126.png', '8');
+INSERT INTO `videos` VALUES ('1', '防抖技术1', '20170621020004.mp4', '0', '20170621020004.png', '7');
+INSERT INTO `videos` VALUES ('2', '防抖技术2', '20170621020004.mp4', '0', '20170621020126.png', '8');
+INSERT INTO `videos` VALUES ('5', '全景技术1', '20170621020004.mp4', '0', '20170621094708.png', '9');
+INSERT INTO `videos` VALUES ('6', '全景技术2', '20170621020004.mp4', '0', '20170621094752.png', '10');
+INSERT INTO `videos` VALUES ('7', '暗影高光技术1', '20170621020004.mp4', '0', '20170621032854.png', '11');
+INSERT INTO `videos` VALUES ('8', '暗影高光技术2', '20170621020004.mp4', '0', '20170621032941.png', '12');
+INSERT INTO `videos` VALUES ('9', '暗影高光技术3', '20170621020004.mp4', '0', '20170621033026.png', '13');
+INSERT INTO `videos` VALUES ('10', 'HDR技术1', '20170621020004.mp4', '0', '20170621034413.png', '14');
+INSERT INTO `videos` VALUES ('11', '单摄像头智能手机1', '20170621020004.mp4', '0', '20170621034735.png', '15');
 
 -- ----------------------------
 -- Table structure for view_record
