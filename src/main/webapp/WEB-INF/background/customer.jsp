@@ -215,7 +215,7 @@
 
     </c:forEach>
     <div class="more">
-        <a class="load-more" href="" target="_self">更多课程>></a>
+        <a class="load-more" href="${pageContext.request.contextPath}/moreLesson" target="_self">更多课程>></a>
     </div>
 </div>
 <div id="footer">

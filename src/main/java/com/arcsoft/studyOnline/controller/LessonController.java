@@ -125,4 +125,13 @@ public class LessonController {
         return lessonWithRouteList;
     }
 
+    @RequestMapping("/moreLesson")
+    public String moreLesson(Model model){
+        List lessonList =  lessonService.selectLessonList();
+        List<LessonWithRoute> lessonWithRouteList =  lessonService.selectLessonListWithRoute();
+        model.addAttribute("lessonList", lessonList);
+        model.addAttribute("lessonWithRouteList", lessonWithRouteList);
+        return "course";
+    }
+
 }

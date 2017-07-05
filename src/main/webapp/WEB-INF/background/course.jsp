@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Focus
@@ -17,7 +18,8 @@
 <div id="header">
     <div class="top-container clearfix" id="t-nav">
         <div id="logo" class="logo">
-            <a href="#" target="_self" class="hide-text" title="虹软中国"><img src="${pageContext.request.contextPath}/img/logo.png"></a>
+            <a href="#" target="_self" class="hide-text" title="虹软中国"><img
+                    src="${pageContext.request.contextPath}/img/logo.png"></a>
         </div>
         <ul class="nav-item">
             <li><a href=" " target="_self">首页</a></li>
@@ -46,10 +48,10 @@
         </div>
 
         <!-- 搜索框模块 -->
-        <div class="search-wrap" >
+        <div class="search-wrap">
             <!-- 搜索框 -->
             <div class="search-area" data-search="top-banner">
-                <input id="search-input" class="search-input"  type="text" value=" ">
+                <input id="search-input" class="search-input" type="text" value=" ">
             </div>
             <!-- 搜索icon -->
             <div class="showhide-search">
@@ -77,24 +79,9 @@
                     <div class="bd">
                         <ul>
                             <li class="course-nav-item on"><a href="" target="_self">全部</a></li>
-                            <li class="course-nav-item"><a href="" target="_self">暗光高清拍摄</a></li>
-                            <li class="course-nav-item"><a href="" target="_self">防抖</a></li>
-                            <li class="course-nav-item"><a href="" target="_self">全景</a></li>
-                            <li class="course-nav-item"><a href="" target="_self">人脸</a></li>
-                            <li class="course-nav-item"><a href="" target="_self">HDR</a></li>
-                            <li class="course-nav-item"><a href="" target="_self">手势识别</a></li>
-                            <li class="course-nav-item"><a href="" target="_self">场景检测与物体识别</a></li>
-                            <li class="course-nav-item"><a href="" target="_self">体感</a></li>
-                            <li class="course-nav-item"><a href="" target="_self">3D立体成像</a></li>
-                            <li class="course-nav-item"><a href="" target="_self">AR/VR</a></li>
-                            <li class="course-nav-item"><a href="" target="_self">单摄像头</a></li>
-                            <li class="course-nav-item"><a href="" target="_self">双摄像头</a></li>
-                            <li class="course-nav-item"><a href="" target="_self">全景相机</a></li>
-                            <li class="course-nav-item"><a href="" target="_self">智能冰箱</a></li>
-                            <li class="course-nav-item"><a href="" target="_self">深度相机</a></li>
-                            <li class="course-nav-item"><a href="" target="_self">行车记录仪</a></li>
-                            <li class="course-nav-item"><a href="" target="_self">投影仪</a></li>
-                            <li class="course-nav-item"><a href="" target="_self">视频直播</a></li>
+                            <c:forEach items="${lessonList}" var="lesson">
+                                <li class="course-nav-item"><a href="" target="_self">${lesson.name}</a></li>
+                            </c:forEach>
                         </ul>
                     </div>
                 </div>
@@ -104,390 +91,30 @@
     <div class="container">
         <div class="course-list">
             <ul>
-                <div class="index-card-container">
-                    <a href="" target="_blank" class="course-card">
-                        <div class="course-card-text">
-                            <div class="course-card-top">
-                                <h4>防抖技术</h4>
-                            </div>
-                            <div class="course-card-content">
-                                <h3 class="course-card-name">防抖技术课程标题</h3>
-                                <p title="防抖技术课程简介">防抖技术课程简介防抖技术课程简介</p>
-                                <div class="course-card-info">
-                                    <span>类型</span>
-                                    <span class="course-type">视频</span>
+                <c:forEach items="${lessonWithRouteList}" var="lessonWithRoute">
+                <c:forEach items="${lessonWithRoute.routes}" var="route">
+                    <div class="index-card-container">
+                        <a href="" target="_blank" class="course-card">
+                            <div class="course-card-text">
+                                <div class="course-card-top">
+                                    <h4>${lessonWithRoute.lessonName}</h4>
+                                </div>
+                                <div class="course-card-content">
+                                    <h3 class="course-card-name">${route.routeName}</h3>
+                                    <p title="防抖技术课程简介">${lessonWithRoute.lessonDetail}</p>
+                                    <div class="course-card-info">
+                                        <span>类型</span>
+                                        <span class="course-type">视频</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="course-card-cover"></div>
-                        <div class="course-card-bg" style="background-image: url(${pageContext.request.contextPath}/img/1.png);"></div>
-                    </a>
-                </div>
-                <div class="index-card-container">
-                    <a href="" target="_blank" class="course-card">
-                        <div class="course-card-text">
-                            <div class="course-card-top">
-                                <h4>防抖技术</h4>
-                            </div>
-                            <div class="course-card-content">
-                                <h3 class="course-card-name">防抖技术课程标题</h3>
-                                <p title="防抖技术课程简介">防抖技术课程简介防抖技术课程简介</p>
-                                <div class="course-card-info">
-                                    <span>类型</span>
-                                    <span class="course-type">视频</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="course-card-cover"></div>
-                        <div class="course-card-bg" style="background-image: url(${pageContext.request.contextPath}/img/2.png);"></div>
-                    </a>
-                </div>
-                <div class="index-card-container">
-                    <a href="" target="_blank" class="course-card">
-                        <div class="course-card-text">
-                            <div class="course-card-top">
-                                <h4>防抖技术</h4>
-                            </div>
-                            <div class="course-card-content">
-                                <h3 class="course-card-name">防抖技术课程标题</h3>
-                                <p title="防抖技术课程简介">防抖技术课程简介防抖技术课程简介</p>
-                                <div class="course-card-info">
-                                    <span>类型</span>
-                                    <span class="course-type">视频</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="course-card-cover"></div>
-                        <div class="course-card-bg" style="background-image: url(${pageContext.request.contextPath}/img/3.png);"></div>
-                    </a>
-                </div>
-                <div class="index-card-container">
-                    <a href="" target="_blank" class="course-card">
-                        <div class="course-card-text">
-                            <div class="course-card-top">
-                                <h4>防抖技术</h4>
-                            </div>
-                            <div class="course-card-content">
-                                <h3 class="course-card-name">防抖技术课程标题</h3>
-                                <p title="防抖技术课程简介">防抖技术课程简介防抖技术课程简介</p>
-                                <div class="course-card-info">
-                                    <span>类型</span>
-                                    <span class="course-type">视频</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="course-card-cover"></div>
-                        <div class="course-card-bg" style="background-image: url(${pageContext.request.contextPath}/img/4.png);"></div>
-                    </a>
-                </div>
-                <div class="index-card-container">
-                    <a href="" target="_blank" class="course-card">
-                        <div class="course-card-text">
-                            <div class="course-card-top">
-                                <h4>防抖技术</h4>
-                            </div>
-                            <div class="course-card-content">
-                                <h3 class="course-card-name">防抖技术课程标题</h3>
-                                <p title="防抖技术课程简介">防抖技术课程简介防抖技术课程简介</p>
-                                <div class="course-card-info">
-                                    <span>类型</span>
-                                    <span class="course-type">视频</span>
-                                    <span class="course-type">PPT</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="course-card-cover"></div>
-                        <div class="course-card-bg" style="background-image: url(${pageContext.request.contextPath}/img/5.png);"></div>
-                    </a>
-                </div>
-                <div class="index-card-container">
-                    <a href="" target="_blank" class="course-card">
-                        <div class="course-card-text">
-                            <div class="course-card-top">
-                                <h4>防抖技术</h4>
-                            </div>
-                            <div class="course-card-content">
-                                <h3 class="course-card-name">防抖技术课程标题</h3>
-                                <p title="防抖技术课程简介">防抖技术课程简介防抖技术课程简介</p>
-                                <div class="course-card-info">
-                                    <span>类型</span>
-                                    <span class="course-type">视频</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="course-card-cover"></div>
-                        <div class="course-card-bg" style="background-image: url(${pageContext.request.contextPath}/img/1.png);"></div>
-                    </a>
-                </div>
-                <div class="index-card-container">
-                    <a href="" target="_blank" class="course-card">
-                        <div class="course-card-text">
-                            <div class="course-card-top">
-                                <h4>防抖技术</h4>
-                            </div>
-                            <div class="course-card-content">
-                                <h3 class="course-card-name">防抖技术课程标题</h3>
-                                <p title="防抖技术课程简介">防抖技术课程简介防抖技术课程简介</p>
-                                <div class="course-card-info">
-                                    <span>类型</span>
-                                    <span class="course-type">视频</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="course-card-cover"></div>
-                        <div class="course-card-bg" style="background-image: url(${pageContext.request.contextPath}/img/2.png);"></div>
-                    </a>
-                </div>
-                <div class="index-card-container">
-                    <a href="" target="_blank" class="course-card">
-                        <div class="course-card-text">
-                            <div class="course-card-top">
-                                <h4>防抖技术</h4>
-                            </div>
-                            <div class="course-card-content">
-                                <h3 class="course-card-name">防抖技术课程标题</h3>
-                                <p title="防抖技术课程简介">防抖技术课程简介防抖技术课程简介</p>
-                                <div class="course-card-info">
-                                    <span>类型</span>
-                                    <span class="course-type">视频</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="course-card-cover"></div>
-                        <div class="course-card-bg" style="background-image: url(${pageContext.request.contextPath}/img/3.png);"></div>
-                    </a>
-                </div>
-                <div class="index-card-container">
-                    <a href="" target="_blank" class="course-card">
-                        <div class="course-card-text">
-                            <div class="course-card-top">
-                                <h4>防抖技术</h4>
-                            </div>
-                            <div class="course-card-content">
-                                <h3 class="course-card-name">防抖技术课程标题</h3>
-                                <p title="防抖技术课程简介">防抖技术课程简介防抖技术课程简介</p>
-                                <div class="course-card-info">
-                                    <span>类型</span>
-                                    <span class="course-type">视频</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="course-card-cover"></div>
-                        <div class="course-card-bg" style="background-image: url(${pageContext.request.contextPath}/img/4.png);"></div>
-                    </a>
-                </div>
-                <div class="index-card-container">
-                    <a href="" target="_blank" class="course-card">
-                        <div class="course-card-text">
-                            <div class="course-card-top">
-                                <h4>防抖技术</h4>
-                            </div>
-                            <div class="course-card-content">
-                                <h3 class="course-card-name">防抖技术课程标题</h3>
-                                <p title="防抖技术课程简介">防抖技术课程简介防抖技术课程简介</p>
-                                <div class="course-card-info">
-                                    <span>类型</span>
-                                    <span class="course-type">视频</span>
-                                    <span class="course-type">PPT</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="course-card-cover"></div>
-                        <div class="course-card-bg" style="background-image: url(${pageContext.request.contextPath}/img/5.png);"></div>
-                    </a>
-                </div>
-                <div class="index-card-container">
-                    <a href="" target="_blank" class="course-card">
-                        <div class="course-card-text">
-                            <div class="course-card-top">
-                                <h4>防抖技术</h4>
-                            </div>
-                            <div class="course-card-content">
-                                <h3 class="course-card-name">防抖技术课程标题</h3>
-                                <p title="防抖技术课程简介">防抖技术课程简介防抖技术课程简介</p>
-                                <div class="course-card-info">
-                                    <span>类型</span>
-                                    <span class="course-type">视频</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="course-card-cover"></div>
-                        <div class="course-card-bg" style="background-image: url(${pageContext.request.contextPath}/img/1.png);"></div>
-                    </a>
-                </div>
-                <div class="index-card-container">
-                    <a href="" target="_blank" class="course-card">
-                        <div class="course-card-text">
-                            <div class="course-card-top">
-                                <h4>防抖技术</h4>
-                            </div>
-                            <div class="course-card-content">
-                                <h3 class="course-card-name">防抖技术课程标题</h3>
-                                <p title="防抖技术课程简介">防抖技术课程简介防抖技术课程简介</p>
-                                <div class="course-card-info">
-                                    <span>类型</span>
-                                    <span class="course-type">视频</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="course-card-cover"></div>
-                        <div class="course-card-bg" style="background-image: url(${pageContext.request.contextPath}/img/2.png);"></div>
-                    </a>
-                </div>
-                <div class="index-card-container">
-                    <a href="" target="_blank" class="course-card">
-                        <div class="course-card-text">
-                            <div class="course-card-top">
-                                <h4>防抖技术</h4>
-                            </div>
-                            <div class="course-card-content">
-                                <h3 class="course-card-name">防抖技术课程标题</h3>
-                                <p title="防抖技术课程简介">防抖技术课程简介防抖技术课程简介</p>
-                                <div class="course-card-info">
-                                    <span>类型</span>
-                                    <span class="course-type">视频</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="course-card-cover"></div>
-                        <div class="course-card-bg" style="background-image: url(${pageContext.request.contextPath}img/3.png);"></div>
-                    </a>
-                </div>
-                <div class="index-card-container">
-                    <a href="" target="_blank" class="course-card">
-                        <div class="course-card-text">
-                            <div class="course-card-top">
-                                <h4>防抖技术</h4>
-                            </div>
-                            <div class="course-card-content">
-                                <h3 class="course-card-name">防抖技术课程标题</h3>
-                                <p title="防抖技术课程简介">防抖技术课程简介防抖技术课程简介</p>
-                                <div class="course-card-info">
-                                    <span>类型</span>
-                                    <span class="course-type">视频</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="course-card-cover"></div>
-                        <div class="course-card-bg" style="background-image: url(${pageContext.request.contextPath}/img/4.png);"></div>
-                    </a>
-                </div>
-                <div class="index-card-container">
-                    <a href="" target="_blank" class="course-card">
-                        <div class="course-card-text">
-                            <div class="course-card-top">
-                                <h4>防抖技术</h4>
-                            </div>
-                            <div class="course-card-content">
-                                <h3 class="course-card-name">防抖技术课程标题</h3>
-                                <p title="防抖技术课程简介">防抖技术课程简介防抖技术课程简介</p>
-                                <div class="course-card-info">
-                                    <span>类型</span>
-                                    <span class="course-type">视频</span>
-                                    <span class="course-type">PPT</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="course-card-cover"></div>
-                        <div class="course-card-bg" style="background-image: url(${pageContext.request.contextPath}/img/5.png);"></div>
-                    </a>
-                </div>
-                <div class="index-card-container">
-                    <a href="" target="_blank" class="course-card">
-                        <div class="course-card-text">
-                            <div class="course-card-top">
-                                <h4>防抖技术</h4>
-                            </div>
-                            <div class="course-card-content">
-                                <h3 class="course-card-name">防抖技术课程标题</h3>
-                                <p title="防抖技术课程简介">防抖技术课程简介防抖技术课程简介</p>
-                                <div class="course-card-info">
-                                    <span>类型</span>
-                                    <span class="course-type">视频</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="course-card-cover"></div>
-                        <div class="course-card-bg" style="background-image: url(${pageContext.request.contextPath}/img/1.png);"></div>
-                    </a>
-                </div>
-                <div class="index-card-container">
-                    <a href="" target="_blank" class="course-card">
-                        <div class="course-card-text">
-                            <div class="course-card-top">
-                                <h4>防抖技术</h4>
-                            </div>
-                            <div class="course-card-content">
-                                <h3 class="course-card-name">防抖技术课程标题</h3>
-                                <p title="防抖技术课程简介">防抖技术课程简介防抖技术课程简介</p>
-                                <div class="course-card-info">
-                                    <span>类型</span>
-                                    <span class="course-type">视频</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="course-card-cover"></div>
-                        <div class="course-card-bg" style="background-image: url(${pageContext.request.contextPath}/img/2.png);"></div>
-                    </a>
-                </div>
-                <div class="index-card-container">
-                    <a href="" target="_blank" class="course-card">
-                        <div class="course-card-text">
-                            <div class="course-card-top">
-                                <h4>防抖技术</h4>
-                            </div>
-                            <div class="course-card-content">
-                                <h3 class="course-card-name">防抖技术课程标题</h3>
-                                <p title="防抖技术课程简介">防抖技术课程简介防抖技术课程简介</p>
-                                <div class="course-card-info">
-                                    <span>类型</span>
-                                    <span class="course-type">视频</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="course-card-cover"></div>
-                        <div class="course-card-bg" style="background-image: url(${pageContext.request.contextPath}/img/3.png);"></div>
-                    </a>
-                </div>
-                <div class="index-card-container">
-                    <a href="" target="_blank" class="course-card">
-                        <div class="course-card-text">
-                            <div class="course-card-top">
-                                <h4>防抖技术</h4>
-                            </div>
-                            <div class="course-card-content">
-                                <h3 class="course-card-name">防抖技术课程标题</h3>
-                                <p title="防抖技术课程简介">防抖技术课程简介防抖技术课程简介</p>
-                                <div class="course-card-info">
-                                    <span>类型</span>
-                                    <span class="course-type">视频</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="course-card-cover"></div>
-                        <div class="course-card-bg" style="background-image: url(${pageContext.request.contextPath}/img/4.png);"></div>
-                    </a>
-                </div>
-                <div class="index-card-container">
-                    <a href="" target="_blank" class="course-card">
-                        <div class="course-card-text">
-                            <div class="course-card-top">
-                                <h4>防抖技术</h4>
-                            </div>
-                            <div class="course-card-content">
-                                <h3 class="course-card-name">防抖技术课程标题</h3>
-                                <p title="防抖技术课程简介">防抖技术课程简介防抖技术课程简介</p>
-                                <div class="course-card-info">
-                                    <span>类型</span>
-                                    <span class="course-type">视频</span>
-                                    <span class="course-type">PPT</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="course-card-cover"></div>
-                        <div class="course-card-bg" style="background-image: url(${pageContext.request.contextPath}/img/5.png);"></div>
-                    </a>
-                </div>
+                            <div class="course-card-cover"></div>
+                            <div class="course-card-bg"
+                                 style="background-image: url(${pageContext.request.contextPath}/img/lessonImage/${lessonWithRoute.lessonCover});"></div>
+                        </a>
+                    </div>
+                </c:forEach>
+                </c:forEach>
             </ul>
         </div>
     </div>
@@ -501,8 +128,8 @@
         <a class="text-page-tag" href="">5</a>
         <a class="text-page-tag" href="">6</a>
         <a class="text-page-tag" href="">7</a>
-        <a  href="">下一页</a>
-        <a  href="">尾页</a>
+        <a href="">下一页</a>
+        <a href="">尾页</a>
     </div>
 </div>
 <div id="footer">

@@ -59,7 +59,7 @@
                 <!--   controls表示控制条，prload：预加载，poster表示最初的显示的图片。data-set支持用json来设置一些参数。source不用说了，track指的是字幕。 -->
                 <div class="video-box">
                     <video id="ocean-video" class="video-js vjs-default-skin vjs-fluid vjs-big-play-centered" controls
-                           preload="none" width="100%" height="100%" poster="${pageContext.request.contextPath}/img/videoSceen/${route.routeCover}"
+                           preload="none" width="100%" height="100%" poster="${pageContext.request.contextPath}/img/videoSceen/${route.videoCoverPath}"
                            data-setup='{"techOrder": ["html5", "flash", "other supported tech"]}'>
                         <source src="${pageContext.request.contextPath}/video/${route.videoPath}" type="video/mp4">
                         <track kind="captions"

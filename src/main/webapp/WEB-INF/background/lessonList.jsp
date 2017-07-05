@@ -31,7 +31,6 @@
             <th>课程名称</th>
             <th>是否上线</th>
             <th>操作</th>
-
         </tr>
         </thead>
         <tbody>
@@ -41,8 +40,6 @@
                 <td>${lesson.name}</td>
                 <td><c:if test="${lesson.isshow eq 0}">否</c:if><c:if test="${lesson.isshow eq 1}">是</c:if></td>
                 <td>
-                    <a target="_blank" href="${pageContext.request.contextPath}/toViewBook?id=${lesson.id}">查看</a>
-                    <a href="${pageContext.request.contextPath}/toInsertRoute?id=${lesson.id}">添加课程学习路径</a>
                     <a href="${pageContext.request.contextPath}/toUpdateLesson?id=${lesson.id}">修改</a>
                     <a href="${pageContext.request.contextPath}/delLesson?id=${lesson.id}">删除</a>
                 </td>
