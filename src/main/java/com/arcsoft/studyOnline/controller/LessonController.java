@@ -111,26 +111,49 @@ public class LessonController {
         return "redirect:/toLessonList";
     }
 
+
+    /**
+     * @return 将查到的课程列表以Json的格式传回
+     */
     @RequestMapping("/getLessonListByJson")
     @ResponseBody
-    public List getLessonListByJson(){
-        List lessonList =  lessonService.selectLessonList();
+    public List getLessonListByJson() {
+        List lessonList = lessonService.selectLessonList();
         return lessonList;
     }
 
+    /**
+     * @return 将查询到的课程及其子课程的信息封装好以Json的格式传回
+     */
     @RequestMapping("/getLessonListWithRouteByJson")
     @ResponseBody
-    public List getLessonListWithRouteByJson(){
-        List<LessonWithRoute> lessonWithRouteList =  lessonService.selectLessonListWithRoute();
+    public List getLessonListWithRouteByJson() {
+        List<LessonWithRoute> lessonWithRouteList = lessonService.selectLessonListWithRoute();
         return lessonWithRouteList;
     }
 
+    /**
+     * @param model 相当于request
+     * @return 查询课程信息和课程及其子课程信息，跳转到页面course.jsp页面
+     */
     @RequestMapping("/moreLesson")
-    public String moreLesson(Model model){
-        List lessonList =  lessonService.selectLessonList();
-        List<LessonWithRoute> lessonWithRouteList =  lessonService.selectLessonListWithRoute();
+    public String moreLesson(Model model) {
+        List<Lesson> lessonList = lessonService.selectLessonList();
+        List<LessonWithRoute> lessonWithRouteList = lessonService.selectLessonListWithRoute();
         model.addAttribute("lessonList", lessonList);
         model.addAttribute("lessonWithRouteList", lessonWithRouteList);
+        return "course";
+    }
+
+    /**
+     * @param name  接收前台提交的课程名参数
+     * @param model 相当于request
+     * @return 跳转到页面 course.jsp
+     */
+    @RequestMapping("selectLessonByName")
+    public String selectLessonByName(@RequestParam(required = false, defaultValue = "") String name, Model model) {
+        List<Lesson> lessonList = lessonService.selectLessonListByName(name);
+        model.addAttribute("lessonList", lessonList);
         return "course";
     }
 

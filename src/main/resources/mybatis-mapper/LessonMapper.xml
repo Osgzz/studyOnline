@@ -295,4 +295,10 @@
         WHERE l.isshow = 1 AND l.id = r.lesson_id
     </select>
 
+    <select id="selectLessonListByName">
+        SELECT *
+        FROM lesson
+        WHERE name LIKE #{name}
+    </select>
+
 </mapper>

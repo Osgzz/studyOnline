@@ -75,4 +75,7 @@ public interface LessonMapper {
     Lesson selectLessonById(@Param("id") Integer id);
 
     List<LessonWithRoute> selectLessonListWithRoute();
+
+    List<Lesson> selectLessonListByName(String name);
+
 }

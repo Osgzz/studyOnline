@@ -28,6 +28,9 @@ public class RouteController {
     private VideoService videoService;
 
 
+    /**
+     * @return 查询出课程列表信息，跳转到 addRoute.jsp 页面
+     */
     @RequestMapping("/toAddRoute")
     public String toAddRoute(Model model) {
         List<Lesson> lessonList = lessonService.selectLessonList();
@@ -35,16 +38,23 @@ public class RouteController {
         return "addRoute";
     }
 
+    /**
+     * @return 接收前台提交的表单信息，处理后重定向到toAddRoute()方法
+     */
     @RequestMapping("/addRoute")
     public String addRoute(Model model, @RequestParam("lessonId") Integer lessonId, @RequestParam("routeName") String routeName, @RequestParam("time") String time, @RequestParam("routeCover") MultipartFile routeCover, @RequestParam("routeDetail") String routeDetail, @RequestParam("video") MultipartFile videoPath, @RequestParam("videoName") String videoName, @RequestParam("ppt") MultipartFile pptPath, @RequestParam("pptName") String pptName, @RequestParam("audio") MultipartFile audioPath, @RequestParam("audioName") String audioName, HttpServletRequest request) {
-        routeService.insertRouteWithResource(lessonId, routeName, time, routeCover, routeDetail, videoPath, videoName, pptPath,  pptName, audioPath, audioName, request);
+        routeService.insertRouteWithResource(lessonId, routeName, time, routeCover, routeDetail, videoPath, videoName, pptPath, pptName, audioPath, audioName, request);
         return "redirect:/toAddRoute";
     }
 
 
+    /**
+     * @param id 接收前台提交的子课程ID，根据ID查询出该子课程的详细信息
+     * @return 将查到的数据以Json的格式返回
+     */
     @RequestMapping("/getRouteWithResourceById")
     @ResponseBody
-    public  RouteWithResource getRouteWithResource(@RequestParam("id") Integer id){
+    public RouteWithResource getRouteWithResource(@RequestParam("id") Integer id) {
         RouteWithResource routeWithResources = routeService.selectRouteWithResource(id);
         return routeWithResources;
     }
