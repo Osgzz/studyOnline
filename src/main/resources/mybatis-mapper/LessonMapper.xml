@@ -295,10 +295,26 @@
         WHERE l.isshow = 1 AND l.id = r.lesson_id
     </select>
 
-    <select id="selectLessonListByName">
+    <select id="selectLessonListByName" resultType="com.arcsoft.studyOnline.bean.Lesson">
         SELECT *
         FROM lesson
         WHERE name LIKE #{name}
+    </select>
+
+    <select id="selectLessonListWithRouteByName" resultMap="getLessonWithRoute">
+        SELECT
+            l.id         l_id,
+            l.name       l_name,
+            l.cover      l_cover,
+            l.detail     l_detail,
+            r.id         r_id,
+            r.lesson_id  r_lesson_id,
+            r.route_name r_route_name,
+            r.cover      r_cover,
+            r.time       r_time,
+            r.detail     r_detail
+        FROM lesson l, route r
+        WHERE l.isshow = 1 AND l.id = r.lesson_id AND l.name LIKE #{name}
     </select>
 
 </mapper>

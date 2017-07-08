@@ -13,7 +13,13 @@
     <title>虹软中国</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/index.css">
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.1.0.min.js"></script>
 </head>
+<script type="text/javascript">
+    function searchLesson() {
+        $("#searchForm").submit();
+    }
+</script>
 <body>
 <div id="header">
     <div class="top-container clearfix" id="t-nav">
@@ -49,26 +55,30 @@
 
         <!-- 搜索框模块 -->
         <div class="search-wrap">
-            <!-- 提示标签 -->
-            <div id="searchTag" class="searchTag">
-                <a href="" target="_blank">防抖技术</a>
-                <a href="" target="_blank">前景技术</a>
-            </div>
-            <!-- 搜索框 -->
-            <div class="search-area" data-search="top-banner">
-                <input id="search-input" class="search-input" type="text" value=" ">
-                <ul id="data-list" class="search-area-result">
-                    <li data-key="暗光高清技术">暗光高清技术</li>
-                    <li data-key="防抖技术">防抖技术</li>
-                    <li data-key="人脸技术">人脸技术</li>
-                    <li data-key="HDR技术">HDR技术</li>
+            <form id="searchForm" action="${pageContext.request.contextPath}/selectLessonByName" method="post"
+                  target="_blank">
+                <!-- 提示标签 -->
+                <div id="searchTag" class="searchTag">
+                    <a href="" target="_blank">防抖技术</a>
+                    <a href="" target="_blank">前景技术</a>
+                </div>
 
-                </ul>
-            </div>
-            <!-- 搜索icon -->
-            <div class="showhide-search">
-                <a href="" target="_blank"><i class="icon-search"></i></a>
-            </div>
+                <!-- 搜索框 -->
+                <div class="search-area" data-search="top-banner">
+
+                    <input name="searchName" id="search-input" class="search-input" type="text">
+                    <ul id="data-list" class="search-area-result">
+                        <li data-key="暗光高清技术">暗光高清技术</li>
+                        <li data-key="防抖技术">防抖技术</li>
+                        <li data-key="人脸技术">人脸技术</li>
+                        <li data-key="HDR技术">HDR技术</li>
+                    </ul>
+                </div>
+                <!-- 搜索icon -->
+                <div class="showhide-search">
+                    <a href="javascript:void(0)" onclick="searchLesson()"><i class="icon-search"></i></a>
+                </div>
+            </form>
         </div>
     </div>
     <div class="mainer">
@@ -199,7 +209,8 @@
                         </a>
                         <!-- 小图 -->
                         <c:forEach items="${lesson.routes}" var="route">
-                            <a class="video-item" href="${pageContext.request.contextPath}/showRoute?routeId=${route.id}"
+                            <a class="video-item"
+                               href="${pageContext.request.contextPath}/showRoute?routeId=${route.id}"
                                target="_blank" title="${route.routeName}">
                                 <span class="vioImg"><img
                                         src="${pageContext.request.contextPath}/img/routeImage/${route.cover}"></span>

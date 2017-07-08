@@ -104,4 +104,8 @@ public class LessonService {
     public List<Lesson> selectLessonListByName(String name) {
         return lessonMapper.selectLessonListByName(Utils.fuzzyString(name));
     }
+
+    public List<LessonWithRoute> selectLessonListWithRouteByName(String searchName) {
+        return lessonMapper.selectLessonListWithRouteByName(Utils.fuzzyString(searchName));
+    }
 }

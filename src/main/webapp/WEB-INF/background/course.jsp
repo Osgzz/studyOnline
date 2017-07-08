@@ -13,7 +13,13 @@
     <title>虹软中国</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/course.css">
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.1.0.min.js"></script>
 </head>
+<script type="text/javascript">
+    function searchLesson() {
+        $("#searchForm").submit();
+    }
+</script>
 <body>
 <div id="header">
     <div class="top-container clearfix" id="t-nav">
@@ -49,14 +55,17 @@
 
         <!-- 搜索框模块 -->
         <div class="search-wrap">
-            <!-- 搜索框 -->
-            <div class="search-area" data-search="top-banner">
-                <input id="search-input" class="search-input" type="text" value=" ">
-            </div>
-            <!-- 搜索icon -->
-            <div class="showhide-search">
-                <a href="" target="_blank"><i class="icon-search"></i></a>
-            </div>
+            <form id="searchForm" action="${pageContext.request.contextPath}/selectLessonByName" method="post"
+                  target="_blank">
+                <!-- 搜索框 -->
+                <div class="search-area" data-search="top-banner">
+                    <input name="searchName" id="search-input" class="search-input" type="text">
+                </div>
+                <!-- 搜索icon -->
+                <div class="showhide-search">
+                    <a href="javascript:void(0)" onclick="searchLesson()"><i class="icon-search"></i></a>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -92,28 +101,28 @@
         <div class="course-list">
             <ul>
                 <c:forEach items="${lessonWithRouteList}" var="lessonWithRoute">
-                <c:forEach items="${lessonWithRoute.routes}" var="route">
-                    <div class="index-card-container">
-                        <a href="" target="_blank" class="course-card">
-                            <div class="course-card-text">
-                                <div class="course-card-top">
-                                    <h4>${lessonWithRoute.lessonName}</h4>
-                                </div>
-                                <div class="course-card-content">
-                                    <h3 class="course-card-name">${route.routeName}</h3>
-                                    <p title="防抖技术课程简介">${lessonWithRoute.lessonDetail}</p>
-                                    <div class="course-card-info">
-                                        <span>类型</span>
-                                        <span class="course-type">视频</span>
+                    <c:forEach items="${lessonWithRoute.routes}" var="route">
+                        <div class="index-card-container">
+                            <a href="" target="_blank" class="course-card">
+                                <div class="course-card-text">
+                                    <div class="course-card-top">
+                                        <h4>${lessonWithRoute.lessonName}</h4>
+                                    </div>
+                                    <div class="course-card-content">
+                                        <h3 class="course-card-name">${route.routeName}</h3>
+                                        <p title="防抖技术课程简介">${lessonWithRoute.lessonDetail}</p>
+                                        <div class="course-card-info">
+                                            <span>类型</span>
+                                            <span class="course-type">视频</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="course-card-cover"></div>
-                            <div class="course-card-bg"
-                                 style="background-image: url(${pageContext.request.contextPath}/img/lessonImage/${lessonWithRoute.lessonCover});"></div>
-                        </a>
-                    </div>
-                </c:forEach>
+                                <div class="course-card-cover"></div>
+                                <div class="course-card-bg"
+                                     style="background-image: url(${pageContext.request.contextPath}/img/lessonImage/${lessonWithRoute.lessonCover});"></div>
+                            </a>
+                        </div>
+                    </c:forEach>
                 </c:forEach>
             </ul>
         </div>

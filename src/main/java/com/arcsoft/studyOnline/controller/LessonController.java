@@ -146,14 +146,16 @@ public class LessonController {
     }
 
     /**
-     * @param name  接收前台提交的课程名参数
+     * @param searchName  接收前台提交的课程名参数
      * @param model 相当于request
      * @return 跳转到页面 course.jsp
      */
     @RequestMapping("selectLessonByName")
-    public String selectLessonByName(@RequestParam(required = false, defaultValue = "") String name, Model model) {
-        List<Lesson> lessonList = lessonService.selectLessonListByName(name);
+    public String selectLessonByName(@RequestParam(required = false, defaultValue = "") String searchName, Model model) {
+        List<Lesson> lessonList = lessonService.selectLessonListByName(searchName);
+        List<LessonWithRoute> lessonWithRouteList = lessonService.selectLessonListWithRouteByName(searchName);
         model.addAttribute("lessonList", lessonList);
+        model.addAttribute("lessonWithRouteList", lessonWithRouteList);
         return "course";
     }
 

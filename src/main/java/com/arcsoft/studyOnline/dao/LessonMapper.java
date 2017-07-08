@@ -78,4 +78,5 @@ public interface LessonMapper {
 
     List<Lesson> selectLessonListByName(String name);
 
+    List<LessonWithRoute> selectLessonListWithRouteByName(String name);
 }
