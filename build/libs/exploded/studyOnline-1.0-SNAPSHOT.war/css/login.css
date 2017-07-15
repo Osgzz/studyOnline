@@ -1,0 +1,164 @@
+.sign-wrap {
+    height: 100%;
+    width: 100%;    
+    border-bottom: 0 0 2px rgba(0,0,0,.5);
+}
+.sign-head{
+     overflow: hidden;
+     box-shadow: 0 0 2px rgba(0,0,0,.5);
+     padding: 5px 20px;
+     background-color: #fff;
+     z-index: 128;
+}
+.logo-wrapper{
+      float: left;
+      width: 70px;
+      height: 40px;
+}
+.sign-content {
+     width: 375px;
+     background: #fff;
+     position: absolute;
+     top: 42%;
+     left: 50%;
+     margin:-187.5px 0 0 -187.5px;
+     padding: 15px;
+/*     z-index: 1;*/
+}
+
+.sign-head ul{
+    padding: 1px 0 0 38px;
+    float: right;
+}
+
+.sign-head ul li{
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    color: #6CC0E5;
+    border: 1px solid #90455A;
+    border-radius: 3px;
+    text-decoration: none;
+    top: 1px;
+}
+
+.sign-head ul li:hover {
+    color: white;
+    background-color: #90455A;
+    cursor: pointer;
+}
+.sign-head ul li:active {
+    color: white;
+    background-color: #90455A;
+    cursor: pointer;
+}
+
+.sign-head ul .on{
+    color: white;
+    background-color: #90455A;
+    cursor: pointer;
+}
+
+.register-form{
+     display: none;
+}
+
+.login-form, .register-form {
+    padding-top: 20px;
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.form-wrapper {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0,0.30);
+    border-radius: 3px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+}
+
+.form-header {
+    text-align: center;
+    font-size: 1em;
+}
+
+.form-heading {
+    padding: 1em;
+}
+
+.field-wrapper {
+    width: 100%;
+    position: relative;
+    padding-top: 1.0em;
+    border-top: 1px solid rgba(0,0,0,0.30);
+    background-color: #fff;
+}
+
+.field-input  {
+      position: relative;
+      padding: 20px 16px;
+      line-height: 16px;/*input行高*/
+      width: 91.55%;
+      color: rgba(0,0,0,1.0);
+      border: none;
+      outline: 0; /*输入框轮廓样式*/
+      letter-spacing: 0.05em; /*输入字距样式*/
+}
+
+/*focus样式*/
+.field-input:focus {
+      background-color: rgba(144, 69, 90, 0.62);
+      color: rgba(0,0,0,1.0);
+}
+
+.field-label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 16px;
+      padding-top: 20px;
+      padding-bottom: 0px;
+      margin: 0;
+      z-index: 1;
+      font-size: .8em;
+      color: rgba(0,0,0,1.00);
+      font-weight: 400;
+      user-select: none;
+      cursor: text;
+}
+
+
+/*验证码输入框样式*/
+.field-input.verify{
+    width:50%;
+    display: block;
+    border:none;
+    float: left;
+    margin-right: 20px;
+}
+
+.verify-code{
+    width: 40px;
+    height: 80px;
+}
+
+.submit-btn-wrapper {
+    padding: 2em 1em;
+    margin: auto;
+    width: 80%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.submit-btn {
+    width: 80%;
+    background-color: #90455A;
+    border: 1px solid rgba(0,0,0,0);
+    padding: 0.5em 1em;
+    border-radius: 3px;
+    color: white;
+    display: block;
+    margin: 0 auto;
+}

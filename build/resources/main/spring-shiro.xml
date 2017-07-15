@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <description>shiro配置</description>
+
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <property name="loginUrl" value="/index"/>
+        <property name="successUrl" value="/home"/>
+        <property name="filterChainDefinitions">
+            <value>
+                <!-- 静态资源允许访问 -->
+                /audios/** = anon
+                /css/** = anon
+                /ext/** = anon
+                /fonts/** = anon
+                /html/** = anon
+                /img/** = anon
+                /js/** = anon
+                /ppts/** = anon
+                /ueditor/** = anon
+                /video/** = anon
+                /video-js-5.11.4/** = anon
+                /login = anon
+                /toCustomerLogin = anon
+                /getLessonListWithRouteByJson = anon
+                /getRouteWithResourceById = anon
+                /ddd.swf = anon
+                /FlePaperViewer.swf = anon
+                /documentView.jsp = anon
+                /docUploadCoverAction.jsp = anon
+                /fileUpload.jsp = anon
+                /logout = logout
+
+                <!-- 登录页允许访问 -->
+                /index = anon
+                <!-- 其他资源需要认证 -->
+                /** = authc
+            </value>
+        </property>
+    </bean>
+
+
+    <!-- 缓存管理器 使用Ehcache实现，引用mybatis的缓存配置 -->
+    <bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+        <property name="cacheManager" ref="ehCacheManagerFactory"/>
+        <!--<property name="cacheManagerConfigFile" value="classpath:ehcache-shiro.xml" />-->
+    </bean>
+
+    <!-- 会话DAO -->
+    <bean id="sessionDAO" class="org.apache.shiro.session.mgt.eis.MemorySessionDAO"/>
+
+    <!-- 会话管理器 -->
+    <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+        <property name="sessionDAO" ref="sessionDAO"/>
+        <!-- 设置session过期时间为1小时(单位：毫秒)，默认为30分钟 -->
+        <property name="globalSessionTimeout" value="3600000"/>
+        <property name="sessionValidationSchedulerEnabled" value="true"/>
+        <property name="sessionIdCookie">
+            <bean class="org.apache.shiro.web.servlet.SimpleCookie">
+                <property name="name" value="JSESSID"/>
+            </bean>
+        </property>
+    </bean>
+
+    <!-- 安全管理器 -->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realms">
+            <list>
+                <ref bean="securityRealm"/>
+            </list>
+        </property>
+        <!-- cacheManager,集合spring缓存工厂 -->
+        <property name="cacheManager" ref="shiroEhcacheManager"/>
+        <property name="sessionManager" ref="sessionManager"/>
+    </bean>
+
+    <!--指定加密算法-->
+    <bean id="securityRealm" class="com.arcsoft.studyOnline.SecurityRealm.SecurityRealm">
+        <property name="credentialsMatcher">
+            <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+                <property name="hashAlgorithmName" value="MD5"/>
+                <property name="hashIterations" value="499"/>
+            </bean>
+        </property>
+    </bean>
+
+    <!-- Shiro生命周期处理器 -->
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+
+</beans>

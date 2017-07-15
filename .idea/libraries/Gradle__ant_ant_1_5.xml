@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: ant:ant:1.5">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/ant/ant/1.5/ant-1.5.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ant/ant/1.5/dcab88fc2a043c2479a6de676a2f8179e9ea2167/ant-1.5.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
