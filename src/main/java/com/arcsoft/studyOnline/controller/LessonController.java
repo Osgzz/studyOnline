@@ -14,7 +14,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Focus on 2017/6/19.
@@ -157,6 +159,22 @@ public class LessonController {
         model.addAttribute("lessonList", lessonList);
         model.addAttribute("lessonWithRouteList", lessonWithRouteList);
         return "course";
+    }
+
+
+    /**
+     * @param searchName  接收前台提交的课程名参数
+     * @return 返回json数据
+     */
+    @RequestMapping("selectLessonByNameWithJson")
+    @ResponseBody
+    public Map selectLessonByNameWithJson(@RequestParam(required = false, defaultValue = "") String searchName) {
+        Map<String, List> map = new HashMap<>();
+        List<Lesson> lessonList = lessonService.selectLessonListByName(searchName);
+        List<LessonWithRoute> lessonWithRouteList = lessonService.selectLessonListWithRouteByName(searchName);
+        map.put("lessonList", lessonList);
+        map.put("lessonWithRouteList", lessonWithRouteList);
+        return map;
     }
 
 }

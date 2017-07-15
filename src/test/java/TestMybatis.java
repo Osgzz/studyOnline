@@ -54,4 +54,10 @@ public class TestMybatis {
 //            e.printStackTrace();
 //        }
     }
+
+    @Test
+    public  void coverPPT(){
+
+
+    }
 }

@@ -1,0 +1,12 @@
+2017-07-11 21:27:23,164 DEBUG [main] [com.artofsolving.jodconverter.openoffice.connection.SocketOpenOfficeConnection]:59 - connecting
+2017-07-11 21:27:23,315 INFO [main] [com.artofsolving.jodconverter.openoffice.connection.SocketOpenOfficeConnection]:77 - connected
+2017-07-11 21:27:34,279 DEBUG [main] [com.artofsolving.jodconverter.openoffice.connection.SocketOpenOfficeConnection]:86 - disconnecting
+2017-07-11 21:27:34,280 INFO [main] [com.artofsolving.jodconverter.openoffice.connection.SocketOpenOfficeConnection]:98 - disconnected
+2017-07-11 21:29:54,988 DEBUG [main] [com.artofsolving.jodconverter.openoffice.connection.SocketOpenOfficeConnection]:59 - connecting
+2017-07-11 21:29:55,137 INFO [main] [com.artofsolving.jodconverter.openoffice.connection.SocketOpenOfficeConnection]:77 - connected
+2017-07-11 21:30:05,561 DEBUG [main] [com.artofsolving.jodconverter.openoffice.connection.SocketOpenOfficeConnection]:86 - disconnecting
+2017-07-11 21:30:05,563 INFO [main] [com.artofsolving.jodconverter.openoffice.connection.SocketOpenOfficeConnection]:98 - disconnected
+2017-07-11 21:31:53,092 DEBUG [main] [com.artofsolving.jodconverter.openoffice.connection.SocketOpenOfficeConnection]:59 - connecting
+2017-07-11 21:31:53,243 INFO [main] [com.artofsolving.jodconverter.openoffice.connection.SocketOpenOfficeConnection]:77 - connected
+2017-07-11 21:32:08,154 DEBUG [main] [com.artofsolving.jodconverter.openoffice.connection.SocketOpenOfficeConnection]:86 - disconnecting
+2017-07-11 21:32:08,155 INFO [main] [com.artofsolving.jodconverter.openoffice.connection.SocketOpenOfficeConnection]:98 - disconnected

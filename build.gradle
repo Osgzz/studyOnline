@@ -67,7 +67,9 @@ dependencies {
             'commons-httpclient:commons-httpclient:3.1',
             "commons-lang:commons-lang:2.6",
             "net.sf.ezmorph:ezmorph:1.0.6",
-            'net.sf.json-lib:json-lib:2.4:jdk15'
+            'net.sf.json-lib:json-lib:2.4:jdk15',
+            'com.artofsolving:jodconverter:2.2.1',
+            'servlets.com:cos:05Nov2002'
     )
     providedCompile(
             'javax.servlet:servlet-api:2.5',

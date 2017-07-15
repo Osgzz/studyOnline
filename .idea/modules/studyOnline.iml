@@ -34,6 +34,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.springframework:spring-context:4.2.4.RELEASE" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: servlets.com:cos:05Nov2002" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: servlets.com:cos:05Nov2002" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: servlets.com:cos:05Nov2002" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: log4j:log4j:1.2.17" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: log4j:log4j:1.2.17" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: log4j:log4j:1.2.17" level="project" />
@@ -255,5 +258,20 @@
     <orderEntry type="library" scope="PROVIDED" name="Gradle: ch.qos.logback:logback-access:1.2.3" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: ch.qos.logback:logback-access:1.2.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: ch.qos.logback:logback-access:1.2.3" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: com.artofsolving:jodconverter:2.2.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.openoffice:juh:2.3.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.openoffice:ridl:2.3.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.openoffice:unoil:2.3.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.openoffice:jurt:2.3.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.artofsolving:jodconverter:2.2.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.openoffice:juh:2.3.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.openoffice:ridl:2.3.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.openoffice:unoil:2.3.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.openoffice:jurt:2.3.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.artofsolving:jodconverter:2.2.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.openoffice:juh:2.3.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.openoffice:ridl:2.3.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.openoffice:unoil:2.3.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.openoffice:jurt:2.3.0" level="project" />
   </component>
 </module>

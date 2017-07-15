@@ -1,0 +1,6 @@
+2017-07-11 17:32:58,570 DEBUG [main] [com.artofsolving.jodconverter.openoffice.connection.SocketOpenOfficeConnection]:59 - connecting
+2017-07-11 17:33:00,651 INFO [main] [com.artofsolving.jodconverter.openoffice.connection.SocketOpenOfficeConnection]:114 - trying to (re)connect
+2017-07-11 17:33:00,652 DEBUG [main] [com.artofsolving.jodconverter.openoffice.connection.SocketOpenOfficeConnection]:59 - connecting
+2017-07-11 17:34:22,468 DEBUG [main] [com.artofsolving.jodconverter.openoffice.connection.SocketOpenOfficeConnection]:59 - connecting
+2017-07-11 17:34:24,550 INFO [main] [com.artofsolving.jodconverter.openoffice.connection.SocketOpenOfficeConnection]:114 - trying to (re)connect
+2017-07-11 17:34:24,551 DEBUG [main] [com.artofsolving.jodconverter.openoffice.connection.SocketOpenOfficeConnection]:59 - connecting

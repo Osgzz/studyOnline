@@ -103,7 +103,7 @@
                 <c:forEach items="${lessonWithRouteList}" var="lessonWithRoute">
                     <c:forEach items="${lessonWithRoute.routes}" var="route">
                         <div class="index-card-container">
-                            <a href="" target="_blank" class="course-card">
+                            <a href="${pageContext.request.contextPath}/showRoute?routeId=${route.id}" target="_blank" class="course-card">
                                 <div class="course-card-text">
                                     <div class="course-card-top">
                                         <h4>${lessonWithRoute.lessonName}</h4>

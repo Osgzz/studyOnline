@@ -17,6 +17,11 @@
           <element id="dir-copy" path="$PROJECT_DIR$/build/resources/main" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: org.openoffice:jurt:2.3.0" />
+          <element id="library" level="project" name="Gradle: org.openoffice:unoil:2.3.0" />
+          <element id="library" level="project" name="Gradle: org.openoffice:ridl:2.3.0" />
+          <element id="library" level="project" name="Gradle: org.openoffice:juh:2.3.0" />
+          <element id="library" level="project" name="Gradle: com.artofsolving:jodconverter:2.2.1" />
           <element id="library" level="project" name="Gradle: ch.qos.logback:logback-access:1.2.3" />
           <element id="library" level="project" name="Gradle: org.logback-extensions:logback-ext-spring:0.1.4" />
           <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.7.25" />
@@ -89,6 +94,7 @@
           <element id="library" level="project" name="Gradle: net.sf.ehcache:ehcache-core:2.5.3" />
           <element id="library" level="project" name="Gradle: org.slf4j:jcl-over-slf4j:1.7.25" />
           <element id="library" level="project" name="Gradle: log4j:log4j:1.2.17" />
+          <element id="file-copy" path="D:/gradleRepo/caches/modules-2/files-2.1/servlets.com/cos/05Nov2002/ae8a47c62f20d55ab3965ddd50fe0d127291e2b4/cos-05Nov2002.jar" />
         </element>
       </element>
     </root>
