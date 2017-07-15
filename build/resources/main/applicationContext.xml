@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd  http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+    <!--spring管理所有业务逻辑组件-->
+    <context:component-scan base-package="com.arcsoft.studyOnline">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+
+    <!--&lt;!&ndash;引入外部的数据库配置文件&ndash;&gt;-->
+    <!--<context:property-placeholder location="classpath:dataSource.properties"/>-->
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+        <property name="ignoreResourceNotFound" value="true" />
+        <property name="locations">
+            <list>
+                <value>classpath:dataSource.properties</value>
+                <value>classpath:shiro-config.properties</value>
+            </list>
+        </property>
+    </bean>
+
+
+
+
+
+    <bean id="adminstrator" class="com.arcsoft.studyOnline.bean.Adminstrator"/>
+    <bean id="audios" class="com.arcsoft.studyOnline.bean.Audios"/>
+    <bean id="discuss" class="com.arcsoft.studyOnline.bean.Discuss"/>
+    <bean id="employee" class="com.arcsoft.studyOnline.bean.Employee"/>
+    <bean id="position" class="com.arcsoft.studyOnline.bean.Position"/>
+    <bean id="ppts" class="com.arcsoft.studyOnline.bean.PPTs"/>
+    <bean id="privateMessage" class="com.arcsoft.studyOnline.bean.PrivateMessage"/>
+    <bean id="videos" class="com.arcsoft.studyOnline.bean.Videos"/>
+    <bean id="route" class="com.arcsoft.studyOnline.bean.Route"/>
+    <bean id="lesson" class="com.arcsoft.studyOnline.bean.Lesson"/>
+    <bean id="viewRecord" class="com.arcsoft.studyOnline.bean.ViewRecord"/>
+    <bean id="lessonWithRoute" class="com.arcsoft.studyOnline.bean.LessonWithRoute"/>
+    <bean id="routeWithResource" class="com.arcsoft.studyOnline.bean.RouteWithResource"/>
+
+
+    <import resource="spring-mybatis.xml"/>
+    <import resource="spring-cache.xml"/>
+    <import resource="spring-shiro.xml"/>
+    
+</beans>

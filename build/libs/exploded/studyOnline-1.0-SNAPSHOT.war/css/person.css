@@ -1,0 +1,430 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?3t2buo');
+  src:  url('../fonts/icomoon.eot?3t2buo#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?3t2buo') format('truetype'),
+    url('../fonts/icomoon.woff?3t2buo') format('woff'),
+    url('f../onts/icomoon.svg?3t2buo#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/*main css*/
+#header {
+	padding-top: 10px;
+	height: 120px;
+	background: #fff;
+	/*border-bottom:0 0 2px rgba(0,0,0,.5);*/
+}
+.top-container {
+	position: relative;
+	background-color: #AF717D;
+	width: auto;
+	padding-right: 20px;
+	height: 60px;
+	z-index: 1000;
+}
+
+/* nav module */
+.logo{
+	margin: 0 20px;
+	height: 80px;
+	width: 200px;
+	float: left;
+}
+.logo, .nav-item li{
+	float: left;
+	list-style: none;
+}
+
+.nav-item a{
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	padding: 0 20px;
+	font-size: 16px;
+	height: 60px;
+	line-height: 60px;
+}
+
+
+/* notice and personal module */
+
+.login-area{
+	float: right;
+	position: relative;
+
+}
+
+/*ul.logined中li元素为浮动元素，需要清除浮动*/
+.clearfix:after{
+	content: " ";
+	display: block; /*加入的该元素为block元素*/
+	clear: both;/*清除左右两边浮动*/
+	height:0;/*高度为0*/
+	visibility: hidden;
+}
+/*针对IE6的清除浮动样式*/
+.clearfix {*zoom:1;}
+
+.logined{
+	margin:0;
+}
+/*查找logined下的li节点*/
+.logined>li{
+	float: left;
+	position: relative;
+	list-style: none;
+	padding:10px 0;
+}
+
+.logined li>a{
+	padding: 0;
+	height: 60px;
+	line-height: 60px;
+	width: 60px;
+	color: #787d82;
+	text-align: center;
+	text-decoration: none;
+}
+.remind-wrap,.my-wrap{
+	height: 60px;
+	width: 60px;
+}
+
+/* 通知提示css */
+.msg-remind{
+	display: none;
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	background-color:#f01414;
+	right: 14px;
+	top: 14px;
+	border-radius: 50%;
+}
+
+.icon-remind,.icon-my,.icon-search {
+	text-align: center;
+	display: block;
+	font-size: 25px;
+	line-height: 45px;
+	cursor: pointer;
+}
+.icon-my:before {
+	content: "\e903";
+	color: #fff;
+}
+.icon-remind:before {
+	content: "\e904";
+	color: #fff;
+}
+
+
+/* search moudle*/
+.search-wrap{
+	position: relative;
+	float: right;
+	margin-right: 18px;
+}
+.searchTag{
+	position: absolute;
+	z-index: 100;
+	left: 5px;
+	top: 20px;
+}
+.searchTag a{
+	display: block;
+	float: left;
+	text-decoration: none;
+	color: #fff;
+	margin-right: 3px;
+	background-color: rgba(144, 69, 90, 0.62);
+	padding:5px 8px;
+	font-size: 14px;
+}
+.search-form{
+	float: right;
+	border: 1px solid #d9dde1;
+	position: relative;
+	height: 38px;
+	width: 210px;
+	margin:10px 0;
+	padding-right: 30px;
+}
+
+.search-input{
+	color: #71777d;
+	background: transparent!important;
+	width: 100%;
+	height: 38px;
+	padding:5px 10px;
+	line-height: 12px;
+	float: left;
+	border: 0;
+	/*为元素设定的宽度和高度决定了它的边框盒*/
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+
+}
+.search-input-button {
+	display: none;
+}
+
+.showhide-search{
+	width: 30px;
+	height: 60px;
+	line-height: 60px;
+	text-align: right;
+	position: absolute;
+	display: inline-block;
+	right: 5px;
+	top: 0;
+}
+
+.showhide-search a{
+	text-decoration: none;
+}
+.search-input-button{
+	display: none;
+}
+.icon-search:before {
+	content: "\e902";
+	color: #fff;
+}
+
+.search-area-result{
+	position: absolute;
+	left: 0;
+	top: 41px;
+	padding:5px;
+	margin-bottom: 20px;
+	min-width: 210px;/*搜索框宽-搜索按钮*/
+	border: 1px solid #d3d3d3;
+	background-color: #fff;
+	box-shadow: 0 4px 8px rgba(0,0,0,.35);
+	font-size: 12px;
+	display: none;
+	cursor: pointer;
+	overflow: hidden;
+	z-index: 1000;
+}
+
+.search-area-result li{
+	display: block;
+	color: #71777d;
+	font-size: 14px;
+	padding: 10px 5px;
+}
+
+.search-area-result li:hover{
+	background: #e5e5e5;
+	cursor: pointer;
+}
+
+/* main css */
+.mainer{
+           padding-top: 0;
+           height: 800px;
+           position: relative;
+}
+
+.middle-container{
+	width: 1200px;	
+	margin: 0 auto;
+	padding: 30px 0;
+}
+
+/* left-box css */
+.left-wrap{
+	width: 216px;
+	background-color: #f8fafc;
+	float: left;
+             height: 400px;
+}
+
+.avator-wrap{
+	padding: 32px 0 24px;
+	text-align: center;
+}
+.avator-mode{
+	position: relative;
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+	border:4px solid #f8fafc;
+	border-radius: 50px;
+	overflow: hidden;
+}
+.avator-mode img{
+	width: 100px;
+	height: 100px;
+}
+
+.desc-mode{
+	font-size: 16px;
+}
+
+.amount-wrap{
+	margin: 0;
+	padding: 0;
+}
+
+.amount-wrap h2{
+	font-size: 16px;
+	line-height: 24px;
+	margin: 12px 24px;
+	font-weight: 700;
+}
+.amount-info{
+	margin-top: 10px;
+	height: 48px;
+	line-height: 48px;
+	padding: 0 0 0 50px;
+	text-decoration: none;
+	position: relative;
+}
+
+.amount-info a{
+	/*position: relative;*/
+	color: #14191e;
+	font-size: 16px;
+	/*display: block;*/
+	text-decoration: none;
+}
+.amount-info:hover, .amount-info:active{
+             background-color: rgba(175, 113, 125, 0.71);
+             cursor: pointer;
+}
+
+.arr{
+	float: right;
+}
+.icon-arr:before {
+	  content: "\e905";
+	  color: #707070;
+}
+
+/*right css*/
+
+
+
+/* div>line css */
+.line{
+	display: block;
+	height: 1px;
+	background-color: #d9dde1;
+	margin: 0 24px;
+}
+
+/* right wrap css */
+.right-wrap{
+	float: left;
+	margin-left: 50px;
+	height: 700px;
+	width: 800px;
+	box-sizing: border-box;
+	background: #fff;
+}
+
+.info-title{
+	height: 40px;
+	padding: 0;
+	padding-bottom:20px;
+}
+.info-title h2{
+	font-size: 16px;
+	line-height: 24px;
+	margin: 12px 24px;
+	font-weight: 700;
+	padding: 0;
+	margin: 0;
+}
+.edit-info {
+	float: right;
+	color: #93999f;
+	font-weight: 400;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+
+.info-wrap{
+	margin: 24px auto 24px 40px;
+}
+.info-box{
+	margin-bottom: 12px;
+}
+.info-box label{
+	width:120px;
+	padding: 20px 0;
+	line-height: 20px;
+	font-size: 14px;
+	text-align: center;
+	font-weight: 700;
+	color: #07111b;
+	background-color:#f3f5f7; 
+}
+.info-box div{
+	width: 600px;
+	margin-left: 8px;
+	padding:20px 0 20px 22px;
+	border-bottom: 1px solid #d9dde1;
+}
+.pull-left{
+	float: left;
+}
+.form-input{
+	display: none;
+}
+.icon-edit:before {
+  content: "\e907";
+  color: #707070;
+}
+
+#footer{
+             bottom: 0px;
+	background-color: #AF717D;
+}
+.foot-container{
+	width: 1200px;
+	padding: 0;
+	margin: 0 auto;
+	/*	height: 80px;*/
+}
+.footer-link{
+	padding: 10px 0;
+	margin: 0 auto;
+	text-align: center;
+	border-bottom: 1px solid #d0d6d9;
+}
+.footer-link a{
+	text-decoration: none;
+	color: #d0d6d9;
+	font-size: 14px;
+}
+.footer-copyright{
+	padding: 5px 0 10px;
+	text-align: center;
+	color: #b4bbbf;
+	font-size: 12px;
+	line-height: 14px;
+}

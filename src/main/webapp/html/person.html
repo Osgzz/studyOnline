@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>虹软中国</title>
+	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../css/person.css">
+	<script type="text/javascript" src="../js/jquery-3.1.0.min.js"></script>
+</head>
+<body>
+<div id="header">
+	<div class="top-container clearfix" id="t-nav">
+		<div id="logo" class="logo">
+			<a href="/" target="_self" class="hide-text" title="虹软中国"><img src="../img/logo.png"></a>
+		</div>
+		<ul class="nav-item">
+			<li><a href=" " target="_self">首页</a></li>
+			<li><a href=" " target="_self">课程</a></li>
+		</ul>
+		<!-- logined模块-->
+		<div class="login-area">
+			<ul class="clearfix logined">
+				<!-- 提醒icon -->
+				<li class="remind-wrap">
+					<i class="msg-remind"></i>
+					<a href="#" target="_blank">
+						<i class="icon-remind">
+						</i>
+					</a>
+				</li>
+				<!-- 个人icon -->
+				<li class="my-wrap">
+					<a href="#" target="_blank">
+						<i class="icon-my">
+						</i>
+					</a>
+				</li>
+			</ul>
+
+		</div>
+
+		<!-- 搜索框模块 -->
+		<div class="search-wrap" >
+			<!-- 提示标签 -->
+			<div id="searchTag" class="searchTag">
+				<a href="" target="_blank">防抖技术</a>
+				<a href="" target="_blank">前景技术</a>
+			</div>
+			<!-- 搜索框 -->
+			<form class="search-form" action="#" target="self" id="search-form">
+				<input type="text"  class="search-input"  id="search-input" name="q"  >
+				<!-- 搜索icon -->
+				<div class="showhide-search">
+			             <!-- <button type="submit">,只是一个简单的按钮，input+submit可以提交数据 -->
+				<input type="submit" class="search-input-button" value=""/><i class="icon-search"></i>								
+				</div>					
+			</form>
+				<ul id="data-list" class="search-area-result">
+					<li data-key="暗光高清技术">暗光高清技术</li>
+					<li data-key="防抖技术">防抖技术</li>
+					<li data-key="人脸技术">人脸技术</li>
+					<li data-key="HDR技术">HDR技术</li>
+				</ul>		
+		</div>
+
+	</div>
+	<div class="mainer">
+		<div class="middle-container" id="m-nav">
+		        <div class="left-wrap">
+		        	<div class="avator-wrap">
+		        		<div class="avator-mode"><img src="../img/1.png"></div>
+		        		<div class="desc-mode"><p>Siesta</p></div>
+		        	</div>
+		        	<div class="amount-wrap">
+		        		<h2>账号管理</h2>
+		        		<span class="line"></span>
+		        		<div class="amount-info">
+		        			<a href="">个人信息</a>
+		        			<span class="arr"><i class="icon-arr"></i></span>
+		        		</div>
+		        	</div>
+		        </div>
+		        <div class="right-wrap">
+		        	<div class="setting-wrap">
+		        	           <div class="edit-form" style="none"></div>
+		        		<div class="info-title clearfix">
+		        			<h2>个人信息</h2>
+		        		</div>
+		        		<span class="line"></span>
+		        		<form class="info-wrap">
+		        			<div class="info-box clearfix">
+		        				<label class="pull-left">员工编号</label>
+		        				<div class="pull-left">
+		        				            <input type="text"  class="form-input" name="position-id" disabled="true">007
+		        				</div>
+		        			</div>
+		        			<div class="info-box clearfix">
+		        				<label class="pull-left">姓名</label>
+		        				<div class="pull-left">
+			        				<input type="text" class="form-input" name="employee-name" disabled="true">黄小明
+		        				</div>
+		        			</div>
+		        			<div class="info-box clearfix">
+		        				<label class="pull-left">性别</label>
+		        				<div class="pull-left">
+			        				<input type="audio" class="form-input" name="sex" disabled="true">男
+		        				</div>
+		        			</div>			        					        			
+		        			<div class="info-box clearfix">
+		        				<label class="pull-left">部门</label>
+		        				<div class="pull-left">
+			        				<input type="text" class="form-input" name="apartment" disabled="true">销售部
+			        			</div>
+		        			</div>
+		        			<div class="info-box clearfix">
+		        				<label class="pull-left">昵称</label>
+		        				<div class="pull-left">
+			        				<input type="audio" class="form-input" name="nick-name" >Siesta
+				        			<a class="edit-info"><i class="icon-edit">编辑</i></a>
+		        				</div>
+		        			</div>
+		        			<div class="info-box clearfix">
+		        				<label class="pull-left">账号密码</label>
+		        				<div class="pull-left">
+			        				<input type="password" class="form-input" name="password" >1234abc
+				        			<a class="edit-info"><i class="icon-edit">编辑</i></a>
+		        				</div>
+		        			</div>		        			
+		        			<div class="info-box clearfix">
+		        				<label class="pull-left">手机号码</label>
+		        				<div class="pull-left">
+			        				<input type="audio" class="form-input" name="phone" >13912345678
+				        			<a class="edit-info"><i class="icon-edit">编辑</i></a>
+		        				</div>
+		        			</div>	
+		        			<div class="info-box clearfix">
+		        				<label class="pull-left">邮箱地址</label>
+		        				<div class="pull-left">
+			        				<input type="audio" class="form-input" name="email-address" >1234abc@qq.com
+				        			<a class="edit-info"><i class="icon-edit">编辑</i></a>
+		        				</div>
+		        			</div>			        					        			                                                                
+		        		</form>
+		        	</div>
+		        </div>
+		</div>
+
+          </div> 
+          <div id="footer">
+          	           <div class="foot-container">
+          	           	<div class="footer-link">
+          	           		<a href="http://www.arcsoft.com.cn" target="_blank" title="虹软官网">虹软官网</a>
+           	           	<a href="http://weibo.com/arcsoftchina" target="_blank" title="虹软微博">虹软微博</a>        	           		
+          	           	</div>
+          	           	<div class="footer-copyright">
+          	           		<p>©&nbsp;2017&nbsp;arcsoft.com&nbsp;&nbsp;浙ICP备11037259号-3</p>
+          	           	</div>
+          	           </div>
+          </div>
+<!-- <script type="text/javascript" src="../js/index.js"></script> -->
+</body>
+
+</html>
