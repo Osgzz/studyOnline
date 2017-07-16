@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: org.openoffice:jurt:2.3.0">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openoffice/jurt/2.3.0/59fd93bb8d72fdc2d0b3b7f916ce579b6351e32/jurt-2.3.0.jar!/" />
+      <root url="jar://D:/gradleRepo/caches/modules-2/files-2.1/org.openoffice/jurt/2.3.0/59fd93bb8d72fdc2d0b3b7f916ce579b6351e32/jurt-2.3.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

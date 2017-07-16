@@ -267,7 +267,7 @@
                         <li class="list-group-item">
                             <button class="menu-item-left">
                                 <span class="glyphicon glyphicon-triangle-right"></span><a href="javascript:void(0)"
-                                                                                           onclick="addTab('添加课程学习路线', 'toAddRoute')">添加课程学习路线</a>
+                                                                                           onclick="addTab('添加子课程', 'toAddRoute')">添加子课程</a>
                             </button>
                         </li>
 
