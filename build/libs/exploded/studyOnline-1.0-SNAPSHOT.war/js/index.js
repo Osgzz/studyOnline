@@ -105,30 +105,32 @@
 
         
         /*jQuery动态创建推荐内容模块*/
-        $.getJSON('http://localhost:8008/studyOnline-1.0-SNAPSHOT/getLessonListWithRouteByJson',
+        $.getJSON('/studyOnline-1.0-SNAPSHOT/getLessonListWithRouteByJson',
               function(json){
                 $(".class-list").children().empty();  
-                 for(var i=0;i<7;i++){
+                $(".type-content").empty();
+                 for(var i=0;i<6;i++){
                       //初始化
                      //课程id
                      // var vioId = json[i].lessonId;
                      //课程<img />元素
-                     var vioCover = 'http://localhost:8008/studyOnline-1.0-SNAPSHOT/img/lessonImage/'+json[i].lessonCover;
+                     var vioCover = '/studyOnline-1.0-SNAPSHOT/img/lessonImage/'+json[i].lessonCover;
                      //课程<vioTitle/>标题
                      var vioTitle = json[i].lessonName;
-
+                     var vioDetail = json[i].lessonDetail;     
                      //生成推荐模块<div>标签插入HTML推荐模块中
                      $(".class-list").append(
-                           "<div class='re-video-item'><span class='re-vioImg'><a href=''><img src="+vioCover+"></a></span><span class='re-vioTitle'>"+vioTitle+"</span></div>");
-                    $("#type").append("<div class='type-content-right' id='course-list'><a class='main-video-item' href='' target='_blank'><span class='main-vioImg'><img src="+vioCover+"></span><span class='main-vioTitle'>"+vioTitle+"</span><span class='viewCount'>120人</span><div class='vioCover-max'><i class='icon-play'></i></div></a></div>");
-                    // $("#course-list").empty();
-                         var data = json[i].routes; //获取子课程json数组数据
-                             for(var j=0;j<6;j++){
-                               var smallVioCover =  'http://localhost:8008/studyOnline-1.0-SNAPSHOT/img/routeImage/'+data[j].cover;//获取子课程的cover路径
-                               var smallVioTitle = data[j].routeName;//获取子课程的name标题
-                               $('#course-list').append("<a class='video-item' href='' target='_blank' ><span class='vioImg' ><img src="+smallVioCover+"></span><span class='vioTitle'>"+smallVioTitle+"</span><div class='vioCover'><i class='icon-play'></i></div><span class='viewCount'>120人</span></a> ")
-                          }
+                           "<div class='re-video-item'><span class='re-vioImg'><a href=' '><img src="+vioCover+"></a></span><span class='re-vioTitle'>"+vioTitle+"</span></div>");                 
+                    $(".type-content").append("<div class='type-content-left fd'><h2 class='path-title'>"+vioDetail+"</h2><a  class='path-more' href='' target='_blank'>了解更多 >></a></div>"); 
+                     var route = json[i].routes; //获取子课程json数组数据
+                             for(var j=0;j<route.length;j++){
+                               var smallVioCover =  '/studyOnline-1.0-SNAPSHOT/img/routeImage/'+route[j].cover;//获取子课程的cover路径
+                               var smallVioTitle = route[j].routeName;//获取子课程的name标题
+                               $('.type-content').append("<div class='type-content-right'><a class='video-item' href='' target='_blank' ><span class='vioImg' ><img src="+smallVioCover+"></span><span class='vioTitle'>"+smallVioTitle+"</span><div class='vioCover'><i class='icon-play'></i></div><span class='viewCount'>120人</span></a></div>");
+
+                          }               
                  } 
+
 
                  // var data = json[i].routes;
 
