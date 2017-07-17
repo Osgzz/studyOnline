@@ -28,420 +28,465 @@
     <table id="20" parent="2" name="audios">
       <Comment>音频表</Comment>
     </table>
-    <table id="21" parent="2" name="discuss">
+    <table id="21" parent="2" name="department">
+      <Comment>部门表</Comment>
+    </table>
+    <table id="22" parent="2" name="discuss">
       <Comment>讨论表</Comment>
     </table>
-    <table id="22" parent="2" name="employee">
+    <table id="23" parent="2" name="employee">
       <Comment>员工表</Comment>
     </table>
-    <table id="23" parent="2" name="lesson">
+    <table id="24" parent="2" name="lesson">
       <Comment>课程表</Comment>
     </table>
-    <table id="24" parent="2" name="position">
+    <table id="25" parent="2" name="position">
       <Comment>职位表</Comment>
     </table>
-    <table id="25" parent="2" name="ppts">
+    <table id="26" parent="2" name="ppts">
       <Comment>ppt表</Comment>
     </table>
-    <table id="26" parent="2" name="private_message"/>
-    <table id="27" parent="2" name="route">
+    <table id="27" parent="2" name="private_message"/>
+    <table id="28" parent="2" name="route">
       <Comment>课程线路表</Comment>
     </table>
-    <table id="28" parent="2" name="videos">
+    <table id="29" parent="2" name="videos">
       <Comment>视频表</Comment>
     </table>
-    <table id="29" parent="2" name="view_record">
+    <table id="30" parent="2" name="view_record">
       <Comment>观看视频记录</Comment>
     </table>
-    <column id="30" parent="19" name="id">
+    <column id="31" parent="19" name="id">
       <Position>1</Position>
       <Comment>管理员ID</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="31" parent="19" name="username">
+    <column id="32" parent="19" name="username">
       <Position>2</Position>
       <Comment>管理员账号</Comment>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="32" parent="19" name="password">
+    <column id="33" parent="19" name="password">
       <Position>3</Position>
       <Comment>管理员密码</Comment>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="33" parent="19" name="PRIMARY">
+    <key id="34" parent="19" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="34" parent="20" name="id">
+    <column id="35" parent="20" name="id">
       <Position>1</Position>
       <Comment>音频ID</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="35" parent="20" name="name">
+    <column id="36" parent="20" name="name">
       <Position>2</Position>
       <Comment>音频名称</Comment>
       <DataType>varchar(40)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="36" parent="20" name="path">
+    <column id="37" parent="20" name="path">
       <Position>3</Position>
       <Comment>音频路径</Comment>
       <DataType>varchar(60)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="37" parent="20" name="route_id">
+    <column id="38" parent="20" name="route_id">
       <Position>4</Position>
       <Comment>所属课程路径ID</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="38" parent="20" name="PRIMARY">
+    <key id="39" parent="20" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="39" parent="21" name="id">
+    <column id="40" parent="21" name="id">
+      <Position>1</Position>
+      <Comment>部门ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="41" parent="21" name="name">
+      <Position>2</Position>
+      <Comment>部门名称</Comment>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="42" parent="21" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="43" parent="22" name="id">
       <Position>1</Position>
       <Comment>讨论留言ID</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="40" parent="21" name="vedio_id">
+    <column id="44" parent="22" name="vedio_id">
       <Position>2</Position>
       <Comment>留言视频ID</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="41" parent="21" name="commentators_id">
+    <column id="45" parent="22" name="commentators_id">
       <Position>3</Position>
       <Comment>留言者ID</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="42" parent="21" name="content">
+    <column id="46" parent="22" name="content">
       <Position>4</Position>
       <Comment>留言内容</Comment>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="43" parent="21" name="time">
+    <column id="47" parent="22" name="time">
       <Position>5</Position>
       <Comment>留言时间</Comment>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="44" parent="21" name="pre_id">
+    <column id="48" parent="22" name="pre_id">
       <Position>6</Position>
       <Comment>上一条留言ID</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="45" parent="21" name="from_who">
+    <column id="49" parent="22" name="from_who">
       <Position>7</Position>
       <Comment>员工为0，管理员为1</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <key id="46" parent="21" name="PRIMARY">
+    <key id="50" parent="22" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="47" parent="22" name="id">
+    <column id="51" parent="23" name="id">
       <Position>1</Position>
       <Comment>员工ID</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="48" parent="22" name="name">
+    <column id="52" parent="23" name="name">
       <Position>2</Position>
       <Comment>员工名称</Comment>
       <DataType>varchar(14)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="49" parent="22" name="password">
+    <column id="53" parent="23" name="nickName">
       <Position>3</Position>
+      <Comment>昵称</Comment>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="54" parent="23" name="password">
+      <Position>4</Position>
       <Comment>登录密码</Comment>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="50" parent="22" name="position_id">
-      <Position>4</Position>
+    <column id="55" parent="23" name="gender">
+      <Position>5</Position>
+      <Comment>性别</Comment>
+      <DataType>varchar(4)|0</DataType>
+    </column>
+    <column id="56" parent="23" name="dept_id">
+      <Position>6</Position>
+      <Comment>所属部门ID</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="57" parent="23" name="position_id">
+      <Position>7</Position>
       <Comment>职位ID</Comment>
       <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <key id="51" parent="22" name="PRIMARY">
+    <column id="58" parent="23" name="phone">
+      <Position>8</Position>
+      <Comment>手机号码</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="59" parent="23" name="email">
+      <Position>9</Position>
+      <Comment>电子邮箱</Comment>
+      <DataType>varchar(40)|0</DataType>
+    </column>
+    <key id="60" parent="23" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="52" parent="23" name="id">
+    <column id="61" parent="24" name="id">
       <Position>1</Position>
       <Comment>课程ID</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="53" parent="23" name="name">
+    <column id="62" parent="24" name="name">
       <Position>2</Position>
       <Comment>课程名称</Comment>
       <DataType>varchar(40)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="54" parent="23" name="isshow">
+    <column id="63" parent="24" name="isshow">
       <Position>3</Position>
       <Comment>是否上线课程</Comment>
       <DataType>int(2)|0</DataType>
       <DefaultExpression>&apos;1&apos;</DefaultExpression>
     </column>
-    <column id="55" parent="23" name="cover">
+    <column id="64" parent="24" name="cover">
       <Position>4</Position>
       <Comment>封面图片路径</Comment>
       <DataType>varchar(60)|0</DataType>
     </column>
-    <column id="56" parent="23" name="detail">
+    <column id="65" parent="24" name="detail">
       <Position>5</Position>
       <Comment>课程简介</Comment>
       <DataType>varchar(600)|0</DataType>
     </column>
-    <key id="57" parent="23" name="PRIMARY">
+    <key id="66" parent="24" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="58" parent="24" name="id">
+    <column id="67" parent="25" name="id">
       <Position>1</Position>
       <Comment>职位ID</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="59" parent="24" name="name">
+    <column id="68" parent="25" name="name">
       <Position>2</Position>
       <Comment>职位名称</Comment>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="60" parent="24" name="premission_level">
+    <column id="69" parent="25" name="premission_level">
       <Position>3</Position>
       <Comment>职位权限级别</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="61" parent="24" name="PRIMARY">
+    <key id="70" parent="25" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="62" parent="25" name="id">
+    <column id="71" parent="26" name="id">
       <Position>1</Position>
       <Comment>ppt的ID</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="63" parent="25" name="name">
+    <column id="72" parent="26" name="name">
       <Position>2</Position>
       <Comment>ppt名字</Comment>
       <DataType>varchar(40)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="64" parent="25" name="path">
+    <column id="73" parent="26" name="path">
       <Position>3</Position>
       <Comment>ppt路径</Comment>
       <DataType>varchar(60)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="65" parent="25" name="route_id">
+    <column id="74" parent="26" name="route_id">
       <Position>4</Position>
       <Comment>所属课程路径ID</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="66" parent="25" name="PRIMARY">
+    <key id="75" parent="26" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="67" parent="26" name="id">
+    <column id="76" parent="27" name="id">
       <Position>1</Position>
       <Comment>私信Id</Comment>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="68" parent="26" name="user_id">
+    <column id="77" parent="27" name="user_id">
       <Position>2</Position>
       <Comment>发送者Id</Comment>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="69" parent="26" name="friend_id">
+    <column id="78" parent="27" name="friend_id">
       <Position>3</Position>
       <Comment>接受者Id</Comment>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="70" parent="26" name="sender_id">
+    <column id="79" parent="27" name="sender_id">
       <Position>4</Position>
       <Comment>发送者id</Comment>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="71" parent="26" name="receiver_id">
+    <column id="80" parent="27" name="receiver_id">
       <Position>5</Position>
       <Comment>接受者Id</Comment>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="72" parent="26" name="message_type">
+    <column id="81" parent="27" name="message_type">
       <Position>6</Position>
       <Comment>消息类型,1：普通消息 2：系统消息</Comment>
       <DataType>tinyint(4)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="73" parent="26" name="message_content">
+    <column id="82" parent="27" name="message_content">
       <Position>7</Position>
       <Comment>消息内容</Comment>
       <DataType>varchar(500)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="74" parent="26" name="send_time">
+    <column id="83" parent="27" name="send_time">
       <Position>8</Position>
       <Comment>消息发送时间</Comment>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="75" parent="26" name="status">
+    <column id="84" parent="27" name="status">
       <Position>9</Position>
       <Comment>消息状态 1：未读 2：已读 3：删除</Comment>
       <DataType>tinyint(4)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;1&apos;</DefaultExpression>
     </column>
-    <key id="76" parent="26" name="PRIMARY">
+    <key id="85" parent="27" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="77" parent="27" name="id">
+    <column id="86" parent="28" name="id">
       <Position>1</Position>
       <Comment>课程线路ID</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="78" parent="27" name="lesson_id">
+    <column id="87" parent="28" name="lesson_id">
       <Position>2</Position>
       <Comment>所属课程ID</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="79" parent="27" name="route_name">
+    <column id="88" parent="28" name="route_name">
       <Position>3</Position>
       <Comment>线路名</Comment>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <column id="80" parent="27" name="time">
+    <column id="89" parent="28" name="time">
       <Position>4</Position>
       <Comment>路径创建时间</Comment>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="81" parent="27" name="cover">
+    <column id="90" parent="28" name="cover">
       <Position>5</Position>
       <Comment>封面图片路径</Comment>
       <DataType>varchar(60)|0</DataType>
     </column>
-    <column id="82" parent="27" name="detail">
+    <column id="91" parent="28" name="detail">
       <Position>6</Position>
       <Comment>简介说明</Comment>
       <DataType>varchar(600)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="83" parent="27" name="PRIMARY">
+    <key id="92" parent="28" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="84" parent="28" name="id">
+    <column id="93" parent="29" name="id">
       <Position>1</Position>
       <Comment>视频ID</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="85" parent="28" name="name">
+    <column id="94" parent="29" name="name">
       <Position>2</Position>
       <Comment>视频名称</Comment>
       <DataType>varchar(40)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="86" parent="28" name="path">
+    <column id="95" parent="29" name="path">
       <Position>3</Position>
       <Comment>视频路径</Comment>
       <DataType>varchar(60)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="87" parent="28" name="views">
+    <column id="96" parent="29" name="views">
       <Position>4</Position>
       <Comment>观看次数</Comment>
       <DataType>int(10)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <column id="88" parent="28" name="cover_path">
+    <column id="97" parent="29" name="cover_path">
       <Position>5</Position>
       <Comment>封面路径</Comment>
       <DataType>varchar(60)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="89" parent="28" name="route_id">
+    <column id="98" parent="29" name="route_id">
       <Position>6</Position>
       <Comment>所属课程路径ID</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="90" parent="28" name="PRIMARY">
+    <key id="99" parent="29" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="91" parent="29" name="id">
+    <column id="100" parent="30" name="id">
       <Position>1</Position>
       <Comment>观看记录ID</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="92" parent="29" name="employee_id">
+    <column id="101" parent="30" name="employee_id">
       <Position>2</Position>
       <Comment>观看视频的员工ID</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="93" parent="29" name="lesson_id">
+    <column id="102" parent="30" name="lesson_id">
       <Position>3</Position>
       <Comment>课程ID</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="94" parent="29" name="view_time">
+    <column id="103" parent="30" name="view_time">
       <Position>4</Position>
       <Comment>观看时间</Comment>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="95" parent="29" name="PRIMARY">
+    <key id="104" parent="30" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

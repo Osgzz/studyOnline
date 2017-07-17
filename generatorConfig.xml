@@ -47,6 +47,7 @@
         <!--<table tableName="route" domainObjectName="Route"/>-->
         <!--<table tableName="lesson" domainObjectName="Lesson"/>-->
         <!--<table tableName="view_record" domainObjectName="ViewRecord"/>-->
+        <!--<table tableName="department" domainObjectName="Department"/>-->
 
     </context>
 </generatorConfiguration>
