@@ -333,13 +333,14 @@
 }
 
 
+
 /* main-css */
 #main{
 	display: block;
 	padding:20px 0;
 	/*min-height: 900px;*/
 }
-
+/*轮播图模块样式*/
 .imgBox{
 	position: relative;
 	height: 400px;
@@ -356,6 +357,7 @@
 	height: 400px;
 	overflow: hidden;
 }
+/*轮播图图片数组样式*/
 .img-list {
 	width: 1200px;
 	height: 400px;
@@ -370,7 +372,7 @@
 .img-list .imgOn{
 	display: inline;
 }
-
+/*图片文字描述背景蒙版*/
 .text-bg{
 	position: absolute;
 	bottom: 0;
@@ -381,6 +383,7 @@
 	/*filter: alpha((opacity=40));*/
 	background-color: black;
 }
+/*文字描述数组样式*/
 .info-list{
 	margin: 0;
 	padding: 0;
@@ -392,7 +395,6 @@
 	height: 100px;
 	overflow: hidden;
 }
-
 .info-list li{
 	float: left;
 	width: 1200px;
@@ -401,16 +403,13 @@
 	padding-top: 10px;
 	color: white;
 	text-decoration: none;
-	display: none;
-}
-.info-list .infoOn{
-	display: inline;
+	display: none;  
 }
 
 .info-list .infoOn{
 	display: inline;
 }
-
+/*圆点图标数组样式*/
 .index-list{
 	position: absolute;
 	margin: 0 550px;
@@ -436,7 +435,7 @@
 	background-color: #ffffff;
 	cursor: pointer;
 }
-
+/*向左 向右箭头样式*/
 .arrow{
 	font-size: 36px;
 	font-weight: bold;
@@ -472,7 +471,6 @@
 #next{
 	right: 20px;
 }
-
 
 
 /* recommend-css */
@@ -564,6 +562,7 @@
 	z-index: 100;
 }
 
+/*课程模块样式*/
 .typeBox{
 	position: relative;
 	width: 1200px;
@@ -577,17 +576,18 @@
 	margin:0;
 	padding:0;
 }
-
+/*课程模块--左侧边栏*/
 .type-content-left{
 	position: relative;
 	float: left;
-	padding: 100px 20px;
-	height: 315px;
-	width: 180px;
+	padding: 80px 20px;
+	height: 250px;
+	width: 150px;
 	box-sizing: border-box;
 	border-radius:4px;
 	margin-right: 20px;
 }
+/*学习路径--不同课程颜色不同样式*/
 .type-content-left.fd{
 	background-color: rgb(152, 84, 98);
 }
@@ -601,7 +601,7 @@
 	background-color: #748341;
 }
 
-
+/*课程学习路径--描述*/
 .path-title{
 	text-align: center;
 	color: #ffffff;
@@ -610,24 +610,8 @@
 	line-height: 24px;
 
 }
-.path-list{
-	padding: 0 12px;
-	margin-top: 10px;
-	text-align: center;
-	margin-top: 0;
 
-}
-
-.path-list>li{
-	list-style: none;
-}
-.path-list>li a{
-	font-size: 15px;
-	display: inline-block;
-	text-decoration: none;
-	color: #ffffff;
-	margin-bottom: 20px;
-}
+/*课程学习路径--了解更多*/
 .path-more{
 	color: #ffffff;
 	font-size: 14px;
@@ -637,74 +621,18 @@
 	right: 10px;
 	text-decoration: none;
 }
-/* 右侧边栏模块 */
-.type-content-right{
+
+/*课程模块--左侧边栏*/
+.course-list{
 	float: left;
-	width: 1000px;
+	width:1030px;
 	padding: 0;
 	margin: 0;
 }
-/* 大图模块样式 */
-.main-video-item{
-	position: relative;
-	display: block;
-	width: 380px;
-	height: 268px;
-	float: left;
-	text-decoration: none;
-	margin-left: 0;
-}
-
-
-
-.main-vioImg{
-	position: relative;
-	display: block;
-	width: 100%;
-	height: 100%;
-	box-sizing: border-box;
-	border:0.1px solid rgba(0,0,0,0.1);
-	border-radius: 4px;
-	overflow: hidden;
-}
-.main-vioImg img{
-	width: 380px;
-	height: 268px;
-	/*position: cursor;*/
-	transition: .5s cubic-bezier(0,0.6,0.3,1);
-	z-index: -999;
-}
-.main-vioTitle{
-	display: block;
-	font-size: 16px;
-	color: #2b2b2b;
-	overflow: hidden;
-	margin-top: 10px;
-	line-height: 16px;
-	transition: .25s;
-}
-
-.video-item{
-	position: relative;
-	display: block;
-	float: left;
-	width: 180px;
-	height: 147px;
-	margin-bottom: 21px;
-	margin-left: 24px;
-	overflow: hidden;
-	text-decoration: none;
-}
-.vioImg img{
-	width: 180px;
-	height: 100px;
-	display: block;
-	cursor: pointer;
-	transition: .5s cubic-bezier(0,0.6,0.3,1);
-	z-index: -999;
-}
-
+/* 观众人数样式*/
 .viewCount{
+	position: absolute;
+/*	bottom: -50px;*/ /*相对于大图图片向下50px*/
 	display: block;
 	font-size: 12px;
 	margin-top: 8px;
@@ -712,32 +640,34 @@
 	background: url(../img/viewCountIcon.png) no-repeat 2px center;
 }
 
-
-/* 浮动样式 */
-.main-video-item:hover .vioCover-max{
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	width: 380px;
-	height: 268px;
-	border: 1px solid #ffffff;
-	background: rgba(0, 0, 0, 0.85);
-
+/* 子课程模块样式 */
+.video-item{
+	position: relative;
+	display: block;
+	float: left;
+	width: 231px;
+	height: 250px;
+	margin-bottom: 21px;
+	margin-left: 24px;
+	overflow: hidden;
+	text-decoration: none;
+	border:1px solid #fff;
+	border-radius: 5px;
 }
-/* 大图播放icon样式 */
-.vioCover-max i{
-	position: absolute;
-	top: 45%;
-	left: 45%;
-	display: none;
-	font-size: 50px;
-	line-height: 50px;
+
+/* 子课程模块--图片样式*/
+.vioImg img{
+	width: 230px;
+	height: 210px;
+/*	width: 100%;
+	height: 80%;*/
+	display: block;
 	cursor: pointer;
-	text-align: center;
+	transition: .5s cubic-bezier(0,0.6,0.3,1);
+	z-index: -999;
 }
-/* 模块分类视频小图 css */
+
+/* 子课程模块--标题样式*/
 .vioTitle{
 	display: block;
 	color: #2b2b2b;
@@ -749,25 +679,7 @@
 	z-index: 100;
 }
 
-.main-video-item:hover i{
-	display: block;
-}
-.main-video-item:hover .main-vioTitle{
-	color: #90455a;
-}
-.video-item:hover .vioCover{
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	width: 180px;
-	height: 100px;
-	border: 1px solid #ffffff;
-	background: rgba(0, 0, 0, 0.85);
-}
-
-/* 播放icon样式 */
+/* 子课程模块--播放icon样式*/
 .vioCover i{
 	position: absolute;
 	top: 40%;
@@ -779,20 +691,32 @@
 	cursor: pointer;
 	text-align: center;
 }
+
+/*子模块:hover 添加图片透明蒙板*/
+.video-item:hover .vioCover{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 233px;
+	height: 210px;
+	border: 1px solid #ffffff;
+	background: rgba(0, 0, 0, 0.85);
+}
+/*子模块:hover 添加icon图标样式*/
 .video-item:hover i{
 	display: block;
 }
-
+/*:hover 课程名称颜色改变*/
+.video-item:hover .vioTitle{
+	color: #90455a;
+}
+/*icon--播放*/
 .icon-play:before {
 	content: "\e900";
 	color: #707070;
 }
-
-.main-video-item:hover img{
-	transform: scale(1.2);
-
-}
-
 /* 更多课程模块 */
 .more{
 	width: 1200px;
