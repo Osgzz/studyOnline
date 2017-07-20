@@ -208,7 +208,7 @@
 	color: #707070;
 }
 
-.search-area-result{
+#search-area-result{
 	position: absolute;
 	left: 0;
 	top: 41px;
@@ -225,14 +225,18 @@
 	z-index: 1000;
 }
 
-.search-area-result li{
+#search-area-result li{
 	display: block;
 	color: #71777d;
 	font-size: 14px;
 	padding: 10px 5px;
 }
+#search-area-result>li a{
+	text-decoration: none;
+	color: #71777d;	
+}
 
-.search-area-result li:hover{
+#search-area-result li:hover{
 	background: #e5e5e5;
 	cursor: pointer;
 }
@@ -622,12 +626,9 @@
 	text-decoration: none;
 }
 
-/*课程模块--左侧边栏*/
-.course-list{
-	float: left;
-	width:1030px;
-	padding: 0;
-	margin: 0;
+/*课程模块--右侧边栏*/
+.type-content-right{
+	margin-bottom: 30px;
 }
 /* 观众人数样式*/
 .viewCount{

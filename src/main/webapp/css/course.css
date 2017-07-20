@@ -42,7 +42,6 @@
 	background:#AF717D;
 	border-bottom: 0 0 2px rgba(0,0,0,.5);
 }
-
 .top-container {
 	position: relative;
 	width: auto;
@@ -109,6 +108,7 @@
 	float: left;
 	position: relative;
 	list-style: none;
+	padding: 10px 0;
 }
 
 .logined li>a{
@@ -141,7 +141,7 @@
 	text-align: center;
 	display: block;
 	font-size: 25px;
-	line-height: 60px;
+	line-height: 45px;
 	cursor: pointer;
 }
 .icon-my:before {
@@ -160,9 +160,7 @@
 	float: right;
 	margin-right: 18px;
 }
-
-
-.search-area{
+.search-form{
 	float: right;
 	border: 1px solid #d9dde1;
 	position: relative;
@@ -188,6 +186,10 @@
 	box-sizing:border-box;
 
 }
+.search-input-button {
+	display: none;
+}
+
 .showhide-search{
 	width: 30px;
 	height: 60px;
@@ -198,15 +200,45 @@
 	right: 5px;
 	top: 0;
 }
-
 .showhide-search a{
 	text-decoration: none;
 }
+.search-input-button{
+	display: none;
+}
 .icon-search:before {
 	content: "\e902";
-	color: #ffffff;
+	color: #707070;
 }
 
+.search-area-result{
+	position: absolute;
+	left: 0;
+	top: 41px;
+	padding:5px;
+	margin-bottom: 20px;
+	min-width: 210px;/*搜索框宽-搜索按钮*/
+	border: 1px solid #d3d3d3;
+	background-color: #fff;
+	box-shadow: 0 4px 8px rgba(0,0,0,.35);
+	font-size: 12px;
+	display: none;
+	cursor: pointer;
+	overflow: hidden;
+	z-index: 1000;
+}
+
+.search-area-result li{
+	display: block;
+	color: #71777d;
+	font-size: 14px;
+	padding: 10px 5px;
+}
+
+.search-area-result li:hover{
+	background: #e5e5e5;
+	cursor: pointer;
+}
 /* course-nav css */
 #main{
 	background-color: #ffffff;
