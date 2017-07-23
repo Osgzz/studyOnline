@@ -371,6 +371,7 @@
 	float: left;
 }
 .user-head img {
+	float: left;
 	width: 0.4rem;
 	height: 0.4rem;
 	border-radius: 50%;
@@ -401,7 +402,7 @@
 }
 .comment-btn{
 	background-color:#AF717D;
-	/*display: block;*/
+	float: left;
 	font-size: 0.14rem;
 	line-height: 100%;
 	cursor: pointer;
