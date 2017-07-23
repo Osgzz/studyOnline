@@ -24,29 +24,49 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 /*main css*/
 #header {
-	padding-top: 10px;
-	height: 120px;
+	padding-top: 0.1rem;
+	height: 100%;
 	background: #fff;
 	/*border-bottom:0 0 2px rgba(0,0,0,.5);*/
 }
 .top-container {
 	position: relative;
-	background-color: #AF717D;
 	width: auto;
-	padding-right: 20px;
-	height: 60px;
+	padding-right: 0.2rem;
+	height: 0.6rem;
+	background-color: #af717d;
 	z-index: 1000;
 }
 
 /* nav module */
+/*div.logo样式*/
 .logo{
-	margin: 0 20px;
-	height: 80px;
-	width: 200px;
+	margin: 0 0.5rem;
+	height: 0.6rem;
+	width: 1.4rem;
 	float: left;
+}
+/*a.logo样式*/
+.hide-text{
+	display: block;
+	width: 1.4rem;
+	height:0.6rem;
+	padding: 0;
+	margin: 0;
+}
+/*img.log样式*/
+.logo img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.nav-item{
+	   display: inline-block;
+	    margin: 0;
+	    padding: 0;
+	    float: left;
 }
 .logo, .nav-item li{
 	float: left;
@@ -55,12 +75,12 @@
 
 .nav-item a{
 	display: block;
-	color: #fff;
 	text-decoration: none;
-	padding: 0 20px;
-	font-size: 16px;
-	height: 60px;
-	line-height: 60px;
+	padding: 0 0.2rem;
+	color: #fff;
+	font-size: 0.16rem;
+	height: 0.6rem;
+	line-height: 0.6rem;
 }
 
 
@@ -69,7 +89,7 @@
 .login-area{
 	float: right;
 	position: relative;
-
+             height: 100%;
 }
 
 /*ul.logined中li元素为浮动元素，需要清除浮动*/
@@ -85,46 +105,48 @@
 
 .logined{
 	margin:0;
+	padding: 0;
+	height: 100%;
 }
 /*查找logined下的li节点*/
 .logined>li{
 	float: left;
 	position: relative;
 	list-style: none;
-	padding:10px 0;
+	padding:0.1rem 0;
 }
 
 .logined li>a{
 	padding: 0;
-	height: 60px;
-	line-height: 60px;
-	width: 60px;
-	color: #fff;
+	height: 0.6rem;
+	line-height: 0.6rem;
+	width: 0.6rem;
+	color: #787d82;
 	text-align: center;
 	text-decoration: none;
 }
 .remind-wrap,.my-wrap{
-	height: 60px;
-	width: 60px;
+/*	height: 0.6rem;*/
+	width: 0.6rem;
 }
 
 /* 通知提示css */
 .msg-remind{
 	display: none;
 	position: absolute;
-	width: 8px;
-	height: 8px;
-	background-color:#f01414;
-	right: 14px;
-	top: 14px;
+	width: 0.08rem;
+	height: 0.08rem;
+	background--color:#f01414;
+	right: 0.14rem;
+	top: 0.14rem;
 	border-radius: 50%;
 }
 
 .icon-remind,.icon-my,.icon-search {
 	text-align: center;
 	display: block;
-	font-size: 25px;
-	line-height: 45px;
+	font-size: 0.25rem;
+	line-height: 0.45rem;
 	cursor: pointer;
 }
 .icon-my:before {
@@ -136,46 +158,30 @@
 	color: #fff;
 }
 
-
 /* search moudle*/
 .search-wrap{
 	position: relative;
 	float: right;
-	margin-right: 18px;
+	margin-right: 0.18rem;
 }
-.searchTag{
-	position: absolute;
-	z-index: 100;
-	left: 5px;
-	top: 20px;
-}
-.searchTag a{
-	display: block;
-	float: left;
-	text-decoration: none;
-	color: #fff;
-	margin-right: 3px;
-	background-color: rgba(144, 69, 90, 0.62);
-	padding:5px 8px;
-	font-size: 14px;
-}
+
 .search-form{
 	float: right;
-	border: 1px solid #d9dde1;
+	border: 0.01rem solid #d9dde1;
 	position: relative;
-	height: 38px;
-	width: 210px;
-	margin:10px 0;
-	padding-right: 30px;
+	height: 0.38rem;
+	width: 2.1rem;
+	margin:0.1rem 0;
+	padding-right: 0.3rem;
 }
 
 .search-input{
-	color: #fff;
+	color: #71777d;
 	background: transparent!important;
 	width: 100%;
-	height: 38px;
-	padding:5px 10px;
-	line-height: 12px;
+	height: 0.38rem;
+	padding:0.05rem 0.1rem;
+	line-height: 0.12rem;
 	float: left;
 	border: 0;
 	/*为元素设定的宽度和高度决定了它的边框盒*/
@@ -190,13 +196,13 @@
 }
 
 .showhide-search{
-	width: 30px;
-	height: 60px;
-	line-height: 60px;
+	width: 0.3rem
+	height: 0.5rem
+	line-height: 0.6rem;
 	text-align: right;
 	position: absolute;
 	display: inline-block;
-	right: 5px;
+	right: 0.05rem
 	top: 0;
 }
 
@@ -211,34 +217,40 @@
 	color: #fff;
 }
 
-.search-area-result{
+#search-area-result{
 	position: absolute;
 	left: 0;
-	top: 41px;
-	padding:5px;
-	margin-bottom: 20px;
-	min-width: 210px;/*搜索框宽-搜索按钮*/
-	border: 1px solid #d3d3d3;
+	top: 0.41rem;
+	padding:0.05rem;
+	margin-bottom: 0.2rem;
+	min-width: 2.1rem;/*搜索框宽-搜索按钮*/
+	border: 0.01rem solid #d3d3d3;
 	background-color: #fff;
-	box-shadow: 0 4px 8px rgba(0,0,0,.35);
-	font-size: 12px;
+	box-shadow: 0 0.04rem 0.08rem rgba(0,0,0,.35);
+	font-size: 0.12rem;
 	display: none;
 	cursor: pointer;
 	overflow: hidden;
 	z-index: 1000;
 }
 
-.search-area-result li{
+#search-area-result li{
 	display: block;
 	color: #71777d;
-	font-size: 14px;
-	padding: 10px 5px;
+	font-size: 0.14rem;
+	padding: 0.1rem 0.05rem;
+}
+#search-area-result>li a{
+	text-decoration: none;
+	color: #71777d;	
 }
 
-.search-area-result li:hover{
+#search-area-result li:hover{
 	background: #e5e5e5;
 	cursor: pointer;
 }
+
+
 
 /* main css */
 .mainer{

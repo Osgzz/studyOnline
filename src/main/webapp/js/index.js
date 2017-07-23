@@ -1,4 +1,5 @@
 (function($){
+        // 当@media(width<768px)时
 
         /* 搜索框功能实现*/
         $('.search-form').bind('click', function() {

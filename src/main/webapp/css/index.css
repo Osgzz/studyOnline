@@ -23,27 +23,52 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+/*body{
+	width: 12.8rem;
+	margin: auto;
+}*/
 /*main css*/
 #header {
-	padding-top: 10px;
-	height: 120px;
+	padding-top: 0.1rem;
+	height: 1.2rem;
 	background: #fff;
 	/*border-bottom:0 0 2px rgba(0,0,0,.5);*/
 }
 .top-container {
 	position: relative;
 	width: auto;
-	padding-right: 20px;
-	height: 60px;
+	padding-right: 0.2rem;
+	height: 0.6rem;
 	z-index: 1000;
 }
 
 /* nav module */
+/*div.logo样式*/
 .logo{
-	margin: 0 20px;
-	height: 80px;
-	width: 200px;
+	margin: 0 0.5rem;
+	height: 0.6rem;
+	width: 1.4rem;
 	float: left;
+}
+/*a.logo样式*/
+.hide-text{
+	display: block;
+	/*width: 2.0rem;*/
+	height:0.6rem;
+	padding: 0;
+	margin: 0;
+}
+/*img.log样式*/
+.logo img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.nav-item{
+	   display: inline-block;
+	    margin: 0;
+	    padding: 0;
+	    float: left;
 }
 .logo, .nav-item li{
 	float: left;
@@ -53,11 +78,11 @@
 .nav-item a{
 	display: block;
 	text-decoration: none;
-	padding: 0 20px;
+	padding: 0 0.2rem;
 	color: #07111b;
-	font-size: 16px;
-	height: 60px;
-	line-height: 60px;
+	font-size: 0.16rem;
+	height: 0.6rem;
+	line-height: 0.6rem;
 }
 
 
@@ -66,7 +91,7 @@
 .login-area{
 	float: right;
 	position: relative;
-
+             height: 100%;
 }
 
 /*ul.logined中li元素为浮动元素，需要清除浮动*/
@@ -82,46 +107,48 @@
 
 .logined{
 	margin:0;
+	padding: 0;
+	height: 100%;
 }
 /*查找logined下的li节点*/
 .logined>li{
 	float: left;
 	position: relative;
 	list-style: none;
-	padding:10px 0;
+	padding:0.1rem 0;
 }
 
 .logined li>a{
 	padding: 0;
-	height: 60px;
-	line-height: 60px;
-	width: 60px;
+	height: 0.6rem;
+	line-height: 0.6rem;
+	width: 0.6rem;
 	color: #787d82;
 	text-align: center;
 	text-decoration: none;
 }
 .remind-wrap,.my-wrap{
-	height: 60px;
-	width: 60px;
+/*	height: 0.6rem;*/
+	width: 0.6rem;
 }
 
 /* 通知提示css */
 .msg-remind{
 	display: none;
 	position: absolute;
-	width: 8px;
-	height: 8px;
+	width: 0.08rem;
+	height: 0.08rem;
 	background--color:#f01414;
-	right: 14px;
-	top: 14px;
+	right: 0.14rem;
+	top: 0.14rem;
 	border-radius: 50%;
 }
 
 .icon-remind,.icon-my,.icon-search {
 	text-align: center;
 	display: block;
-	font-size: 25px;
-	line-height: 45px;
+	font-size: 0.25rem;
+	line-height: 0.45rem;
 	cursor: pointer;
 }
 .icon-my:before {
@@ -133,46 +160,49 @@
 	color: #707070;
 }
 
-
 /* search moudle*/
 .search-wrap{
 	position: relative;
 	float: right;
-	margin-right: 18px;
+	margin-right: 0.18rem;
 }
 .searchTag{
 	position: absolute;
 	z-index: 100;
-	left: 5px;
-	top: 20px;
+	left: 0.05rem;
+	top: 0.2rem;
+	overflow: hidden;
+	line-height: 0.14rem;
 }
 .searchTag a{
 	display: block;
 	float: left;
 	text-decoration: none;
 	color: #fff;
-	margin-right: 3px;
+	margin-right: 0.03rem;
 	background-color: rgba(144, 69, 90, 0.62);
-	padding:5px 8px;
-	font-size: 14px;
+	padding:0.05rem 0.08rem;
+	font-size: 0.14rem;
+	line-height: 0.14rem;
+	/*overflow: hidden;*/
 }
 .search-form{
 	float: right;
-	border: 1px solid #d9dde1;
+	border: 0.01rem solid #d9dde1;
 	position: relative;
-	height: 38px;
-	width: 210px;
-	margin:10px 0;
-	padding-right: 30px;
+	height: 0.38rem;
+	width: 2.1rem;
+	margin:0.1rem 0;
+	padding-right: 0.3rem;
 }
 
 .search-input{
 	color: #71777d;
 	background: transparent!important;
 	width: 100%;
-	height: 38px;
-	padding:5px 10px;
-	line-height: 12px;
+	height: 0.38rem;
+	padding:0.05rem 0.1rem;
+	line-height: 0.12rem;
 	float: left;
 	border: 0;
 	/*为元素设定的宽度和高度决定了它的边框盒*/
@@ -187,13 +217,13 @@
 }
 
 .showhide-search{
-	width: 30px;
-	height: 60px;
-	line-height: 60px;
+	width: 0.3rem
+	height: 0.5rem
+	line-height: 0.6rem;
 	text-align: right;
 	position: absolute;
 	display: inline-block;
-	right: 5px;
+	right: 0.05rem
 	top: 0;
 }
 
@@ -211,14 +241,14 @@
 #search-area-result{
 	position: absolute;
 	left: 0;
-	top: 41px;
-	padding:5px;
-	margin-bottom: 20px;
-	min-width: 210px;/*搜索框宽-搜索按钮*/
-	border: 1px solid #d3d3d3;
+	top: 0.41rem;
+	padding:0.05rem;
+	margin-bottom: 0.2rem;
+	min-width: 2.1rem;/*搜索框宽-搜索按钮*/
+	border: 0.01rem solid #d3d3d3;
 	background-color: #fff;
-	box-shadow: 0 4px 8px rgba(0,0,0,.35);
-	font-size: 12px;
+	box-shadow: 0 0.04rem 0.08rem rgba(0,0,0,.35);
+	font-size: 0.12rem;
 	display: none;
 	cursor: pointer;
 	overflow: hidden;
@@ -228,8 +258,8 @@
 #search-area-result li{
 	display: block;
 	color: #71777d;
-	font-size: 14px;
-	padding: 10px 5px;
+	font-size: 0.14rem;
+	padding: 0.1rem 0.05rem;
 }
 #search-area-result>li a{
 	text-decoration: none;
@@ -242,25 +272,76 @@
 }
 
 /* nav css */
-.mainer{
-	z-index: 1000;
-	height: 40px;
-	background-color: #AF717D;
+/*菜单栏样式*/
+/*1、判断在不同的分辨率的设备下searchTag是否存在
+   2、在不同的设备下设置菜单栏的高度*/
+
+@media screen and (min-width:239px) and (max-width:321px){
+    .searchTag{display:none}
+    /*二级菜单栏的大小及选项间的样式*/
+    .sub-nav {
+    	width: 8rem;
+    }
+    .sub-nav ul > li {
+            padding: 0.5rem;
+    }
 }
 
+@media screen and (min-width:321px) and (max-width:768px){
+    .searchTag{display:none}
+    .sub-nav {
+    	width: 6.5rem;
+    }
+    .sub-nav ul > li {
+            padding: 0.2rem;
+    }
+}
+
+@media screen and (min-width:768px){
+     .searchTag{display:block}
+     .sub-nav {
+    	width: 4.5rem;
+    }
+    .sub-nav ul > li {
+            padding: 0.1rem;
+    }
+    .re-video-item{
+    	width: 14.74%;
+    }
+}
+.mainer{
+	margin:0.2rem 0;
+	z-index: 1000;
+	height: 30%;
+	background-color: #AF717D;
+	float: left;
+	width: 100%;
+}
+/*菜单栏的位置*/
 .middle-container{
+	display: inline-block;
 	position: relative;
 	width: auto;
-	margin:0 40px;
+	padding: 0.1rem;
+	margin:0 0.4rem;
+	float: left;
+	/*margin: 0.05rem 0.5rem 0.05rem 2.3rem;*/
+	margin-left: 2.3rem;
 }
 
+/*菜单栏--虹软技术样式*/
+.main-nav{
+	margin: 0;
+}
 .main-nav>li{
-	position: relative;
-	display: block;
+	/*position: relative;*/
+	/*display: block;*/
 	list-style: none;
 	float: left;
-	margin-right: 30px;
+	margin-right: 0.3rem;
 	background-color: rgba(0, 0, 0, 0.05);
+	line-height: 0.16rem;
+
 }
 /*.main-nav li:hover{
 	color: #434a50;
@@ -277,25 +358,28 @@
 
 .main-nav>li a{
 	color: #fff;
-	height: 40px;
-	line-height: 40px;
+	height: 0.16rem;
+	line-height: 0.16rem;
+	font-size: 0.16rem;
+	float: left;
 	text-align: center;
 	text-decoration: none;
 
 }
-
+/*二级菜单栏样式*/
 /*sub-nav css */
 .sub-nav{
 	display: none; /*二级菜单栏原始状态隐藏*/
-	width: 420px;
+	/*width: 4.2rem;*/
 	position: absolute;
-	border: 1px #a10f13 solid;
-	left: 0px;
-	top: 40px;
-	padding: 0 0 10px 0;
+	border: 0.01rem #af717d solid;
+	left: 0.0rem;
+	top: 0.4rem;
+	padding: 0 0 0.3rem 0;
 	overflow: hidden;
-	font-size:14px;
+	font-size:0.14rem;
 	background-color: rgba(0, 0, 0, .7);
+             z-index: 1111;
 
 	/*background-color:rgba(195, 195, 195, 0)*/
 }
@@ -308,13 +392,15 @@
 .sub-nav ul{
 	/*	border: 1px #a10f13 solid;*/
 	padding: 0;
+	white-space: nowrap;/*文字强制不换行*/
 	width: 100%;
 }
 
 .sub-nav ul>li {
 	list-style: none;
 	float: left;
-	width: 190px;
+	width: 40%;
+	/*padding: 0.1rem;*/
 }
 
 .sub-nav ul li:hover {
@@ -326,14 +412,14 @@
 	color: #fff;
 	display: block;
 	height: 100%;
-	padding:5px 10px;
+	padding:0.05rem 0.1rem;
 
 }
 
 .more-li {
 	position: absolute;
 	right: 0px;
-	bottom: -10px;
+	bottom: 0.2rem;
 }
 
 
@@ -341,30 +427,30 @@
 /* main-css */
 #main{
 	display: block;
-	padding:20px 0;
+	padding:0.2rem 0;
 	/*min-height: 900px;*/
 }
 /*轮播图模块样式*/
 .imgBox{
 	position: relative;
-	height: 400px;
-	width: 1200px;
+	height: 4.0rem;
+	width: 95%;
 	margin: auto;
 	background-color: #ffffff;
-	box-shadow: 0 4px 8px 0 rgba(7,17,27,.1);
-	border-radius: 4px;
+	box-shadow: 0 0.04rem 0.08rem 0 rgba(7,17,27,.1);
+	border-radius: 0.04rem;
 	/*	z-index: -1000;*/
 }
 
 .banner {
-	width: 1200px;
-	height: 400px;
+	width: 100%;
+	height: 4.0rem;
 	overflow: hidden;
 }
 /*轮播图图片数组样式*/
 .img-list {
-	width: 1200px;
-	height: 400px;
+	width: 100%;
+	height: 4.0rem;
 	z-index: 10;
 	padding:0;
 	margin: 0;
@@ -373,15 +459,24 @@
 .img-list>li{
 	display: none;
 }
+.img-list img{
+	height: 100%;
+}
 .img-list .imgOn{
-	display: inline;
+	display: inline-block;
+	height: 100%;
+}
+.imgOn img{
+	float: left;
+	width: 100%;
+	height: 100%;
 }
 /*图片文字描述背景蒙版*/
 .text-bg{
 	position: absolute;
 	bottom: 0;
-	width: 1200px;
-	height: 100px;
+	width: 100%;
+	height: 1.0rem;
 	z-index: 20;
 	opacity: 0.4;
 	/*filter: alpha((opacity=40));*/
@@ -395,16 +490,16 @@
 	text-align: center;
 	bottom: 0;
 	z-index: 30;
-	width: 1200px;
-	height: 100px;
+	width: 100%;
+	height: 1.0rem;
 	overflow: hidden;
 }
 .info-list li{
 	float: left;
-	width: 1200px;
-	height: 100px;
-	font-size: 45px;
-	padding-top: 10px;
+	width: 100%;
+	height: 1.0rem;
+	font-size: 0.45rem;
+	padding-top: 0.1rem;
 	color: white;
 	text-decoration: none;
 	display: none;  
@@ -416,19 +511,21 @@
 /*圆点图标数组样式*/
 .index-list{
 	position: absolute;
-	margin: 0 550px;
+	margin: 0 45%;
 	z-index: 20;
-	bottom:20px;
-	width: 100px;
-	height: 10px;
+	bottom:0.2rem;
+	width: 1.0rem;
+	height: 0.1rem;
 	text-align: center;
 }
 /*原点分页样式 */
 .index-list span{
 	display: inline-block;
-	width: 10px;
-	height: 10px;
-	line-height:10px;
+	float: left;
+	margin: 0.035rem;
+	width: 0.1rem;
+	height: 0.1rem;
+	line-height:0.1rem;
 	border-radius: 50%;
 	color: white;
 	background-color: #808080;
@@ -441,19 +538,15 @@
 }
 /*向左 向右箭头样式*/
 .arrow{
-	font-size: 36px;
+	font-size: 0.36rem;
 	font-weight: bold;
-	line-height: 39px;
-
+	line-height: 0.39rem;
 	position: absolute;
 	z-index: 2;
-	top: 135px;
-
+	top: 1.35rem;
 	display: none;
-
-	width: 40px;
-	height: 40px;
-
+	width: 0.4rem
+	height: 0.4rem
 	cursor: pointer;
 	text-align: center;
 	text-decoration: none;
@@ -469,11 +562,11 @@
 }
 
 #prev{
-	left: 20px;
+	left: 0.4rem;
 }
 
 #next{
-	right: 20px;
+	right: 0.4rem;
 }
 
 
@@ -481,20 +574,27 @@
 
 .recomBox{
 	position: relative;
-	width: 1200px;
-	height: 212px;
-	margin: 20px auto;
+	width: 100%;
+	height: 100%;
+	margin: 0.2rem auto;
 	overflow: hidden;
 	background-color: #ffffff;
 	/*	box-shadow: 0 1px 1px 0 rgba(7,17,27,.1);*/
-	border-radius: 4px;
+	border-radius: 0.04rem;
 }
 .title-list{
 	height: auto;
 }
 .more-title{
 	float: right;
-	font-size: 14px;
+            margin: 0 0.4rem 0 0;
+	font-size: 0.14rem;
+}
+.like{
+	font-weight: 700;
+	font-size: 0.16rem;
+	margin: auto;
+	width: 95%;
 }
 .change{
 	cursor: pointer;
@@ -506,17 +606,18 @@
 }
 
 #class-list{
-	padding-bottom: 30px;
+	padding: 0.3rem;
+	height: 1.5rem;
 }
 
 .re-video-item{
 	position: relative;
 	display: block;
 	float: left;
-	width: 180px;
-	height: 147px;
-	margin-bottom: 21px;
-	margin-left: 24px;
+	width: 14.39%;
+	/*height: 100%;*/
+	margin-bottom: 0.21rem;
+	margin-left: 0.29rem;
 	overflow: hidden;
 	text-decoration: none;
 }
@@ -530,12 +631,12 @@
 	position: relative; /*  图片相对与vioImg span放大 */
 	display: block;
 	box-sizing: border-box;
-	border:1px solid rgba(0,0,0,0.1);
+	/*border:0.01rem solid rgba(0,0,0,0.1);*/
 	overflow: hidden;
 }
 .re-vioImg img{
-	width: 180px;
-	height: 100px;
+	width: 1.8rem;
+	height: 1.0rem;
 	display: block;
 	cursor: pointer;
 	transition: .5s cubic-bezier(0,0.6,0.3,1);
@@ -558,19 +659,21 @@
 .re-vioTitle{
 	display: block;
 	color: #2b2b2b;
-	margin-top: 5px;
-	font-size: 14px;
-	line-height: 14px;
+	margin-top: 0.05rem;
+	font-size: 0.14rem;
+	/*line-height: 100%;*/
+	height: 100%;
 	overflow: hidden;
 	white-space: normal;
+	padding: 0.05rem;
 	z-index: 100;
 }
 
 /*课程模块样式*/
 .typeBox{
 	position: relative;
-	width: 1200px;
-	margin:50px auto 30px;
+	width: 100%;
+	margin:0.1rem auto 0.3rem;
 	padding: 0;
 	margin-left: auto;
 	margin-right: auto;
@@ -578,18 +681,18 @@
 
 .type-content{
 	margin:0;
-	padding:0;
+	padding:0 0.3rem 0.2rem;
 }
 /*课程模块--左侧边栏*/
 .type-content-left{
 	position: relative;
 	float: left;
-	padding: 80px 20px;
-	height: 250px;
-	width: 150px;
+	padding: 0.8rem 0.2rem;
+	height: 100%;
+	width: 15%;
 	box-sizing: border-box;
-	border-radius:4px;
-	margin-right: 20px;
+	border-radius:0.04rem;
+	margin-right: 0.2rem;
 }
 /*学习路径--不同课程颜色不同样式*/
 .type-content-left.fd{
@@ -609,36 +712,37 @@
 .path-title{
 	text-align: center;
 	color: #ffffff;
-	font-size: 20px;
+	font-size: 0.2rem;
 	font-weight: 700;
-	line-height: 24px;
+	line-height: 100%;
 
 }
 
 /*课程学习路径--了解更多*/
 .path-more{
 	color: #ffffff;
-	font-size: 14px;
-	line-height: 12px;
+	font-size: 0.14rem;
+	line-height: 100%;
+	white-space: nowrap;
 	position: absolute;
-	bottom: 15px;
-	right: 10px;
+	bottom: 0.15rem;
+	right: 0.1rem;
 	text-decoration: none;
 }
 
 /*课程模块--右侧边栏*/
 .type-content-right{
-	margin-bottom: 30px;
+	margin-bottom: 0.3rem;
 }
 /* 观众人数样式*/
 .viewCount{
 	position: absolute;
 /*	bottom: -50px;*/ /*相对于大图图片向下50px*/
 	display: block;
-	font-size: 12px;
-	margin-top: 8px;
-	padding-left: 18px;
-	background: url(../img/viewCountIcon.png) no-repeat 2px center;
+	font-size: 0.12rem;
+	margin-top: 0.08rem;
+	padding-left: 0.18rem;
+	background: url(../img/viewCountIcon.png) no-repeat 0.02rem center;
 }
 
 /* 子课程模块样式 */
@@ -646,20 +750,20 @@
 	position: relative;
 	display: block;
 	float: left;
-	width: 231px;
-	height: 250px;
-	margin-bottom: 21px;
-	margin-left: 24px;
+	width:2.31rem;
+	height: 100%;
+	margin-bottom: 0.21rem;
+	margin-left: 0.24rem;
 	overflow: hidden;
 	text-decoration: none;
-	border:1px solid #fff;
-	border-radius: 5px;
+	border:0.01rem solid #fff;
+	border-radius: 0.05rem;
 }
 
 /* 子课程模块--图片样式*/
 .vioImg img{
-	width: 230px;
-	height: 210px;
+	width: 2.3rem;
+	height: 2.1rem;
 /*	width: 100%;
 	height: 80%;*/
 	display: block;
@@ -672,9 +776,9 @@
 .vioTitle{
 	display: block;
 	color: #2b2b2b;
-	margin-top: 5px;
-	font-size: 14px;
-	line-height: 14px;
+	margin-top: 0.05rem;
+	font-size: 0.14rem;
+	line-height: 100%;
 	overflow: hidden;
 	white-space: normal;
 	z-index: 100;
@@ -687,8 +791,8 @@
 	left: 40%;
 	text-align: center;
 	display: none;
-	font-size: 30px;
-	line-height: 30px;
+	font-size: 0.3rem;
+	line-height: 0.3rem;
 	cursor: pointer;
 	text-align: center;
 }
@@ -700,9 +804,9 @@
 	right: 0;
 	top: 0;
 	bottom: 0;
-	width: 233px;
-	height: 210px;
-	border: 1px solid #ffffff;
+	width: 2.33rem;
+	height: 2.1rem;
+	border: 0.01rem solid #ffffff;
 	background: rgba(0, 0, 0, 0.85);
 }
 /*子模块:hover 添加icon图标样式*/
@@ -720,16 +824,16 @@
 }
 /* 更多课程模块 */
 .more{
-	width: 1200px;
-	height: 20px;
-	padding: 20px 0;
+	width: 100%;
+	height: 0.2rem;
+	padding: 0.2rem 0;
 	margin: 0 auto;
 }
 .load-more{
 	display: block;
 	/*	padding: 0px;*/
 	color: #2b2b2b;
-	font-size: 18px;
+	font-size: 0.18rem;
 	font-weight: 600;
 	text-align: center;
 	text-decoration: none;
@@ -740,26 +844,26 @@
 	background-color: #AF717D;
 }
 .foot-container{
-	width: 1200px;
+	width: 100%;
 	padding: 0;
 	margin: 0 auto;
 	/*	height: 80px;*/
 }
 .footer-link{
-	padding: 10px 0;
+/*	padding: 10px 0;*/
 	margin: 0 auto;
 	text-align: center;
-	border-bottom: 1px solid #d0d6d9;
+	border-bottom: 0.01rem solid #d0d6d9;
 }
 .footer-link a{
 	text-decoration: none;
 	color: #d0d6d9;
-	font-size: 14px;
+	font-size: 0.14rem;
 }
 .footer-copyright{
-	padding: 5px 0 10px;
+	padding: 0.05rem 0 0.1rem;
 	text-align: center;
 	color: #b4bbbf;
-	font-size: 12px;
-	line-height: 14px;
+	font-size: 0.12rem;
+	line-height: 0.14rem;
 }

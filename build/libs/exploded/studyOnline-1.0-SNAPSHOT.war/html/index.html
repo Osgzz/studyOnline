@@ -2,10 +2,18 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1">
 	<title>虹软中国</title>
 	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="../css/index.css">
 	<script type="text/javascript" src="../js/jquery-3.1.0.min.js"></script>
+	<!-- 通过js计算出能让,rem布局结合在html上根据不同分辨率设置不同的font-size 
+	      html的font-size=deviceWidth/12.0-->
+	<script type="text/javascript">
+			var deviceWidth = document.documentElement.clientWidth;
+			if(deviceWidth > 1200) deviceWidth = 1280;
+			document.documentElement.style.fontSize = deviceWidth / 12.0 + 'px';
+	</script>
 </head>
 <body>
 <div id="header">
@@ -83,16 +91,14 @@
 							<li><a href="" target="_self">全景技术</a></li>
 							<li><a href="" target="_self">人脸技术</a></li>
 							<li><a href="" target="_self">HDR技术</a></li>
-							<li><a href="" target="_self"> </a></li>
 							<li><a href="" target="_self">场景检测与物体识别技术</a></li>
 							<li><a href="" target="_self">体感技术</a></li>
 							<li><a href="" target="_self">3D立体成像技术</a></li>
 							<li><a href="" target="_self">AR/VR技术</a><li>
-							<li><span class="more-li"><a href="" target="_blank">更多>></a></span></li>
-						</ul>
+						</ul>							
+							<span class="more-li"><a href="" target="_blank">更多>></a></span>		
 
 					</div>
-				</li>
 				<!-- 一级菜单 -->
 <!-- 				<li class="m-nav-item"><a href="" target="_self">虹软产品</a>
 					<div class="sub-nav">
@@ -141,7 +147,7 @@
 				<li>体感技术课程</li>
 			</ul>
 			<!-- 轮播图圆心按钮-->
-			<div class="index-list">
+			<div class="index-list clearfix">
 				<span index="1" class="indexOn"></span>
 				<span index="2"></span>
 				<span index="3"></span>
@@ -154,8 +160,8 @@
  	           <div class="recomBox">
  	                      <!-- 推荐模块 标题栏 -->
  	                     <div class="title-list clearfix">
-  	                     	        <p class="more-title">更多精彩内容，请点击<span class="change">换一换<i class="icon-refresh"></i></a></span></p>	                     	        
- 	                     	        <h4 class="like">猜你喜欢</h4> 
+ 	                     	        <p class="like">猜你喜欢</p> 
+  	                     	        <p class="more-title">更多精彩内容，请点击<span class="change">换一换<i class="icon-refresh"></i></a></span></p>	                     
  	                     </div>
  	                     <!-- 推荐模块 视频栏 -->
                                 <div  id="class-list" class="class-list clearfix">
@@ -252,5 +258,15 @@
           </div>
 <script type="text/javascript" src="../js/index.js"></script>
 </body>
-
+<!--           <footer id="footer">
+          	           <div class="foot-container">
+          	           	<div class="footer-link">
+          	           		<a href="http://www.arcsoft.com.cn" target="_blank" title="虹软官网">虹软官网</a>
+           	           	<a href="http://weibo.com/arcsoftchina" target="_blank" title="虹软微博">虹软微博</a>        	           		
+          	           	</div>
+          	           	<div class="footer-copyright">
+          	           		<p>©&nbsp;2017&nbsp;arcsoft.com&nbsp;&nbsp;浙ICP备11037259号-3</p>
+          	           	</div>
+          	           </div>
+          </footer> -->
 </html>

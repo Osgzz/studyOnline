@@ -6,7 +6,7 @@
 }
 .audioplayer
 {
-	height: 2.5em; /* 40 */
+	height:0.4rem; /* 40 */
 	color: #fff;
 	background: #333;
 	position: relative;
@@ -16,7 +16,7 @@
 /* fallback case (read Adaptiveness chapter) */
 .audioplayer-mini
 {
-	width: 2.5em; /* 40 */
+	width: 0.4rem; /* 40 */
 	margin: 0 auto;
 }
 
@@ -27,7 +27,7 @@
 }
 .audioplayer-playpause
 {
-	width: 2.5em; /* 40 */
+	width: 0.4rem; /* 40 */
 	height: 100%;
 	text-align: left;
 	text-indent: -9999px;
@@ -55,25 +55,25 @@
 {
 	width: 0;
 	height: 0;
-	border: 0.5em solid transparent; /* 8 */
+	border: 0.08rem solid transparent; /* 8 */
 	border-right: none;
 	border-left-color: #fff;
 	content: '';
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin: -0.5em 0 0 -0.25em; /* 8 4 */
+             top: 15%;
+	left: 30%;
+	margin: 0.08rem 0 0 0.04rem; /* 8 4 */
 }
 
 /* "pause" icon when audio is being played */
 .audioplayer-playing .audioplayer-playpause a
 {
-	width: 0.75em; /* 12 */
-	height: 0.75em; /* 12 */
+	width: 0.12rem; /* 12 */
+	height: 0.14rem; /* 12 */
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	margin: -0.375em 0 0 -0.375em; /* 6 */
+	margin: 0.06rem 0 0 0.06rem; /* 6 */
 }
 .audioplayer-playing .audioplayer-playpause a:before,
 .audioplayer-playing .audioplayer-playpause a:after
@@ -95,21 +95,23 @@
 }
 .audioplayer-time
 {
-	width: 4.375em; /* 70 */
+	width: 0.7rem; /* 70 */
 	height: 100%;
-	line-height: 2.5em; /* 40 */
+	line-height: 0.4rem; /* 40 */
 	text-align: center;
 	z-index: 2;
 	top: 0;
+	font-size: 0.14rem;
 }
 .audioplayer-time-current
 {
 	border-left: 1px solid #111;
-	left: 2.5em; /* 40 */
+	left: 0.4rem; /* 40 */
 }
 .audioplayer-time-duration
 {
-	right: 2.5em; /* 40 */
+	right: 0.4rem; /* 40 */
+	/*top: -0.15rem;*/
 }
 .audioplayer-novolume .audioplayer-time-duration
 {
@@ -118,18 +120,18 @@
 }
 .audioplayer-bar
 {
-	height: 0.875em; /* 14 */
+	height: 0.14rem; /* 14 */
 	background-color: #222;
 	cursor: pointer;
 	z-index: 1;
 	top: 50%;
-	right: 6.875em; /* 110 */
-	left: 6.875em; /* 110 */
-	margin-top: -0.438em; /* 7 */
+	right: 1.1rem; /* 110 */
+	left: 1.1rem; /* 110 */
+	margin-top: 0.07rem; /* 7 */
 }
 .audioplayer-novolume .audioplayer-bar
 {
-	right: 4.375em; /* 70 */
+	right: 0.7rem; /* 70 */
 }
 .audioplayer-bar div
 {
@@ -141,11 +143,11 @@
 }
 .audioplayer-volume
 {
-	width: 2.5em; /* 40 */
+	width: 0.4rem; /* 40 */
 	height: 100%;
-	border-left: 1px solid #111;
+	border-left: 0.01rem solid #111;
 	text-align: left;
-	text-indent: -9999px;
+	text-indent:-99.99rem;
 	cursor: pointer;
 	z-index: 2;
 	top: 0;
@@ -153,18 +155,18 @@
 }
 .audioplayer-bar
 {
-	height: 0.875em; /* 14 */
+	height: 0.14rem; /* 14 */
 	background-color: #222;
 	cursor: pointer;
 	z-index: 1;
 	top: 50%;
-	right: 6.875em; /* 110 */
-	left: 6.875em; /* 110 */
-	margin-top: -0.438em; /* 7 */
+	right: 1.1rem; /* 110 */
+	left: 1.1rem; /* 110 */
+	margin-top:-0.07rem; /* 7 */
 }
 .audioplayer-novolume .audioplayer-bar
 {
-	right: 4.375em; /* 70 */
+	right: 0.7rem; /* 70 */
 }
 .audioplayer-bar div
 {
@@ -186,11 +188,11 @@
 }
 .audioplayer-volume
 {
-	width: 2.5em; /* 40 */
+	width: 0.4rem; /* 40 */
 	height: 100%;
-	border-left: 1px solid #111;
+	border-left: 0.01rem solid #111;
 	text-align: left;
-	text-indent: -9999px;
+	text-indent: -99.99rem;
 	cursor: pointer;
 	z-index: 2;
 	top: 0;
@@ -210,8 +212,8 @@
 /* "volume" icon */
 .audioplayer-volume-button a
 {
-	width: 0.313em; /* 5 */
-	height: 0.375em; /* 6 */
+	width: 0.05rem; /* 5 */
+	height:0.06rem; /* 6 */
 	background-color: #fff;
 	display: block;
 	position: relative;
@@ -227,28 +229,29 @@
 }
 .audioplayer-volume-button a:before
 {
+	position: absolute;
 	width: 0;
 	height: 0;
-	border: 0.5em solid transparent; /* 8 */
+	border: 0.08rem solid transparent; /* 8 */
 	border-left: none;
 	border-right-color: #fff;
 	z-index: 2;
-	top: 50%;
-	right: -0.25em;
-	margin-top: -0.5em; /* 8 */
+	top: -0.13rem;
+	right: -0.03rem;
+	margin-top:0.08rem; /* 8 */
 }
 .audioplayer:not(.audioplayer-mute) .audioplayer-volume-button a:after
 {
 	/* "volume" icon by Nicolas Gallagher, http://nicolasgallagher.com/pure-css-gui-icons */
-	width: 0.313em; /* 5 */
-	height: 0.313em; /* 5 */
-	border: 0.25em double #fff; /* 4 */
-	border-width: 0.25em 0.25em 0 0; /* 4 */
-	left: 0.563em; /* 9 */
-	top: -0.063em; /* 1 */
-	-webkit-border-radius: 0 0.938em 0 0; /* 15 */
-	-moz-border-radius: 0 0.938em 0 0; /* 15 */
-	border-radius: 0 0.938em 0 0; /* 15 */
+	width: 0.05rem; /* 5 */
+	height: 0.05rem; /* 5 */
+	border: 0.04rem double #fff; /* 4 */
+	border-width: 0.04rem 0.04rem 0 0; /* 4 */
+	left: 0.09rem; /* 9 */
+	top: -0.01rem; /* 1 */
+	-webkit-border-radius: 0 0.15rem 0 0; /* 15 */
+	-moz-border-radius: 0 0.15rem 0 0; /* 15 */
+	border-radius: 0 0.15rem 0 0; /* 15 */
 	-webkit-transform: rotate( 45deg );
 	-moz-transform: rotate( 45deg );
 	-ms-transform: rotate( 45deg );
@@ -260,11 +263,11 @@
 .audioplayer-volume-adjust
 {
 	width: 100%;
-	height: 6.25em; /* 100 */
+	height: 1.0rem; /* 100 */
 	cursor: default;
 	position: absolute;
 	left: 0;
-	top: -9999px;
+	top: -99.99rem;
 	background: #222;
 }
 .audioplayer-volume:not(:hover) .audioplayer-volume-adjust

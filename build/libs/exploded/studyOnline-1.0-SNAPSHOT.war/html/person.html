@@ -6,63 +6,59 @@
 	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="../css/person.css">
 	<script type="text/javascript" src="../js/jquery-3.1.0.min.js"></script>
+	<!-- 通过js计算出能让,rem布局结合在html上根据不同分辨率设置不同的font-size 
+	      html的font-size=deviceWidth/12.0-->
+	<script type="text/javascript">
+			var deviceWidth = document.documentElement.clientWidth;
+			if(deviceWidth > 1200) deviceWidth = 1280;
+			document.documentElement.style.fontSize = deviceWidth / 12.0 + 'px';
+	</script>
 </head>
 <body>
-<div id="header">
-	<div class="top-container clearfix" id="t-nav">
-		<div id="logo" class="logo">
-			<a href="index.html" target="_self" class="hide-text" title="虹软中国"><img src="../img/logo.png"></a>
-		</div>
-		<ul class="nav-item">
-			<li><a href="index.html" target="_self">首页</a></li>
-			<li><a href="course.html" target="_self">课程</a></li>
-		</ul>
-		<!-- logined模块-->
-		<div class="login-area">
-			<ul class="clearfix logined">
-				<!-- 提醒icon -->
-				<li class="remind-wrap">
-					<i class="msg-remind"></i>
-					<a href="#" target="_self">
-						<i class="icon-remind">
-						</i>
-					</a>
-				</li>
-				<!-- 个人icon -->
-				<li class="my-wrap">
-					<a href="#" target="_self">
-						<i class="icon-my">
-						</i>
-					</a>
-				</li>
-			</ul>
+	<div id="header">
+		<div class="top-container clearfix" id="t-nav">
+			 <div id="logo" class="logo">
+			        <a href="index.html" target="_self" class="hide-text" title="虹软中国"><img src="../img/logo.png"></a>
+			 </div>
+			 <ul class="nav-item">
+				 <li><a href="index.html" target="_self">首页</a></li>
+				 <li><a href="#" target="_self">课程</a></li>
+		             </ul>
+		             <!-- logined模块-->
+		             <div class="login-area">
+		                      <ul class="clearfix logined">
+		                           <!-- 提醒icon -->
+		                           <li class="remind-wrap">
+		                           	<i class="msg-remind"></i>
+		                           	<a href="#" target="_self">
+		                           		<i class="icon-remind">
+		                           		</i>
+		                           	</a>
+		                           </li>
+                                               <!-- 个人icon -->
+		                           <li class="my-wrap">
+		                                       <a href="person.html" target="_self  ">
+		                                       	<i class="icon-my">
+		                                       	</i>
+		                                       </a>
+		                           </li>		                      	
+		                      </ul>
 
-		</div>
+		             </div>
 
-		<!-- 搜索框模块 -->
-		<div class="search-wrap" >
-			<!-- 提示标签 -->
-<!-- 			<div id="searchTag" class="searchTag">
-				<a href="" target="_blank">防抖技术</a>
-				<a href="" target="_blank">前景技术</a>
-			</div> -->
-			<!-- 搜索框 -->
-			<form class="search-form" action="#" target="self" id="search-form" autocomplete="off" name="searchName">
-				<input type="text"  class="search-input"  id="search-input" name="q"  >
-				<!-- 搜索icon -->
-				<div class="showhide-search">
+                                  <!-- 搜索框模块 -->
+                                  <div class="search-wrap" >
+                                            <!-- 搜索框 -->
+	                                 <form class="search-form" data-search="top-banner" action="#" target="self" id="search-form">
+	                                        <input id="search-input" class="search-input"  type="text" value=" " name="searchName" autocomplete="off">
+	                                 <!-- 搜索icon -->
+	                                 <div class="showhide-search">
 			             <!-- <button type="submit">,只是一个简单的按钮，input+submit可以提交数据 -->
-				<input type="submit" class="search-input-button" value="" onclick="" /><i class="icon-search"></i>								
-				</div>					
-			</form>
-				<ul id="data-list" class="search-area-result">
-					<li data-key="暗光高清技术">暗光高清技术</li>
-					<li data-key="防抖技术">防抖技术</li>
-					<li data-key="人脸技术">人脸技术</li>
-					<li data-key="HDR技术">HDR技术</li>
-				</ul>		
-		</div>
-
+				<input type="submit" class="search-input-button" value=""/><i class="icon-search"></i>								
+			       </div>	                                        
+	                                 </form>	
+                                 </div>
+                     </div>
 	</div>
 	<div class="mainer">
 		<div class="middle-container" id="m-nav">
