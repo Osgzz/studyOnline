@@ -1,11 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: org.apache.openejb:javaee-api:5.0-1">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.openejb/javaee-api/5.0-1/e70617aac9ef41c6fc16d94d6ed7d398bbe18f4d/javaee-api-5.0-1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/openejb/javaee-api/5.0-1/javaee-api-5.0-1.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.openejb/javaee-api/5.0-1/79daa45b0b506a666da4767abb0f85072adec1af/javaee-api-5.0-1-sources.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>

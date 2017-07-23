@@ -26,11 +26,9 @@
                 /toCustomerLogin = anon
                 /getLessonListWithRouteByJson = anon
                 /getRouteWithResourceById = anon
-                /ddd.swf = anon
-                /FlePaperViewer.swf = anon
-                /documentView.jsp = anon
-                /docUploadCoverAction.jsp = anon
-                /fileUpload.jsp = anon
+                /viewPDF.jsp = anon
+                /a.pdf = anon
+                /pdf/** = anon
                 /logout = logout
 
                 <!-- 登录页允许访问 -->

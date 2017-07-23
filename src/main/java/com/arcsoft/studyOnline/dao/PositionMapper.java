@@ -61,4 +61,6 @@ public interface PositionMapper {
      * @mbg.generated Sun Jun 18 17:34:40 CST 2017
      */
     int updateByExample(@Param("record") Position record, @Param("example") PositionExample example);
+
+    List<Position> selectPositionList();
 }

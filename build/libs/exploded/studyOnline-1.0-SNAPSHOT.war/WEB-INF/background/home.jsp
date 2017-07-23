@@ -224,14 +224,14 @@
                             <!-- 利用data-target指定URL -->
                             <button class="menu-item-left">
                                 <span class="glyphicon glyphicon-triangle-right"></span><a href="javascript:void(0)"
-                                                                                           id="employeeList">用户信息列表</a>
+                                                                                           onclick="addTab('用户信息列表','toEmployeeList')">用户信息列表</a>
                             </button>
                         </li>
                         <li class="list-group-item">
                             <!-- 利用data-target指定URL -->
                             <button class="menu-item-left">
                                 <span class="glyphicon glyphicon-triangle-right"></span><a href="javascript:void(0)"
-                                                                                           id="addEmployee">新增用户</a>
+                                                                                           onclick="addTab('新增用户','toAddEmployee')">新增用户</a>
                             </button>
                         </li>
 
@@ -267,7 +267,7 @@
                         <li class="list-group-item">
                             <button class="menu-item-left">
                                 <span class="glyphicon glyphicon-triangle-right"></span><a href="javascript:void(0)"
-                                                                                           onclick="addTab('添加课程学习路线', 'toAddRoute')">添加课程学习路线</a>
+                                                                                           onclick="addTab('添加子课程', 'toAddRoute')">添加子课程</a>
                             </button>
                         </li>
 

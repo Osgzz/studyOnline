@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>添加学习路线</title>
+    <title>添加子课程</title>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.1.0.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/ext/bootstrap/js/bootstrap.min.js"></script>
     <link href="${pageContext.request.contextPath}/ext/bootstrap/css/bootstrap.min.css" type="text/css"
@@ -40,6 +40,13 @@
 
 
         <div class="form-group">
+            <label class="col-sm-1 control-label" for="routeName">子课程名称：</label>
+            <div class="col-sm-2">
+                <input id="routeName" type="text" name="routeName" class="form-control" placeholder="子课程名称">
+            </div>
+        </div>
+
+        <div class="form-group">
             <label class="col-sm-1 control-label" for="lessonId">课程名称：</label>
             <div class="col-md-2">
                 <select id="lessonId" class="form-control" name="lessonId">
@@ -51,15 +58,6 @@
             </div>
         </div>
 
-
-        <div class="form-group">
-            <label class="col-sm-1 control-label" for="routeName">学习路径名称：</label>
-            <div class="col-sm-2">
-                <input id="routeName" type="text" name="routeName" class="form-control" placeholder="学习路径名称">
-            </div>
-        </div>
-
-
         <div class="form-group">
             <label class="col-sm-1 control-label" for="datetimepicker">发布时间：</label>
             <div class="col-sm-2">
@@ -70,7 +68,7 @@
 
 
         <div class="form-group">
-            <label class="col-sm-1 control-label" for="routeCover">学习路径封面：</label>
+            <label class="col-sm-1 control-label" for="routeCover">子课程封面：</label>
             <input type="file" id="routeCover" name="routeCover"/>
         </div>
 

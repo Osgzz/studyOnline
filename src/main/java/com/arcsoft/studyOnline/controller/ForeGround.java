@@ -6,6 +6,7 @@ import com.arcsoft.studyOnline.bean.RouteWithResource;
 import com.arcsoft.studyOnline.service.EmployeeService;
 import com.arcsoft.studyOnline.service.LessonService;
 import com.arcsoft.studyOnline.service.RouteService;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -47,6 +48,7 @@ public class ForeGround {
         Employee employee = employeeService.getEmployeeByUsername(username);
         if (employee != null) {
             if (employee.getPassword().equals(password)) {
+                model.addAttribute("employee",employee);
                 List<LessonWithRoute> lessonWithRouteList = lessonService.selectLessonListWithRoute();
                 model.addAttribute("lessonList", lessonWithRouteList);
                 return "customer";
@@ -78,5 +80,10 @@ public class ForeGround {
         return "video";
     }
 
-
+    @RequestMapping("/toPerson")
+    public String toPerson(Model model,Integer id){
+        Employee employee = employeeService.selectEmployeeById(id);
+        model.addAttribute("employee",employee);
+        return "person";
+    }
 }

@@ -8,13 +8,6 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/ext/bootstrap/js/bootstrap.min.js"></script>
     <link href="${pageContext.request.contextPath}/ext/bootstrap/css/bootstrap.min.css" type="text/css"
           rel="stylesheet">
-    <script>
-        $(function () {
-            $("#cancel").click(function () {
-                window.location = "/toLessonList";
-            })
-        })
-    </script>
 </head>
 <body>
 
@@ -51,7 +44,7 @@
             <textarea style="width: 600px" id="detail" name="detail" class="form-control col-sm-6" rows="3">${lesson.detail}</textarea>
         </div>
         <input class="btn btn-success col-sm-offset-1" type="submit" value="提交"/>
-        <button id="cancel" class="btn btn-danger">取消</button>
+        <a id="cancel" href="${pageContext.request.contextPath}/toLessonList" class="btn btn-danger">取消</a>
     </form>
 </div>
 
