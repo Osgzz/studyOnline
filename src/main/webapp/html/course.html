@@ -5,16 +5,24 @@
 	<title>虹软中国</title>
 	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="../css/course.css">
+	<script type="text/javascript" src="../js/jquery-3.1.0.min.js"></script>
+	<!-- 通过js计算出能让,rem布局结合在html上根据不同分辨率设置不同的font-size 
+	      html的font-size=deviceWidth/12.0-->
+	<script type="text/javascript">
+			var deviceWidth = document.documentElement.clientWidth;
+			if(deviceWidth > 1200) deviceWidth = 1280;
+			document.documentElement.style.fontSize = deviceWidth / 12.0 + 'px';
+	</script>	
 </head>
 <body>
 	<div id="header">
 		<div class="top-container clearfix" id="t-nav">
 			 <div id="logo" class="logo">
-			        <a href="/" target="_self" class="hide-text" title="虹软中国"><img src="../img/logo.png"></a>
+			        <a href="index.html" target="_self" class="hide-text" title="虹软中国"><img src="../img/logo.png"></a>
 			 </div>
 			 <ul class="nav-item">
-				 <li><a href=" " target="_self">首页</a></li>
-				 <li><a href=" " target="_self">课程</a></li>
+				 <li><a href="index.html" target="_self">首页</a></li>
+				 <li><a href="#" target="_self">课程</a></li>
 		             </ul>
 		             <!-- logined模块-->
 		             <div class="login-area">
@@ -22,14 +30,14 @@
 		                           <!-- 提醒icon -->
 		                           <li class="remind-wrap">
 		                           	<i class="msg-remind"></i>
-		                           	<a href="#" target="_blank">
+		                           	<a href="#" target="_self">
 		                           		<i class="icon-remind">
 		                           		</i>
 		                           	</a>
 		                           </li>
                                                <!-- 个人icon -->
 		                           <li class="my-wrap">
-		                                       <a href="#" target="_blank">
+		                                       <a href="person.html" target="_self  ">
 		                                       	<i class="icon-my">
 		                                       	</i>
 		                                       </a>
@@ -41,13 +49,14 @@
                                   <!-- 搜索框模块 -->
                                   <div class="search-wrap" >
                                             <!-- 搜索框 -->
-	                                 <div class="search-area" data-search="top-banner">
-	                                        <input id="search-input" class="search-input"  type="text" value=" ">
-	                                 </div>
+	                                 <form class="search-form" data-search="top-banner" action="#" target="self" id="search-form">
+	                                        <input id="search-input" class="search-input"  type="text" value=" " name="searchName" autocomplete="off">
 	                                 <!-- 搜索icon -->
 	                                 <div class="showhide-search">
-	                                           <a href="" target="_blank"><i class="icon-search"></i></a>
-	                                 </div>
+			             <!-- <button type="submit">,只是一个简单的按钮，input+submit可以提交数据 -->
+				<input type="submit" class="search-input-button" value=""/><i class="icon-search"></i>								
+			       </div>	                                        
+	                                 </form>	
                                  </div>
                      </div>
 	</div>
@@ -94,8 +103,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="container">
-			<div class="course-list">
+		<div class="container clearfix">
+			<div class="course-list clearfix">
 				<ul>
 			                      <div class="index-card-container">
 			                      	<a href="" target="_blank" class="course-card">
