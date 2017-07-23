@@ -1460,7 +1460,7 @@
       <workItem from="1500445317757" duration="19711000" />
       <workItem from="1500529032393" duration="13907000" />
       <workItem from="1500713805818" duration="12892000" />
-      <workItem from="1500779109062" duration="13285000" />
+      <workItem from="1500779109062" duration="13355000" />
     </task>
     <task id="LOCAL-00001" summary="1、mybatis逆向工程：新增实体类，mybatis映射文件，dao&#10;2、配置数据库，连接池，springmvc配置文件和spring配置文件&#10;3、集成ueditor富文本编辑器&#10;4、gradle添加依赖包">
       <created>1495539438775</created>
@@ -1606,7 +1606,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="432487000" />
+    <option name="totallyTimeSpent" value="432557000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1292" height="744" extended-state="0" />
