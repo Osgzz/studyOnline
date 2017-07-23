@@ -5,7 +5,7 @@
          // $('#search-input').bind('keyup',function(){
          //          var jqueryInput = $(this);
          //          var searchText = jqueryInput.val();
-         //          $.get('http://localhost:8008/studyOnline-1.0-SNAPSHOT/getLessonListWithRouteByJson?lessonName='+searchText,function(data){
+         //          $.get('http://localhost:8080/studyOnline-1.0-SNAPSHOT/getLessonListWithRouteByJson?lessonName='+searchText,function(data){
          //                 var d = data.lessonName;
          //                 html = ' ';
          //                 $.each(function(i, d) {
@@ -26,7 +26,7 @@
          // // });
          // $(document).delegate('li','click',function(){
          //     var keyword = $(this).text;
-         //     location.href = 'http://localhost:8008/studyOnline-1.0-SNAPSHOT/search?q'+keyword;
+         //     location.href = 'http://localhost:8080/studyOnline-1.0-SNAPSHOT/search?q'+keyword;
          // });
 
 
@@ -105,7 +105,7 @@
 
         
         /*jQuery动态创建推荐内容模块*/
-        $.getJSON('http://localhost:8008/studyOnline-1.0-SNAPSHOT/getLessonListWithRouteByJson',
+        $.getJSON('http://localhost:8080/studyOnline-1.0-SNAPSHOT/getLessonListWithRouteByJson',
               function(json){
                 $(".class-list").children().empty();  
                  for(var i=0;i<7;i++){
@@ -113,7 +113,7 @@
                      //课程id
                      // var vioId = json[i].lessonId;
                      //课程<img />元素
-                     var vioCover = 'http://localhost:8008/studyOnline-1.0-SNAPSHOT/img/lessonImage/'+json[i].lessonCover;
+                     var vioCover = 'http://localhost:8080/studyOnline-1.0-SNAPSHOT/img/lessonImage/'+json[i].lessonCover;
                      //课程<vioTitle/>标题
                      var vioTitle = json[i].lessonName;
 
@@ -124,7 +124,7 @@
                     // $("#course-list").empty();
                          var data = json[i].routes; //获取子课程json数组数据
                              for(var j=0;j<6;j++){
-                               var smallVioCover =  'http://localhost:8008/studyOnline-1.0-SNAPSHOT/img/routeImage/'+data[j].cover;//获取子课程的cover路径
+                               var smallVioCover =  'http://localhost:8080/studyOnline-1.0-SNAPSHOT/img/routeImage/'+data[j].cover;//获取子课程的cover路径
                                var smallVioTitle = data[j].routeName;//获取子课程的name标题
                                $('#course-list').append("<a class='video-item' href='' target='_blank' ><span class='vioImg' ><img src="+smallVioCover+"></span><span class='vioTitle'>"+smallVioTitle+"</span><div class='vioCover'><i class='icon-play'></i></div><span class='viewCount'>120人</span></a> ")
                           }
@@ -139,12 +139,12 @@
             // });
 
         /*jQuery动态创建课程模块内容*/
-        // $.getJSON('http://localhost:8008/studyOnline-1.0-SNAPSHOT/getLessonListWithRouteByJson',
+        // $.getJSON('http://localhost:8080/studyOnline-1.0-SNAPSHOT/getLessonListWithRouteByJson',
         //       function(json){
         //         $("#course-list").children().empty();
         //          for(var j=0;j<6;j++){
         //              //课程<img />元素
-        //              var vioImg = $("img").attr("src",'http://localhost:8008/studyOnline-1.0-SNAPSHOT/img/lessonImage/'+data[i].lessonCover);
+        //              var vioImg = $("img").attr("src",'http://localhost:8080/studyOnline-1.0-SNAPSHOT/img/lessonImage/'+data[i].lessonCover);
         //              //课程<vioTitle/>标题
         //              var vioTitle = data[i].lessonName;
         //              //生成课程模块<a>标签插入到HTML课程模块           

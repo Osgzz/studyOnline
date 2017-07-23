@@ -275,9 +275,47 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-    <select id="selectEmployeeByUsername" resultType="com.arcsoft.studyOnline.bean.Employee">
-        SELECT *
-        FROM employee
-        WHERE name = #{username}
-    </select>
+
+  <select id="selectEmployeeByUsername" resultType="com.arcsoft.studyOnline.bean.Employee">
+      SELECT *
+      FROM employee
+      WHERE name = #{username}
+  </select>
+
+  <select id="selectEmployeeList" resultType="com.arcsoft.studyOnline.bean.Employee">
+    SELECT *
+    FROM employee
+  </select>
+
+  <insert id="insertEmployee" parameterType="com.arcsoft.studyOnline.bean.Employee" useGeneratedKeys="true"
+          keyProperty="id">
+    INSERT INTO
+        employee(name,nickName,password,gender,dept_id,position_id,phone,email)
+    VALUES (#{name},#{nickname},#{password},#{gender},#{deptId},#{positionId},#{phone},#{email})
+  </insert>
+
+  <select id="selectEmployeeById" resultType="com.arcsoft.studyOnline.bean.Employee">
+    SELECT *
+    FROM employee
+    WHERE id = #{id}
+  </select>
+
+  <update id="updateEmployee" parameterType="com.arcsoft.studyOnline.bean.Employee" useGeneratedKeys="true"
+          keyProperty="id">
+    UPDATE employee
+    SET name = #{employee.name},
+        nickName = #{employee.nickname},
+        password = #{employee.password},
+        gender = #{employee.gender},
+        dept_id = #{employee.deptId},
+        position_id = #{employee.positionId},
+        phone = #{employee.phone},
+        email = #{employee.email}
+    WHERE id = #{employee.id}
+  </update>
+
+  <delete id="delEmployee">
+    DELETE employee FROM employee
+    WHERE id = #{id}
+  </delete>
 </mapper>

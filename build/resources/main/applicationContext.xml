@@ -41,6 +41,7 @@
     <bean id="viewRecord" class="com.arcsoft.studyOnline.bean.ViewRecord"/>
     <bean id="lessonWithRoute" class="com.arcsoft.studyOnline.bean.LessonWithRoute"/>
     <bean id="routeWithResource" class="com.arcsoft.studyOnline.bean.RouteWithResource"/>
+    <bean id="department" class="com.arcsoft.studyOnline.bean.Department"/>
 
 
     <import resource="spring-mybatis.xml"/>

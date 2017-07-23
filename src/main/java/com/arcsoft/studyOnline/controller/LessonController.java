@@ -134,6 +134,7 @@ public class LessonController {
         return lessonWithRouteList;
     }
 
+
     /**
      * @param model 相当于request
      * @return 查询课程信息和课程及其子课程信息，跳转到页面course.jsp页面
@@ -176,5 +177,6 @@ public class LessonController {
         map.put("lessonWithRouteList", lessonWithRouteList);
         return map;
     }
+
 
 }

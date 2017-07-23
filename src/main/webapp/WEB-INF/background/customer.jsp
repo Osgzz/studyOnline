@@ -44,7 +44,7 @@
                 </li>
                 <!-- 个人icon -->
                 <li class="my-wrap">
-                    <a href="#" target="_blank">
+                    <a href="${pageContext.request.contextPath}/toPersonMessage?id=${employee.id}" target="_blank">
                         <i class="icon-my">
                         </i>
                     </a>

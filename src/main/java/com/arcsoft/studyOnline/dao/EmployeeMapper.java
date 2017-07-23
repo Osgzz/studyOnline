@@ -63,4 +63,18 @@ public interface EmployeeMapper {
     int updateByExample(@Param("record") Employee record, @Param("example") EmployeeExample example);
 
     Employee selectEmployeeByUsername(String username);
+
+    List<Employee> selectEmployeeList();
+
+    void insertEmployee(Employee employee);
+
+    Employee selectEmployeeById(Integer id);
+
+    void updateEmployee(@Param("employee") Employee employee);
+
+    void delEmployee(Integer id);
+
+    void updateEmployeePassword(Employee employee);
+
+    void updateEmployeeInfo(@Param("employee")Employee employee);
 }

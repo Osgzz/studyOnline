@@ -61,4 +61,6 @@ public interface DepartmentMapper {
      * @mbg.generated Mon Jul 17 21:15:39 CST 2017
      */
     int updateByExample(@Param("record") Department record, @Param("example") DepartmentExample example);
+
+    List<Department> selectDepartmentList();
 }
