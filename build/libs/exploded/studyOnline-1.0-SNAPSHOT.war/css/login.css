@@ -1,60 +1,71 @@
 .sign-wrap {
     height: 100%;
     width: 100%;    
-    border-bottom: 0 0 2px rgba(0,0,0,.5);
+    border-bottom: 0 0 0.02rem rgba(0,0,0,.5);
 }
 .sign-head{
      overflow: hidden;
-     box-shadow: 0 0 2px rgba(0,0,0,.5);
-     padding: 5px 20px;
+     box-shadow: 0 0 0.02rem rgba(0,0,0,.5);
+     padding: 0.05rem 0.2rem;
      background-color: #fff;
      z-index: 128;
+     height: 20%;
 }
 .logo-wrapper{
       float: left;
-      width: 70px;
-      height: 40px;
+      width: 1.7rem;
+      /*margin-top: 0.3rem;*/
+      height: 0.5rem;
+}
+.sign-logo{
+     float: left;
+}
+.sign-logo img{
+    float: left;
+    width: 1.7rem;
 }
 .sign-content {
-     width: 375px;
+     width: 4.5rem;
      background: #fff;
      position: absolute;
-     top: 42%;
-     left: 50%;
-     margin:-187.5px 0 0 -187.5px;
-     padding: 15px;
+     margin: 0.5rem 0;
+     padding: 0 4.0rem;
 /*     z-index: 1;*/
 }
 
 .sign-head ul{
-    padding: 1px 0 0 38px;
+    padding: 0.1rem 0 0 0.38rem;
     float: right;
+    margin: 0;
 }
 
 .sign-head ul li{
+    float: left;
     display: inline-block;
     padding: 0.5em 1.5em;
     color: #6CC0E5;
-    border: 1px solid #90455A;
-    border-radius: 3px;
+    border: 0.01rem solid #af717d;
+    border-radius: 0.03rem;
     text-decoration: none;
-    top: 1px;
+    font-size: 0.16rem;
+    line-height: 100%;
+    margin-right: 0.1rem;
 }
 
 .sign-head ul li:hover {
     color: white;
-    background-color: #90455A;
+    background-color: #af717d;
     cursor: pointer;
 }
 .sign-head ul li:active {
     color: white;
-    background-color: #90455A;
+    background-color: #af717d;
     cursor: pointer;
 }
 
 .sign-head ul .on{
     color: white;
-    background-color: #90455A;
+    background-color: #af717d;
     cursor: pointer;
 }
 
@@ -63,17 +74,18 @@
 }
 
 .login-form, .register-form {
-    padding-top: 20px;
-    width: 70%;
+    padding-top:0.2rem;
+    width: 90%;
     height: 100%;
-    margin: 0 auto;
+    margin:  auto;
 }
 
 .form-wrapper {
     width: 100%;
-    border: 1px solid rgba(0, 0, 0,0.30);
-    border-radius: 3px;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+    /*height: 9.0rem;*/
+    border: 0.01rem solid rgba(0, 0, 0,0.30);
+    border-radius: 0.03rem;
+    box-shadow: 0 0.01rem 0.03rem rgba(0, 0, 0, 0.25);
     background-color: #fff;
 }
 
@@ -84,25 +96,28 @@
 
 .form-heading {
     padding: 1em;
+    font-size: 0.18rem;
+    font-weight: 300;
 }
 
 .field-wrapper {
     width: 100%;
     position: relative;
-    padding-top: 1.0em;
-    border-top: 1px solid rgba(0,0,0,0.30);
+    /*padding-top: 1.0em;*/
+    border-top: 0.01rem solid rgba(0,0,0,0.30);
     background-color: #fff;
 }
 
 .field-input  {
       position: relative;
-      padding: 20px 16px;
-      line-height: 16px;/*input行高*/
-      width: 91.55%;
+      padding: 0.2rem 0.16rem;
+      line-height: 0.16rem;/*input行高*/
+      width: 91%;
       color: rgba(0,0,0,1.0);
       border: none;
       outline: 0; /*输入框轮廓样式*/
       letter-spacing: 0.05em; /*输入字距样式*/
+      font-size: 0.14rem;
 }
 
 /*focus样式*/
@@ -115,10 +130,11 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      padding: 16px;
-      padding-top: 20px;
-      padding-bottom: 0px;
+      display: block;
+      /*width: 100%;*/
+      padding: 0.16rem;
+      padding-top: 0.2rem;
+      padding-bottom: 0;
       margin: 0;
       z-index: 1;
       font-size: .8em;
@@ -126,6 +142,7 @@
       font-weight: 400;
       user-select: none;
       cursor: text;
+      font-size: 0.14rem;
 }
 
 
@@ -134,31 +151,35 @@
     width:50%;
     display: block;
     border:none;
-    float: left;
-    margin-right: 20px;
+    /*float: right;*/
+    /*margin-right: 0.2rem;*/
+    text-align: center;
+   /* z-index: 9999;*/
 }
 
 .verify-code{
-    width: 40px;
-    height: 80px;
+    width: 0.4rem;
+    height: 0.8rem;
 }
 
 .submit-btn-wrapper {
-    padding: 2em 1em;
-    margin: auto;
+    padding: 0.12em 0.21em;
+    margin: 0.3rem 0.2rem;
+    /*float: left;*/
     width: 80%;
     background-color: #fff;
-    display: flex;
-    justify-content: center;
+    /*display: flex;*/
+    /*justify-content: center;*/
 }
 
 .submit-btn {
     width: 80%;
-    background-color: #90455A;
-    border: 1px solid rgba(0,0,0,0);
+    background-color: #af717d;
+    border: 0.01rem solid rgba(0,0,0,0);
     padding: 0.5em 1em;
-    border-radius: 3px;
+    border-radius: 0.03rem;
     color: white;
     display: block;
     margin: 0 auto;
+    font-size: 0.14rem;
 }

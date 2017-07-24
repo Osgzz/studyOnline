@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: org.openoffice:unoil:2.3.0">
     <CLASSES>
-      <root url="jar://D:/gradleRepo/caches/modules-2/files-2.1/org.openoffice/unoil/2.3.0/ce69fbf5937aa3e7124f21a6d3a11d007cd6f4fd/unoil-2.3.0.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openoffice/unoil/2.3.0/ce69fbf5937aa3e7124f21a6d3a11d007cd6f4fd/unoil-2.3.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

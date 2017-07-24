@@ -273,15 +273,5 @@
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.springframework:spring-jdbc:4.2.4.RELEASE" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.springframework:spring-webmvc:4.2.4.RELEASE" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.springframework:spring-context-support:4.2.4.RELEASE" level="project" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/../../src/main/webapp/WEB-INF/lib" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/../../src/main/webapp/WEB-INF/lib" recursive="false" />
-      </library>
-    </orderEntry>
   </component>
 </module>

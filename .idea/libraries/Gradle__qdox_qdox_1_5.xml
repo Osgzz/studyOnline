@@ -1,9 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: qdox:qdox:1.5">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/qdox/qdox/1.5/qdox-1.5.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/qdox/qdox/1.5/4d2db265eddf1576cb9d896abc90c7ba46b48d87/qdox-1.5.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/qdox/qdox/1.5/5ea2b0cbbee49197372893d7b830a339b3573510/qdox-1.5-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>
