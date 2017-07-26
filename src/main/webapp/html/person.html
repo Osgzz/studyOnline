@@ -46,18 +46,34 @@
 
 		             </div>
 
-                                  <!-- 搜索框模块 -->
-                                  <div class="search-wrap" >
-                                            <!-- 搜索框 -->
-	                                 <form class="search-form" data-search="top-banner" action="#" target="self" id="search-form">
-	                                        <input id="search-input" class="search-input"  type="text" value=" " name="searchName" autocomplete="off">
-	                                 <!-- 搜索icon -->
-	                                 <div class="showhide-search">
+		<!-- 搜索框模块 -->
+		<div class="search-wrap" >
+			<!-- 提示标签 -->
+			<div id="searchTag" class="searchTag">
+				<a href="" target="_blank">防抖技术</a>
+				<a href="" target="_blank">前景技术</a>
+			</div>
+			<!-- 搜索框 -->
+			<form class="search-form" action="/studyOnline-1.0-SNAPSHOT/selectLessonByNameWithJson" target="_blank" id="search-form">
+				<input type="text"  class="search-input"  id="search-input" name="searchName"  autocomplete="off">
+				<!-- 搜索icon -->
+				<div class="showhide-search">
 			             <!-- <button type="submit">,只是一个简单的按钮，input+submit可以提交数据 -->
-				<input type="submit" class="search-input-button" value=""/><i class="icon-search"></i>								
-			       </div>	                                        
-	                                 </form>	
-                                 </div>
+				<input class="search-input-button" type="submit" value="" onclick=“" /><i class="icon-search"></i>					
+				</div>					
+			</form>
+<!-- 				<ul id="data-list" class="search-area-result">
+					<li data-key="暗光高清技术">暗光高清技术</li>
+					<li data-key="防抖技术">防抖技术</li>
+					<li data-key="人脸技术">人脸技术</li>
+					<li data-key="HDR技术">HDR技术</li>
+				</ul>	 -->	
+		             <div class="suggest" id="search-suggest">
+				<ul id="search-area-result">
+
+				</ul>				             	
+		             </div>
+		</div>
                      </div>
 	</div>
 	<div class="mainer">

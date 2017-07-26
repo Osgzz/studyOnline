@@ -205,6 +205,7 @@
 	line-height: 0.12rem;
 	float: left;
 	border: 0;
+            font-size: 0.14rem;
 	/*为元素设定的宽度和高度决定了它的边框盒*/
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
@@ -379,14 +380,14 @@
 	overflow: hidden;
 	font-size:0.14rem;
 	background-color: rgba(0, 0, 0, .7);
-             z-index: 1111;
+             /*z-index: 111111;*/
 
 	/*background-color:rgba(195, 195, 195, 0)*/
 }
 
 .m-nav-item:hover .sub-nav{   /*滑过一级菜单栏的时候二级菜单栏显示*/
 	display: block;
-	z-index: 3;
+	z-index: 99999;
 }
 
 .sub-nav ul{
@@ -406,6 +407,7 @@
 .sub-nav ul li:hover {
 	color: #fff;
 	background-color:rgba(144, 69, 90, 0.55);
+	z-index: 999;
 }
 
 .sub-nav ul>li a{
@@ -439,7 +441,7 @@
 	background-color: #ffffff;
 	box-shadow: 0 0.04rem 0.08rem 0 rgba(7,17,27,.1);
 	border-radius: 0.04rem;
-	/*	z-index: -1000;*/
+		/*z-index: -1000;*/
 }
 
 .banner {

@@ -46,18 +46,34 @@
 
 		             </div>
 
-                                  <!-- 搜索框模块 -->
-                                  <div class="search-wrap" >
-                                            <!-- 搜索框 -->
-	                                 <form class="search-form" data-search="top-banner" action="#" target="self" id="search-form">
-	                                        <input id="search-input" class="search-input"  type="text" value=" " name="searchName" autocomplete="off">
-	                                 <!-- 搜索icon -->
-	                                 <div class="showhide-search">
+		<!-- 搜索框模块 -->
+		<div class="search-wrap" >
+			<!-- 提示标签 -->
+			<div id="searchTag" class="searchTag">
+				<a href="" target="_blank">防抖技术</a>
+				<a href="" target="_blank">前景技术</a>
+			</div>
+			<!-- 搜索框 -->
+			<form class="search-form" action="/studyOnline-1.0-SNAPSHOT/selectLessonByNameWithJson" target="_blank" id="search-form">
+				<input type="text"  class="search-input"  id="search-input" name="searchName"  autocomplete="off">
+				<!-- 搜索icon -->
+				<div class="showhide-search">
 			             <!-- <button type="submit">,只是一个简单的按钮，input+submit可以提交数据 -->
-				<input type="submit" class="search-input-button" value=""/><i class="icon-search"></i>								
-			       </div>	                                        
-	                                 </form>	
-                                 </div>
+				<input class="search-input-button" type="submit" value="" onclick=“" /><i class="icon-search"></i>					
+				</div>					
+			</form>
+<!-- 				<ul id="data-list" class="search-area-result">
+					<li data-key="暗光高清技术">暗光高清技术</li>
+					<li data-key="防抖技术">防抖技术</li>
+					<li data-key="人脸技术">人脸技术</li>
+					<li data-key="HDR技术">HDR技术</li>
+				</ul>	 -->	
+		             <div class="suggest" id="search-suggest">
+				<ul id="search-area-result">
+
+				</ul>				             	
+		             </div>
+		</div>
                      </div>
 	</div>
 	<div id="main">
@@ -68,28 +84,29 @@
 						<span class="hd l">方向:</span>
 					             <div class="bd">
 							<ul>
-								<li class="course-nav-item on"><a href="" target="_self">全部</a></li>
- 								<li class="course-nav-item"><a href="" target="_self">虹软技术</a></li>
-  								<li class="course-nav-item"><a href="" target="_self">虹软产品</a></li>
+								<li class="course-nav-item-top all on"><a href="#" target="_self">全部</a></li>
+ 								<li class="course-nav-item-top one"><a href="#" target="_self">虹软技术</a></li>
+  								<li class="course-nav-item-top two"><a href="#" target="_self">虹软产品</a></li>
   							</ul>
 						</div>
 					</div>
 					<div class="course-nav-row clearfix">
 						<span class="hd l">分类:</span>
-						<div class="bd">
-							<ul>
-								<li class="course-nav-item on"><a href="" target="_self">全部</a></li>
-				                                	      	<li class="course-nav-item"><a href="" target="_self">暗光高清拍摄</a></li>
-				                                	      	<li class="course-nav-item"><a href="" target="_self">防抖</a></li>
-				                                	      	<li class="course-nav-item"><a href="" target="_self">全景</a></li>
-				                                	      	<li class="course-nav-item"><a href="" target="_self">人脸</a></li>
-				                                	      	<li class="course-nav-item"><a href="" target="_self">HDR</a></li>
-				                                	      	<li class="course-nav-item"><a href="" target="_self">手势识别</a></li>
-				                                	      	<li class="course-nav-item"><a href="" target="_self">场景检测与物体识别</a></li>
-				                                	      	<li class="course-nav-item"><a href="" target="_self">体感</a></li>
-				                                	      	<li class="course-nav-item"><a href="" target="_self">3D立体成像</a></li>
-				                                	      	<li class="course-nav-item"><a href="" target="_self">AR/VR</a></li>
-				                                	      	<li class="course-nav-item"><a href="" target="_self">单摄像头</a></li>				                                	      	
+						<div class="bd" id="tab">
+						             <!-- "全部课程"的子菜单栏 -->
+							<ul class="all">
+								<li class="course-nav-item on"><a href="#" target="_self">全部</a></li>
+				                                	      	<li class="course-nav-item"><a href="#" target="_self">暗光高清拍摄</a></li>
+				                                	      	<li class="course-nav-item"><a href="#" target="_self">防抖</a></li>
+				                                	      	<li class="course-nav-item"><a href="#" target="_self">全景</a></li>
+				                                	      	<li class="course-nav-item"><a href="#" target="_self">人脸</a></li>
+				                                	      	<li class="course-nav-item"><a href="#" target="_self">HDR</a></li>
+				                                	      	<li class="course-nav-item"><a href="#" target="_self">手势识别</a></li>
+				                                	      	<li class="course-nav-item"><a href="#" target="_self">场景检测与物体识别</a></li>
+				                                	      	<li class="course-nav-item"><a href="#" target="_self">体感</a></li>
+				                                	      	<li class="course-nav-item"><a href="#" target="_self">3D立体成像</a></li>
+				                                	      	<li class="course-nav-item"><a href="#" target="_self">AR/VR</a></li>
+				                                	      	<li class="course-nav-item"><a href="#" target="_self">单摄像头</a></li>				                                	      	
 				                                	      	<li class="course-nav-item"><a href="" target="_self">双摄像头</a></li>
 				                                	      	<li class="course-nav-item"><a href="" target="_self">全景相机</a></li>
 				                                	      	<li class="course-nav-item"><a href="" target="_self">智能冰箱</a></li>
@@ -98,34 +115,71 @@
 				                                	      	<li class="course-nav-item"><a href="" target="_self">投影仪</a></li>
 				                                	      	<li class="course-nav-item"><a href="" target="_self">视频直播</a></li>
   							</ul>
+  							<!-- "虹软技术"选项子菜单栏 -->
+  							<ul class="one">
+  								
+  							</ul>
+  							<!-- "虹软产品"选项的子菜单栏 -->
+  							<ul class="two">
+  								
+  							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="container clearfix">
-			<div class="course-list clearfix">
+			<div class="course-list clearfix" id="course-list">
 				<ul>
-			                      <div class="index-card-container">
-			                      	<a href="" target="_blank" class="course-card">
+<!-- 			                      <div class="index-card-container">
+			                      	<a href="#" target="_blank" class="course-card">
 			                      	             <div class="course-card-text">
 				                      		<div class="course-card-top">
-				                      			<h4>防抖技术</h4>
+				                      			<!-- <h4>防抖技术</h4> --
 				                      		</div>
 				                      		<div class="course-card-content">
-				                      			<h3 class="course-card-name">防抖技术课程标题</h3>
+				                      			<h3 class="course-card-name"></h3>
 				                      			<p title="防抖技术课程简介">防抖技术课程简介防抖技术课程简介</p>
-				                      			<div class="course-card-info">
-				                      				<span>类型</span>
-				                      				<span class="course-type">视频</span>
-				                      			</div>
 				                      		</div>			                      	             	
 			                      	             </div>
 			                      		<div class="course-card-cover"></div>
-			                      		<div class="course-card-bg" style="background-image: url(../img/1.png);"></div>
+			                      		<!-- background-image 背景图片div--
+			                      		<div class="course-card-bg"></div>
+			                         	</a>	 		                      	
+			                      </div>-->
+<!-- 			                      <div class="index-card-container">
+			                      	<a href="#" target="_blank" class="course-card">
+			                      	             <div class="course-card-text">
+				                      		<div class="course-card-top">
+
+				                      		</div>
+				                      		<div class="course-card-content">
+
+				                      		</div>			                      	             	
+			                      	             </div>
+			                      		<div class="course-card-cover"></div>
+
+			                      		<div class="course-card-bg"></div>
 			                      	</a>			                      	
 			                      </div>
+
 			                      <div class="index-card-container">
+			                      	<a href="#" target="_blank" class="course-card">
+			                      	             <div class="course-card-text">
+				                      		<div class="course-card-top">
+
+				                      		</div>
+				                      		<div class="course-card-content">
+
+				                      		</div>			                      	             	
+			                      	             </div>
+			                      		<div class="course-card-cover"></div>
+
+			                      		<div class="course-card-bg"></div>
+			                      	</a>			                      	
+			                      </div>			                      
+ -->
+<!-- 			                      <div class="index-card-container">
 			                      	<a href="" target="_blank" class="course-card">
 			                      	             <div class="course-card-text">
 				                      		<div class="course-card-top">
@@ -489,7 +543,7 @@
 			                      		<div class="course-card-cover"></div>
 			                      		<div class="course-card-bg" style="background-image: url(../img/5.png);"></div>
 			                      	</a>			                      	
-			                      </div>					                    					                                            				                      
+			                      </div>	 -->				                    					                                            				                      
 				</ul>
 			</div>
 		</div>
@@ -518,6 +572,7 @@
           	           	</div>
           	           </div>
              </div>
+             <script type="text/javascript" src="../js/course.js"></script>
 </body>
 </html>
 
