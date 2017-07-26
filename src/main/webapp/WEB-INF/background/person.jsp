@@ -139,7 +139,7 @@
                     <h2>账号管理</h2>
                     <span class="line"></span>
                     <div class="amount-info">
-                        <a href="${pageContext.request.contextPath}/toPerson?id=${employee.id}">个人信息</a>
+                        <a href="${pageContext.request.contextPath}/toPersonMessage?id=${employee.id}">个人信息</a>
                         <span class="arr"><i class="icon-arr"></i></span>
                     </div>
                     <div class="amount-info">

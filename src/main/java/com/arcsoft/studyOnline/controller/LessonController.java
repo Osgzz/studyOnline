@@ -4,6 +4,9 @@ import com.arcsoft.studyOnline.bean.Lesson;
 import com.arcsoft.studyOnline.bean.LessonWithRoute;
 import com.arcsoft.studyOnline.service.LessonService;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -149,22 +152,34 @@ public class LessonController {
     }
 
     /**
-     * @param searchName  接收前台提交的课程名参数
-     * @param model 相当于request
+     * @param searchName 接收前台提交的课程名参数
+     * @param model      相当于request
      * @return 跳转到页面 course.jsp
      */
     @RequestMapping("selectLessonByName")
-    public String selectLessonByName(@RequestParam(required = false, defaultValue = "") String searchName, Model model) {
-        List<Lesson> lessonList = lessonService.selectLessonListByName(searchName);
+    public String selectLessonByName(@RequestParam(required = false, defaultValue = "") String searchName, @RequestParam(required = false, defaultValue = "0") Integer start, Model model) {
+        Page<Object> page = PageHelper.startPage(start, 10);
         List<LessonWithRoute> lessonWithRouteList = lessonService.selectLessonListWithRouteByName(searchName);
+        PageInfo<LessonWithRoute> pageInfo = new PageInfo<>(lessonWithRouteList);
+        int pageCount = pageInfo.getPages();
+        List<Lesson> lessonList = lessonService.selectLessonListByName(searchName);
+
         model.addAttribute("lessonList", lessonList);
         model.addAttribute("lessonWithRouteList", lessonWithRouteList);
+        model.addAttribute("pageCount", pageCount);
+        model.addAttribute("start", start);
+        if (start - 1 >= 1) {
+            model.addAttribute("pre", start - 1);
+        }
+        if (start + 1 <= pageCount) {
+            model.addAttribute("next", start + 1);
+        }
         return "course";
     }
 
 
     /**
-     * @param searchName  接收前台提交的课程名参数
+     * @param searchName 接收前台提交的课程名参数
      * @return 返回json数据
      */
     @RequestMapping("selectLessonByNameWithJson")
