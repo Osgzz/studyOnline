@@ -26,7 +26,7 @@
 
 .icon-thumb:before {
 	content: "\e906";
-	color: #707070;
+	color: #fff;
 }
 
 .icon-back:before {
@@ -35,51 +35,61 @@
 
 /*main css*/
 #header {
-	margin: 0;
-	padding: 0;
-	/*	padding-top: 10px;*/
-	/*	height: 120px;*/
-	background:#AF717D;
-	border-bottom: 0 0 2px rgba(0,0,0,.5);
+	padding-top: 0.1rem;
+	height: 100%;
+	background: #fff;
+	/*border-bottom:0 0 2px rgba(0,0,0,.5);*/
 }
-
 .top-container {
 	position: relative;
 	width: auto;
-	margin: 0 auto;
-	padding-right: 20px;
-	height: 60px;
+	padding-right: 0.2rem;
+	height: 0.6rem;
+	background-color: #af717d;
 	z-index: 1000;
 }
 
 /* nav module */
+/*div.logo样式*/
 .logo{
-	margin: 0 20px;
-	height: 40px;
-	/*	width: 200px;*/
+	margin: 0 0.5rem;
+	height: 0.6rem;
+	width: 1.4rem;
 	float: left;
 }
-/*.nav-item ul{
-	margin: 0;
+/*a.logo样式*/
+.hide-text{
+	display: block;
+	width: 1.4rem;
+	height:0.6rem;
 	padding: 0;
-	position: relative;
-	height: 60px;
-	width: 60px;
-}*/
+	margin: 0;
+}
+/*img.log样式*/
+.logo img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.nav-item{
+	   display: inline-block;
+	    margin: 0;
+	    padding: 0;
+	    float: left;
+}
 .logo, .nav-item li{
 	float: left;
 	list-style: none;
-	display: list-item;
 }
 
 .nav-item a{
-	text-decoration: none;
 	display: block;
-	padding: 0 20px;
-	color: #07111b;
-	font-size: 16px;
-	height: 60px;
-	line-height: 60px;
+	text-decoration: none;
+	padding: 0 0.2rem;
+	color: #fff;
+	font-size: 0.16rem;
+	height: 0.6rem;
+	line-height: 0.6rem;
 }
 
 
@@ -88,6 +98,7 @@
 .login-area{
 	float: right;
 	position: relative;
+             height: 100%;
 }
 
 /*ul.logined中li元素为浮动元素，需要清除浮动*/
@@ -103,82 +114,83 @@
 
 .logined{
 	margin:0;
+	padding: 0;
+	height: 100%;
 }
 /*查找logined下的li节点*/
 .logined>li{
 	float: left;
 	position: relative;
 	list-style: none;
+	padding:0.1rem 0;
 }
 
 .logined li>a{
 	padding: 0;
-	height: 60px;
-	line-height: 60px;
-	width: 60px;
+	height: 0.6rem;
+	line-height: 0.6rem;
+	width: 0.6rem;
 	color: #787d82;
 	text-align: center;
 	text-decoration: none;
 }
 .remind-wrap,.my-wrap{
-	height: 60px;
-	width: 60px;
+/*	height: 0.6rem;*/
+	width: 0.6rem;
 }
 
 /* 通知提示css */
 .msg-remind{
 	display: none;
 	position: absolute;
-	width: 8px;
-	height: 8px;
+	width: 0.08rem;
+	height: 0.08rem;
 	background--color:#f01414;
-	right: 14px;
-	top: 14px;
+	right: 0.14rem;
+	top: 0.14rem;
 	border-radius: 50%;
 }
 
 .icon-remind,.icon-my,.icon-search {
 	text-align: center;
 	display: block;
-	font-size: 25px;
-	line-height: 60px;
+	font-size: 0.25rem;
+	line-height: 0.45rem;
 	cursor: pointer;
 }
 .icon-my:before {
 	content: "\e903";
-	color: #ffffff;
+	color: #fff;
 }
 .icon-remind:before {
 	content: "\e904";
-	color: #ffffff;
+	color: #fff;
 }
-
 
 /* search moudle*/
 .search-wrap{
 	position: relative;
 	float: right;
-	margin-right: 18px;
+	margin-right: 0.18rem;
 }
 
-
-.search-area{
+.search-form{
 	float: right;
-	border: 1px solid #d9dde1;
+	border: 0.01rem solid #d9dde1;
 	position: relative;
-	height: 38px;
-	width: 210px;
-	margin:10px 0;
-	padding-right: 30px;
+	height: 0.38rem;
+	width: 2.1rem;
+	margin:0.1rem 0;
+	padding-right: 0.3rem;
 }
 
 .search-input{
 	color: #71777d;
 	background: transparent!important;
 	width: 100%;
-	height: 38px;
-	padding:5px 10px;
-	line-height: 12px;
+	height: 0.38rem;
+	padding:0.05rem 0.1rem;
+	line-height: 0.12rem;
 	float: left;
 	border: 0;
 	/*为元素设定的宽度和高度决定了它的边框盒*/
@@ -188,58 +200,99 @@
 	box-sizing:border-box;
 
 }
+.search-input-button {
+	display: none;
+}
+
 .showhide-search{
-	width: 30px;
-	height: 60px;
-	line-height: 60px;
+	width: 0.3rem
+	height: 0.5rem
+	line-height: 0.6rem;
 	text-align: right;
 	position: absolute;
 	display: inline-block;
-	right: 5px;
+	right: 0.05rem
 	top: 0;
 }
 
 .showhide-search a{
 	text-decoration: none;
 }
+.search-input-button{
+	display: none;
+}
 .icon-search:before {
 	content: "\e902";
-	color: #ffffff;
+	color: #fff;
 }
+
+#search-area-result{
+	position: absolute;
+	left: 0;
+	top: 0.41rem;
+	padding:0.05rem;
+	margin-bottom: 0.2rem;
+	min-width: 2.1rem;/*搜索框宽-搜索按钮*/
+	border: 0.01rem solid #d3d3d3;
+	background-color: #fff;
+	box-shadow: 0 0.04rem 0.08rem rgba(0,0,0,.35);
+	font-size: 0.12rem;
+	display: none;
+	cursor: pointer;
+	overflow: hidden;
+	z-index: 1000;
+}
+
+#search-area-result li{
+	display: block;
+	color: #71777d;
+	font-size: 0.14rem;
+	padding: 0.1rem 0.05rem;
+}
+#search-area-result>li a{
+	text-decoration: none;
+	color: #71777d;	
+}
+
+#search-area-result li:hover{
+	background: #e5e5e5;
+	cursor: pointer;
+}
+
 
 /* course-nav css */
 #main{
 	background-color: #ffffff;
 	padding-top: 0;
-	min-height: 750px;
+	min-height: 7.5rem;
 }
 .wrap{
 	width: 100%;
 	background-color: #ffffff;
-	padding-bottom: 12px;
+	padding-bottom: 0.12rem;
 }
 .top{
-	width: 1200px;
+	width: 100%;
 	margin: auto;
 }
 .course-content{
-	padding-bottom: 12px;
+	padding-bottom: 0.12rem;
 	float: none;
 	width: 100%;
 }
 .course-nav-row{
 	/*	position: relative;*/
-	padding:16px 0 5px;
-	border-bottom:1px solid #edf1f2;
+	padding:0.16rem 0 0.05rem;
+	border-bottom:0.01rem solid #edf1f2;
 }
 /*.course-nav-row.b{
 	margin-bottom: 10px;
 }*/
 .course-nav-row .hd{
-	width: 52px;
-	height: 20px;
-	line-height: 30px;
-	font-size: 14px;
+	width: 0.52rem;
+	height: 0.2rem;
+	line-height: 100%;
+	font-size: 0.14rem;
 	font-weight: 700;
 	color: #07111b;
 	text-align: right;
@@ -249,7 +302,7 @@
 	float: left;
 }
 .course-nav-row .bd{
-	margin-left: 64px;
+	margin-left: 0.64rem;
 }
 .bd ul{
 	margin: 0;
@@ -257,21 +310,22 @@
 }
 .course-nav-item{
 	display: inline-block;
-	margin: 0 4px;
+	margin: 0 0.04rem;
+	float: left;
 }
 .course-nav-item.on a{
 	background:#AF717D;
 	color: #ffffff;
-	border-radius: 2px;
+	border-radius:0.02rem;
 }
 .course-nav-item a{
 	display: block;
 	color: #14191e;
-	font-size: 14px;
+	font-size: 0.14rem;
 	text-decoration: none;
-	line-height: 14px;
-	margin-bottom: 10px;
-	padding:10px;
+	line-height: 100%;
+	margin-bottom: 0.1rem;
+	padding:0.1rem;
 }
 .course-nav-item a:hover{
 	color: #a10f13;
@@ -281,28 +335,50 @@
 .container{
 	background-color: #fff;
 	margin: 0 auto;
-	width: 1200px;
+	width: 100%;
 }
 .course-list{
-	padding:10px 0 20px;
+	padding:0.1rem 0 0.2rem;
+	margin: 0 auto;
 }
 .course-list ul{
-	margin: 0;
+	margin: 0 0.3rem;
 	padding: 0;
 }
+
 .index-card-container{
 	position: relative;
-	width: 220px;
-	height: 228px;
+	width: 2.3rem;
+	height: 2.28rem;
 	float: left;
-	margin-right: 20px;
-	margin-bottom: 50px;
-	border-radius:4px;
+	margin-right: 0.2rem;
+	margin-bottom: 0.5rem;
+	border-radius:0.04rem;
 	z-index: 100;
 	/*box-shadow: 0 4px 8px 0 rgba(28, 29, 29, 0.84)*/
 }
+
+/*1、判断在不同的分辨率的设备下.index-card-container的宽度*/
+
+/*@media screen and (min-width:239px) and (max-width:321px){
+    .index-card-container{
+    	width: 1.90rem;
+    }
+}
+@media screen and (min-width:321px) and (max-width:768px){
+    .index-card-container{
+    	width: 1.85rem;
+    }
+}
+
+@media screen and (min-width:768px){
+    .index-card-container{
+    	width: 2.3rem;
+    }
+}*/
+
 .index-card-container:hover{
-	box-shadow: 0 4px 8px 0 rgba(28, 29, 29, 0.84)
+	box-shadow: 0 0.04rem 0.08rem 0 rgba(28, 29, 29, 0.84)
 }
 .course-card{
 	display: block;
@@ -326,40 +402,40 @@
 	color: #fff;
 }*/
 .course-card-top{
-	height:48px;
-	padding: 0px 20px;
+	height:0.48rem;
+	padding: 0 0.2rem;
 	color: #ffffff;
 	overflow: hidden;
 	background: rgb(0,0,0,0.85);
-	border-bottom: 1px solid #ffffff;
+	border-bottom: 0.01rem solid #ffffff;
 }
 .course-card-top h4{
 	text-align: center;
-	line-height: 20px;
+	line-height: 0.2rem;
 }
 .course-card-content{
-	height: 180px;
-	padding:16px 24px;
+	height: 1.8rem;
+	padding:0.16rem 0.24rem;
 	box-sizing: border-box;
 }
 .course-card-name{
 	text-decoration: none;
-	font-size: 16px;
+	font-size: 0.16rem;
 	color: #ffffff;
-	line-height: 24px;
+	line-height: 0.24rem;
 }
 .course-card-info, .course-card-content p{
-	font-size: 12px;
+	font-size: 0.12rem;
 	color: #ffffff;
-	line-height: 24px;
-	margin: 8px 0;
+	line-height: 0.24rem;
+	margin: 0.08rem 0;
 }
 .course-card-info{
 	position: absolute;
-	bottom: 24px;
-	right: 24px;
-	left: 24px;
-	height: 24px;
+	bottom: 0.24rem;
+	right: 0.24rem;
+	left: 0.24rem;
+	height: 0.24rem;
 	color: #00ffd2;
 	text-align: left;
 }
@@ -372,7 +448,7 @@
 	display: block;
 	width: 100%;
 	height: 100%;
-	border-radius: 4px;
+	border-radius: 0.04rem;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -381,39 +457,42 @@
 	position: absolute;
 	z-index: 0;
 	left: 0;
-	top: 0px;
+	top: 0;
 	right: 0;
 	bottom: 0;
-	border-radius: 4px;
+	border-radius: 0.04rem;
 	background: rgba(20, 25, 30, 0.56);
 	opacity: .9;
 	z-index: -3;
 }
 
 .page{
-	margin: 20px 0;
+	padding: 0 29%;
+	margin: 0.2rem 0;
 	overflow: hidden;
 	clear: both;
 	text-align: center;
+
 }
 .page a {
-	margin: 0 4px;
-	padding: 0 4px;
-	min-width: 24px;
-	line-height: 32px;
-	font-size: 14px;
+	margin: 0 0.04rem;
+	padding: 0 0.04rem;
+	float: left;
+	min-width: 0.24rem;
+	line-height: 100%;
+	font-size: 0.14rem;
 	display: inline-block;
 	color: #4d555d;
 	text-decoration: none;
-	border-radius: 16px;
+	border-radius: 0.16rem;
 }
 .text-page-tag:hover{
-	border-radius: 50px;
+	border-radius: 0.5rem;
 	color: #4d555d;
 	background: #a0a0a0;
 }
 .text-page-tag:active {
-	border-radius: 50px;
+	border-radius: 0.5rem;
 	color: #ffffff;
 	background: #4d555d;
 }
@@ -424,26 +503,26 @@
 	background-color: #AF717D;
 }
 .foot-container{
-	width: 1200px;
+	width: 100%;
 	padding: 0;
 	margin: 0 auto;
 	/*	height: 80px;*/
 }
 .footer-link{
-	padding: 10px 0;
+	padding: 0.1rem 0;
 	margin: 0 auto;
 	text-align: center;
-	border-bottom: 1px solid #d0d6d9;
+	border-bottom: 0.01rem solid #d0d6d9;
 }
 .footer-link a{
 	text-decoration: none;
 	color: #d0d6d9;
-	font-size: 14px;
+	font-size: 0.14rem;
 }
 .footer-copyright{
-	padding: 5px 0 10px;
+	padding: 0.05rem 0 0.1rem;
 	text-align: center;
 	color: #b4bbbf;
-	font-size: 12px;
-	line-height: 14px;
+	font-size: 0.12rem;
+	line-height: 0.14rem;
 }
