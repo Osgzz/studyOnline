@@ -5,6 +5,11 @@
 	<title>登录-注册</title>
 	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="../css/login.css">
+	<script type="text/javascript">
+			var deviceWidth = document.documentElement.clientWidth;
+			if(deviceWidth > 1200) deviceWidth = 1280;
+			document.documentElement.style.fontSize = deviceWidth / 12.0 + 'px';
+	</script>	
 </head>
 <body>
  <div id="sign-wrap" class="sign-wrap">	
@@ -25,7 +30,7 @@
 	             <div class="login-form">
 	                          <div class="form-wrapper">
 			        <div class = "form-header">
-			                    <h2 class="form-heading">登录</h2>
+			                    <p class="form-heading">登录</p>
 			        </div>
 	            
 			        <form action=" " class = "form-horizontal">
@@ -62,10 +67,10 @@
 		 <div class="register-form">
                                       <div class="form-wrapper">
 			        <div class = "form-header">
-			                    <h2 class="form-heading">注册</h2>
+			                    <p class="form-heading">注册</p>
 			        </div>
 	
-			        <form action=" " class = "form-horizontal">
+			        <form action=" " class = "form-horizontal"  autocomplete="off">
 	
 			                   <div class = "field-wrapper">
 			                           <label class="field-label" >账号</label>

@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: org.opensymphony.quartz:quartz:1.6.1">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/opensymphony/quartz/quartz/1.6.1/quartz-1.6.1.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.opensymphony.quartz/quartz/1.6.1/41c8f042d49c65a5889e3fd8b9598e7cfca02c5e/quartz-1.6.1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

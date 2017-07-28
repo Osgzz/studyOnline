@@ -33,69 +33,72 @@
 	position: relative;
 	margin: 0;
 	padding: 0;
-	height: 50px;	
+	height: 0.5rem;	
 	background:#AF717D;
-	border-bottom: 0 0 2px rgba(0,0,0,.5);	
+	border-bottom: 0 0 0.02rem rgba(0,0,0,.5);	
 	z-index: 100;
 }
 
 .container{
-	width: 1200px;
+	width: 100%;
 	margin: 0 auto;
 	padding: 0;
 }
 
 .video-title{
 	/*position: relative;*/
-	padding: 15px 0 0 0;
+	padding: 0.15rem 0 0 0;
 	float: left;
+	margin: 0 auto;
 
 }
 .video-back{
 	text-decoration: none;
 	float: left;
 	text-align: left;
-	line-height:24px;
+	line-height:100%;
 	color: #ffffff; 
 	cursor: pointer;
 }
 
 .icon-back:before {
-  content: "\ea40";
+            content: "\ea40";
+            font-size: 0.2rem;
+            float: left;
 }
 
 
 .video-info{
 	float: left;
 	color: #ffffff;
-	margin: 0;
+	margin: 0 0.2rem;
 	padding: 0;
 }
 
 .video-name{
 	float: left;
-            	font-size: 16px;
-	line-height: 24px;
+            	font-size: 0.16rem;
+	line-height: 100%;
 }
 .video-intro{
 	position: relative;
 	float: left;
 	display: block;
-	font-size: 12px;
-	line-height: 24px;
-	padding-left: 4px;
+	font-size: 0.12rem;
+	line-height: 100%;
+	padding-left: 0.04rem;
 	cursor: default;
 }
 .video-downitem{
 	display: none;
 	position: absolute;
 	top: auto !important;
-	left: 0px;
-	font-size: 12px;
-	width: 345px;
-	line-height: 20px;
-	padding: 10px;
-	border:1px solid #ddd;
+	left: 0;
+	font-size: 0.12rem;
+	width: 3.45rem;
+	line-height: 100%;
+	padding: 0.1rem;
+	border:0.01rem solid #ddd;
 	z-index: 1111;
 	background: rgba(144, 69, 90, 0.85);
 }
@@ -109,6 +112,7 @@
 .login-area{
 	float: right;
 	position: relative;
+	padding: 0.15rem 0 0 0;
 
 }
 
@@ -136,35 +140,35 @@
 
 .logined li>a{
 	padding: 0;
-	height: 60px;
-	line-height: 60px;
-	width: 60px;
+	height: 0.6rem;
+	line-height: 100%;
+	width: 0.6rem;
 	color: #787d82;
 	text-align: center;
 	text-decoration: none;
 }
 .remind-wrap,.my-wrap{
-	height: 60px;
-	width: 60px;
+	height: 100%;
+	width: 0.6rem;
 }
 
 /* 通知提示css */
 .msg-remind{
 	display: none;
 	position: absolute;
-	width: 8px;
-	height: 8px;
+	width: 0.08rem;
+	height: 0.08rem;
 	background--color:#f01414;
-	right: 14px;
-	top: 14px;
+	right: 0.14rem;
+	top: 0.14rem;
 	border-radius: 50%;
 }
 
 .icon-remind,.icon-my,.icon-search {
 	text-align: center;
 	display: block;
-	font-size: 25px;
-	line-height: 60px;
+	font-size:0.25rem;
+	line-height: 100%;
 	cursor: pointer;
 }
 .icon-my:before {
@@ -179,7 +183,7 @@
 /* video stage */
 /* stage css */
 .video-stage{
-	padding: 25px 0;
+	padding: 0.25rem 0;
 	margin: 0;
 /*	background: #262a2d;
 	z-index: 99;*/
@@ -189,14 +193,14 @@
 }
 
 .stage-container{
-	width: 1200px;
+	width: 100%;
 	margin: 0 auto;
 	padding: 0;
 }
 .video-wrap{
-             box-shadow: 0 0 20px #111;
+             box-shadow: 0 0 0.2rem #111;
              margin:0 auto;
-             width: 860px;
+             width: 8.6rem;
 /*             background: #000;*/
 	background: rgb(139, 75, 108);
 }
@@ -215,8 +219,8 @@
 /* ppt stage */
 /* stage css */
 .ppt-stage{
-	height:300px;
-	padding: 25px 0;
+	height:100%;
+	padding: 0.25rem 0;
 	margin: 0;
 	background:#AF717D;
 	background-image:linear-gradient(120deg, #795da3, #90455a);
@@ -230,7 +234,7 @@
 }*/
 .ppt-wrap{
              margin:0 auto;
-             width: 860px;
+             width: 8.6rem;
 /*             background: #000;*/
 }
 .ppt-box{
@@ -241,26 +245,30 @@
 }
 
 .ppt-name{	
-	padding: 20px;
+	padding: 0.2rem;
 	color: #fff;
+	font-size: 0.2rem;
+	font-weight: 700;
 	/*text-align: center;*/
 }
 .ppt-desc{
 	color: #fff;
-	padding: 10px;
-	padding-bottom: 30px;
+	padding: 0.1rem;
+	/*padding-bottom: 0.3rem;*/
 	opacity: 0.7;
+	font-size: 0.16rem;
 }
 .ppt-btn{
 	display: inline-block;
 	color: #fff;
-	padding: 10px;
-	margin: 5px;
+	font-size: 0.14rem;
+	padding: 0.1rem;
+	margin: 0.05rem;
 	background-color: rgab(255,255,255,0.08);
 	border-color: rgba(255,255,255,0.2);
 	border-style: solid;
-	border-width: 1px;
-	border-radius: 5px;
+	border-width: 0.01rem;
+	border-radius: 0.05rem;
 	text-decoration: none;
 	transition: color 0.2s, background-color 0.2s, border-color 0.2s;
 }
@@ -272,8 +280,8 @@
 /* audio stage */
 /*stage css*/
 .audio-stage{
-	height:300px;
-	padding: 25px 0;
+	height:100%;
+	padding: 0.25rem 0;
 	margin: 0;
 	background:#AF717D;
 	background-image:linear-gradient(120deg, #795da3, #90455a);
@@ -287,7 +295,7 @@
 }*/
 .audio-wrap{
              margin:0 auto;
-             width: 860px;
+             width: 8.6rem;
 /*             background: #000;*/
 }
 .audio-box{
@@ -298,15 +306,18 @@
 }
 
 .audio-name{	
-	padding: 20px;
+	padding: 0.2rem;
 	color: #fff;
+	font-size: 0.2rem;
+	font-weight: 700;
 	/*text-align: center;*/
 }
 .audio-desc{
 	color: #fff;
-	padding: 10px;
-	padding-bottom: 30px;
+	padding: 0.1rem;
+	/*padding-bottom: 0.3rem;*/
 	opacity: 0.7;
+	font-size: 0.16rem;
 }
 
 .audio-show{
@@ -317,12 +328,12 @@
 
 /* comment-area css */
 .comment-container{
-	width: 1200px;
+	width: 100%;
 	margin:0 auto;
 }
 .comment-area{
 	position: relative;
-	width: 824px;
+	width: 8.24rem;
 /*	width: 100%;*/
 	margin:0 auto;
 	padding:0;
@@ -331,18 +342,18 @@
 .comment-title{
 /*	float: left;
 */	display: block;
-	border-bottom: 1px solid #D1D6DA;
-	height: 35px;
-	line-height: 35px;
-	padding: 26px 24px;
-	font-size: 16px;
+	border-bottom: 0.01rem solid #D1D6DA;
+	height: 0.35rem;
+	line-height: 100%;
+	padding: 0.26rem 0.24rem;
+	font-size: 0.16rem;
 	color: #4d555d;
 	font-weight: 700;
 	text-align: left;
 }
 .comment-dis{
-	padding-top:24px;
-	width: 824px;
+	padding-top:0.24rem;
+	width: 8.24rem;
 	margin: 0 auto; 
 }
 .my-content{
@@ -353,84 +364,85 @@
 .user-head{
 	display: block;
 	overflow: hidden;
-	padding-top: 10px;
-	margin-left: 24px;
-	margin-right: 26px;
+	padding-top: 0.1rem;
+	margin-left:0.24rem;
+	margin-right: 0.26rem;
 	text-decoration: none;
 	float: left;
 }
 .user-head img {
-	width: 40px;
-	height: 40px;
+	float: left;
+	width: 0.4rem;
+	height: 0.4rem;
 	border-radius: 50%;
 }
 .comment-input{
 	float: left;
-	width:715px;
+	width:7.15rem;
 	position: relative;
-	border: 1px solid #b7bbbf;
-	padding: 8px 10px;
-	border-radius: 2px;
+	border: 0.01rem solid #b7bbbf;
+	padding: 0.08rem 0.1rem;
+	border-radius: 0.02rem;
 	box-sizing: border-box;
 }
 .input-holder{
             display: block;
             width: 97%;
-            height: 62px;
-            font-size: 14px;
-            padding:8px;
-            line-height: 18px;
+            height: 0.62rem;
+            font-size: 0.14rem;
+            padding:0.08rem;
+            line-height: 100%;
             border:0;
 }
 .input-btm{
 	float: right;
-	margin-top: 20px;
-	margin-right: 24px;
-	padding-bottom: 40px;
+	margin-top: 0.2rem;
+	margin-right: 0.24rem;
+	padding-bottom: 0.4rem;
 }
 .comment-btn{
 	background-color:#AF717D;
-	/*display: block;*/
-	font-size: 14px;
-	line-height: 16px;
+	float: left;
+	font-size: 0.14rem;
+	line-height: 100%;
 	cursor: pointer;
-	height: 40px;
-	padding:0 12px;
-	border-radius: 4px;
+	height: 100%;
+	padding:0 0.12rem;
+	border-radius:0.04rem;
 	text-align: center;
 	color: #ffffff;
 }
 
 .list-container{
-	border-top: 1px solid #b7bbbf;
+	border-top: 0.01rem solid #b7bbbf;
 	margin: 0;
 	padding:0;
 }
 .list-container ul{
-	border:1px solid #e8e8e8;
+	border:0.01rem solid #e8e8e8;
 	list-style:none;
 	margin: 0;
-	padding:0 20px;
-	line-height: 26px;
+	padding:0 0.2rem;
+	line-height: 0.2rem;
 }
 .content-item{
-	padding:20px 24px;
-	border-bottom: 1px solid #d9dde1;
+	padding:0.2rem 0.24rem;
+	border-bottom: 0.01rem solid #d9dde1;
 }
 .list-avator{
 	float: left;
-	width: 40px;
-	height: 40px;
-	margin-right: 20px;
+	width: 0.4rem;
+	height: 0.4rem;
+	margin-right: 0.2rem;
 }
 .list-avator img{
 	display: block;
-	width: 40px;
-	height: 40px;
+	width: 0.4rem;
+	height: 0.4rem;
 	border-radius: 50%;
 }
 .list-main{
-	margin-left: 60px;
+	margin-left: 0.6rem;
 	padding:0;
 }
 /*.pl>ul {
@@ -439,14 +451,14 @@
 }*/
 .plbg{
 	background-color: #fafafa;
-	border-bottom: 1px dotted #DCDCDC;
+	border-bottom: 0.01rem dotted #DCDCDC;
 }
 .list-nick{
-	font-size: 14px;
+	font-size: 0.14rem;
 	float: left;
-	line-height: 16px;
-	padding-top: 8px;
-	padding-bottom: 8px;
+	line-height: 100%;
+	padding-top: 0.08rem;
+	padding-bottom: 0.08rem;
 }
 .list-nick a{
 	color: #4d555d;
@@ -455,17 +467,17 @@
 }
 .list-time{
 	float: right;
-	font-size: 14px;
+	font-size: 0.14rem;
 	color: #4d555d;
 }
 .plul{
-	padding-bottom:10px;
+	padding-bottom:0.1rem;
 }
 .list-content{
-	margin-top: 3px;
-	font-size:14px;
+	margin-top: 0.03rem;
+	font-size:0.14rem;
 	color: #14191e;
-	line-height: 24px; 
+	line-height: 100%;
 }
 /*.list-btm{
 	position: relative;
@@ -476,7 +488,7 @@
 }*/
 .list-reply{
              float: right;
-	font-size: 12px;
+	font-size: 0.12rem;
 	color: #93999f;
 	cursor: pointer;
 }
@@ -485,10 +497,10 @@
 	float: right;
 	text-decoration: none;
 	color: #93999f;
-	font-size: 12px;
+	font-size: 0.12rem;
 }
 .list-praise i {
-	font-size: 16px;
+	font-size: 0.16rem;
 	/*top: 2px;*/
 }
 
@@ -498,7 +510,7 @@
   color: #707070;
 }
 .list-page{
-	margin: 40px 0 60px;
+	margin: 0.4rem 0 0.6rem;
 	padding: 0;
 	overflow: hidden;
 	clear: both;
@@ -506,22 +518,22 @@
 }
 .list-page a{
 	text-decoration: none;
-            margin: 0 4px;
-            padding: 0 4px;
-            min-width: 24px;
-            line-height: 32px;
-            font-size: 14px;
+            margin: 0 0.04rem
+            padding: 0 0.04rem;
+            min-width: 0.24rem;
+            line-height: 100%;
+            font-size: 0.14rem;
             display: inline-block;
             color: #4d555d;
-            border-radius: 16px;
+            border-radius: 0.16rem;
 }
 .text-page-tag:hover{
- 	border-radius: 50px;
+ 	border-radius:0.5rem;
  	color: #4d555d;
  	background: #a0a0a0;
  }
 .text-page-tag:active {
-  	border-radius: 50px;
+  	border-radius: 0.5rem;
  	color: #ffffff;
  	background: #4d555d;	
  }
@@ -533,26 +545,26 @@
 	background-color: #AF717D;
 }
 .foot-container{
-	width: 1200px;
+	width: 100%;
 	padding: 0;
 	margin: 0 auto;
 /*	height: 80px;*/
 }
 .footer-link{
-	padding: 10px 0;
+	padding: 0.1rem 0;
 	margin: 0 auto;
 	text-align: center;
-          border-bottom: 1px solid #d0d6d9;
+          border-bottom: 0.01rem solid #d0d6d9;
 }
 .footer-link a{
 	text-decoration: none;
 	color: #d0d6d9;
-	font-size: 14px;
+	font-size: 0.14rem;
 }
 .footer-copyright{
-	padding: 5px 0 10px;
+	padding: 0.05rem 0 0.1rem;
 	text-align: center;
 	color: #b4bbbf;
-	font-size: 12px;
-	line-height: 14px;
+	font-size: 0.12rem;
+	line-height: 100%;
 }

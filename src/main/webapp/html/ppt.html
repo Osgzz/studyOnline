@@ -6,6 +6,11 @@
 	<link rel="stylesheet" type="text/css" href="../css/content.css">
 	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="../video-js-5.11.4/video-js.css">
+	<script type="text/javascript">
+			var deviceWidth = document.documentElement.clientWidth;
+			if(deviceWidth > 1200) deviceWidth = 1280;
+			document.documentElement.style.fontSize = deviceWidth / 12.0 + 'px';
+	</script>	
 </head>
 <body>
 	<div id="header">

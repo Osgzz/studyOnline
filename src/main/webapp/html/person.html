@@ -46,42 +46,64 @@
 
 		             </div>
 
-                                  <!-- 搜索框模块 -->
-                                  <div class="search-wrap" >
-                                            <!-- 搜索框 -->
-	                                 <form class="search-form" data-search="top-banner" action="#" target="self" id="search-form">
-	                                        <input id="search-input" class="search-input"  type="text" value=" " name="searchName" autocomplete="off">
-	                                 <!-- 搜索icon -->
-	                                 <div class="showhide-search">
+		<!-- 搜索框模块 -->
+		<div class="search-wrap" >
+			<!-- 提示标签 -->
+			<div id="searchTag" class="searchTag">
+				<a href="" target="_blank">防抖技术</a>
+				<a href="" target="_blank">前景技术</a>
+			</div>
+			<!-- 搜索框 -->
+			<form class="search-form" action="/studyOnline-1.0-SNAPSHOT/selectLessonByNameWithJson" target="_blank" id="search-form">
+				<input type="text"  class="search-input"  id="search-input" name="searchName"  autocomplete="off">
+				<!-- 搜索icon -->
+				<div class="showhide-search">
 			             <!-- <button type="submit">,只是一个简单的按钮，input+submit可以提交数据 -->
-				<input type="submit" class="search-input-button" value=""/><i class="icon-search"></i>								
-			       </div>	                                        
-	                                 </form>	
-                                 </div>
+				<input class="search-input-button" type="submit" value="" onclick=“" /><i class="icon-search"></i>					
+				</div>					
+			</form>
+<!-- 				<ul id="data-list" class="search-area-result">
+					<li data-key="暗光高清技术">暗光高清技术</li>
+					<li data-key="防抖技术">防抖技术</li>
+					<li data-key="人脸技术">人脸技术</li>
+					<li data-key="HDR技术">HDR技术</li>
+				</ul>	 -->	
+		             <div class="suggest" id="search-suggest">
+				<ul id="search-area-result">
+
+				</ul>				             	
+		             </div>
+		</div>
                      </div>
 	</div>
-	<div class="mainer">
-		<div class="middle-container" id="m-nav">
+	<div class="mainer clearfix">
+		<div class="middle-container clearfix" id="m-nav">
 		        <div class="left-wrap">
 		        	<div class="avator-wrap">
 		        		<div class="avator-mode"><img src="../img/1.png"></div>
 		        		<div class="desc-mode"><p>Siesta</p></div>
 		        	</div>
-		        	<div class="amount-wrap">
-		        		<h2>账号管理</h2>
-		        		<span class="line"></span>
-		        		<div class="amount-info">
-		        			<a href="">个人信息</a>
-		        			<span class="arr"><i class="icon-arr"></i></span>
-		        		</div>
-		        	</div>
+	                <div class="amount-wrap">
+	                    <h2>账号管理</h2>
+	                    <span class="line"></span>
+	                    <div class="amount-info clearfix">
+	                        <a href="#">个人信息</a>
+	                        <span class="arr"><i class="icon-arr"></i></span>
+	                    </div>
+	                    <div class="amount-info clearfix">
+	                        <a href="#">修改密码</a>
+	                        <span class="arr"><i class="icon-arr"></i></span>
+	                    </div>
+	                </div>
+	            </div>
 		        </div>
 		        <div class="right-wrap">
 		        	<div class="setting-wrap">
 		        	           <div class="edit-form" style="none"></div>
-		        		<div class="info-title clearfix">
-		        			<h2>个人信息</h2>
-		        		</div>
+			                    <div class="info-title clearfix">
+			                        <h2>个人信息</h2>
+			                        <a class="edit-info" href="javascript:void(0)" id="modifyPerson"><i class="icon-edit">编辑</i></a>
+			                    </div>
 		        		<span class="line"></span>
 		        		<form class="info-wrap">
 		        			<div class="info-box clearfix">
@@ -112,28 +134,28 @@
 		        				<label class="pull-left">昵称</label>
 		        				<div class="pull-left">
 			        				<input type="audio" class="form-input" name="nick-name" >Siesta
-				        			<a class="edit-info"><i class="icon-edit">编辑</i></a>
+				        			
 		        				</div>
 		        			</div>
 		        			<div class="info-box clearfix">
 		        				<label class="pull-left">账号密码</label>
 		        				<div class="pull-left">
 			        				<input type="password" class="form-input" name="password" >1234abc
-				        			<a class="edit-info"><i class="icon-edit">编辑</i></a>
+				        			
 		        				</div>
 		        			</div>		        			
 		        			<div class="info-box clearfix">
 		        				<label class="pull-left">手机号码</label>
 		        				<div class="pull-left">
 			        				<input type="audio" class="form-input" name="phone" >13912345678
-				        			<a class="edit-info"><i class="icon-edit">编辑</i></a>
+				        			
 		        				</div>
 		        			</div>	
 		        			<div class="info-box clearfix">
 		        				<label class="pull-left">邮箱地址</label>
 		        				<div class="pull-left">
 			        				<input type="audio" class="form-input" name="email-address" >1234abc@qq.com
-				        			<a class="edit-info"><i class="icon-edit">编辑</i></a>
+				        			
 		        				</div>
 		        			</div>			        					        			                                                                
 		        		</form>
@@ -142,7 +164,7 @@
 		</div>
 
           </div> 
-          <div id="footer">
+	<div id="footer">
           	           <div class="foot-container">
           	           	<div class="footer-link">
           	           		<a href="http://www.arcsoft.com.cn" target="_blank" title="虹软官网">虹软官网</a>
@@ -152,8 +174,8 @@
           	           		<p>©&nbsp;2017&nbsp;arcsoft.com&nbsp;&nbsp;浙ICP备11037259号-3</p>
           	           	</div>
           	           </div>
-          </div>
-<!-- <script type="text/javascript" src="../js/index.js"></script> -->
+             </div>
+	<script type="text/javascript" src="../js/index.js"></script>
 </body>
 
 </html>

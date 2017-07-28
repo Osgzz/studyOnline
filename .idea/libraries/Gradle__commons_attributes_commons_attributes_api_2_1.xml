@@ -1,9 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: commons-attributes:commons-attributes-api:2.1">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/commons-attributes/commons-attributes-api/2.1/commons-attributes-api-2.1.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-attributes/commons-attributes-api/2.1/bd9c2942a1d3e7ed4dd142953bc6c1309697fab0/commons-attributes-api-2.1.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-attributes/commons-attributes-api/2.1/1c44b4ed0542ad1857aab16d65c7c1a3c9c4795d/commons-attributes-api-2.1-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>
