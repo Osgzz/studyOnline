@@ -138,11 +138,11 @@
                 <div class="amount-wrap">
                     <h2>账号管理</h2>
                     <span class="line"></span>
-                    <div class="amount-info">
+                    <div class="amount-info clearfix">
                         <a href="${pageContext.request.contextPath}/toPerson?id=${employee.id}">个人信息</a>
                         <span class="arr"><i class="icon-arr"></i></span>
                     </div>
-                    <div class="amount-info">
+                    <div class="amount-info clearfix">
                         <a href="${pageContext.request.contextPath}/toModifyPassword?id=${employee.id}">修改密码</a>
                         <span class="arr"><i class="icon-arr"></i></span>
                     </div>

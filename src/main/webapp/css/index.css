@@ -694,7 +694,7 @@
 	width: 15%;
 	box-sizing: border-box;
 	border-radius:0.04rem;
-	margin-right: 0.2rem;
+	/*margin-right: 0.2rem;*/
 }
 /*学习路径--不同课程颜色不同样式*/
 .type-content-left.fd{
@@ -752,7 +752,7 @@
 	position: relative;
 	display: block;
 	float: left;
-	width:2.31rem;
+	width:18.8%;
 	height: 100%;
 	margin-bottom: 0.21rem;
 	margin-left: 0.24rem;

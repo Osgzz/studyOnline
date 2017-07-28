@@ -145,7 +145,7 @@
 	position: absolute;
 	width: 0.08rem;
 	height: 0.08rem;
-	background--color:#f01414;
+	background-color:#f01414;
 	right: 0.14rem;
 	top: 0.14rem;
 	border-radius: 50%;
@@ -279,6 +279,23 @@
 	cursor: pointer;
 }
 
+/*菜单栏样式*/
+/*1、判断在不同的分辨率的设备下searchTag是否存在*/
+
+@media screen and (min-width:239px) and (max-width:321px){
+    .searchTag{display:none}
+
+}
+
+@media screen and (min-width:321px) and (max-width:768px){
+    .searchTag{display:none}
+
+}
+
+@media screen and (min-width:768px){
+     .searchTag{display:block}
+}
+
 /* course-nav css */
 #main{
 	background-color: #ffffff;
@@ -371,7 +388,7 @@
 
 .index-card-container{
 	position: relative;
-	width: 2.3rem;
+	width: 18.2%;
 	height: 100%;
 	float: left;
 	margin-right: 0.2rem;
@@ -432,7 +449,7 @@
 	color: #ffffff;
 	text-align: center;
 	overflow: hidden;
-	background: rgb(0,0,0,0.85);
+	/*background: rgb(0,0,0,0.85);*/
 	border-bottom: 0.01rem solid #ffffff;
 	/* margin: 0; */
 	font-size: 0.2rem;
