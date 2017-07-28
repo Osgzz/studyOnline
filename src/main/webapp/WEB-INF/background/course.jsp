@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 <%--
   Created by IntelliJ IDEA.
   User: Focus
@@ -103,7 +104,8 @@
                 <c:forEach items="${lessonWithRouteList}" var="lessonWithRoute">
                     <c:forEach items="${lessonWithRoute.routes}" var="route">
                         <div class="index-card-container">
-                            <a href="${pageContext.request.contextPath}/showRoute?routeId=${route.id}" target="_blank" class="course-card">
+                            <a href="${pageContext.request.contextPath}/showRoute?routeId=${route.id}" target="_blank"
+                               class="course-card">
                                 <div class="course-card-text">
                                     <div class="course-card-top">
                                         <h4>${lessonWithRoute.lessonName}</h4>
@@ -128,17 +130,13 @@
         </div>
     </div>
     <div class="page">
-        <a href="">首页</a>
-        <a href="">上一页</a>
-        <a class="text-page-tag" href="">1</a>
-        <a class="text-page-tag" href="">2</a>
-        <a class="text-page-tag" href="">3</a>
-        <a class="text-page-tag" href="">4</a>
-        <a class="text-page-tag" href="">5</a>
-        <a class="text-page-tag" href="">6</a>
-        <a class="text-page-tag" href="">7</a>
-        <a href="">下一页</a>
-        <a href="">尾页</a>
+        <a href="${pageContext.request.contextPath}/selectLessonByName?start=1">首页</a>
+        <c:if test="${not empty pre}"><a href="${pageContext.request.contextPath}/selectLessonByName?start=${pre}">上一页</a></c:if>
+        <c:forEach var="i" begin="1" end="${pageCount}" step="1">
+            <a class="text-page-tag" href="selectLessonByName?start=${i}">${i}</a>
+        </c:forEach>
+        <c:if test="${not empty next}"><a href="${pageContext.request.contextPath}/selectLessonByName?start=${next}">下一页</a></c:if>
+        <a href="${pageContext.request.contextPath}/selectLessonByName?start=${pageCount}">尾页</a>
     </div>
 </div>
 <div id="footer">
