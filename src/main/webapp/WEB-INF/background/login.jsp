@@ -1,3 +1,4 @@
+<!doctype html>
 <%--
   Created by IntelliJ IDEA.
   User: Focus
