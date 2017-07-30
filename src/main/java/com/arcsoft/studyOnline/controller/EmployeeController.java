@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
@@ -138,6 +139,19 @@ public class EmployeeController {
         redirectAttributes.addFlashAttribute("id",id);
         employeeService.updateEmployeeInfo(id,name,nickname,gender,department,position,phone,email,request);
         return "redirect:/toPersonMessage";
+    }
+
+
+    /**
+     * @param excel 上传的员工信息Excel表格
+     * @return 跳转回原页面
+     */
+    @RequestMapping("/listByExcel")
+    public String listByExcel(Model model, @RequestParam("excel") MultipartFile excel, HttpServletRequest request){
+        employeeService.employeeListByExcel(excel,request);
+        List<Employee> employeeList = employeeService.selectEmployeeList();
+        model.addAttribute("employeeList",employeeList);
+        return "addEmployee";
     }
 
 }

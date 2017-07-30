@@ -77,4 +77,6 @@ public interface EmployeeMapper {
     void updateEmployeePassword(Employee employee);
 
     void updateEmployeeInfo(@Param("employee")Employee employee);
+
+    int selectEmployeeCount(@Param("name") String name);
 }

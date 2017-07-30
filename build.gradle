@@ -9,6 +9,9 @@ sourceCompatibility = 1.8
 repositories {
     mavenLocal()
     mavenCentral()
+    maven {
+        url("http://mvnrepository.com/")
+    }
 }
 
 dependencies {
@@ -69,7 +72,14 @@ dependencies {
             "net.sf.ezmorph:ezmorph:1.0.6",
             'net.sf.json-lib:json-lib:2.4:jdk15',
             'com.artofsolving:jodconverter:2.2.1',
-            'servlets.com:cos:05Nov2002'
+            'servlets.com:cos:05Nov2002',
+            //用于excel表
+            'org.apache.poi:poi:3.9',
+            'org.apache.poi:poi-ooxml-schemas:3.9',
+            'dom4j:dom4j:1.6.1',
+            'net.sourceforge.jexcelapi:jxl:2.6',
+            'org.apache.xmlbeans:xmlbeans:2.6.0',
+            'org.apache.poi:poi-ooxml:3.9'
     )
     providedCompile(
             'javax.servlet:servlet-api:2.5',

@@ -336,4 +336,10 @@
     email = #{employee.email}
     WHERE id=#{employee.id}
   </update>
+
+  <select id="selectEmployeeCount" resultType="java.lang.Integer">
+    SELECT count(name)
+    FROM employee
+    WHERE name=#{name}
+  </select>
 </mapper>
