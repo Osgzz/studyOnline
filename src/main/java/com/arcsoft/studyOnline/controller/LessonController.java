@@ -184,11 +184,28 @@ public class LessonController {
      */
     @RequestMapping("selectLessonByNameWithJson")
     @ResponseBody
-    public Map selectLessonByNameWithJson(@RequestParam(required = false, defaultValue = "") String searchName) {
-        Map<String, List> map = new HashMap<>();
-        List<Lesson> lessonList = lessonService.selectLessonListByName(searchName);
+    public Map selectLessonByNameWithJson(@RequestParam(required = false, defaultValue = "") String searchName,@RequestParam(required = false, defaultValue = "0") Integer start) {
+        Map<String, Object> map = new HashMap<>();
+
+        Page<Object> page = PageHelper.startPage(start, 15);
         List<LessonWithRoute> lessonWithRouteList = lessonService.selectLessonListWithRouteByName(searchName);
-        map.put("lessonList", lessonList);
+        PageInfo<LessonWithRoute> pageInfo = new PageInfo<>(lessonWithRouteList);
+        int pageCount = pageInfo.getPages();
+
+
+
+        map.put("start", start);
+        if (start - 1 >= 1) {
+            map.put("pre", start - 1);
+        }else {
+            map.put("pre", 1);
+        }
+        if (start + 1 <= pageCount) {
+            map.put("next", start + 1);
+        }else {
+            map.put("next", pageCount);
+        }
+        map.put("pageCount", pageCount);
         map.put("lessonWithRouteList", lessonWithRouteList);
         return map;
     }
