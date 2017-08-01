@@ -29,7 +29,7 @@
         </div>
         <ul>
             <li class="login-titl on">登录</li>
-            <li class="register-titl">注册</li>
+            <%--<li class="register-titl">注册</li>--%>
         </ul>
     </div>
 
@@ -41,7 +41,7 @@
                     <p class="form-heading">登录</p>
                 </div>
 
-                <form action="${pageContext.request.contextPath}/customerLogin" class="form-horizontal">
+                <form action="${pageContext.request.contextPath}/customerLogin" class="form-horizontal" method="post">
 
                     <div class="field-wrapper">
                         <label class="field-label">账号</label>
@@ -72,7 +72,7 @@
         </div>
 
         <!-- register-moudle           -->
-        <div class="register-form">
+        <!--     <div class="register-form">
             <div class="form-wrapper">
                 <div class="form-header">
                     <p class="form-heading">注册</p>
@@ -112,7 +112,7 @@
 
                 </form>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 

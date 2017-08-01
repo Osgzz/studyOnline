@@ -2,6 +2,7 @@ package com.arcsoft.studyOnline.service;
 
 import com.arcsoft.studyOnline.bean.Department;
 import com.arcsoft.studyOnline.bean.Employee;
+import com.arcsoft.studyOnline.bean.EmployeeWithDeptNameAndPositon;
 import com.arcsoft.studyOnline.bean.Position;
 import com.arcsoft.studyOnline.dao.DepartmentMapper;
 import com.arcsoft.studyOnline.dao.EmployeeMapper;
@@ -21,9 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -211,5 +210,9 @@ public class EmployeeService {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public List<EmployeeWithDeptNameAndPositon> selectEmployeeWithDeptAndPositon() {
+        return  employeeMapper.selectEDP();
     }
 }
