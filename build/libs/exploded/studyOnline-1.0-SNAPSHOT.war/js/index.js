@@ -178,65 +178,53 @@
              })
                
         /*course.js*/
-       //当点击浏览器其他位置时，提示框消失
-        $(document).bind('click',function() {
-            $('#search-area-result').hide();
+        //动态获取菜单栏“全部”项的数据
+        $.get('/studyOnline-1.0-SNAPSHOT/getLessonListWithRouteByJson', function(data) {
+            $("#tab ul.all").append("<li class='course-nav-item on'><a href='/studyOnline-1.0-SNAPSHOT/html/course.html?searchName' target='_self'>全部</a></li>");
+            for(var i=0;i<data.length;i++){
+                var navItem = data[i].lessonName;
+                //遍历json数据,tab添加"one"样式,插入遍历到的“虹软技术”大课程菜单选项
+                $("#tab ul.all").append("<li class='course-nav-item'><a href='/studyOnline-1.0-SNAPSHOT/html/course.html?searchName="+data[i].lessonName+"'target='_self'>"+data[i].lessonName+"</a></li>");
+            }
         });
-        //为li添加事件代理,点击课程名称跳转到对应的课程播放页
-        // $(document).delegate('li', 'click', function() {
-        //      location.href = $('.li-item').attr("href");
-        // });
+
       $(".course-nav-item-top.one").click(function() {
         $(".course-nav-item-top.one").addClass('on');//:acitve添加背景色
         $(".course-nav-item-top.all").removeClass('on');//除去背景色
         $(".course-nav-item-top.two").removeClass('on');  //除去背景色   
-
              //动态获取数据，并切换tab栏为“虹软技术”下对应的课程
         $.get('/studyOnline-1.0-SNAPSHOT/getLessonListWithRouteByJson', function(data) {
             $("#tab ul.all").hide();//tab>all选项隐藏
             $("#tab ul.two").hide();//tab>all选项隐藏           
             //添加li:全部选项
             $("#tab ul.one").children().remove();//初始化tab>one选项
-            $("#tab ul.one").append("<li class='course-nav-item on'><a href='#' target='_self'>全部</a></li>");
-            for(var i=0;i<data.length;i++){
+            $("#tab ul.one").append("<li class='course-nav-item on'><a href='/studyOnline-1.0-SNAPSHOT/html/course.html?searchName' target='_self'>全部</a></li>");
+            for(var i=0;i<data.length-3;i++){
                 var navItem = data[i].lessonName;
+
                 //遍历json数据,tab添加"one"样式,插入遍历到的“虹软技术”大课程菜单选项
-                $("#tab ul.one").append("<li class='course-nav-item'><a href='#' target='_self'>"+data[i].lessonName+"</a></li>");
-            //获取子课程的数据,tab栏数据可以点击切换选项
-            // var routeData = data[i].routes;
-            // for (var i = routes.length;i++) {
-            //  routes[i]
-            // }
+                $("#tab ul.one").append("<li class='course-nav-item'><a href='/studyOnline-1.0-SNAPSHOT/html/course.html?searchName="+data[i].lessonName+"'target='_self'>"+data[i].lessonName+"</a></li>");
+
             }
+                        //子菜单栏切换样式的实现   
+            changeTab();  
             //新生成的tab>one选项显示
             $("#tab ul.one").show();   
-            //子菜单栏切换样式的实现   
-            // $(".course-nav-item").click(function(event) {
-           //           $this = $(this);
-           //           $(".course-nav-item").hasClass('on');
-           //           $(".course-nav-item").removeClass('on');
-           //           $this.addClass('on');
-        //                  });     
-                          changeTab();  
+            // //子菜单栏切换样式的实现   
+            // changeTab();  
         });
             // $(".course-nav-item.one").css('.course-nav-item.one.on');        
       });
       //方向栏下>第一次点击"全部"选项前,也可做分类>下的选项切换
-      changeTab();
+      // changeTab();
+      
       $(".course-nav-item-top.all").click(function() {
-        $(".course-nav-item-top.all").addClass('on');//:acitve添加背景色
-        $(".course-nav-item-top.one").removeClass('on');//除去背景色
-        $(".course-nav-item-top.two").removeClass('on');    //除去背景色     
-              
-             $("#tab ul.all").show();//tab>all选项显示
-              changeTab();
-    // //子菜单栏切换样式的实现    
-    // $(".course-nav-item").click(function(event) {
-    //              $this = $(this);
-    //              $(".course-nav-item").hasClass('on');
-    //              $(".course-nav-item").removeClass('on');
-    //              $this.addClass('on');
- //             });               
+            $(".course-nav-item-top.all").addClass('on');//:acitve添加背景色
+            $(".course-nav-item-top.one").removeClass('on');//除去背景色
+            $(".course-nav-item-top.two").removeClass('on');    //除去背景色     
+            $("#tab ul.all").show();//tab>all选项显示
+             changeTab();
+            
         $("#tab ul.one").hide();//tab>one选项隐藏
         $("#tab ul.two").hide();//tab>two选项隐藏  
             
@@ -246,45 +234,41 @@
         $(".course-nav-item-top.two").addClass('on');//:acitve添加背景色
         $(".course-nav-item-top.one").removeClass('on');//除去背景色
         $(".course-nav-item-top.all").removeClass('on');     //除去背景色    
-
          //动态获取数据，并切换tab栏为“虹软产品”下对应的课程
         $.get('/studyOnline-1.0-SNAPSHOT/getLessonListWithRouteByJson', function(data) {
             $("#tab ul.all").hide();//tab>all选项隐藏
             $("#tab ul.one").hide();//tab>one选项隐藏           
             //添加li:全部选项
             $("#tab ul.two").children().remove();//初始化tab>one选项             
-            $("#tab ul.two").append("<li class='course-nav-item on'><a href='#' target='_self'>全部</a></li>");
-            for(var i=0;i<data.length;i++){
+            $("#tab ul.two").append("<li class='course-nav-item on'><a href='/studyOnline-1.0-SNAPSHOT/html/course.html?searchName' target='_self'>全部</a></li>");
+            for(var i=3;i<data.length;i++){
                 var navItem = data[i].lessonName;
                 //遍历json数据,tab添加"one"样式,插入遍历到的“虹软技术”大课程菜单选项
-                $("#tab ul.two").append("<li class='course-nav-item'><a href='#' target='_self'>"+data[i].lessonName+"</a></li>");
-            //获取子课程的数据,tab栏数据可以点击切换选项
-            // var routeData = data[i].routes;
-            // for (var i = routes.length;i++) {
-            //  routes[i]
-            // }
+                $("#tab ul.two").append("<li class='course-nav-item'><a href='/studyOnline-1.0-SNAPSHOT/html/course.html?searchName="+data[i].lessonName+"'target='_self'>"+data[i].lessonName+"</a></li>");
             }
             //新生成的tab>one选项显示
             $("#tab ul.two").show(); 
             // //子菜单栏切换样式的实现    
-            // $(".course-nav-item").click(function(event) {
-           //           $this = $(this);
-           //           $(".course-nav-item").hasClass('on');
-           //           $(".course-nav-item").removeClass('on');
-           //           $this.addClass('on');
-        //                  }); 
-                       changeTab();
+             changeTab();
+                  // $(".course-nav-item li a").each(function(){
+                  //   if($($(this))[0].href == String(window.location)){
+                  //        $(".course-nav-item li").remove('on');
+                  //        $(this).parent().addClass('on');
+                  //        console.log("添加样式成功");
+                  //   }
+                    // });    
         });
       });  
-     //
+    //子菜单栏切换样式的实现
       function changeTab(){ 
-            $(".course-nav-item").click(function(event) {
-                    $this = $(this);
-                    $(".course-nav-item").hasClass('on');
-                    $(".course-nav-item").removeClass('on');
-                    $this.addClass('on');
-                         });                    
-      }      
+              $('#tab li a').each(function(){  
+                    if($($(this))[0].href==String(window.location)){  
+                        $('#tab li').removeClass("on");  
+                        $(this).parent().addClass('on');  
+                    }     
+             });          
+       }   
+       // changeTab();
        //course.html获取url中的参数
         function getUrlParam(name)
         {
@@ -299,7 +283,8 @@
         }
         //传递course.html获取的课程参数到后台接口，并获取json数据进行动态数据插入
         var courseParam = getUrlParam('searchName');
-        // console.log(courseParam);
+        // console.log(courseParam);   
+
         $.getJSON('/studyOnline-1.0-SNAPSHOT/selectLessonByNameWithJson?searchName='+courseParam,  function(json) {
                    var data = json.lessonWithRouteList;
                    for(var i=0;i<data.length;i++){
@@ -320,11 +305,12 @@
                        ////获取子课程视频路径  
                       var coursePath = '/studyOnline-1.0-SNAPSHOT/showRoute?id='+ route[j].id;
                                $("#course-list ul").append("<div class='index-card-container'><a href="+coursePath+" target='_blank' class='course-card'><div class='course-card-cover'></div><div class='course-card-text'><div class='course-card-top'><h4>"+topCourseName+"</h4></div><div class='course-card-content'><h3 class='course-card-name'>"+courseName+"</h3><p title="+courseDesc+">"+courseDesc+"</p></div></div><div class='course-card-bg' style='background:url("+courseCover+")'></div></div></a></div>");                        
-
                         }                            
                   }
         });
 
+        // 分页js
+        // $.getJSON('/studyOnline-1.0-SNAPSHOT/selectLessonByNameWithJson?searchName='
       
 
 

@@ -1,3 +1,4 @@
+<!doctype html>
 <%--
   Created by IntelliJ IDEA.
   User: Focus
@@ -9,17 +10,21 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <%--<title>登录-注册</title>--%>
-    <title>登录</title>
+    <title>登录-注册</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/login.css">
+    <script type="text/javascript">
+        var deviceWidth = document.documentElement.clientWidth;
+        if (deviceWidth > 1200) deviceWidth = 1280;
+        document.documentElement.style.fontSize = deviceWidth / 12.0 + 'px';
+    </script>
 </head>
 <body>
 <div id="sign-wrap" class="sign-wrap">
 
     <!-- nav moudle -->
     <div class="sign-head">
-        <div class = "logo-wrapper">
+        <div class="logo-wrapper">
             <a class="sign-logo" href=""><img src="${pageContext.request.contextPath}/img/logo.png"/></a>
         </div>
         <ul>
@@ -32,34 +37,34 @@
         <!-- login moudle -->
         <div class="login-form">
             <div class="form-wrapper">
-                <div class = "form-header">
-                    <h2 class="form-heading">登录</h2>
+                <div class="form-header">
+                    <p class="form-heading">登录</p>
                 </div>
 
-                <form action="${pageContext.request.contextPath}/customerLogin" class = "form-horizontal" method="post">
+                <form action="${pageContext.request.contextPath}/customerLogin" class="form-horizontal" method="post">
 
-                    <div class = "field-wrapper">
-                        <label class="field-label" >账号</label>
+                    <div class="field-wrapper">
+                        <label class="field-label">账号</label>
                         <input type="text" class="field-input" name="username" id="uname" placeholder="请输入用户名"
                         />
                     </div>
 
-                    <div class = "field-wrapper">
-                        <label class="field-label" >密码</label>
-                        <input type="password" class="field-input"  name="password" id="upwd" placeholder="请输入密码"
+                    <div class="field-wrapper">
+                        <label class="field-label">密码</label>
+                        <input type="password" class="field-input" name="password" id="upwd" placeholder="请输入密码"
                         />
                     </div>
 
-                 <%--   <div class = "field-wrapper">
-                        <label class="field-label verify" >验证码</label>
-                        <input type="text" class="field-input verify" name="verify" id="vef"  placeholder="请输入验证码"
+                    <div class="field-wrapper">
+                        <label class="field-label verify">验证码</label>
+                        <input type="text" class="field-input verify" name="verify" id="vef" placeholder="请输入验证码"
                         />
                         <span class="verify-code"></span>
-                    </div>--%>
+                    </div>
 
 
-                    <div class = "submit-btn-wrapper">
-                        <button type="submit"  class="submit-btn login">登录</button>
+                    <div class="submit-btn-wrapper">
+                        <button type="submit" class="submit-btn login">登录</button>
                     </div>
 
                 </form>
@@ -67,47 +72,47 @@
         </div>
 
         <!-- register-moudle           -->
-    <%--    <div class="register-form">
+        <!--     <div class="register-form">
             <div class="form-wrapper">
-                <div class = "form-header">
-                    <h2 class="form-heading">注册</h2>
+                <div class="form-header">
+                    <p class="form-heading">注册</p>
                 </div>
 
-                <form action=" " class = "form-horizontal">
+                <form action="${pageContext.request.contextPath}/customerLogin" class="form-horizontal" autocomplete="off">
 
-                    <div class = "field-wrapper">
-                        <label class="field-label" >账号</label>
+                    <div class="field-wrapper">
+                        <label class="field-label">账号</label>
                         <input type="text" class="field-input" name="username" id="uname" placeholder="请输入手机号/用户名"
                         />
                     </div>
 
-                    <div class = "field-wrapper">
-                        <label class="field-label" >密码</label>
-                        <input type="password" class="field-input"  name="password" id="upwd" placeholder="请输入密码"
+                    <div class="field-wrapper">
+                        <label class="field-label">密码</label>
+                        <input type="password" class="field-input" name="password" id="upwd" placeholder="请输入密码"
                         />
                     </div>
 
-                    <div class = "field-wrapper">
-                        <label class="field-label" >确认密码</label>
-                        <input type="password" class="field-input"  name="re-password" id="re-upwd" placeholder="请确认密码"
+                    <div class="field-wrapper">
+                        <label class="field-label">确认密码</label>
+                        <input type="password" class="field-input" name="re-password" id="re-upwd" placeholder="请确认密码"
                         />
                     </div>
 
-                    <div class = "field-wrapper">
-                        <label class="field-label verify" >验证码</label>
-                        <input type="text" class="field-input verify" name="verify" id="vef"  placeholder="请输入验证码"
+                    <div class="field-wrapper">
+                        <label class="field-label verify">验证码</label>
+                        <input type="text" class="field-input verify" name="verify" id="vef" placeholder="请输入验证码"
                         />
                         <span class="verify-code"></span>
                     </div>
 
 
-                    <div class = "submit-btn-wrapper">
-                        <button type="submit"  class="submit-btn register">注册</button>
+                    <div class="submit-btn-wrapper">
+                        <button type="submit" class="submit-btn register">注册</button>
                     </div>
 
                 </form>
             </div>
-        </div>--%>
+        </div> -->
     </div>
 </div>
 

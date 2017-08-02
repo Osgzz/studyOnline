@@ -29,6 +29,7 @@
             <th>用户密码</th>
             <th>用户性别</th>
             <th>用户部门</th>
+            <th>用户职位</th>
             <th>用户级别</th>
             <th>用户手机</th>
             <th>用户邮箱</th>
@@ -38,18 +39,19 @@
         <tbody>
         <c:forEach items="${employeeList}" var="employee">
             <tr>
-                <td>${employee.id}</td>
-                <td>${employee.name}</td>
-                <td>${employee.nickname}</td>
-                <td>${employee.password}</td>
-                <td>${employee.gender}</td>
-                <td>${employee.deptId}</td>
-                <td>${employee.positionId}</td>
-                <td>${employee.phone}</td>
-                <td>${employee.email}</td>
+                <td>${employee.employeeId}</td>
+                <td>${employee.employeeName}</td>
+                <td>${employee.employeeNickname}</td>
+                <td>${employee.employeePassword}</td>
+                <td>${employee.employeeGender}</td>
+                <td>${employee.deptName}</td>
+                <td>${employee.positionName}</td>
+                <td>${employee.premissionLevel}</td>
+                <td>${employee.employeePhone}</td>
+                <td>${employee.employeeEmail}</td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/toUpdateEmployee?id=${employee.id}">修改</a>
-                    <a href="${pageContext.request.contextPath}/delEmployee?id=${employee.id}">删除</a>
+                    <a href="${pageContext.request.contextPath}/toUpdateEmployee?id=${employee.employeeId}">修改</a>
+                    <a href="${pageContext.request.contextPath}/delEmployee?id=${employee.employeeId}">删除</a>
                 </td>
             </tr>
         </c:forEach>

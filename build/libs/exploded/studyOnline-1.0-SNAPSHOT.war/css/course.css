@@ -362,13 +362,20 @@
 	line-height: 100%;
 	margin-bottom: 0.1rem;
 	padding:0.1rem;
+	cursor: pointer;
 }
 .course-nav-item a:hover, .course-nav-item-top a:hover{
 	color: #a10f13;
 }
-.course-nav-item a:active, .course-nav-item-top a:active{
-	color: #fff;
-	background-color: #AF717D;
+/*.course-nav-item a:active, .course-nav-item-top span:active{
+	background:#AF717D;
+	color: #ffffff;
+	border-radius:0.02rem;
+}*/
+.course-nav-item>a:active{
+	background:#AF717D;
+	color: #ffffff;
+	border-radius:0.02rem;
 }
 
 /* course-content css */

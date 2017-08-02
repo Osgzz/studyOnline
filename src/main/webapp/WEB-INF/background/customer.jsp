@@ -1,3 +1,4 @@
+<!doctype html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -16,6 +17,12 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.1.0.min.js"></script>
 </head>
 <script type="text/javascript">
+    /* 通过js计算出能让,rem布局结合在html上根据不同分辨率设置不同的font-size
+      html的font-size=deviceWidth/12.0*/
+    var deviceWidth = document.documentElement.clientWidth;
+    if (deviceWidth > 1200) deviceWidth = 1280;
+    document.documentElement.style.fontSize = deviceWidth / 12.0 + 'px';
+
     function searchLesson() {
         $("#searchForm").submit();
     }
@@ -28,8 +35,8 @@
                     src="${pageContext.request.contextPath}/img/logo.png"></a>
         </div>
         <ul class="nav-item">
-            <li><a href=" " target="_self">首页</a></li>
-            <li><a href=" " target="_self">课程</a></li>
+            <li><a href="#" target="_self">首页</a></li>
+            <li><a href="course.html" target="_self">课程</a></li>
         </ul>
         <!-- logined模块-->
         <div class="login-area">
@@ -55,30 +62,27 @@
 
         <!-- 搜索框模块 -->
         <div class="search-wrap">
+            <!-- 提示标签 -->
+            <div id="searchTag" class="searchTag">
+                <a href="" target="_blank">防抖技术</a>
+                <a href="" target="_blank">前景技术</a>
+            </div>
+            <!-- 搜索框 -->
             <form id="searchForm" action="${pageContext.request.contextPath}/selectLessonByName" method="post"
                   target="_blank">
-                <!-- 提示标签 -->
-                <div id="searchTag" class="searchTag">
-                    <a href="" target="_blank">防抖技术</a>
-                    <a href="" target="_blank">前景技术</a>
-                </div>
-
-                <!-- 搜索框 -->
-                <div class="search-area" data-search="top-banner">
-
-                    <input name="searchName" id="search-input" class="search-input" type="text">
-                    <ul id="data-list" class="search-area-result">
-                        <li data-key="暗光高清技术">暗光高清技术</li>
-                        <li data-key="防抖技术">防抖技术</li>
-                        <li data-key="人脸技术">人脸技术</li>
-                        <li data-key="HDR技术">HDR技术</li>
-                    </ul>
-                </div>
+                <input type="text" class="search-input" id="search-input" name="searchName" autocomplete="off">
                 <!-- 搜索icon -->
                 <div class="showhide-search">
-                    <a href="javascript:void(0)" onclick="searchLesson()"><i class="icon-search"></i></a>
+                    <!-- <button type="submit">,只是一个简单的按钮，input+submit可以提交数据 -->
+                    <a href="javascript:void(0)" class="search-input-button" onclick="searchLesson()"><i
+                            class="icon-search"></i></a>
                 </div>
             </form>
+            <div class="suggest" id="search-suggest">
+                <ul id="search-area-result">
+
+                </ul>
+            </div>
         </div>
     </div>
     <div class="mainer">
@@ -95,35 +99,15 @@
                             <li><a href="" target="_self">全景技术</a></li>
                             <li><a href="" target="_self">人脸技术</a></li>
                             <li><a href="" target="_self">HDR技术</a></li>
-                            <li><a href="" target="_self">手势识别技术</a></li>
                             <li><a href="" target="_self">场景检测与物体识别技术</a></li>
                             <li><a href="" target="_self">体感技术</a></li>
                             <li><a href="" target="_self">3D立体成像技术</a></li>
                             <li><a href="" target="_self">AR/VR技术</a>
                             <li>
-                            <li><span class="more-li"><a href="" target="_blank">更多>></a></span></li>
                         </ul>
+                        <span class="more-li"><a href="" target="_blank">更多>></a></span>
 
                     </div>
-                </li>
-                <!-- 一级菜单 -->
-                <li class="m-nav-item"><a href="" target="_self">虹软产品</a>
-                    <div class="sub-nav">
-                        <!-- 二级菜单 -->
-                        <ul>
-                            <li><a href="" target="_self">单摄像头智能手机解决方案</a></li>
-                            <li><a href="" target="_self">双摄像头智能手机解决方案</a></li>
-                            <li><a href="" target="_self">360度全景相机结局方案</a></li>
-                            <li><a href="" target="_self">智能冰箱解决方案</a></li>
-                            <li><a href="" target="_self">深度相机解决方案</a></li>
-                            <li><a href="" target="_self">智能行车记录仪解决方案</a></li>
-                            <li><a href="" target="_self">投影仪解决方案</a></li>
-                            <li><a href="" target="_self">互联网视频直播解决方案</a></li>
-                            <li><span class="more-li"><a href="" target="_blank">更多>></a></span></li>
-                        </ul>
-
-                    </div>
-                </li>
             </ul>
         </div>
     </div>
@@ -133,101 +117,184 @@
 <div id="main">
     <!-- 轮播图 -->
     <div class="imgBox">
-        <div id="img-list" style="left:-1200px;">
-            <ul>
-                <li><a href="" target="_blank"><img src="${pageContext.request.contextPath}/img/main5.jpg"
-                                                    alt="单摄像头智能手机课程"></a></li>
-                <li><a href="" target="_blank"><img src="${pageContext.request.contextPath}/img/main1.jpg" alt="防抖技术课程"></a>
-                </li>
-                <li><a href="" target="_blank"><img src="${pageContext.request.contextPath}/img/main2.jpg"
-                                                    alt="暗光高清技术课程"></a></li>
-                <li><a href="" target="_blank"><img src="${pageContext.request.contextPath}/img/main3.jpg" alt="全景技术课程"></a>
-                </li>
-                <li><a href="" target="_blank"><img src="${pageContext.request.contextPath}/img/main4.jpg"
-                                                    alt="HDR技术课程"></a></li>
-                <li><a href="" target="_blank"><img src="${pageContext.request.contextPath}/img/main5.jpg"
-                                                    alt="单摄像头智能手机"></a></li>
-                <li><a href="" target="_blank"><img src="${pageContext.request.contextPath}/img/main1.jpg" alt="防抖技术课程"></a>
-                </li>
+        <div class="banner">
+            <ul class="img-list">
+                <li class="imgOn"><a href="" target="_blank"><img src="${pageContext.request.contextPath}/img/防抖.png"
+                                                                  alt="防抖技术课程"
+                                                                  background-size="cover"></a></li>
+                <li><a href="" target="_blank"><img src="${pageContext.request.contextPath}/img/暗夜.jpg" alt="暗光高清技术课程"
+                                                    background-size="cover"></a></li>
+                <li><a href="" target="_blank"><img src="${pageContext.request.contextPath}/img/全景.png" alt="全景技术课程"
+                                                    background-size="cover"></a></li>
+                <li><a href="" target="_blank"><img src="${pageContext.request.contextPath}/img/HDR.png" alt="HDR技术课程"
+                                                    background-size="cover"></a></li>
+                <li><a href="" target="_blank"><img src="${pageContext.request.contextPath}/img/体感.png" alt="体感技术"
+                                                    background-size="cover"></a></li>
             </ul>
-        </div>
+            <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+            <a href="javascript:;" id="next" class="arrow">&gt;</a>
 
-        <!-- 轮播图圆心按钮 -->
-        <div id="arcBox" class="point-button">
-            <span index="1" class="on"></span>
-            <span index="2"></span>
-            <span index="3"></span>
-            <span index="4"></span>
-            <span index="5"></span>
+            <div class="text-bg"></div>
+            <ul class="info-list">
+                <li class="infoOn">防抖技术课程</li>
+                <li>暗光高清技术课程</li>
+                <li>全景技术课程</li>
+                <li>HDR技术课程</li>
+                <li>体感技术课程</li>
+            </ul>
+            <!-- 轮播图圆心按钮-->
+            <div class="index-list clearfix">
+                <span index="1" class="indexOn"></span>
+                <span index="2"></span>
+                <span index="3"></span>
+                <span index="4"></span>
+                <span index="5"></span>
+            </div>
         </div>
-
-        <a href="javascript:;" id="prev" class="arrow">&lt;</a>
-        <a href="javascript:;" id="next" class="arrow">&gt;</a>
     </div>
 
     <!-- 推荐模块 -->
     <div class="recomBox">
         <!-- 推荐模块 标题栏 -->
         <div class="title-list clearfix">
-            <p class="more-title">更多精彩内容，请点击<span class="change"><a href="" target="_self">换一换<i
-                    class="icon-refresh"></i></a></span></p>
-            <h4 class="like">猜你喜欢</h4>
+            <p class="like">猜你喜欢</p>
+            <p class="more-title">更多精彩内容，请点击<span class="change">换一换<a><i class="icon-refresh"></i></a></span></p>
         </div>
         <!-- 推荐模块 视频栏 -->
         <div class="class-list clearfix">
             <c:forEach items="${lessonList}" var="lesson">
-                <a class="video-item" href="#" title="${lesson.lessonName}">
-                    <span class="vioImg"><img
-                            src="${pageContext.request.contextPath}/img/lessonImage/${lesson.lessonCover}"></span>
-                    <span class="vioTitle">${lesson.lessonName}</span>
-                </a>
+                <%--            <c:forEach items="${lessonList}" var="lesson">
+                            <a class="video-item" href="#" title="${lesson.lessonName}">
+                                    <span class="vioImg"><img
+                                            src="${pageContext.request.contextPath}/img/lessonImage/${lesson.lessonCover}"></span>
+                                <span class="vioTitle">${lesson.lessonName}</span>
+                            </a>
+                        </c:forEach>--%>
+                <div class='re-video-item'><span class='re-vioImg'>
+                    <a href='${pageContext.request.contextPath}/showRoute?id=${lesson.lessonId}'>
+                        <img src="${pageContext.request.contextPath}/img/lessonImage/${lesson.lessonCover}">
+                    </a></span>
+                    <span class='re-vioTitle'>${lesson.lessonName}</span>
+                </div>
             </c:forEach>
         </div>
     </div>
-    <c:forEach items="${lessonList}" var="lesson" varStatus="n">
-        <c:if test="${n.index < 3 }">
-            <div class="typeBox">
-                <!-- 防抖技术课程模块  -->
-                <div class="type-content fd clearfix">
-                    <!-- 左边栏 -->
-                    <div class="type-content-left fd">
-                        <div class="type-content-recommend">
-                            <h2 class="path-title">${lesson.lessonName}课程学习路径</h2>
-                            <a class="path-more" href="" target="_blank">了解更多 >></a>
 
-                        </div>
-                    </div>
-                    <!-- 右边栏 -->
-                    <div class="type-content-right">
-                        <!-- 大图 -->
-                        <a class="main-video-item" href="#" target="" title="${lesson.lessonName}课程">
-                            <span class="main-vioImg"><img
-                                    src="${pageContext.request.contextPath}/img/lessonImage/${lesson.lessonCover}"></span>
-                            <span class="main-vioTitle">${lesson.lessonName}课程</span>
-                            <span class="viewCount">0</span>
-                            <div class="vioCover-max"><i class="icon-play"></i></div>
-                        </a>
-                        <!-- 小图 -->
-                        <c:forEach items="${lesson.routes}" var="route">
-                            <a class="video-item"
-                               href="${pageContext.request.contextPath}/showRoute?routeId=${route.id}"
-                               target="_blank" title="${route.routeName}">
-                                <span class="vioImg"><img
-                                        src="${pageContext.request.contextPath}/img/routeImage/${route.cover}"></span>
-                                <span class="vioTitle">${route.routeName}</span>
-                                <div class="vioCover"><i class="icon-play"></i></div>
-                                <span class="viewCount">0</span>
-                            </a>
-                        </c:forEach>
-                    </div>
-                </div>
+
+    <%-- <c:forEach items="${lessonList}" var="lesson" varStatus="n">
+         <c:if test="${n.index < 3 }">
+             <div class="typeBox">
+                 <!-- 防抖技术课程模块  -->
+                 <div class="type-content fd clearfix">
+                     <!-- 左边栏 -->
+                     <div class="type-content-left fd">
+                         <div class="type-content-recommend">
+                             <h2 class="path-title">${lesson.lessonName}课程学习路径</h2>
+                             <a class="path-more" href="" target="_blank">了解更多 >></a>
+
+                         </div>
+                     </div>
+                     <!-- 右边栏 -->
+                     <div class="type-content-right">
+                         <!-- 大图 -->
+                         <a class="main-video-item" href="#" target="" title="${lesson.lessonName}课程">
+                             <span class="main-vioImg"><img
+                                     src="${pageContext.request.contextPath}/img/lessonImage/${lesson.lessonCover}"></span>
+                             <span class="main-vioTitle">${lesson.lessonName}课程</span>
+                             <span class="viewCount">0</span>
+                             <div class="vioCover-max"><i class="icon-play"></i></div>
+                         </a>
+                         <!-- 小图 -->
+                         <c:forEach items="${lesson.routes}" var="route">
+                             <a class="video-item"
+                                href="${pageContext.request.contextPath}/showRoute?routeId=${route.id}"
+                                target="_blank" title="${route.routeName}">
+                                 <span class="vioImg"><img
+                                         src="${pageContext.request.contextPath}/img/routeImage/${route.cover}"></span>
+                                 <span class="vioTitle">${route.routeName}</span>
+                                 <div class="vioCover"><i class="icon-play"></i></div>
+                                 <span class="viewCount">0</span>
+                             </a>
+                         </c:forEach>
+                     </div>
+                 </div>
+             </div>
+         </c:if>
+
+     </c:forEach>--%>
+
+    <!-- 课程模块 -->
+    <div class="typeBox">
+        <div class="type-content">
+            <!-- 左侧边栏-防抖技术课程模块 -->
+            <div class="type-content-left fd"></div>
+            <!-- 右侧边栏 -->
+            <div class="type-content-right clearfix">
+
             </div>
-        </c:if>
+            <!-- 左侧边栏-暗夜高清课程模块-->
+            <div class="type-content-left qj"></div>
+            <!-- 右侧边栏 -->
+            <div class="type-content-right clearfix">
 
-    </c:forEach>
-    <div class="more">
-        <a class="load-more" href="${pageContext.request.contextPath}/moreLesson" target="_self">更多课程>></a>
+            </div>
+            <!-- 左侧边栏-hdr课程模块 -->
+            <div class="type-content-left hdr"></div>
+            <!-- 右侧边栏 -->
+            <div class="type-content-right clearfix">
+
+            </div>
+            <!-- 左侧边栏-体感技术课程模块 -->
+            <div class="type-content-left cj"></div>
+            <!-- 右侧边栏 -->
+            <div class="type-content-right clearfix">
+
+            </div>
+        </div>
+        <!-- 防抖技术课程模块   -->
+        <!-- 		<div class="type-content fd clearfix"> -->
+
+        <!-- 左边栏  -->
+
+        <!-- 			<div class="type-content-left fd"> -->
+        <!-- 				<div class="type-path">
+                            <h2 class="path-title">防抖技术课程学习路径</h2>
+                            <a  class="path-more" href="" target="_blank">了解更多 >></a>
+                                     </div> -->
+        <!--                                	</div> -->
+
+        <!-- 右边栏-->
+        <!--                               	 <div class="type-content-right">  -->
+        <!--小图-->
+        <!--                                                   <a class="video-item" href="" target="_blank" title="单摄像头智能手机">
+                                                               <span class="vioImg"><img src="../img/2.png"></span>
+                                                                   <span class="vioTitle">防抖技术课程1</span>
+                                                                   <div class="vioCover"><i class="icon-play"></i></div>
+                                                                   <span class="viewCount">120人</span>
+                                                 </a>
+                                                          <a class="video-item" href="" target="_blank" title="单摄像头智能手机">
+                                                               <span class="vioImg"><img src="../img/3.png"></span>
+                                                                   <span class="vioTitle">防抖技术课程2</span>
+                                                                   <div class="vioCover"><i class="icon-play"></i></div>
+                                                                   <span class="viewCount">120人</span>
+                        </a>
+                                                          <a class="video-item" href="" target="_blank" title="单摄像头智能手机">
+                                                               <span class="vioImg"><img src="../img/4.png"></span>
+                                                                   <span class="vioTitle">防抖技术课程3</span>
+                                                                   <div class="vioCover"><i class="icon-play"></i></div>
+                                                                   <span class="viewCount">120人</span>
+                        </a>
+                        <a class="video-item" href="" target="_blank" title="单摄像头智能手机">
+                                                               <span class="vioImg"><img src="../img/5.png"></span>
+                                                                   <span class="vioTitle">防抖技术课程4</span>
+                                                                   <div class="vioCover"><i class="icon-play"></i></div>
+                                                                   <span class="viewCount">120人</span>
+                        </a>  -->
+
+        <!--                                        </div>
+                                  -->
     </div>
+
 </div>
 <div id="footer">
     <div class="foot-container">
@@ -241,7 +308,7 @@
     </div>
 </div>
 
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/header.js"></script>
+<%--<script type="text/javascript" src="${pageContext.request.contextPath}/js/header.js"></script>--%>
 </body>
 
 </html>

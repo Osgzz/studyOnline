@@ -5,6 +5,8 @@
   Time: 15:28
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -12,6 +14,9 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/person.css">
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/ext/bootstrap/js/bootstrap.min.js"></script>
+    <link href="${pageContext.request.contextPath}/ext/bootstrap/css/bootstrap.min.css" type="text/css"
+          rel="stylesheet">
 </head>
 <body>
 
@@ -105,21 +110,49 @@
                         <div class="info-box clearfix">
                             <label class="pull-left">原密码</label>
                             <div class="pull-left">
-                                <input type="password"  class="form-input" name="originalPassword">
+                                <input class="form-input">
+                                <input type="password" name="originalPassword" style="width: 400px;outline:none;border: none">
                             </div>
                         </div>
                         <div class="info-box clearfix">
                             <label class="pull-left">新密码</label>
                             <div class="pull-left">
-                                <input type="password" class="form-input" name="newPassword">
+                                <input class="form-input">
+                                <input type="password" name="newPassword" style="width: 400px;outline:none;border: none">
                             </div>
                         </div>
                         <div class="info-box clearfix">
                             <label class="pull-left">再次输入新密码</label>
                             <div class="pull-left">
-                                <input type="password" class="form-input" name="newPasswordAgain">
+                                <input class="form-input">
+                                <input type="password" name="newPasswordAgain" style="width: 400px;outline:none;border: none">
                             </div>
                         </div>
+
+                        <c:if test="${message1!=null }">
+                            <div class="info-box clearfix">
+                                <div class="pull-left">
+                                    <p style="color: #ff2f2f">旧密码错误</p>
+                                </div>
+                            </div>
+                        </c:if>
+
+                        <c:if test="${message2!=null }">
+                            <div class="info-box clearfix">
+                                <div class="pull-left">
+                                    <p style="color: #ff2f2f">两次新密码不同，请重新输入！</p>
+                                </div>
+                            </div>
+                        </c:if>
+
+                        <c:if test="${message3!=null }">
+                            <div class="info-box clearfix">
+                                <div class="pull-left">
+                                    <p style="color: #ff2f2f">修改密码成功</p>
+                                </div>
+                            </div>
+                        </c:if>
+
                         <div class="info-box clearfix">
                             <div class="pull-left">
                                 <input class="btn btn-success col-sm-offset-1" type="submit" value="提交"/>

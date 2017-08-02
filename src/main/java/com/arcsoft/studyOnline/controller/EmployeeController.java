@@ -2,6 +2,7 @@ package com.arcsoft.studyOnline.controller;
 
 import com.arcsoft.studyOnline.bean.Department;
 import com.arcsoft.studyOnline.bean.Employee;
+import com.arcsoft.studyOnline.bean.EmployeeWithDeptNameAndPositon;
 import com.arcsoft.studyOnline.bean.Position;
 import com.arcsoft.studyOnline.service.DepartmentService;
 import com.arcsoft.studyOnline.service.EmployeeService;
@@ -12,13 +13,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Focus on 2017/7/9.
@@ -36,7 +35,8 @@ public class EmployeeController {
 
     @RequestMapping("/toEmployeeList")
     public String toEmployeeList(Model model) {
-        List<Employee> employeeList = employeeService.selectEmployeeList();
+        List<EmployeeWithDeptNameAndPositon> employeeList = employeeService.selectEmployeeWithDeptAndPositon();
+        System.out.println(employeeList);
         model.addAttribute("employeeList",employeeList);
         return "employeeList";
     }
@@ -138,6 +138,19 @@ public class EmployeeController {
         redirectAttributes.addFlashAttribute("id",id);
         employeeService.updateEmployeeInfo(id,name,nickname,gender,department,position,phone,email,request);
         return "redirect:/toPersonMessage";
+    }
+
+
+    /**
+     * @param excel 上传的员工信息Excel表格
+     * @return 跳转回原页面
+     */
+    @RequestMapping("/listByExcel")
+    public String listByExcel(Model model, @RequestParam("excel") MultipartFile excel, HttpServletRequest request){
+        employeeService.employeeListByExcel(excel,request);
+        List<Employee> employeeList = employeeService.selectEmployeeList();
+        model.addAttribute("employeeList",employeeList);
+        return "addEmployee";
     }
 
 }

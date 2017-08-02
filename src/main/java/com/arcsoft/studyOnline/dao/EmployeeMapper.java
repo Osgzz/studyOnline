@@ -3,6 +3,8 @@ package com.arcsoft.studyOnline.dao;
 import com.arcsoft.studyOnline.bean.Employee;
 import com.arcsoft.studyOnline.bean.EmployeeExample;
 import java.util.List;
+
+import com.arcsoft.studyOnline.bean.EmployeeWithDeptNameAndPositon;
 import org.apache.ibatis.annotations.Param;
 
 public interface EmployeeMapper {
@@ -77,4 +79,8 @@ public interface EmployeeMapper {
     void updateEmployeePassword(Employee employee);
 
     void updateEmployeeInfo(@Param("employee")Employee employee);
+
+    int selectEmployeeCount(@Param("name") String name);
+
+    List<EmployeeWithDeptNameAndPositon> selectEDP();
 }
