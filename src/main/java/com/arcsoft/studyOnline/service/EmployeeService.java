@@ -71,17 +71,17 @@ public class EmployeeService {
         employeeMapper.updateEmployeePassword(employee);
     }
 
-    public void updateEmployeeInfo(Integer id,String employeeName,String employeeNickname,String employeeGender,Integer departmentId,Integer positionId,String employeePhone,String employeeMail){
+    public void updateEmployeeInfo(Integer id,String name,String nickname,String gender,Integer department,Integer position,String phone,String email,HttpServletRequest request){
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         Employee employee = (Employee) applicationContext.getBean("employee");
         employee.setId(id);
-        employee.setName(employeeName);
-        employee.setNickname(employeeNickname);
-        employee.setGender(employeeGender);
-        employee.setDeptId(departmentId);
-        employee.setPositionId(positionId);
-        employee.setPhone(employeePhone);
-        employee.setEmail(employeeMail);
+        employee.setName(name);
+        employee.setNickname(nickname);
+        employee.setGender(gender);
+        employee.setDeptId(department);
+        employee.setPositionId(position);
+        employee.setPhone(phone);
+        employee.setEmail(email);
         employeeMapper.updateEmployeeInfo(employee);
     }
 }

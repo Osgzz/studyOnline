@@ -80,7 +80,7 @@ public class EmployeeController {
     }
 
     @RequestMapping("/toPersonMessage")
-    public String toPerson(Model model,Integer id){
+    public String toPersonMessage(Model model,@ModelAttribute("id") Integer id){
         Employee employee = employeeService.selectEmployeeById(id);
         model.addAttribute("employee",employee);
         List<Position> positionList = positionService.selectPositionList();
@@ -98,43 +98,46 @@ public class EmployeeController {
     }
 
     @RequestMapping("/modifyPassword")
-    public Map modifyPassword(@RequestParam Integer id, @RequestParam String originalPassword,@RequestParam String newPassword,@RequestParam String newPasswordAgain){
-
-        Map<String,String> map = new HashMap<>();
+    public String modifyPassword(Model model,@RequestParam("id") Integer id, @RequestParam("originalPassword") String originalPassword,@RequestParam("newPassword") String newPassword,@RequestParam("newPasswordAgain") String newPasswordAgain,RedirectAttributes redirectAttributes){
 
         Employee employee = employeeService.selectEmployeeById(id);
+        redirectAttributes.addFlashAttribute("id",id);
 
         if(originalPassword.equals(employee.getPassword())){
             if(newPassword.equals(newPasswordAgain)){
                 employeeService.updateEmployeePassword(id,newPassword);
-                map.put("message","修改密码成功");
-                return map;
+                redirectAttributes.addFlashAttribute("message3","修改密码成功");
+                return "redirect:/toAgainPassword";
             }else {
-                map.put("message","两次新密码不同，请重新输入！");
-                return map;
+                redirectAttributes.addFlashAttribute("message2","两次新密码不同，请重新输入！");
+                return "redirect:/toAgainPassword";
             }
         }else{
-            map.put("message","旧密码错误");
-            return map;
+            redirectAttributes.addFlashAttribute("message1","旧密码错误");
+            return "redirect:/toAgainPassword";
         }
     }
 
-    @RequestMapping("/modifyPersonInfo")
-    public String modifyPersonInfo(@RequestParam("employeeId") Integer id,@RequestParam("name") String name,@RequestParam("nickname") String nickname,@RequestParam("gender") String gender,@RequestParam("department") Integer department,@RequestParam("position") Integer position,@RequestParam("phone") String phone,@RequestParam("email") String email,RedirectAttributes redirectAttributes){
-
-        employeeService.updateEmployeeInfo(id,name,nickname,gender,department,position,phone,email);
-        redirectAttributes.addFlashAttribute("id",id);
-        return "redirect:/toPersonInfo";
-    }
-
-    @RequestMapping("/toPersonInfo")
-    public String toPersonInfo(Model model, @ModelAttribute("id") Integer id){
+    @RequestMapping("/toAgainPassword")
+    public String toAgainPassword(Model model,@ModelAttribute("message") String message,@ModelAttribute("id") Integer id){
         Employee employee = employeeService.selectEmployeeById(id);
         model.addAttribute("employee",employee);
-        List<Position> positionList = positionService.selectPositionList();
-        model.addAttribute("positionList",positionList);
-        List<Department> departmentList = departmentService.selectDepartmentList();
-        model.addAttribute("departmentList",departmentList);
-        return "person";
+        switch (message){
+            case "message1":
+                model.addAttribute("message1","旧密码错误");
+            case "message2":
+                model.addAttribute("message2","两次新密码不同，请重新输入！");
+            case "message3":
+                model.addAttribute("message3","修改密码成功");
+        }
+        return "modifyPassword";
     }
+
+    @RequestMapping("/modifyPersonInfo")
+    public String modifyPersonInfo(@RequestParam("id") Integer id,@RequestParam("name") String name,@RequestParam("nickname") String nickname,@RequestParam("gender") String gender,@RequestParam("department") Integer department,@RequestParam("position") Integer position,@RequestParam("phone") String phone,@RequestParam("email") String email,HttpServletRequest request,RedirectAttributes redirectAttributes){
+        redirectAttributes.addFlashAttribute("id",id);
+        employeeService.updateEmployeeInfo(id,name,nickname,gender,department,position,phone,email,request);
+        return "redirect:/toPersonMessage";
+    }
+
 }
