@@ -15,6 +15,16 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/ext/bootstrap/js/bootstrap.min.js"></script>
     <link href="${pageContext.request.contextPath}/ext/bootstrap/css/bootstrap.min.css" type="text/css"
           rel="stylesheet">
+
+    <script type="text/javascript">
+        $(function () {
+            $("#EmployeeListByExcel").click(function () {
+                $("#excelModal").modal("show");
+                $("#excelModal").removeAttr("style");
+            });
+        });
+    </script>
+
 </head>
 <body>
 
@@ -93,6 +103,38 @@
 
         <input class="btn btn-success col-sm-offset-1" type="submit" value="提交"/>
     </form>
+
+    <button class="btn btn-success col-sm-offset-1">
+        <a href="javascript:void(0)" id="EmployeeListByExcel">Excel批量添加</a>
+    </button>
+</div>
+
+<%--模态框：上传excel文件--%>
+<div style="display:none" class="modal fade" id="excelModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel"
+     aria-hidden="true" enctype="multipart/form-data">
+    <%--<div style="display:none" class="modal fade" id="excelModal" role="dialog">--%>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="editModalLabel">上传文件</h4>
+            </div>
+            <form method="post" enctype="multipart/form-data" role="form" action="${pageContext.request.contextPath}/listByExcel">
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="excel">文件：</label>
+                        <input type="file" id="excel" name="excel"/>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <input type="submit" class="btn btn-primary" value="上传"/>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
 </body>

@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 <%--
   Created by IntelliJ IDEA.
   User: Focus
@@ -16,8 +17,14 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.1.0.min.js"></script>
 </head>
 <script type="text/javascript">
+    //    通过js计算出能让,rem布局结合在html上根据不同分辨率设置不同的font-size
+    //    html的font-size=deviceWidth/12.0
+    var deviceWidth = document.documentElement.clientWidth;
+    if (deviceWidth > 1200) deviceWidth = 1280;
+    document.documentElement.style.fontSize = deviceWidth / 12.0 + 'px';
+
     function searchLesson() {
-        $("#searchForm").submit();
+        $("#search-form").submit();
     }
 </script>
 <body>
@@ -28,8 +35,8 @@
                     src="${pageContext.request.contextPath}/img/logo.png"></a>
         </div>
         <ul class="nav-item">
-            <li><a href=" " target="_self">首页</a></li>
-            <li><a href=" " target="_self">课程</a></li>
+            <li><a href="${pageContext.request.contextPath}/html/index.html" target="_self">首页</a></li>
+            <li><a href="#" target="_self">课程</a></li>
         </ul>
         <!-- logined模块-->
         <div class="login-area">
@@ -44,7 +51,7 @@
                 </li>
                 <!-- 个人icon -->
                 <li class="my-wrap">
-                    <a href="#" target="_blank">
+                    <a href="${pageContext.request.contextPath}/html/person.html" target="_self  ">
                         <i class="icon-my">
                         </i>
                     </a>
@@ -55,21 +62,36 @@
 
         <!-- 搜索框模块 -->
         <div class="search-wrap">
-            <form id="searchForm" action="${pageContext.request.contextPath}/selectLessonByName" method="post"
-                  target="_blank">
-                <!-- 搜索框 -->
-                <div class="search-area" data-search="top-banner">
-                    <input name="searchName" id="search-input" class="search-input" type="text">
+                <!-- 提示标签 -->
+                <div id="searchTag" class="searchTag">
+                    <a href="" target="_blank">防抖技术</a>
+                    <a href="" target="_blank">前景技术</a>
                 </div>
-                <!-- 搜索icon -->
-                <div class="showhide-search">
-                    <a href="javascript:void(0)" onclick="searchLesson()"><i class="icon-search"></i></a>
-                </div>
-            </form>
-        </div>
+<!-- 搜索框 -->
+<form class="search-form" action="${pageContext.request.contextPath}/selectLessonByName" target="_blank" id="search-form" method="post">
+    <input type="text"  class="search-input"  id="search-input" name="searchName"  autocomplete="off">
+    <!-- 搜索icon -->
+    <div class="showhide-search">
+        <!-- <button type="submit">,只是一个简单的按钮，input+submit可以提交数据 -->
+        <a href="javascript:void(0)" onclick="searchLesson()"><i class="icon-search"></i></a>
     </div>
+</form>
+<!-- 				<ul id="data-list" class="search-area-result">
+					<li data-key="暗光高清技术">暗光高清技术</li>
+					<li data-key="防抖技术">防抖技术</li>
+					<li data-key="人脸技术">人脸技术</li>
+					<li data-key="HDR技术">HDR技术</li>
+				</ul>	 -->
+<div class="suggest" id="search-suggest">
+    <ul id="search-area-result">
+
+    </ul>
 </div>
-<div id="main">
+</div>
+</div>
+</div>
+
+<%--<div id="main">
     <div class="wrap">
         <div class="top">
             <div class="course-content">
@@ -103,7 +125,8 @@
                 <c:forEach items="${lessonWithRouteList}" var="lessonWithRoute">
                     <c:forEach items="${lessonWithRoute.routes}" var="route">
                         <div class="index-card-container">
-                            <a href="${pageContext.request.contextPath}/showRoute?routeId=${route.id}" target="_blank" class="course-card">
+                            <a href="${pageContext.request.contextPath}/showRoute?routeId=${route.id}" target="_blank"
+                               class="course-card">
                                 <div class="course-card-text">
                                     <div class="course-card-top">
                                         <h4>${lessonWithRoute.lessonName}</h4>
@@ -128,17 +151,110 @@
         </div>
     </div>
     <div class="page">
-        <a href="">首页</a>
-        <a href="">上一页</a>
-        <a class="text-page-tag" href="">1</a>
-        <a class="text-page-tag" href="">2</a>
-        <a class="text-page-tag" href="">3</a>
-        <a class="text-page-tag" href="">4</a>
-        <a class="text-page-tag" href="">5</a>
-        <a class="text-page-tag" href="">6</a>
-        <a class="text-page-tag" href="">7</a>
-        <a href="">下一页</a>
-        <a href="">尾页</a>
+        <a href="${pageContext.request.contextPath}/selectLessonByName?start=1">首页</a>
+        <c:if test="${not empty pre}"><a
+                href="${pageContext.request.contextPath}/selectLessonByName?start=${pre}">上一页</a></c:if>
+        <c:forEach var="i" begin="1" end="${pageCount}" step="1">
+            <a class="text-page-tag" href="selectLessonByName?start=${i}">${i}</a>
+        </c:forEach>
+        <c:if test="${not empty next}"><a
+                href="${pageContext.request.contextPath}/selectLessonByName?start=${next}">下一页</a></c:if>
+        <a href="${pageContext.request.contextPath}/selectLessonByName?start=${pageCount}">尾页</a>
+    </div>
+</div>
+<div id="footer">
+    <div class="foot-container">
+        <div class="footer-link">
+            <a href="http://www.arcsoft.com.cn" target="_blank" title="虹软官网">虹软官网</a>
+            <a href="http://weibo.com/arcsoftchina" target="_blank" title="虹软微博">虹软微博</a>
+        </div>
+        <div class="footer-copyright">
+            <p>©&nbsp;2017&nbsp;arcsoft.com&nbsp;&nbsp;浙ICP备11037259号-3</p>
+        </div>
+    </div>
+</div>--%>
+
+
+
+<div id="main">
+    <div class="wrap">
+        <div class="top">
+            <div class="course-content">
+                <div class="course-nav-row clearfix">
+                    <span class="hd l">方向:</span>
+                    <div class="bd">
+                        <ul>
+                            <li class="course-nav-item-top all on"><a href="#" target="_self">全部</a></li>
+                            <li class="course-nav-item-top one"><a href="#" target="_self">虹软技术</a></li>
+                            <li class="course-nav-item-top two"><a href="#" target="_self">虹软产品</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="course-nav-row clearfix">
+                    <span class="hd l">分类:</span>
+                    <div class="bd" id="tab">
+                        <!-- "全部课程"的子菜单栏 -->
+                        <ul class="all">
+                            <li class="course-nav-item on"><a href="#" target="_self">全部</a></li>
+                            <c:forEach items="${lessonList}" var="lesson">
+                                <li class="course-nav-item"><a href="" target="_self">${lesson.name}</a></li>
+                            </c:forEach>
+                        </ul>
+                        <!-- "虹软技术"选项子菜单栏 -->
+                        <ul class="one">
+
+                        </ul>
+                        <!-- "虹软产品"选项的子菜单栏 -->
+                        <ul class="two">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container clearfix">
+        <div class="course-list clearfix" id="course-list">
+            <ul>
+                <c:forEach items="${lessonWithRouteList}" var="lessonWithRoute">
+                    <c:forEach items="${lessonWithRoute.routes}" var="route">
+                        <div class="index-card-container">
+                            <a href="${pageContext.request.contextPath}/showRoute?routeId=${route.id}" target="_blank"
+                               class="course-card">
+                                <div class="course-card-text">
+                                    <div class="course-card-top">
+                                        <h4>${lessonWithRoute.lessonName}</h4>
+                                    </div>
+                                    <div class="course-card-content">
+                                        <h3 class="course-card-name">${route.routeName}</h3>
+                                        <p title="防抖技术课程简介">${lessonWithRoute.lessonDetail}</p>
+                                        <div class="course-card-info">
+                                            <span>类型</span>
+                                            <span class="course-type">视频</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="course-card-cover"></div>
+                                <div class="course-card-bg"
+                                     style="background-image: url(${pageContext.request.contextPath}/img/lessonImage/${lessonWithRoute.lessonCover});"></div>
+                            </a>
+                        </div>
+                    </c:forEach>
+                </c:forEach>
+
+            </ul>
+        </div>
+    </div>
+    <div class="page">
+        <a href="${pageContext.request.contextPath}/selectLessonByName?start=1">首页</a>
+        <c:if test="${not empty pre}"><a
+                href="${pageContext.request.contextPath}/selectLessonByName?start=${pre}">上一页</a></c:if>
+        <c:forEach var="i" begin="1" end="${pageCount}" step="1">
+            <a class="text-page-tag" href="selectLessonByName?start=${i}">${i}</a>
+        </c:forEach>
+        <c:if test="${not empty next}"><a
+                href="${pageContext.request.contextPath}/selectLessonByName?start=${next}">下一页</a></c:if>
+        <a href="${pageContext.request.contextPath}/selectLessonByName?start=${pageCount}">尾页</a>
     </div>
 </div>
 <div id="footer">
