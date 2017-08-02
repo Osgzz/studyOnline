@@ -8,18 +8,19 @@
              $('#search-input').bind('keyup', function() {
                 var searchText = $('#search-input').val();
                 //输入搜索课程，出现子课程提示
-                $.get('/studyOnline-1.0-SNAPSHOT/selectLessonByNameWithJson?searchName='+searchText,function(d){
-                    var data = d.lessonWithRouteList[0].routes;
+                $.get('/studyOnline-1.0-SNAPSHOT/selectLessonByNameWithJson?searchName='+searchText,function(json){
+                    var route = json.lessonWithRouteList[0].routes;
                     var htmlContent = ' ';
-                    for (var i=0;i<data.length;i++) {
-                        htmlContent+= '<li><a class=li-item target=_blank href=/studyOnline-1.0-SNAPSHOT/showRoute?id='+data[i].id+'>'+data[i].routeName+'</a></li>';
+                    for (var i=0;i<route.length;i++) {
+                        htmlContent+= '<li><a class=li-item target=_blank href=/studyOnline-1.0-SNAPSHOT/showRoute?id='+data[i].id+'>'+data[i].routeName+'</a></li>';                    
                     }
                     $('#search-area-result').html(htmlContent);
                     $('#search-area-result').css({display: 'block'}); 
                     //点击li就会获取当前的值匹配到搜索框中
                     $("li").click(function() {
                         $('#search-input').val($(this).text());                      
-                    });
+                    });                       
+
                 },'json');
              });
         });
@@ -36,6 +37,7 @@
                      $("#search-form").submit();   
                      // alert('表单值不为空，提交表单');    
                         }   
+                    
         });
         //点击搜索按钮，onclick触发searchLesson函数,
         // function searchLesson(){
@@ -56,7 +58,6 @@
         // $(document).delegate('li', 'click', function() {
         //      location.href = $('.li-item').attr("href");
         // });
-        
 
 
          /*轮播图模块的功能实现*/
@@ -284,50 +285,47 @@
                     $this.addClass('on');
                          });                    
       }      
-
-      // 动态获取课程列表的所有数据
-      $.getJSON('/studyOnline-1.0-SNAPSHOT/getLessonListWithRouteByJson', function(json) {
-                 
-            for(var i=0;i<json.length;i++){
+       //course.html获取url中的参数
+        function getUrlParam(name)
+        {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");  
+            var r = window.location.search.substr(1).match(reg);  //获取url中"?"符后的字符串并正则匹配
+            var context = "";  
+            if (r != null)  
+                 context = r[2];  
+            reg = null;  
+            r = null;  
+            return context == null || context == "" || context == "undefined" ? "" : context;  
+        }
+        //传递course.html获取的课程参数到后台接口，并获取json数据进行动态数据插入
+        var courseParam = getUrlParam('searchName');
+        // console.log(courseParam);
+        $.getJSON('/studyOnline-1.0-SNAPSHOT/selectLessonByNameWithJson?searchName='+courseParam,  function(json) {
+                   var data = json.lessonWithRouteList;
+                   for(var i=0;i<data.length;i++){
                     //获取子课程所有数据
-                    var route = json[i].routes;   
+                    var route = json.lessonWithRouteList[0].routes;  
+                    // console.log(route);
                     //动态插入输出全部课程数模块         
-                             for(var j=0;j<route.length;j++){                       
+                     for(var j=0;j<route.length;j++){                       
                      //获取大课程名称
-                     var len = 0;
-                     var  topCourseName = json[i].lessonName;
-                           //动态插入大课程标题
-                     // $("#course-list ul").append("<div class='index-card-container'><a href='#' target='_blank' class='course-card'><div class='course-card-text'><div class='course-card-top'><h4>"+topCourseName+"</h4></div></div></a></div>");                       
-                             // for(var j=0; j<route.length;j++){
-                   //               //获取子课程课程名称      
-                                   var courseName = route[j].routeName;
+                     var  topCourseName = data[i].lessonName;
+                        //获取子课程课程名称      
+                     var courseName = route[j].routeName;
                        //获取子课程课程描述                                             
-                                             var courseDesc = route[j].detail;
+                     var courseDesc = route[j].detail;
                        //获取子课程图片路径                                             
-                                             var courseCover = '/studyOnline-1.0-SNAPSHOT/img/routeImage/'+ route[j].cover;
-                                             // var lessonCover = '/studyOnline-1.0-SNAPSHOT/img/routeImage/'+ json[i].lessonCover;
+                      var courseCover = '/studyOnline-1.0-SNAPSHOT/img/routeImage/'+ route[j].cover;
 
-                                             ////获取子课程视频路径  
-                                             var coursePath = '/studyOnline-1.0-SNAPSHOT/showRoute?id='+ route[j].id;
-                                             $("#course-list ul").append("<div class='index-card-container'><a href='#' target='_blank' class='course-card'><div class='course-card-cover'></div><div class='course-card-text'><div class='course-card-top'><h4>"+topCourseName+"</h4></div><div class='course-card-content'><h3 class='course-card-name'>"+courseName+"</h3><p title="+courseDesc+">"+courseDesc+"</p></div></div><div class='course-card-bg' style='background:url("+courseCover+")'></div></div></a></div>");                        
+                       ////获取子课程视频路径  
+                      var coursePath = '/studyOnline-1.0-SNAPSHOT/showRoute?id='+ route[j].id;
+                               $("#course-list ul").append("<div class='index-card-container'><a href="+coursePath+" target='_blank' class='course-card'><div class='course-card-cover'></div><div class='course-card-text'><div class='course-card-top'><h4>"+topCourseName+"</h4></div><div class='course-card-content'><h3 class='course-card-name'>"+courseName+"</h3><p title="+courseDesc+">"+courseDesc+"</p></div></div><div class='course-card-bg' style='background:url("+courseCover+")'></div></div></a></div>");                        
 
-                                             // $("#course-list ul").append("<div class='index-card-container'><a href="+coursePath+" target='_blank' class='course-card'><div class='course-card-text'><div class='course-card-top'><p>"+topCourseName+"</p></div><div class='course-card-content'><h3 class='course-card-name'>"+courseName+"</h3><p title='防抖技术课程简介'>"+courseDesc+"</p></div></div><div class='course-card-cover'></div><div class='course-card-bg'></div></a></div>');
-                                             // $(".course-card-content").eq(i-1).children().remove();
-                                             // $(".course-card-text").eq(j).eq(i).append("<div class='course-card-content'><h3 class='course-card-name'>"+courseName+"</h3><p title="+courseDesc+">"+courseDesc+"</p></div></div>");
-                                             // var courseCardText = '<div class=course-card-content><h3 class=course-card-name>'+courseName+'</h3><p title='+courseDesc+'>'+courseDesc+'</p></div>';
-                                             // (course-card-text).insertBefore(".course-card-top");
-                                             // $(".course-card").eq(j).eq(i).append("<div class='course-card-cover'></div>");
-                                             // $('.course-card-bg').css({
-                                             //                                                 background: 'url('+lessonCover+')'
-                                             //                                              });                                                 
-                                    // $(".course-card").eq(j).eq(i).append("<div class='course-card-bg'></div>");                        
-                    
-                  // }
-              }                            
-                               }
+                        }                            
+                  }
+        });
 
-            
-      });
+      
 
 
     /*person.js*/

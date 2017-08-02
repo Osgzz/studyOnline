@@ -66,9 +66,46 @@
       <file leaf-file-name="Employee.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/arcsoft/studyOnline/bean/Employee.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7197">
+            <state relative-caret-position="50">
               <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="e#2431#2432#0" expanded="false" />
+                <element signature="e#2456#2457#0" expanded="false" />
+                <element signature="e#2741#2742#0" expanded="false" />
+                <element signature="e#2769#2770#0" expanded="false" />
+                <element signature="e#3052#3053#0" expanded="false" />
+                <element signature="e#3079#3080#0" expanded="false" />
+                <element signature="e#3373#3374#0" expanded="false" />
+                <element signature="e#3434#3435#0" expanded="false" />
+                <element signature="e#3729#3730#0" expanded="false" />
+                <element signature="e#3760#3761#0" expanded="false" />
+                <element signature="e#4074#4075#0" expanded="false" />
+                <element signature="e#4147#4148#0" expanded="false" />
+                <element signature="e#4442#4443#0" expanded="false" />
+                <element signature="e#4473#4474#0" expanded="false" />
+                <element signature="e#4787#4788#0" expanded="false" />
+                <element signature="e#4860#4861#0" expanded="false" />
+                <element signature="e#5149#5150#0" expanded="false" />
+                <element signature="e#5178#5179#0" expanded="false" />
+                <element signature="e#5482#5483#0" expanded="false" />
+                <element signature="e#5549#5550#0" expanded="false" />
+                <element signature="e#5841#5842#0" expanded="false" />
+                <element signature="e#5870#5871#0" expanded="false" />
+                <element signature="e#6177#6178#0" expanded="false" />
+                <element signature="e#6213#6214#0" expanded="false" />
+                <element signature="e#6517#6518#0" expanded="false" />
+                <element signature="e#6550#6551#0" expanded="false" />
+                <element signature="e#6877#6878#0" expanded="false" />
+                <element signature="e#6921#6922#0" expanded="false" />
+                <element signature="e#7207#7208#0" expanded="false" />
+                <element signature="e#7235#7236#0" expanded="false" />
+                <element signature="e#7534#7535#0" expanded="false" />
+                <element signature="e#7598#7599#0" expanded="false" />
+                <element signature="e#7884#7885#0" expanded="false" />
+                <element signature="e#7912#7913#0" expanded="false" />
+                <element signature="e#8211#8212#0" expanded="false" />
+                <element signature="e#8275#8276#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -76,9 +113,12 @@
       <file leaf-file-name="AdminstratorService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/arcsoft/studyOnline/service/AdminstratorService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1070">
+            <state relative-caret-position="100">
               <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
-              <folding />
+              <folding>
+                <element signature="e#738#739#0" expanded="false" />
+                <element signature="e#805#806#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -471,7 +511,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/css/login.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/arcsoft/studyOnline/controller/PageController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/background/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
@@ -522,6 +561,7 @@
         <option value="$PROJECT_DIR$/build/libs/exploded/studyOnline-1.0-SNAPSHOT.war/css/index.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/course.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/background/customer.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/html/course.html" />
       </list>
     </option>
   </component>
@@ -559,6 +599,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
@@ -895,7 +936,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1398,7 +1438,12 @@
           <option name="PROGRAM_PARAMETERS" value="" />
         </SHUTDOWN>
       </ConfigurationWrapper>
-      <method />
+      <method>
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Gradle : com.arcsoft.studyOnline : studyOnline-1.0-SNAPSHOT.war (exploded)" />
+        </option>
+      </method>
     </configuration>
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.studyOnline" />
@@ -1470,6 +1515,8 @@
       <workItem from="1500779109062" duration="11707000" />
       <workItem from="1500862046799" duration="399000" />
       <workItem from="1500863464929" duration="42566000" />
+      <workItem from="1501650118345" duration="4183000" />
+      <workItem from="1501663276148" duration="4078000" />
     </task>
     <task id="LOCAL-00001" summary="1、mybatis逆向工程：新增实体类，mybatis映射文件，dao&#10;2、配置数据库，连接池，springmvc配置文件和spring配置文件&#10;3、集成ueditor富文本编辑器&#10;4、gradle添加依赖包">
       <created>1495539438775</created>
@@ -1615,26 +1662,25 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="473874000" />
+    <option name="totallyTimeSpent" value="482135000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="0" width="1292" height="744" extended-state="1" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3786885" sideWeight="0.49025974" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34918034" sideWeight="0.12581168" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34918034" sideWeight="0.13717532" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.85679615" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34918034" sideWeight="0.8741883" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34918034" sideWeight="0.8628247" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15879828" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15827923" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16314936" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3496802" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11525974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1753,6 +1799,33 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/arcsoft/studyOnline/service/AdminstratorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+          <folding>
+            <element signature="e#738#739#0" expanded="false" />
+            <element signature="e#805#806#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/course.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2125">
+          <caret line="85" column="19" lean-forward="false" selection-start-line="85" selection-start-column="19" selection-end-line="85" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2250">
@@ -1789,7 +1862,44 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="e#2431#2432#0" expanded="false" />
+            <element signature="e#2456#2457#0" expanded="false" />
+            <element signature="e#2741#2742#0" expanded="false" />
+            <element signature="e#2769#2770#0" expanded="false" />
+            <element signature="e#3052#3053#0" expanded="false" />
+            <element signature="e#3079#3080#0" expanded="false" />
+            <element signature="e#3373#3374#0" expanded="false" />
+            <element signature="e#3434#3435#0" expanded="false" />
+            <element signature="e#3729#3730#0" expanded="false" />
+            <element signature="e#3760#3761#0" expanded="false" />
+            <element signature="e#4074#4075#0" expanded="false" />
+            <element signature="e#4147#4148#0" expanded="false" />
+            <element signature="e#4442#4443#0" expanded="false" />
+            <element signature="e#4473#4474#0" expanded="false" />
+            <element signature="e#4787#4788#0" expanded="false" />
+            <element signature="e#4860#4861#0" expanded="false" />
+            <element signature="e#5149#5150#0" expanded="false" />
+            <element signature="e#5178#5179#0" expanded="false" />
+            <element signature="e#5482#5483#0" expanded="false" />
+            <element signature="e#5549#5550#0" expanded="false" />
+            <element signature="e#5841#5842#0" expanded="false" />
+            <element signature="e#5870#5871#0" expanded="false" />
+            <element signature="e#6177#6178#0" expanded="false" />
+            <element signature="e#6213#6214#0" expanded="false" />
+            <element signature="e#6517#6518#0" expanded="false" />
+            <element signature="e#6550#6551#0" expanded="false" />
+            <element signature="e#6877#6878#0" expanded="false" />
+            <element signature="e#6921#6922#0" expanded="false" />
+            <element signature="e#7207#7208#0" expanded="false" />
+            <element signature="e#7235#7236#0" expanded="false" />
+            <element signature="e#7534#7535#0" expanded="false" />
+            <element signature="e#7598#7599#0" expanded="false" />
+            <element signature="e#7884#7885#0" expanded="false" />
+            <element signature="e#7912#7913#0" expanded="false" />
+            <element signature="e#8211#8212#0" expanded="false" />
+            <element signature="e#8275#8276#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2102,17 +2212,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/arcsoft/studyOnline/bean/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7197">
+        <state relative-caret-position="50">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="e#2431#2432#0" expanded="false" />
+            <element signature="e#2456#2457#0" expanded="false" />
+            <element signature="e#2741#2742#0" expanded="false" />
+            <element signature="e#2769#2770#0" expanded="false" />
+            <element signature="e#3052#3053#0" expanded="false" />
+            <element signature="e#3079#3080#0" expanded="false" />
+            <element signature="e#3373#3374#0" expanded="false" />
+            <element signature="e#3434#3435#0" expanded="false" />
+            <element signature="e#3729#3730#0" expanded="false" />
+            <element signature="e#3760#3761#0" expanded="false" />
+            <element signature="e#4074#4075#0" expanded="false" />
+            <element signature="e#4147#4148#0" expanded="false" />
+            <element signature="e#4442#4443#0" expanded="false" />
+            <element signature="e#4473#4474#0" expanded="false" />
+            <element signature="e#4787#4788#0" expanded="false" />
+            <element signature="e#4860#4861#0" expanded="false" />
+            <element signature="e#5149#5150#0" expanded="false" />
+            <element signature="e#5178#5179#0" expanded="false" />
+            <element signature="e#5482#5483#0" expanded="false" />
+            <element signature="e#5549#5550#0" expanded="false" />
+            <element signature="e#5841#5842#0" expanded="false" />
+            <element signature="e#5870#5871#0" expanded="false" />
+            <element signature="e#6177#6178#0" expanded="false" />
+            <element signature="e#6213#6214#0" expanded="false" />
+            <element signature="e#6517#6518#0" expanded="false" />
+            <element signature="e#6550#6551#0" expanded="false" />
+            <element signature="e#6877#6878#0" expanded="false" />
+            <element signature="e#6921#6922#0" expanded="false" />
+            <element signature="e#7207#7208#0" expanded="false" />
+            <element signature="e#7235#7236#0" expanded="false" />
+            <element signature="e#7534#7535#0" expanded="false" />
+            <element signature="e#7598#7599#0" expanded="false" />
+            <element signature="e#7884#7885#0" expanded="false" />
+            <element signature="e#7912#7913#0" expanded="false" />
+            <element signature="e#8211#8212#0" expanded="false" />
+            <element signature="e#8275#8276#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/arcsoft/studyOnline/service/AdminstratorService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1070">
+        <state relative-caret-position="100">
           <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
-          <folding />
+          <folding>
+            <element signature="e#738#739#0" expanded="false" />
+            <element signature="e#805#806#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
