@@ -324,6 +324,7 @@
             p.premission_level p_premissionLevel
         FROM employee e, department d, position p
         WHERE e.dept_id = d.id AND e.position_id = p.id
+        ORDER BY e_id ASC
     </select>
 
     <insert id="insertEmployee" parameterType="com.arcsoft.studyOnline.bean.Employee" useGeneratedKeys="true"

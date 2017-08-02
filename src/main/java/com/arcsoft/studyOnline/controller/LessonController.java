@@ -97,9 +97,24 @@ public class LessonController {
      * @return 跳转到 课程信息列表
      */
     @RequestMapping("/toLessonList")
-    public String toLessonList(Model model) {
+    public String toLessonList(Model model,@RequestParam(required = false, defaultValue = "") String searchName, @RequestParam(required = false, defaultValue = "1") Integer start) {
+        Page<Object> page = PageHelper.startPage(start, 10);
         List<Lesson> lessonList = lessonService.selectLessonList();
+        PageInfo<Lesson> pageInfo = new PageInfo<>(lessonList);
+        int pageCount = pageInfo.getPages();
         model.addAttribute("lessonList", lessonList);
+        model.addAttribute("pageCount", pageCount);
+        model.addAttribute("start", start);
+        if (start - 1 >= 1) {
+            model.addAttribute("pre", start - 1);
+        } else {
+            model.addAttribute("pre", 1);
+        }
+        if (start + 1 <= pageCount) {
+            model.addAttribute("next", start + 1);
+        } else {
+            model.addAttribute("next", pageCount);
+        }
         return "lessonList";
     }
 
