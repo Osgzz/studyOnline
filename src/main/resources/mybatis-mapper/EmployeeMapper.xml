@@ -382,4 +382,11 @@
         FROM employee
         WHERE name = #{name}
     </select>
+
+
+    <select id="selectEmployeeByName" resultType="com.arcsoft.studyOnline.bean.Employee">
+        SELECT *
+        FROM employee
+        WHERE name = #{name}
+    </select>
 </mapper>

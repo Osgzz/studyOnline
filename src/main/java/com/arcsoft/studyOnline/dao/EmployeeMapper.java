@@ -83,4 +83,6 @@ public interface EmployeeMapper {
     int selectEmployeeCount(@Param("name") String name);
 
     List<EmployeeWithDeptNameAndPositon> selectEDP();
+
+    Employee selectEmployeeByName(@Param("name")String name);
 }

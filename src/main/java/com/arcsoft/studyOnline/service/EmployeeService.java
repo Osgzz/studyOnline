@@ -215,4 +215,8 @@ public class EmployeeService {
     public List<EmployeeWithDeptNameAndPositon> selectEmployeeWithDeptAndPositon() {
         return  employeeMapper.selectEDP();
     }
+
+    public Employee selectEmployeeByName(String name) {
+        return employeeMapper.selectEmployeeByName(name);
+    }
 }

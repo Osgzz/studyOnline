@@ -1,5 +1,7 @@
 package com.arcsoft.studyOnline.controller;
 
+import com.arcsoft.studyOnline.SecurityRealm.CustomizedToken;
+import com.arcsoft.studyOnline.SecurityRealm.LoginType;
 import com.arcsoft.studyOnline.bean.Employee;
 import com.arcsoft.studyOnline.bean.LessonWithRoute;
 import com.arcsoft.studyOnline.bean.RouteWithResource;
@@ -7,6 +9,11 @@ import com.arcsoft.studyOnline.service.EmployeeService;
 import com.arcsoft.studyOnline.service.LessonService;
 import com.arcsoft.studyOnline.service.RouteService;
 import com.sun.org.apache.xpath.internal.operations.Mod;
+import org.apache.poi.hpsf.CustomProperties;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -28,6 +35,9 @@ public class ForeGround {
     @Autowired
     private RouteService routeService;
 
+    private static final String USER_LOGIN_TYPE = LoginType.EMP.toString();
+
+
 
     /**
      * @return 跳转到login.jsp 页面
@@ -45,16 +55,25 @@ public class ForeGround {
      */
     @RequestMapping("/customerLogin")
     public String customerLogin(String username, String password, Model model) {
-        Employee employee = employeeService.getEmployeeByUsername(username);
-        if (employee != null) {
-            if (employee.getPassword().equals(password)) {
-                model.addAttribute("employee",employee);
-                List<LessonWithRoute> lessonWithRouteList = lessonService.selectLessonListWithRoute();
-                model.addAttribute("lessonList", lessonWithRouteList);
-                return "customer";
+        Subject currentUser = SecurityUtils.getSubject();
+
+        if (!currentUser.isAuthenticated()) {
+            CustomizedToken token = new CustomizedToken(username, password,USER_LOGIN_TYPE);
+            token.setRememberMe(true);
+            try {
+                currentUser.login(token);
+            } catch (AuthenticationException e) {
+                System.out.println("登录失败:" + e.getMessage());
+                model.addAttribute("msg", "error");
+                return "redirect:/toCustomerLogin";
             }
         }
-        return "redirect:/toCustomerLogin";
+
+        List<LessonWithRoute> lessonWithRouteList = lessonService.selectLessonListWithRoute();
+        model.addAttribute("lessonList", lessonWithRouteList);
+        Employee employee = employeeService.selectEmployeeByName(username);
+        model.addAttribute("employeeId",employee.getId());
+        return "customer";
     }
 
     /**

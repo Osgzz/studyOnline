@@ -2,32 +2,32 @@ package com.arcsoft.studyOnline.SecurityRealm;
 
 import com.arcsoft.studyOnline.bean.Adminstrator;
 import com.arcsoft.studyOnline.service.AdminstratorService;
-import org.apache.shiro.authc.*;
+import org.apache.shiro.authc.AuthenticationException;
+
+import org.apache.shiro.authc.AuthenticationInfo;
+import org.apache.shiro.authc.AuthenticationToken;
+import org.apache.shiro.authc.SimpleAuthenticationInfo;
+import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authz.AuthorizationInfo;
-import org.apache.shiro.authz.SimpleAuthorizationInfo;
-import org.apache.shiro.realm.AuthenticatingRealm;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.stereotype.Component;
 
+
 import javax.annotation.Resource;
-import javax.xml.registry.infomodel.User;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by Focus on 2017/5/26.
  */
-@Component("securityRealm")
-public class SecurityRealm extends AuthenticatingRealm {
+public class AdminRealm extends AuthorizingRealm {
     @Resource
     private AdminstratorService adminstratorService;
 
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 
-        UsernamePasswordToken upToken = (UsernamePasswordToken) token;
+        CustomizedToken  upToken = (CustomizedToken) token;
         String principal = (String) upToken.getPrincipal();
         Adminstrator adminstrator = adminstratorService.selectAdminstratorByUsername(principal);
         if (adminstrator == null) {
@@ -37,6 +37,11 @@ public class SecurityRealm extends AuthenticatingRealm {
         ByteSource credentialsSalt = ByteSource.Util.bytes(principal);
         SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(principal, adminstrator.getPassword(),credentialsSalt, getName());
         return authenticationInfo;
+    }
+
+    @Override
+    protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
+        return null;
     }
 
 //    @Resource

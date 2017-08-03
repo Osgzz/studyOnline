@@ -1,5 +1,7 @@
 package com.arcsoft.studyOnline.controller;
 
+import com.arcsoft.studyOnline.SecurityRealm.CustomizedToken;
+import com.arcsoft.studyOnline.SecurityRealm.LoginType;
 import com.arcsoft.studyOnline.bean.Adminstrator;
 import com.arcsoft.studyOnline.service.AdminstratorService;
 import org.apache.shiro.SecurityUtils;
@@ -29,6 +31,8 @@ public class AdminstratorController {
     @Autowired
     private AdminstratorService adminstratorService;
 
+    private static final String USER_LOGIN_TYPE = LoginType.ADMIN.toString();
+
     @RequestMapping("/index")
     public String index() {
         return "index";
@@ -46,7 +50,7 @@ public class AdminstratorController {
     public String login(@RequestParam String username, @RequestParam String password, Model model) {
         Subject currentUser = SecurityUtils.getSubject();
         if (!currentUser.isAuthenticated()) {
-            UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+            CustomizedToken token = new CustomizedToken(username, password,USER_LOGIN_TYPE);
             token.setRememberMe(true);
             try {
                 currentUser.login(token);
