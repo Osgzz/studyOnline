@@ -125,12 +125,13 @@
     //子菜单栏切换样式的实现
     //使用url传参数，然后根据参数判断是否有必要显示class
       function changeTab(){ 
-              $('#tab li a').each(function(){  
+               $('#tab li a').each(function(){  
                     if($($(this))[0].href==String(window.location)){  
                         $('#tab li').removeClass("on");  
                         $(this).parent().addClass('on');  
-                    }     
-             });          
+
+                    }                      
+               });        
        }   
 
 
@@ -150,8 +151,8 @@
         //传递course.html获取的课程参数到后台接口，并获取json数据进行动态数据插入
         var courseParam = getUrlParam('searchName');
         // console.log(courseParam);   
-
-        $.getJSON('/studyOnline-1.0-SNAPSHOT/selectLessonByNameWithJson?searchName='+courseParam,  function(json) {
+        var start =1; //当前页默认为1
+        $.getJSON('/studyOnline-1.0-SNAPSHOT/selectLessonByNameWithJson?searchName='+courseParam+'&start='+start,  function(json) {
                    var data = json.lessonWithRouteList;
                    for(var i=0;i<data.length;i++){
                     //获取子课程所有数据
@@ -173,9 +174,21 @@
                                $("#course-list ul").append("<div class='index-card-container'><a href="+coursePath+" target='_blank' class='course-card'><div class='course-card-cover'></div><div class='course-card-text'><div class='course-card-top'><h4>"+topCourseName+"</h4></div><div class='course-card-content'><h3 class='course-card-name'>"+courseName+"</h3><p title="+courseDesc+">"+courseDesc+"</p></div></div><div class='course-card-bg' style='background:url("+courseCover+")'></div></div></a></div>");                        
                         }                            
                   }
+                  var pre = json.pre;//上一页
+                  var next = json.next;//下一页
+                  var start = json.start;//当前页
+                  var total = json.pageCount;//分页页数
+                  $(".page").children().remove();            
+                  $('.page').append("<div class='page-pre'><a href='/studyOnline-1.0-SNAPSHOT/html/course.html?start="+pre+" 'target='_self'>上一页</a></div>");
+                  $('.page').append("<div class='page-list'></div>");      
+                  for(var a=1;a<=total;a++){
+                       $(".page-list").append("<a class = 'text-page-tag' href='/studyOnline-1.0-SNAPSHOT/html/course.html?start="+start+" 'target='_self'>"+a+"</a>");
+                  }
+                  $('.page').append("<div class='page-next'><a href='/studyOnline-1.0-SNAPSHOT/html/course.html?start="+next+" 'target='_self'>下一页</a></div>");
+
+
+                
         });
 
-        // 分页js
-        // $.getJSON('/studyOnline-1.0-SNAPSHOT/selectLessonByNameWithJson?searchName='
       
  })(jQuery);      
