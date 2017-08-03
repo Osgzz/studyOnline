@@ -65,7 +65,7 @@ public class ForeGround {
             } catch (AuthenticationException e) {
                 System.out.println("登录失败:" + e.getMessage());
                 model.addAttribute("msg", "error");
-                return "redirect:/toCustomerLogin";
+                return "redirect:/html/login.html";
             }
         }
 
@@ -73,7 +73,7 @@ public class ForeGround {
         model.addAttribute("lessonList", lessonWithRouteList);
         Employee employee = employeeService.selectEmployeeByName(username);
         model.addAttribute("employeeId",employee.getId());
-        return "customer";
+        return "redirect:/html/index.html";
     }
 
     /**
