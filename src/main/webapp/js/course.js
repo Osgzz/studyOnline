@@ -184,7 +184,7 @@
         var r = window.location.search.substr(1).match(reg); //匹配目标参数
         if(r != null)
             return unescape(getCharFromUtf8(r[2]));  //增加UTF-8解码处理。
-        return null; //返回参数值
+        return ""; //返回参数值
     }
 
 
