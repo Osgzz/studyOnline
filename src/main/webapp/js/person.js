@@ -7,7 +7,9 @@
              $('#search-input').bind('keyup', function() {
                 var searchText = $('#search-input').val();
                 //输入搜索课程，出现子课程提示
-                $.get('/studyOnline-1.0-SNAPSHOT/selectLessonByNameWithJson?searchName='+searchText,function(json){
+                $.get('/studyOnline-1.0-SNAPSHOT/selectLessonByNameWithJson?', {
+                    searchName:searchText
+                    },function(json){
                     var route = json.lessonWithRouteList[0].routes;
                     var htmlContent = ' ';
                     for (var i=0;i<route.length;i++) {

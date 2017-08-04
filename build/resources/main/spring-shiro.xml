@@ -24,6 +24,7 @@
                 /video-js-5.11.4/** = anon
                 /login = anon
                 /toCustomerLogin = anon
+                /customerLogin = anon
                 /getLessonListWithRouteByJson = anon
                 /getRouteWithResourceById = anon
                 /viewPDF.jsp = anon
@@ -62,20 +63,32 @@
         </property>
     </bean>
 
+    <!-- 配置使用自定义认证器，可以实现多Realm认证，并且可以指定特定Realm处理特定类型的验证 -->
+    <bean id="authenticator" class="com.arcsoft.studyOnline.SecurityRealm.CustomizedModularRealmAuthenticator">
+        <property name="definedRealms">
+            <map>
+                <entry key="empRealm" value-ref="empRealm" />
+                <entry key="adminRealm" value-ref="adminRealm" />
+            </map>
+        </property>
+    </bean>
+
     <!-- 安全管理器 -->
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="realms">
             <list>
-                <ref bean="securityRealm"/>
+                <ref bean="empRealm"/>
+                <ref bean="adminRealm"/>
             </list>
         </property>
         <!-- cacheManager,集合spring缓存工厂 -->
         <property name="cacheManager" ref="shiroEhcacheManager"/>
         <property name="sessionManager" ref="sessionManager"/>
+        <property name="authenticator" ref="authenticator"/>
     </bean>
 
-    <!--指定加密算法-->
-    <bean id="securityRealm" class="com.arcsoft.studyOnline.SecurityRealm.SecurityRealm">
+    <!--管理员：指定加密算法-->
+    <bean id="adminRealm" class="com.arcsoft.studyOnline.SecurityRealm.AdminRealm">
         <property name="credentialsMatcher">
             <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
                 <property name="hashAlgorithmName" value="MD5"/>
@@ -83,6 +96,12 @@
             </bean>
         </property>
     </bean>
+
+
+    <!--员工：指定加密算法-->
+    <bean id="empRealm" class="com.arcsoft.studyOnline.SecurityRealm.EmpRealm">
+    </bean>
+
 
     <!-- Shiro生命周期处理器 -->
     <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>

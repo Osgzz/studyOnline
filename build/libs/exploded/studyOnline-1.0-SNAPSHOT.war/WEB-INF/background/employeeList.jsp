@@ -1,3 +1,4 @@
+<!doctype html>
 <%--
   Created by IntelliJ IDEA.
   User: 59309
@@ -60,18 +61,18 @@
     <nav aria-label="Page navigation">
         <ul class="pagination">
             <li>
-                <a href="${pageContext.request.contextPath}/toBookList?start=1&bookId=${bookId}&bookname=${bookname}&publisher=${publisher}&author=${author}"
+                <a href="${pageContext.request.contextPath}/toEmployeeList?start=${pre}"
                    aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
             <c:forEach var="i" begin="1" end="${pageCount}" step="1">
                 <li>
-                    <a href="${pageContext.request.contextPath}/toBookList?start=${i}&bookId=${bookId}&bookname=${bookname}&publisher=${publisher}&author=${author}">${i}</a>
+                    <a href="${pageContext.request.contextPath}/toEmployeeList?start=${i}">${i}</a>
                 </li>
             </c:forEach>
             <li>
-                <a href="${pageContext.request.contextPath}/toBookList?start=${pageCount}&bookId=${bookId}&bookname=${bookname}&publisher=${publisher}&author=${author}"
+                <a href="${pageContext.request.contextPath}/toEmployeeList?start=${next}"
                    aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>

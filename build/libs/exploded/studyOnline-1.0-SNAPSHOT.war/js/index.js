@@ -8,11 +8,13 @@
              $('#search-input').bind('keyup', function() {
                 var searchText = $('#search-input').val();
                 //输入搜索课程，出现子课程提示
-                $.get('/studyOnline-1.0-SNAPSHOT/selectLessonByNameWithJson?searchName='+searchText,function(json){
+                $.get('/studyOnline-1.0-SNAPSHOT/selectLessonByNameWithJson?',{
+                    searchName:searchText
+                    },function(json){
                     var route = json.lessonWithRouteList[0].routes;
                     var htmlContent = ' ';
                     for (var i=0;i<route.length;i++) {
-                        htmlContent+= '<li><a class=li-item target=_blank href=/studyOnline-1.0-SNAPSHOT/showRoute?id='+data[i].id+'>'+data[i].routeName+'</a></li>';                    
+                        htmlContent+= '<li><a class=li-item target=_blank href=/studyOnline-1.0-SNAPSHOT/showRoute?id='+route[i].id+'>'+route[i].routeName+'</a></li>';                    
                     }
                     $('#search-area-result').html(htmlContent);
                     $('#search-area-result').css({display: 'block'}); 
@@ -146,7 +148,7 @@
                  var vioTitle = json[i].lessonName;
                  //生成推荐模块<div>标签插入HTML推荐模块中
                  $(".class-list").append(
-                       "<div class='re-video-item'><span class='re-vioImg'><a href='/studyOnline-1.0-SNAPSHOT/showRoute?id='><img src="+vioCover+"></a></span><span class='re-vioTitle'>"+vioTitle+"</span></div>");                 
+                       "<div class='re-video-item'><span class='re-vioImg'><a href='/studyOnline-1.0-SNAPSHOT/html/course.html?searchName="+vioTitle+"' target='_blank'><img src="+vioCover+"></a></span><span class='re-vioTitle'>"+vioTitle+"</span></div>");                 
                  }              
 
                   /*课程模块*/
@@ -154,8 +156,8 @@
                  for(var i=0;i<6;i++){
                      var vioDetail = json[i].lessonDetail;     
                      //生成推荐模块<div>标签插入HTML推荐模块中
-                     var vioId = '/studyOnline-1.0-SNAPSHOT/showRoute?id='+json[i].lessonId;
-                    $('.type-content-left').eq(i).append("<h2 class='path-title'>"+vioDetail+"</h2><a  class='path-more' href="+vioId+" target='_blank'>了解更多 >></a>");//eq()函数指定当前的数据索引添加<h2>标签，否则会遍历出全部的课程名称
+                     var vioPath = '/studyOnline-1.0-SNAPSHOT/html/course.html?searchName='+json[i].lessonName; //点击“了解更多”跳转到course.html
+                    $('.type-content-left').eq(i).append("<h2 class='path-title'>"+vioDetail+"</h2><a  class='path-more' href="+vioPath+" target='_blank'>了解更多 >></a>");//eq()函数指定当前的数据索引添加<h2>标签，否则会遍历出全部的课程名称
 
                       // $(".type-content-left").empty();
                       
