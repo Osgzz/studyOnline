@@ -10,6 +10,7 @@
             $.get('/studyOnline-1.0-SNAPSHOT/selectLessonByNameWithJson?' ,{
                 searchName: searchText
                 }, function (json) {
+
                 var route = json.lessonWithRouteList[0].routes;
                 var htmlContent = ' ';
                 for (var i = 0; i < route.length; i++) {
@@ -138,7 +139,7 @@
 
 
     // changeTab();
-    //course.html获取url中的参数
+
     function getUrlParam(name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
         var r = window.location.search.substr(1).match(reg);  //获取url中"?"符后的字符串并正则匹配
@@ -150,10 +151,51 @@
         return context == null || context == "" || context == "undefined" ? "" : context;
     }
 
+    function getCharFromUtf8(str) {
+        var cstr = "";
+        var nOffset = 0;
+        if (str == "")
+            return "";
+        str = str.toLowerCase();
+        nOffset = str.indexOf("%e");
+        if (nOffset == -1)
+            return str;
+        while (nOffset != -1) {
+            cstr += str.substr(0, nOffset);
+            str = str.substr(nOffset, str.length - nOffset);
+            if (str == "" || str.length < 9)
+                return cstr;
+            cstr += utf8ToChar(str.substr(0, 9));
+            str = str.substr(9, str.length - 9);
+            nOffset = str.indexOf("%e");
+        }
+        return cstr + str;
+    }
+
+//将编码转换成字符
+    function utf8ToChar(str) {
+        var iCode, iCode1, iCode2;
+        iCode = parseInt("0x" + str.substr(1, 2));
+        iCode1 = parseInt("0x" + str.substr(4, 2));
+        iCode2 = parseInt("0x" + str.substr(7, 2));
+        return String.fromCharCode(((iCode & 0x0F) << 12) | ((iCode1 & 0x3F) << 6) | (iCode2 & 0x3F));
+    }
+
+    //获取url中的参数
+    function getUrlParamWithEncode(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg); //匹配目标参数
+        if(r != null)
+            return unescape(getCharFromUtf8(r[2]));  //增加UTF-8解码处理。
+        return ""; //返回参数值
+    }
+
+
     //传递course.html获取的课程参数到后台接口，并获取json数据进行动态数据插入
-    var courseParam = getUrlParam('searchName');
+    var courseParam = getUrlParamWithEncode('searchName');
     // console.log(courseParam);
     var start = getUrlParam('start');
+
     $.getJSON('/studyOnline-1.0-SNAPSHOT/selectLessonByNameWithJson', {
         searchName: courseParam,
         start: start
@@ -184,12 +226,12 @@
         var start = json.start;//当前页
         var total = json.pageCount;//分页页数
         $(".page").children().remove();
-        $('.page').append("<div class='page-pre'><a href='/studyOnline-1.0-SNAPSHOT/html/course.html?start=" + pre + "&searchName="+courseParam+" 'target='_self'>上一页</a></div>");
+        $('.page').append("<div class='page-pre'><a href='/studyOnline-1.0-SNAPSHOT/html/course.html?start=" + pre + "&searchName=" + courseParam + " 'target='_self'>上一页</a></div>");
         $('.page').append("<div class='page-list'></div>");
         for (var a = 1; a <= total; a++) {
-            $(".page-list").append("<a class = 'text-page-tag' href='/studyOnline-1.0-SNAPSHOT/html/course.html?start=" + a + "&searchName="+courseParam+" 'target='_self'>" + a + "</a>");
+            $(".page-list").append("<a class = 'text-page-tag' href='/studyOnline-1.0-SNAPSHOT/html/course.html?start=" + a + "&searchName=" + courseParam + " 'target='_self'>" + a + "</a>");
         }
-        $('.page').append("<div class='page-next'><a href='/studyOnline-1.0-SNAPSHOT/html/course.html?start=" + next + "&searchName="+courseParam+" 'target='_self'>下一页</a></div>");
+        $('.page').append("<div class='page-next'><a href='/studyOnline-1.0-SNAPSHOT/html/course.html?start=" + next + "&searchName=" + courseParam + " 'target='_self'>下一页</a></div>");
 
 
     });

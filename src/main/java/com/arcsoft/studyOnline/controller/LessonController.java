@@ -200,6 +200,8 @@ public class LessonController {
     @RequestMapping("selectLessonByNameWithJson")
     @ResponseBody
     public Map selectLessonByNameWithJson(@RequestParam(required = false, defaultValue = "") String searchName,@RequestParam(required = false, defaultValue = "1") Integer start) {
+
+
         Map<String, Object> map = new HashMap<>();
 
         Page<Object> page = PageHelper.startPage(start, 15);
