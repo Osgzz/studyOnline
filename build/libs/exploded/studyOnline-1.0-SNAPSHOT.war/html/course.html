@@ -6,8 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="../css/course.css">
 	<script type="text/javascript" src="../js/jquery-3.1.0.min.js"></script>
-	<script type="text/javascript" src="../js/jquery.twbsPagination.js"></script>
-	<!-- 通过js计算出能让,rem布局结合在html上根据不同分辨率设置不同的font-size 
+	<!-- 通过js计算出能让,rem布局结合在html上根据不同分辨率设置不同的font-size
 	      html的font-size=deviceWidth/12.0-->
 	<script type="text/javascript">
 			var deviceWidth = document.documentElement.clientWidth;
@@ -55,7 +54,7 @@
 				<a href="" target="_blank">前景技术</a>
 			</div>
 			<!-- 搜索框 -->
-			<form class="search-form" action="/studyOnline-1.0-SNAPSHOT/html/course.html"  target="_self" id="search-form">
+			<form class="search-form" action="course.html" target="_blank" id="search-form">
 				<input type="text"  class="search-input"  id="search-input" name="searchName"  autocomplete="off">
 				<!-- 搜索icon -->
 				<div class="showhide-search">
@@ -85,9 +84,9 @@
 						<span class="hd l">方向:</span>
 					             <div class="bd">
 							<ul>
-								<li class="course-nav-item-top all on"><a href="javascript:;">全部</a></li>
- 								<li class="course-nav-item-top one"><a href="javascript:;">虹软技术</a></li>
-  								<li class="course-nav-item-top two"><a href="javascript:;">虹软产品</a></li>
+								<li class="course-nav-item-top all on"><a href="#" target="_self">全部</a></li>
+ 								<li class="course-nav-item-top one"><a href="#" target="_self">虹软技术</a></li>
+  								<li class="course-nav-item-top two"><a href="#" target="_self">虹软产品</a></li>
   							</ul>
 						</div>
 					</div>
@@ -95,7 +94,8 @@
 						<span class="hd l">分类:</span>
 						<div class="bd" id="tab">
 						             <!-- "全部课程"的子菜单栏 -->
-							<ul class="all">		                             
+							<ul class="all">
+
   							</ul>
   							<!-- "虹软技术"选项子菜单栏 -->
   							<ul class="one">
@@ -138,13 +138,6 @@
 				<a href="">上一页</a>	                         	       
 	                         </div>
 			<div class="page-list">
-				<a class="text-page-tag" href="">1</a>
-				<a class="text-page-tag" href="">2</a>
-				<a class="text-page-tag" href="">3</a>
-				<a class="text-page-tag" href="">4</a>
-				<a class="text-page-tag" href="">5</a>
-				<a class="text-page-tag" href="">6</a>
-				<a class="text-page-tag" href="">7</a>
 			</div>
 	                         <div class="page-next">
 				<a href="">下一页</a>	                         	       

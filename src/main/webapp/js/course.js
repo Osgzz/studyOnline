@@ -7,7 +7,10 @@
         $('#search-input').bind('keyup', function () {
             var searchText = $('#search-input').val();
             //输入搜索课程，出现子课程提示
-            $.get('/studyOnline-1.0-SNAPSHOT/selectLessonByNameWithJson', {searchName: searchText}, function (json) {
+            $.get('/studyOnline-1.0-SNAPSHOT/selectLessonByNameWithJson?' ,{
+                searchName: searchText
+                }, function (json) {
+
                 var route = json.lessonWithRouteList[0].routes;
                 var htmlContent = ' ';
                 for (var i = 0; i < route.length; i++) {
@@ -97,9 +100,9 @@
     });
 
     $(".course-nav-item-top.two").click(function () {
-        // $(".course-nav-item-top.two").addClass('on');//:acitve添加背景色
-        // $(".course-nav-item-top.one").removeClass('on');//除去背景色
-        // $(".course-nav-item-top.all").removeClass('on');     //除去背景色    
+        $(".course-nav-item-top.two").addClass('on');//:acitve添加背景色
+        $(".course-nav-item-top.one").removeClass('on');//除去背景色
+        $(".course-nav-item-top.all").removeClass('on');     //除去背景色    
         //动态获取数据，并切换tab栏为“虹软产品”下对应的课程
         $.get('/studyOnline-1.0-SNAPSHOT/getLessonListWithRouteByJson', function (data) {
             $("#tab ul.all").hide();//tab>all选项隐藏
