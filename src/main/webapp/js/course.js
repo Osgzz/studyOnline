@@ -217,7 +217,7 @@
                 var courseCover = '/studyOnline-1.0-SNAPSHOT/img/routeImage/' + route[j].cover;
 
                 ////获取子课程视频路径
-                var coursePath = '/studyOnline-1.0-SNAPSHOT/showRoute?id=' + route[j].id;
+                var coursePath = '/studyOnline-1.0-SNAPSHOT/html/video.html?id=' + route[j].id;
                 $("#course-list ul").append("<div class='index-card-container'><a href=" + coursePath + " target='_blank' class='course-card'><div class='course-card-cover'></div><div class='course-card-text'><div class='course-card-top'><h4>" + topCourseName + "</h4></div><div class='course-card-content'><h3 class='course-card-name'>" + courseName + "</h3><p title=" + courseDesc + ">" + courseDesc + "</p></div></div><div class='course-card-bg' style='background:url(" + courseCover + ")'></div></div></a></div>");
             }
         }

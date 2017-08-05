@@ -172,7 +172,7 @@
                          for(var j=0;j<route.length;j++){
                                var smallVioCover =  '/studyOnline-1.0-SNAPSHOT/img/routeImage/'+route[j].cover;//获取子课程的cover路径
                                var smallVioTitle = route[j].routeName;//获取子课程的name标题
-                               var smallVioId = '/studyOnline-1.0-SNAPSHOT/showRoute?id='+route[j].id;
+                               var smallVioId = '/studyOnline-1.0-SNAPSHOT/html/video.html?id='+route[j].id;
                                // $('.type-content').append("<div class='type-content-right'><a class='video-item' href='' target='_blank' ><span class='vioImg' ><img src="+smallVioCover+"></span><span class='vioTitle'>"+smallVioTitle+"</span><div class='vioCover'><i class='icon-play'></i></div><span class='viewCount'>120人</span></a></div>");
                                $('.type-content-right').eq(i).append("<a class='video-item' href="+smallVioId+" target='_blank' ><span class='vioImg' ><img src="+smallVioCover+"></span><span class='vioTitle'>"+smallVioTitle+"</span><div class='vioCover'><i class='icon-play'></i></div><span class='viewCount'>120人</span></a>");
                           }               

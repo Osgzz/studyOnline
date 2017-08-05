@@ -20,6 +20,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -93,10 +94,10 @@ public class ForeGround {
      * @return 跳转到video.jsp页面
      */
     @RequestMapping("/showRoute")
-    public String showRoute(Integer routeId, Model model) {
+    @ResponseBody
+    public RouteWithResource showRoute(Integer routeId, Model model) {
         RouteWithResource routeWithResources = routeService.selectRouteWithResource(routeId);
-        model.addAttribute("route", routeWithResources);
-        return "video";
+        return routeWithResources;
     }
 
     @RequestMapping("/toPerson")
