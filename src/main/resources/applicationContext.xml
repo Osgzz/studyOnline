@@ -43,7 +43,7 @@
     <bean id="routeWithResource" class="com.arcsoft.studyOnline.bean.RouteWithResource"/>
     <bean id="department" class="com.arcsoft.studyOnline.bean.Department"/>
     <bean id="employeeWithDeptNameAndPositon" class="com.arcsoft.studyOnline.bean.EmployeeWithDeptNameAndPositon"/>
-
+<bean id="discussWithEmpName" class="com.arcsoft.studyOnline.bean.DiscussWithEmpName"/>
 
     <import resource="spring-mybatis.xml"/>
     <import resource="spring-cache.xml"/>

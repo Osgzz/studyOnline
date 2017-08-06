@@ -34,9 +34,9 @@
             $("#comment").children("li").remove();
             var content = $("#discussContent").val("");
             var discussList = json.discussList;
-            var empNickName = json.empNiciName;
             for (var i = 0; i < discussList.length; i++) {
                 var discuss = discussList[i];
+                var empNickName = discuss.empNickName;
                 var time = discuss.time;
                 var discussText = discuss.content;
                 $("#comment").append("<li class='content-item clearfix'><div class='list-avator'><a href='#'><img src='../img/1.png' alt='头像'></a></div><div class='list-main'><ul class='plbg clearfix'><div class='list-nick'><a href='#'>" + empNickName + "</a></div><div class='list-time'><span class='list-time'>" + time + "</span></div></ul><ul class='plul clearfix'><div class='list-content'>" + discussText + "</div><a class='list-reply' name=''>回复</a></ul></div></li>");
@@ -82,9 +82,9 @@
             $("#comment").children("li").remove();
             var content = $("#discussContent").val("");
             var discussList = json.discussList;
-            var empNickName = json.empNiciName;
             for (var i = 0; i < discussList.length; i++) {
                 var discuss = discussList[i];
+                var empNickName = discuss.empNickName;
                 var time = discuss.time;
                 var discussText = discuss.content;
                 $("#comment").append("<li class='content-item clearfix'><div class='list-avator'><a href='#'><img src='../img/1.png' alt='头像'></a></div><div class='list-main'><ul class='plbg clearfix'><div class='list-nick'><a href='#'>" + empNickName + "</a></div><div class='list-time'><span class='list-time'>" + time + "</span></div></ul><ul class='plul clearfix'><div class='list-content'>" + discussText + "</div><a class='list-reply' name=''>回复</a></ul></div></li>");

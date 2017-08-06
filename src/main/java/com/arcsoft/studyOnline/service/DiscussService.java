@@ -1,6 +1,7 @@
 package com.arcsoft.studyOnline.service;
 
 import com.arcsoft.studyOnline.bean.Discuss;
+import com.arcsoft.studyOnline.bean.DiscussWithEmpName;
 import com.arcsoft.studyOnline.dao.DiscussMapper;
 import com.arcsoft.studyOnline.dao.EmployeeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class DiscussService {
     }
 
 
-    public List<Discuss> selectDiscussListByVideoId(Integer videoId) {
+    public List<DiscussWithEmpName> selectDiscussListByVideoId(Integer videoId) {
         return discussMapper.selectDiscussListByVideoId(videoId);
     }
 }

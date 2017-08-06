@@ -1,6 +1,7 @@
 package com.arcsoft.studyOnline.controller;
 
 import com.arcsoft.studyOnline.bean.Discuss;
+import com.arcsoft.studyOnline.bean.DiscussWithEmpName;
 import com.arcsoft.studyOnline.bean.Employee;
 import com.arcsoft.studyOnline.service.DiscussService;
 import com.arcsoft.studyOnline.service.EmployeeService;
@@ -43,7 +44,7 @@ public class DiscussController {
         Employee employee = employeeService.selectEmployeeByName(userName);
         Integer empId = employee.getId();
         discussService.insertDiscuss(content, videoId, empId, date, preId);
-        List<Discuss> discussList = discussService.selectDiscussListByVideoId(videoId);
+        List<DiscussWithEmpName> discussList = discussService.selectDiscussListByVideoId(videoId);
 
         map.put("discussList", discussList);
         map.put("empNiciName", employee.getNickname());
@@ -58,7 +59,7 @@ public class DiscussController {
         Employee employee = employeeService.selectEmployeeByName(userName);
         Integer empId = employee.getId();
         String empNiciName = employee.getNickname();
-        List<Discuss> discussList = discussService.selectDiscussListByVideoId(videoId);
+        List<DiscussWithEmpName> discussList = discussService.selectDiscussListByVideoId(videoId);
 
         map.put("discussList", discussList);
         map.put("empNiciName", empNiciName);

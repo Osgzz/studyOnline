@@ -4,6 +4,8 @@ import com.arcsoft.studyOnline.bean.Discuss;
 import com.arcsoft.studyOnline.bean.DiscussExample;
 import java.util.Date;
 import java.util.List;
+
+import com.arcsoft.studyOnline.bean.DiscussWithEmpName;
 import org.apache.ibatis.annotations.Param;
 
 public interface DiscussMapper {
@@ -81,5 +83,5 @@ public interface DiscussMapper {
 
     void insertDiscuss(@Param("videoId")Integer videoId,@Param("empId") Integer empId,@Param("content") String content,@Param("date") Date date,@Param("preId") Integer preId);
 
-    List<Discuss> selectDiscussListByVideoId(@Param("videoId")Integer videoId);
+    List<DiscussWithEmpName> selectDiscussListByVideoId(@Param("videoId")Integer videoId);
 }
