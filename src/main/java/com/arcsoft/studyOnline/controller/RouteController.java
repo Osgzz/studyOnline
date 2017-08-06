@@ -42,7 +42,7 @@ public class RouteController {
      * @return 接收前台提交的表单信息，处理后重定向到toAddRoute()方法
      */
     @RequestMapping("/addRoute")
-    public String addRoute(Model model, @RequestParam("lessonId") Integer lessonId, @RequestParam("routeName") String routeName, @RequestParam("time") String time, @RequestParam("routeCover") MultipartFile routeCover, @RequestParam("routeDetail") String routeDetail, @RequestParam("video") MultipartFile videoPath, @RequestParam("videoName") String videoName, @RequestParam("ppt") MultipartFile pptPath, @RequestParam("pptName") String pptName, @RequestParam("audio") MultipartFile audioPath, @RequestParam("audioName") String audioName, HttpServletRequest request) {
+    public String addRoute(Model model, @RequestParam("lessonId") Integer lessonId, @RequestParam("routeName") String routeName, @RequestParam("time") String time, @RequestParam("routeCover") MultipartFile routeCover, @RequestParam("routeDetail") String routeDetail, @RequestParam(value = "video" ,required = false) MultipartFile videoPath, @RequestParam(value = "videoName",required = false) String videoName, @RequestParam(value = "ppt",required = false) MultipartFile pptPath, @RequestParam(value = "pptName",required = false) String pptName, @RequestParam(value = "audio",required = false) MultipartFile audioPath, @RequestParam(value = "audioName",required = false) String audioName, HttpServletRequest request) {
         routeService.insertRouteWithResource(lessonId, routeName, time, routeCover, routeDetail, videoPath, videoName, pptPath, pptName, audioPath, audioName, request);
         return "redirect:/toAddRoute";
     }

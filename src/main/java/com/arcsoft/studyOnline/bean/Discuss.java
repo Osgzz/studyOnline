@@ -1,5 +1,9 @@
 package com.arcsoft.studyOnline.bean;
 
+import com.arcsoft.studyOnline.utils.JsonDateSerializer;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class Discuss {
@@ -146,6 +150,8 @@ public class Discuss {
      *
      * @mbg.generated Sun Jun 18 17:34:40 CST 2017
      */
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @JsonSerialize(using=JsonDateSerializer.class)
     public Date getTime() {
         return time;
     }

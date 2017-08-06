@@ -21,7 +21,7 @@
             </a>
             <div class="video-info">
                 <span id="routeTitle" class="video-name"><!--<放置简title，js动态获取--></span>
-                <div  class="video-intro">课程介绍
+                <div class="video-intro">课程介绍
                     <span id="routeDetail" class="video-downitem"><em class="f-c3">简介：</em><!--<放置简介，js动态获取--></span>
                 </div>
             </div>
@@ -84,180 +84,182 @@
                         <img src="../img/1.png" alt="头像">
                     </a>
                     <div class="comment-input">
-                        <textarea class="input-holder" placeholder="扯淡、吐槽、表扬、鼓励……想说啥就说啥！"></textarea>
+                        <textarea id="discussContent" name="content" class="input-holder"
+                                  placeholder="扯淡、吐槽、表扬、鼓励……想说啥就说啥！"></textarea>
                     </div>
                     <div class="input-btm">
-                        <input class="comment-btn" type="button" value="发表评论">
+                        <input type="hidden" id="videoId" name="videoId">
+                        <input id="submitDiscuss" class="comment-btn" type="button" value="发表评论">
                     </div>
                 </div>
                 <div id="comment-list">
                     <div class="list-container">
-                        <ul>
-                            <li class="content-item clearfix">
-                                <div class="list-avator">
-                                    <a href="" target="_blank">
-                                        <img src="../img/1.png" alt="头像">
-                                    </a>
-                                </div>
-                                <div class="list-main">
-                                    <ul class="plbg clearfix">
-                                        <div class="list-nick">
-                                            <a href="">路人甲</a>
-                                        </div>
-                                        <div class="list-time">
-                                            <span class="list-time">2天前</span>
-                                        </div>
-                                    </ul>
-                                    <ul class="plul clearfix">
-                                        <div class="list-content">
-                                            这个评论厉害了@
-                                        </div>
-                                        <ul class="plbg plbg2 clearfix">
-                                            <div class="list-nick">
-                                                <a href="">路人乙</a>
-                                            </div>
-                                            <div class="list-time">
-                                                <span class="list-time">2天前</span>
-                                            </div>
-                                        </ul>
-                                        <ul class="plul plul2 clearfix">
-                                            <div class="list-content">
-                                                来自于第二个的回复@
-                                            </div>
-                                        </ul>
-                                        <a class="list-reply" name="">回复</a>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="content-item clearfix">
-                                <div class="list-avator">
-                                    <a href="" target="_blank">
-                                        <img src="../img/1.png" alt="头像">
-                                    </a>
-                                </div>
-                                <div class="list-main">
-                                    <ul class="plbg clearfix">
-                                        <div class="list-nick">
-                                            <a href="">路人甲</a>
-                                        </div>
-                                        <div class="list-time">
-                                            <span class="list-time">2天前</span>
-                                        </div>
-                                    </ul>
-                                    <ul class="plul clearfix">
-                                        <div class="list-content">
-                                            这个评论厉害了@
-                                        </div>
-                                        <a class="list-reply" name="">回复</a>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="content-item clearfix">
-                                <div class="list-avator">
-                                    <a href="" target="_blank">
-                                        <img src="../img/1.png" alt="头像">
-                                    </a>
-                                </div>
-                                <div class="list-main">
-                                    <ul class="plbg clearfix">
-                                        <div class="list-nick">
-                                            <a href="">路人甲</a>
-                                        </div>
-                                        <div class="list-time">
-                                            <span class="list-time">2天前</span>
-                                        </div>
-                                    </ul>
-                                    <ul class="plul clearfix">
-                                        <div class="list-content">
-                                            这个评论厉害了@
-                                        </div>
-                                        <a class="list-reply" name="">回复</a>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="content-item clearfix">
-                                <div class="list-avator">
-                                    <a href="" target="_blank">
-                                        <img src="../img/1.png" alt="头像">
-                                    </a>
-                                </div>
-                                <div class="list-main">
-                                    <ul class="plbg clearfix">
-                                        <div class="list-nick">
-                                            <a href="">路人甲</a>
-                                        </div>
-                                        <div class="list-time">
-                                            <span class="list-time">2天前</span>
-                                        </div>
-                                    </ul>
-                                    <ul class="plul clearfix">
-                                        <div class="list-content">
-                                            这个评论厉害了@
-                                        </div>
-                                        <a class="list-reply" name="">回复</a>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="content-item clearfix">
-                                <div class="list-avator">
-                                    <a href="" target="_blank">
-                                        <img src="../img/1.png" alt="头像">
-                                    </a>
-                                </div>
-                                <div class="list-main">
-                                    <ul class="plbg clearfix">
-                                        <div class="list-nick">
-                                            <a href="">路人甲</a>
-                                        </div>
-                                        <div class="list-time">
-                                            <span class="list-time">2天前</span>
-                                        </div>
-                                    </ul>
-                                    <ul class="plul clearfix">
-                                        <div class="list-content">
-                                            这个评论厉害了@
-                                        </div>
-                                        <a class="list-reply" name="">回复</a>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="content-item clearfix">
-                                <div class="list-avator">
-                                    <a href="" target="_blank">
-                                        <img src="../img/1.png" alt="头像">
-                                    </a>
-                                </div>
-                                <div class="list-main">
-                                    <ul class="plbg clearfix">
-                                        <div class="list-nick">
-                                            <a href="">路人甲</a>
-                                        </div>
-                                        <div class="list-time">
-                                            <span class="list-time">2天前</span>
-                                        </div>
-                                    </ul>
-                                    <ul class="plul clearfix">
-                                        <div class="list-content">
-                                            这个评论厉害了@
-                                        </div>
-                                        <ul class="plbg plbg2 clearfix">
-                                            <div class="list-nick">
-                                                <a href="">路人乙</a>
-                                            </div>
-                                            <div class="list-time">
-                                                <span class="list-time">2天前</span>
-                                            </div>
-                                        </ul>
-                                        <ul class="plul plul2 clearfix">
-                                            <div class="list-content">
-                                                来自于第二个的回复@
-                                            </div>
-                                            <a class="list-reply" name="">回复</a>
-                                        </ul>
-                                        <a class="list-reply" name="">回复</a>
-                                    </ul>
-                                </div>
-                            </li>
+                        <ul id="comment">
+                            <!--<li class="content-item clearfix">-->
+                                <!--<div class="list-avator">-->
+                                    <!--<a href="" target="_blank">-->
+                                        <!--<img src="../img/1.png" alt="头像">-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                                <!--<div class="list-main">-->
+                                    <!--<ul class="plbg clearfix">-->
+                                        <!--<div class="list-nick">-->
+                                            <!--<a href="">路人甲</a>-->
+                                        <!--</div>-->
+                                        <!--<div class="list-time">-->
+                                            <!--<span class="list-time">2天前</span>-->
+                                        <!--</div>-->
+                                    <!--</ul>-->
+                                    <!--<ul class="plul clearfix">-->
+                                        <!--<div class="list-content">-->
+                                            <!--这个评论厉害了@-->
+                                        <!--</div>-->
+                                        <!--<ul class="plbg plbg2 clearfix">-->
+                                            <!--<div class="list-nick">-->
+                                                <!--<a href="">路人乙</a>-->
+                                            <!--</div>-->
+                                            <!--<div class="list-time">-->
+                                                <!--<span class="list-time">2天前</span>-->
+                                            <!--</div>-->
+                                        <!--</ul>-->
+                                        <!--<ul class="plul plul2 clearfix">-->
+                                            <!--<div class="list-content">-->
+                                                <!--来自于第二个的回复@-->
+                                            <!--</div>-->
+                                        <!--</ul>-->
+                                        <!--<a class="list-reply" name="">回复</a>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                            <!--<li class="content-item clearfix">-->
+                                <!--<div class="list-avator">-->
+                                    <!--<a href="" target="_blank">-->
+                                        <!--<img src="../img/1.png" alt="头像">-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                                <!--<div class="list-main">-->
+                                    <!--<ul class="plbg clearfix">-->
+                                        <!--<div class="list-nick">-->
+                                            <!--<a href="">路人甲</a>-->
+                                        <!--</div>-->
+                                        <!--<div class="list-time">-->
+                                            <!--<span class="list-time">2天前</span>-->
+                                        <!--</div>-->
+                                    <!--</ul>-->
+                                    <!--<ul class="plul clearfix">-->
+                                        <!--<div class="list-content">-->
+                                            <!--这个评论厉害了@-->
+                                        <!--</div>-->
+                                        <!--<a class="list-reply" name="">回复</a>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                            <!--<li class="content-item clearfix">-->
+                                <!--<div class="list-avator">-->
+                                    <!--<a href="" target="_blank">-->
+                                        <!--<img src="../img/1.png" alt="头像">-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                                <!--<div class="list-main">-->
+                                    <!--<ul class="plbg clearfix">-->
+                                        <!--<div class="list-nick">-->
+                                            <!--<a href="">路人甲</a>-->
+                                        <!--</div>-->
+                                        <!--<div class="list-time">-->
+                                            <!--<span class="list-time">2天前</span>-->
+                                        <!--</div>-->
+                                    <!--</ul>-->
+                                    <!--<ul class="plul clearfix">-->
+                                        <!--<div class="list-content">-->
+                                            <!--这个评论厉害了@-->
+                                        <!--</div>-->
+                                        <!--<a class="list-reply" name="">回复</a>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                            <!--<li class="content-item clearfix">-->
+                                <!--<div class="list-avator">-->
+                                    <!--<a href="" target="_blank">-->
+                                        <!--<img src="../img/1.png" alt="头像">-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                                <!--<div class="list-main">-->
+                                    <!--<ul class="plbg clearfix">-->
+                                        <!--<div class="list-nick">-->
+                                            <!--<a href="">路人甲</a>-->
+                                        <!--</div>-->
+                                        <!--<div class="list-time">-->
+                                            <!--<span class="list-time">2天前</span>-->
+                                        <!--</div>-->
+                                    <!--</ul>-->
+                                    <!--<ul class="plul clearfix">-->
+                                        <!--<div class="list-content">-->
+                                            <!--这个评论厉害了@-->
+                                        <!--</div>-->
+                                        <!--<a class="list-reply" name="">回复</a>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                            <!--<li class="content-item clearfix">-->
+                                <!--<div class="list-avator">-->
+                                    <!--<a href="" target="_blank">-->
+                                        <!--<img src="../img/1.png" alt="头像">-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                                <!--<div class="list-main">-->
+                                    <!--<ul class="plbg clearfix">-->
+                                        <!--<div class="list-nick">-->
+                                            <!--<a href="">路人甲</a>-->
+                                        <!--</div>-->
+                                        <!--<div class="list-time">-->
+                                            <!--<span class="list-time">2天前</span>-->
+                                        <!--</div>-->
+                                    <!--</ul>-->
+                                    <!--<ul class="plul clearfix">-->
+                                        <!--<div class="list-content">-->
+                                            <!--这个评论厉害了@-->
+                                        <!--</div>-->
+                                        <!--<a class="list-reply" name="">回复</a>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                            <!--<li class="content-item clearfix">-->
+                                <!--<div class="list-avator">-->
+                                    <!--<a href="" target="_blank">-->
+                                        <!--<img src="../img/1.png" alt="头像">-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                                <!--<div class="list-main">-->
+                                    <!--<ul class="plbg clearfix">-->
+                                        <!--<div class="list-nick">-->
+                                            <!--<a href="">路人甲</a>-->
+                                        <!--</div>-->
+                                        <!--<div class="list-time">-->
+                                            <!--<span class="list-time">2天前</span>-->
+                                        <!--</div>-->
+                                    <!--</ul>-->
+                                    <!--<ul class="plul clearfix">-->
+                                        <!--<div class="list-content">-->
+                                            <!--这个评论厉害了@-->
+                                        <!--</div>-->
+                                        <!--<ul class="plbg plbg2 clearfix">-->
+                                            <!--<div class="list-nick">-->
+                                                <!--<a href="">路人乙</a>-->
+                                            <!--</div>-->
+                                            <!--<div class="list-time">-->
+                                                <!--<span class="list-time">2天前</span>-->
+                                            <!--</div>-->
+                                        <!--</ul>-->
+                                        <!--<ul class="plul plul2 clearfix">-->
+                                            <!--<div class="list-content">-->
+                                                <!--来自于第二个的回复@-->
+                                            <!--</div>-->
+                                            <!--<a class="list-reply" name="">回复</a>-->
+                                        <!--</ul>-->
+                                        <!--<a class="list-reply" name="">回复</a>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</li>-->
                         </ul>
                     </div>
                     <div class="list-page">

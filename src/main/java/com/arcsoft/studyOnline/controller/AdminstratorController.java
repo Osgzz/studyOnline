@@ -49,17 +49,17 @@ public class AdminstratorController {
     @RequestMapping("/login")
     public String login(@RequestParam String username, @RequestParam String password, Model model) {
         Subject currentUser = SecurityUtils.getSubject();
-        if (!currentUser.isAuthenticated()) {
-            CustomizedToken token = new CustomizedToken(username, password,USER_LOGIN_TYPE);
-            token.setRememberMe(true);
-            try {
-                currentUser.login(token);
-            } catch (AuthenticationException e) {
-                System.out.println("登录失败:" + e.getMessage());
-                model.addAttribute("msg", "error");
-                return "index";
-            }
+
+        CustomizedToken token = new CustomizedToken(username, password, USER_LOGIN_TYPE);
+        token.setRememberMe(true);
+        try {
+            currentUser.login(token);
+        } catch (AuthenticationException e) {
+            System.out.println("登录失败:" + e.getMessage());
+            model.addAttribute("msg", "error");
+            return "index";
         }
+
         model.addAttribute("username", username);
         return "home";
     }
